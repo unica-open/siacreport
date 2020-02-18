@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ente_proprietario" id="1211">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="nome_report" id="89">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">BILR099</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="anno_bilancio" id="1208">
+            <property name="hidden">false</property>
+            <text-property name="promptText">Anno di bilancio</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="DataSourceLiquidazioni" id="16">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+			<property name="odaURL">${userconn}</property>
+			<property name="odaUser">${userdb}</property>
+			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetDatiLiquidazioni" id="1210">
+            <list-property name="columnHints"/>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ente_prop</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_anno</property>
+                    <property name="paramName">anno_bilancio</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">nome_ente</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">bil_anno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">anno_capitolo</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">num_capitolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">cod_articolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ueb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">descr_capitolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">descr_articolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">anno_liquidazione</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">num_liquidazione</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">stato_liquidazione</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">descr_liquidazione</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">importo_liquidazione</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">emissione_liquidazione</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">movgest_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">movgest_ts_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">pdc_finanziario_cap</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">pdc_finanziario_movgest</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">classif_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">classif_tipo_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">cofog</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">transaz_europea</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">siope</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">ricorrente</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">perimetro_sanitario</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">politiche_regionali</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">cup</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">elem_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">liq_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">DataSourceLiquidazioni</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">nome_ente</property>
+                    <property name="nativeName">nome_ente</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">bil_anno</property>
+                    <property name="nativeName">bil_anno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">anno_capitolo</property>
+                    <property name="nativeName">anno_capitolo</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">num_capitolo</property>
+                    <property name="nativeName">num_capitolo</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">cod_articolo</property>
+                    <property name="nativeName">cod_articolo</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ueb</property>
+                    <property name="nativeName">ueb</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">descr_capitolo</property>
+                    <property name="nativeName">descr_capitolo</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">descr_articolo</property>
+                    <property name="nativeName">descr_articolo</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">anno_liquidazione</property>
+                    <property name="nativeName">anno_liquidazione</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">num_liquidazione</property>
+                    <property name="nativeName">num_liquidazione</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">stato_liquidazione</property>
+                    <property name="nativeName">stato_liquidazione</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">descr_liquidazione</property>
+                    <property name="nativeName">descr_liquidazione</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">importo_liquidazione</property>
+                    <property name="nativeName">importo_liquidazione</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">emissione_liquidazione</property>
+                    <property name="nativeName">emissione_liquidazione</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">movgest_id</property>
+                    <property name="nativeName">movgest_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">movgest_ts_id</property>
+                    <property name="nativeName">movgest_ts_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">pdc_finanziario_cap</property>
+                    <property name="nativeName">pdc_finanziario_cap</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">pdc_finanziario_movgest</property>
+                    <property name="nativeName">pdc_finanziario_movgest</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">classif_id</property>
+                    <property name="nativeName">classif_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">classif_tipo_code</property>
+                    <property name="nativeName">classif_tipo_code</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">cofog</property>
+                    <property name="nativeName">cofog</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">transaz_europea</property>
+                    <property name="nativeName">transaz_europea</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">siope</property>
+                    <property name="nativeName">siope</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">ricorrente</property>
+                    <property name="nativeName">ricorrente</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">perimetro_sanitario</property>
+                    <property name="nativeName">perimetro_sanitario</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">politiche_regionali</property>
+                    <property name="nativeName">politiche_regionali</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">cup</property>
+                    <property name="nativeName">cup</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">elem_id</property>
+                    <property name="nativeName">elem_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">liq_id</property>
+                    <property name="nativeName">liq_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from "BILR099_elenco_liquidazioni_trans_elem_non_completa" (?, ?)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes/>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes/>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>nome_ente</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>nome_ente</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>nome_ente</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>utente_ins</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>utente_ins</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>utente_ins</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>data_ins</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>data_ins</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>data_ins</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>code_soggetto</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>code_soggetto</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>code_soggetto</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>descr_soggetto</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>descr_soggetto</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>descr_soggetto</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>code_sede_sec</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>code_sede_sec</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>code_sede_sec</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>descr_sede_sec</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>descr_sede_sec</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>descr_sede_sec</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>azione</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>azione</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>azione</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">400mm</property>
+            <property name="width">800mm</property>
+            <property name="orientation">landscape</property>
+            <page-header>
+                <grid id="2387">
+                    <property name="dataSet">DataSetDatiLiquidazioni</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">nome_ente</property>
+                            <text-property name="displayName">nome_ente</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["nome_ente"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">bil_anno</property>
+                            <text-property name="displayName">bil_anno</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["bil_anno"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">anno_capitolo</property>
+                            <text-property name="displayName">anno_capitolo</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["anno_capitolo"]</expression>
+                            <property name="dataType">integer</property>
+                        </structure>
+                        <structure>
+                            <property name="name">num_capitolo</property>
+                            <text-property name="displayName">num_capitolo</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["num_capitolo"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">cod_articolo</property>
+                            <text-property name="displayName">cod_articolo</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["cod_articolo"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">ueb</property>
+                            <text-property name="displayName">ueb</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["ueb"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">descr_capitolo</property>
+                            <text-property name="displayName">descr_capitolo</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["descr_capitolo"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">descr_articolo</property>
+                            <text-property name="displayName">descr_articolo</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["descr_articolo"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">anno_liquidazione</property>
+                            <text-property name="displayName">anno_liquidazione</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["anno_liquidazione"]</expression>
+                            <property name="dataType">integer</property>
+                        </structure>
+                        <structure>
+                            <property name="name">num_liquidazione</property>
+                            <text-property name="displayName">num_liquidazione</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["num_liquidazione"]</expression>
+                            <property name="dataType">integer</property>
+                        </structure>
+                        <structure>
+                            <property name="name">stato_liquidazione</property>
+                            <text-property name="displayName">stato_liquidazione</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["stato_liquidazione"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">descr_liquidazione</property>
+                            <text-property name="displayName">descr_liquidazione</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["descr_liquidazione"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">importo_liquidazione</property>
+                            <text-property name="displayName">importo_liquidazione</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["importo_liquidazione"]</expression>
+                            <property name="dataType">decimal</property>
+                        </structure>
+                        <structure>
+                            <property name="name">emissione_liquidazione</property>
+                            <text-property name="displayName">emissione_liquidazione</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["emissione_liquidazione"]</expression>
+                            <property name="dataType">date</property>
+                        </structure>
+                        <structure>
+                            <property name="name">movgest_id</property>
+                            <text-property name="displayName">movgest_id</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["movgest_id"]</expression>
+                            <property name="dataType">integer</property>
+                        </structure>
+                        <structure>
+                            <property name="name">movgest_ts_id</property>
+                            <text-property name="displayName">movgest_ts_id</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["movgest_ts_id"]</expression>
+                            <property name="dataType">integer</property>
+                        </structure>
+                        <structure>
+                            <property name="name">pdc_finanziario_cap</property>
+                            <text-property name="displayName">pdc_finanziario_cap</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["pdc_finanziario_cap"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">pdc_finanziario_movgest</property>
+                            <text-property name="displayName">pdc_finanziario_movgest</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["pdc_finanziario_movgest"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">classif_id</property>
+                            <text-property name="displayName">classif_id</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["classif_id"]</expression>
+                            <property name="dataType">integer</property>
+                        </structure>
+                        <structure>
+                            <property name="name">classif_tipo_code</property>
+                            <text-property name="displayName">classif_tipo_code</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["classif_tipo_code"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">cofog</property>
+                            <text-property name="displayName">cofog</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["cofog"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">transaz_europea</property>
+                            <text-property name="displayName">transaz_europea</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["transaz_europea"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">siope</property>
+                            <text-property name="displayName">siope</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["siope"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">ricorrente</property>
+                            <text-property name="displayName">ricorrente</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["ricorrente"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">perimetro_sanitario</property>
+                            <text-property name="displayName">perimetro_sanitario</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["perimetro_sanitario"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">politiche_regionali</property>
+                            <text-property name="displayName">politiche_regionali</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["politiche_regionali"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">cup</property>
+                            <text-property name="displayName">cup</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["cup"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">elem_id</property>
+                            <text-property name="displayName">elem_id</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["elem_id"]</expression>
+                            <property name="dataType">integer</property>
+                        </structure>
+                        <structure>
+                            <property name="name">liq_id</property>
+                            <text-property name="displayName">liq_id</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["liq_id"]</expression>
+                            <property name="dataType">integer</property>
+                        </structure>
+                    </list-property>
+                    <column id="1212"/>
+                    <column id="1213"/>
+                    <row id="1214">
+                        <cell id="1215">
+                            <data id="1220">
+                                <property name="resultSetColumn">nome_ente</property>
+                            </data>
+                        </cell>
+                        <cell id="1216">
+                            <text id="1221">
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                    <row id="1217">
+                        <cell id="1218">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <text-data id="1438">
+                                <property name="textAlign">center</property>
+                                <expression name="valueExpr">"ELENCO DELLE LIQUIDAZIONI CON TRANSAZIONE ELEMENTARE NON COMPLETA - ANNO BILANCIO "+params["anno_bilancio"].value</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="TableElencoLiquidazioni" id="2388">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="dataSet">DataSetDatiLiquidazioni</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">nome_ente</property>
+                    <text-property name="displayName">nome_ente</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nome_ente"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">bil_anno</property>
+                    <text-property name="displayName">bil_anno</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["bil_anno"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">anno_capitolo</property>
+                    <text-property name="displayName">anno_capitolo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["anno_capitolo"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">num_capitolo</property>
+                    <text-property name="displayName">num_capitolo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["num_capitolo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cod_articolo</property>
+                    <text-property name="displayName">cod_articolo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cod_articolo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ueb</property>
+                    <text-property name="displayName">ueb</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ueb"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">descr_capitolo</property>
+                    <text-property name="displayName">descr_capitolo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descr_capitolo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">descr_articolo</property>
+                    <text-property name="displayName">descr_articolo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descr_articolo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">anno_liquidazione</property>
+                    <text-property name="displayName">anno_liquidazione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["anno_liquidazione"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">num_liquidazione</property>
+                    <text-property name="displayName">num_liquidazione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["num_liquidazione"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">stato_liquidazione</property>
+                    <text-property name="displayName">stato_liquidazione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["stato_liquidazione"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">descr_liquidazione</property>
+                    <text-property name="displayName">descr_liquidazione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descr_liquidazione"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_liquidazione</property>
+                    <text-property name="displayName">importo_liquidazione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_liquidazione"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">emissione_liquidazione</property>
+                    <text-property name="displayName">emissione_liquidazione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["emissione_liquidazione"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">movgest_id</property>
+                    <text-property name="displayName">movgest_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["movgest_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">movgest_ts_id</property>
+                    <text-property name="displayName">movgest_ts_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["movgest_ts_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">pdc_finanziario_cap</property>
+                    <text-property name="displayName">pdc_finanziario_cap</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pdc_finanziario_cap"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">pdc_finanziario_movgest</property>
+                    <text-property name="displayName">pdc_finanziario_movgest</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pdc_finanziario_movgest"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">classif_id</property>
+                    <text-property name="displayName">classif_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["classif_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">classif_tipo_code</property>
+                    <text-property name="displayName">classif_tipo_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["classif_tipo_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cofog</property>
+                    <text-property name="displayName">cofog</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cofog"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">transaz_europea</property>
+                    <text-property name="displayName">transaz_europea</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["transaz_europea"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">siope</property>
+                    <text-property name="displayName">siope</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["siope"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ricorrente</property>
+                    <text-property name="displayName">ricorrente</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ricorrente"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">perimetro_sanitario</property>
+                    <text-property name="displayName">perimetro_sanitario</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["perimetro_sanitario"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">politiche_regionali</property>
+                    <text-property name="displayName">politiche_regionali</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["politiche_regionali"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cup</property>
+                    <text-property name="displayName">cup</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cup"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">elem_id</property>
+                    <text-property name="displayName">elem_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["elem_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">liq_id</property>
+                    <text-property name="displayName">liq_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["liq_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+            <list-property name="sort">
+                <structure>
+                    <expression name="key" type="javascript">row["anno_liquidazione"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+                <structure>
+                    <expression name="key" type="javascript">row["num_liquidazione"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+            </list-property>
+            <column id="2497"/>
+            <column id="2498"/>
+            <column id="2500"/>
+            <column id="2501"/>
+            <column id="2502"/>
+            <column id="2503"/>
+            <column id="2512"/>
+            <column id="2513"/>
+            <column id="2514"/>
+            <column id="2515"/>
+            <column id="2516"/>
+            <column id="2517"/>
+            <column id="2521"/>
+            <column id="2523"/>
+            <column id="2607"/>
+            <column id="2611"/>
+            <column id="2621"/>
+            <column id="2625"/>
+            <column id="2631"/>
+            <column id="2635"/>
+            <column id="2525"/>
+            <header>
+                <row id="2389">
+                    <cell id="2390">
+                        <text id="2532">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Anno Liquidazione]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2391">
+                        <text id="2533">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Num. Liquidazione]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2393">
+                        <text id="2535">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Stato Liquidazione]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2394">
+                        <text id="2536">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Descr. Liquidazione]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2395">
+                        <text id="2537">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Importo Liquidazione]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2396">
+                        <text id="2538">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Data Emissione Liq.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2405">
+                        <text id="2547">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Anno Cap.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2406">
+                        <text id="2548">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Num. Cap.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2407">
+                        <text id="2549">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Cod. Art.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2408">
+                        <text id="2550">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[UEB]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2409">
+                        <text id="2551">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Descr. Cap.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2410">
+                        <text id="2552">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Descr. Art.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2414">
+                        <text id="2556">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Piano dei Conti Cap.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2416">
+                        <text id="2558">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Piano dei Conti Liquidazione (*)]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2604">
+                        <text id="2559">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[COFOG (*)]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2608">
+                        <text id="2616">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Cod. Transaz. Europea (*)]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2618">
+                        <text id="2560">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[SIOPE (*)]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2622">
+                        <text id="2626">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Ricorrente]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2628">
+                        <text id="2637">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[CUP]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2632">
+                        <text id="2636">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Capitoli Perimetro Sanitario]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2418">
+                        <text id="2638">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Programma Pol. Reg. Unitaria]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="2425">
+                    <cell id="2426">
+                        <data id="2642">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">anno_liquidazione</property>
+                        </data>
+                    </cell>
+                    <cell id="2427">
+                        <data id="2643">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">num_liquidazione</property>
+                        </data>
+                    </cell>
+                    <cell id="2429">
+                        <data id="2645">
+                            <property name="resultSetColumn">stato_liquidazione</property>
+                        </data>
+                    </cell>
+                    <cell id="2430">
+                        <data id="2646">
+                            <property name="resultSetColumn">descr_liquidazione</property>
+                        </data>
+                    </cell>
+                    <cell id="2431">
+                        <data id="2647">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                <property name="locale">it_IT</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">importo_liquidazione</property>
+                        </data>
+                    </cell>
+                    <cell id="2432">
+                        <data id="2648">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy</property>
+                            </structure>
+                            <property name="resultSetColumn">emissione_liquidazione</property>
+                        </data>
+                    </cell>
+                    <cell id="2441">
+                        <data id="2582">
+                            <property name="resultSetColumn">anno_capitolo</property>
+                        </data>
+                    </cell>
+                    <cell id="2442">
+                        <data id="2583">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">num_capitolo</property>
+                        </data>
+                    </cell>
+                    <cell id="2443">
+                        <data id="2584">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">cod_articolo</property>
+                        </data>
+                    </cell>
+                    <cell id="2444">
+                        <data id="2585">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">ueb</property>
+                        </data>
+                    </cell>
+                    <cell id="2445">
+                        <data id="2586">
+                            <property name="resultSetColumn">descr_capitolo</property>
+                        </data>
+                    </cell>
+                    <cell id="2446">
+                        <data id="2587">
+                            <property name="resultSetColumn">descr_articolo</property>
+                        </data>
+                    </cell>
+                    <cell id="2450">
+                        <data id="2596">
+                            <property name="resultSetColumn">pdc_finanziario_cap</property>
+                        </data>
+                    </cell>
+                    <cell id="2452">
+                        <data id="2597">
+                            <property name="resultSetColumn">pdc_finanziario_movgest</property>
+                        </data>
+                    </cell>
+                    <cell id="2605">
+                        <data id="2598">
+                            <property name="resultSetColumn">cofog</property>
+                        </data>
+                    </cell>
+                    <cell id="2609">
+                        <data id="2617">
+                            <property name="resultSetColumn">transaz_europea</property>
+                        </data>
+                    </cell>
+                    <cell id="2619">
+                        <data id="2599">
+                            <property name="resultSetColumn">siope</property>
+                        </data>
+                    </cell>
+                    <cell id="2623">
+                        <data id="2627">
+                            <property name="resultSetColumn">ricorrente</property>
+                        </data>
+                    </cell>
+                    <cell id="2629">
+                        <data id="2649">
+                            <property name="resultSetColumn">cup</property>
+                        </data>
+                    </cell>
+                    <cell id="2633">
+                        <data id="2639">
+                            <property name="resultSetColumn">perimetro_sanitario</property>
+                        </data>
+                    </cell>
+                    <cell id="2454">
+                        <data id="2640">
+                            <property name="resultSetColumn">politiche_regionali</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="2461">
+                    <cell id="2462"/>
+                    <cell id="2463"/>
+                    <cell id="2465"/>
+                    <cell id="2466"/>
+                    <cell id="2467"/>
+                    <cell id="2468"/>
+                    <cell id="2477"/>
+                    <cell id="2478"/>
+                    <cell id="2479"/>
+                    <cell id="2480"/>
+                    <cell id="2481"/>
+                    <cell id="2482"/>
+                    <cell id="2486"/>
+                    <cell id="2488"/>
+                    <cell id="2606"/>
+                    <cell id="2610"/>
+                    <cell id="2620"/>
+                    <cell id="2624"/>
+                    <cell id="2630"/>
+                    <cell id="2634"/>
+                    <cell id="2490"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

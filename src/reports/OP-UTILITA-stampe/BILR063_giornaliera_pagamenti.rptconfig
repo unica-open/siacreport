@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_3401_0</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_3154_2</property>
+            <property name="value">BPI120</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__periodo_dal_3402_3</property>
+            <property name="value">01/01/2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__periodo_al_3403_4</property>
+            <property name="value">31/12/2016</property>
+        </structure>
+        <structure>
+            <property name="name">periodo_al_3403_5</property>
+            <property name="value">2016-12-31</property>
+        </structure>
+        <structure>
+            <property name="name">periodo_al_3403_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_6</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_3154_7</property>
+            <property name="value">BPI120</property>
+        </structure>
+        <structure>
+            <property name="name">report_3154_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_8</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">periodo_dal_3402_9</property>
+            <property name="value">2016-01-01</property>
+        </structure>
+        <structure>
+            <property name="name">periodo_dal_3402_type_</property>
+            <property name="value">date</property>
+        </structure>
+    </list-property>
+</report>

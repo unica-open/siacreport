@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_17_0</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_1209_2</property>
+            <property name="value">BILR001</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno Competenza_3586_3</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_4</property>
+            <property name="value">Con data del giorno</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_1209_5</property>
+            <property name="value">BILR001</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_1209_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_6</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_7</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_8</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_expr_</property>
+            <property name="value">dataSetRow["anno"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_17_9</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_17_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

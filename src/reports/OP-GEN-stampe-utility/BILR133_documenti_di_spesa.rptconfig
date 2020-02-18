@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_1211_0</property>
+            <property name="value">30</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_1</property>
+            <property name="value">BILR132</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_2</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__residuo_2507_3</property>
+            <property name="value">Competenza</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Titolo_7138_4</property>
+            <property name="value">T - TUTTI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Macroaggregato_7139_5</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__pdc_V_liv_7157_6</property>
+            <property name="value">U.1.3.01.01.001</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__iva_7158_7</property>
+            <property name="value">DOCUMENTI SENZA IVA</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__pagati_7159_8</property>
+            <property name="value">PAGATI</property>
+        </structure>
+        <structure>
+            <property name="name">iva_7158_9</property>
+            <property name="value">N</property>
+        </structure>
+        <structure>
+            <property name="name">iva_7158_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">pdc_V_liv_7157_10</property>
+            <property name="value">U.1.3.01.01.001</property>
+        </structure>
+        <structure>
+            <property name="name">pdc_V_liv_7157_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">residuo_2507_11</property>
+            <property name="value">N</property>
+        </structure>
+        <structure>
+            <property name="name">residuo_2507_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_12</property>
+            <property name="value">BILR132</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_13</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">pagati_7159_14</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">pagati_7159_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo_7138_15</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo_7138_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo_7138_expr_</property>
+            <property name="value">row["classif_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">Macroaggregato_7139_16</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">Macroaggregato_7139_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Macroaggregato_7139_expr_</property>
+            <property name="value">row["classif_code_4"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_1211_17</property>
+            <property name="value">30</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_1211_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

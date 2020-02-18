@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_45_0</property>
+            <property name="value">3</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2018</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_2</property>
+            <property name="value">BILR152</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno provvedimento_5197_3</property>
+            <property name="value">2018</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero provvedimento_5188_4</property>
+            <property name="value">14955 </property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__tipo_provvedimento_8702_5</property>
+            <property name="value">ATTO DI LIQUIDAZIONE/RISCOSSIONE</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_6</property>
+            <property name="value">BILR152</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_provvedimento_8702_7</property>
+            <property name="value">26</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_provvedimento_8702_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_provvedimento_8702_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_8</property>
+            <property name="value">2018</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero provvedimento_5188_9</property>
+            <property name="value">14955</property>
+        </structure>
+        <structure>
+            <property name="name">Numero provvedimento_5188_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_45_10</property>
+            <property name="value">3</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_45_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento_5197_11</property>
+            <property name="value">2018</property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento_5197_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

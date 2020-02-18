@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_17_0</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_1</property>
+            <property name="value">BILR093</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_2</property>
+            <property name="value">2015</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Bilancio_1209_3</property>
+            <property name="value">PREVISIONE</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo_1210_4</property>
+            <property name="value">SPESA</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_17_5</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_17_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo_1210_6</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo_1210_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Bilancio_1209_7</property>
+            <property name="value">P</property>
+        </structure>
+        <structure>
+            <property name="name">Bilancio_1209_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_8</property>
+            <property name="value">BILR093</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_9</property>
+            <property name="value">2015</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

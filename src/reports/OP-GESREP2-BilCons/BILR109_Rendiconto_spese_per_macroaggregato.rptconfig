@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_26_0</property>
+            <property name="value">4</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_27_1</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__titolo_72_2</property>
+            <property name="value">1-Spese correnti</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__tipo_spese_73_3</property>
+            <property name="value">Impegni</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_71_4</property>
+            <property name="value">BILR109</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_5</property>
+            <property name="value">Con data del giorno</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_spese_73_6</property>
+            <property name="value">I</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_spese_73_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_27_7</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_27_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_71_8</property>
+            <property name="value">BILR109</property>
+        </structure>
+        <structure>
+            <property name="name">report_71_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_9</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">titolo_72_10</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">titolo_72_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">titolo_72_expr_</property>
+            <property name="value">dataSetRow["titolo"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_11</property>
+            <property name="value">4</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

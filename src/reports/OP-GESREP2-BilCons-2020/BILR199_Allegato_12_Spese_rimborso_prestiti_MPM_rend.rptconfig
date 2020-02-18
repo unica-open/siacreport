@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_26_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_27_1</property>
+            <property name="value">2017</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_competenza_5689_2</property>
+            <property name="value">2017</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Variazione_72_3</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5188_4</property>
+            <property name="value">Numero provvedimento di variazione di PEG_5188</property>
+        </structure>
+        <structure>
+            <property name="name">Numero provvedimento di variazione di PEG_5188_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno provvedimento di variazione di PEG_5197_5</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8702_6</property>
+            <property name="value">Tipo provvedimento di variazione di PEG_8702</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di PEG_8702_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di PEG_8702_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Direzione_6993_7</property>
+            <property name="value">999 - DIREZIONE NON SPECIFICATA</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Settore_6994_8</property>
+            <property name="value">999 - SETTORE NON SPECIFICATO</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8703_9</property>
+            <property name="value">Numero provvedimento di variazione di Bilancio_8703</property>
+        </structure>
+        <structure>
+            <property name="name">Numero provvedimento di variazione di Bilancio_8703_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno provvedimento di variazione di Bilancio_8704_10</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8705_11</property>
+            <property name="value">Tipo provvedimento di variazione di Bilancio_8705</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di Bilancio_8705_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di Bilancio_8705_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Direzione1_8707_12</property>
+            <property name="value">999 - DIREZIONE NON SPECIFICATA</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Settore1_8708_13</property>
+            <property name="value">999 - SETTORE NON SPECIFICATO</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_14</property>
+            <property name="value">Con data del giorno</property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di Bilancio_8704_15</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di Bilancio_8704_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_competenza_5689_16</property>
+            <property name="value">2017</property>
+        </structure>
+        <structure>
+            <property name="name">anno_competenza_5689_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_27_17</property>
+            <property name="value">2017</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_27_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_18</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_72_19</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_72_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione1_8707_20</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione1_8707_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione1_8707_expr_</property>
+            <property name="value">row["cod_direz"]</property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di PEG_5197_21</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di PEG_5197_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione_6993_22</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione_6993_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione_6993_expr_</property>
+            <property name="value">row["cod_direz"]</property>
+        </structure>
+        <structure>
+            <property name="name">Settore_6994_23</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">Settore_6994_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Settore_6994_expr_</property>
+            <property name="value">row["cod_sett"]</property>
+        </structure>
+        <structure>
+            <property name="name">Settore1_8708_24</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">Settore1_8708_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Settore1_8708_expr_</property>
+            <property name="value">row["cod_sett"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_25</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

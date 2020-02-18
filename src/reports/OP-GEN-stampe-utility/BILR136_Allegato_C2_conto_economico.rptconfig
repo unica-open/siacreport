@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_1211_0</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_1</property>
+            <property name="value">BILR092</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_2</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__classificatori_5723_3</property>
+            <property name="value">Piano dei conti economico</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__tipo_stampa_6207_4</property>
+            <property name="value">Sì</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Stampa conti al di sotto del livello di legge_2720_5</property>
+            <property name="value">No</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Codice PDCE Livello II_2180_6</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Codice PDCE Livello III_2718_7</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Codice PDCE Ultimo Livello_6189_8</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">classificatori_5723_9</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">classificatori_5723_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Codice PDCE Ultimo Livello_6189_10</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Codice PDCE Ultimo Livello_6189_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_11</property>
+            <property name="value">BILR092</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_12</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Stampa conti al di sotto del livello di legge_2720_13</property>
+            <property name="value">N</property>
+        </structure>
+        <structure>
+            <property name="name">Stampa conti al di sotto del livello di legge_2720_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Codice PDCE Livello II_2180_14</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Codice PDCE Livello II_2180_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_stampa_6207_15</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_stampa_6207_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Codice PDCE Livello III_2718_16</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Codice PDCE Livello III_2718_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_1211_17</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_1211_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

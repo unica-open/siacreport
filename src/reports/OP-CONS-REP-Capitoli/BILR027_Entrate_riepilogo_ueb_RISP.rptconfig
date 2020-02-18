@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_26_0</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__tipo bilancio_5503_1</property>
+            <property name="value">Previsione</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_5170_2</property>
+            <property name="value">2014</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Capitolo_5168_3</property>
+            <property name="value">83</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__articolo_5169_4</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo finanziamento_5171_5</property>
+            <property name="value">MB</property>
+        </structure>
+        <structure>
+            <property name="name">Capitolo_5168_6</property>
+            <property name="value">83</property>
+        </structure>
+        <structure>
+            <property name="name">Capitolo_5168_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo finanziamento_5171_7</property>
+            <property name="value">MB</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo finanziamento_5171_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">articolo_5169_8</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">articolo_5169_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_5170_9</property>
+            <property name="value">2014</property>
+        </structure>
+        <structure>
+            <property name="name">anno_5170_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">tipo bilancio_5503_10</property>
+            <property name="value">EP</property>
+        </structure>
+        <structure>
+            <property name="name">tipo bilancio_5503_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_11</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

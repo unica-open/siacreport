@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_26_0</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Capitolo_27_1</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Articolo_5368_2</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__ueb_5407_3</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo capitolo_5472_4</property>
+            <property name="value">E</property>
+        </structure>
+        <structure>
+            <property name="name">Capitolo_27_5</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">Capitolo_27_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ueb_5407_6</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">ueb_5407_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo capitolo_5472_7</property>
+            <property name="value">E</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo capitolo_5472_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Articolo_5368_8</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">Articolo_5368_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_9</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

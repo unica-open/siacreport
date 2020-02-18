@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_7_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_8_1</property>
+            <property name="value">2014</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_231_2</property>
+            <property name="value">BILR014</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_231_3</property>
+            <property name="value">BILR014</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_231_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_8_4</property>
+            <property name="value">2014</property>
+        </structure>
+        <structure>
+            <property name="name">anno_8_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_7_5</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_7_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

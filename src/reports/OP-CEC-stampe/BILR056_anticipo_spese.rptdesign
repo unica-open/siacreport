@@ -1,0 +1,1548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="AnticipoSpese" id="7">
+            <property name="FILELIST">../xml_per_prove/StampaRicevutaRichiestaEconomale_ANTICIPO_SPESE_MISSIONE(5).xml</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="DatiTestata" id="48">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">nomeEnte</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">nomeEnte</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">intestazioneDirezione</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">intestazioneDirezione</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">intestazioneSettore</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">intestazioneSettore</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">intestazioneUfficio</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">intestazioneUfficio</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codiceCassa</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">codiceCassa</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizioneCassa</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">descrizioneCassa</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numeroImpegno</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">numeroImpegno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numeroCapitolo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">numeroCapitolo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numeroArticolo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">numeroArticolo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">matricola</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">matricola</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strutturaDiAppartenenza</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">strutturaDiAppartenenza</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numeroSospeso</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">numeroSospeso</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">annoSospeso</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">annoSospeso</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">denominazioneSoggetto</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">denominazioneSoggetto</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">annoImpegno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">annoImpegno</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">nomeEnte</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">intestazioneDirezione</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">intestazioneSettore</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">intestazioneUfficio</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">codiceCassa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">descrizioneCassa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">numeroImpegno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">numeroCapitolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">numeroArticolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">matricola</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">strutturaDiAppartenenza</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">numeroSospeso</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">annoSospeso</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">denominazioneSoggetto</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">annoImpegno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">AnticipoSpese</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">nomeEnte</property>
+                    <property name="nativeName">nomeEnte</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">intestazioneDirezione</property>
+                    <property name="nativeName">intestazioneDirezione</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">intestazioneSettore</property>
+                    <property name="nativeName">intestazioneSettore</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">intestazioneUfficio</property>
+                    <property name="nativeName">intestazioneUfficio</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">codiceCassa</property>
+                    <property name="nativeName">codiceCassa</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">descrizioneCassa</property>
+                    <property name="nativeName">descrizioneCassa</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">numeroImpegno</property>
+                    <property name="nativeName">numeroImpegno</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">numeroCapitolo</property>
+                    <property name="nativeName">numeroCapitolo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">numeroArticolo</property>
+                    <property name="nativeName">numeroArticolo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">matricola</property>
+                    <property name="nativeName">matricola</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">strutturaDiAppartenenza</property>
+                    <property name="nativeName">strutturaDiAppartenenza</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">numeroSospeso</property>
+                    <property name="nativeName">numeroSospeso</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">annoSospeso</property>
+                    <property name="nativeName">annoSospeso</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">denominazioneSoggetto</property>
+                    <property name="nativeName">denominazioneSoggetto</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">annoImpegno</property>
+                    <property name="nativeName">annoImpegno</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaRicevutaRichiestaEconomaleReportModel/richiestaEconomale/tipoRichiestaEconomale]#:#{nomeEnte;STRING;../ente/nome},{intestazioneDirezione;STRING;../cassaEconomale/variabiliStampa/intestazioneDirezione},{intestazioneSettore;STRING;../cassaEconomale/variabiliStampa/intestazioneSettore},{intestazioneUfficio;STRING;../cassaEconomale/variabiliStampa/intestazioneUfficio},{codiceCassa;STRING;../cassaEconomale/codice},{descrizioneCassa;STRING;../cassaEconomale/descrizione},{numeroImpegno;STRING;../impegno/numero},{numeroCapitolo;STRING;../impegno/capitoloUscitaGestione/numeroCapitolo},{numeroArticolo;STRING;../impegno/capitoloUscitaGestione/numeroArticolo},{matricola;STRING;../matricola},{strutturaDiAppartenenza;STRING;../strutturaDiAppartenenza},{numeroSospeso;STRING;../sospeso/numeroSospeso},{annoSospeso;STRING;../bilancio/anno},{denominazioneSoggetto;STRING;../../denominazioneRichiedente},{annoImpegno;STRING;../impegno/annoMovimento}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>nomeEnte</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>nomeEnte</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>intestazioneDirezione</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>intestazioneDirezione</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>intestazioneSettore</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>intestazioneSettore</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>intestazioneUfficio</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>intestazioneUfficio</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codiceCassa</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codiceCassa</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>descrizioneCassa</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>descrizioneCassa</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>numeroImpegno</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>numeroImpegno</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>numeroCapitolo</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>numeroCapitolo</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>numeroArticolo</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>numeroArticolo</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="DatiCorpo" id="358">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">dettaglioPagamentoCalc</property>
+                    <expression name="expression">if (row["dettaglioPagamento"]==null) {&#13;
+	"";&#13;
+}&#13;
+else {&#13;
+	row["dettaglioPagamento"];&#13;
+}</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">intestazioneSettoreCorpo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">intestazioneSettoreCorpo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">intestazioneUfficioCorpo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">intestazioneUfficioCorpo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">responsabileCassa</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">responsabileCassa</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizioneValuta</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">descrizioneValuta</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importoFattura</property>
+                    <property name="analysis">measure</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">importoFattura</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizioneDellaRichiesta</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">descrizioneDellaRichiesta</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numeroMovimento</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">numeroMovimento</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizioneModPagDip</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">descrizioneModPagDip</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">intestazioneCitta</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">intestazioneCitta</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dataStampa</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">dataStampa</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dataModificaRichiestaEconomale</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">dataModificaRichiestaEconomale</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dataMovimento</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">dataMovimento</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dettaglioPagamento</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">dettaglioPagamento</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">intestazioneSettoreCorpo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">intestazioneUfficioCorpo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">responsabileCassa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">descrizioneValuta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">importoFattura</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">descrizioneDellaRichiesta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">numeroMovimento</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">descrizioneModPagDip</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">intestazioneCitta</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">dataStampa</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">dataModificaRichiestaEconomale</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">dataMovimento</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">dettaglioPagamento</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">dettaglioPagamentoCalc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">AnticipoSpese</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">intestazioneSettoreCorpo</property>
+                    <property name="nativeName">intestazioneSettoreCorpo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">intestazioneUfficioCorpo</property>
+                    <property name="nativeName">intestazioneUfficioCorpo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">responsabileCassa</property>
+                    <property name="nativeName">responsabileCassa</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">descrizioneValuta</property>
+                    <property name="nativeName">descrizioneValuta</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">importoFattura</property>
+                    <property name="nativeName">importoFattura</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">descrizioneDellaRichiesta</property>
+                    <property name="nativeName">descrizioneDellaRichiesta</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">numeroMovimento</property>
+                    <property name="nativeName">numeroMovimento</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">descrizioneModPagDip</property>
+                    <property name="nativeName">descrizioneModPagDip</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">intestazioneCitta</property>
+                    <property name="nativeName">intestazioneCitta</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">dataStampa</property>
+                    <property name="nativeName">dataStampa</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">dataModificaRichiestaEconomale</property>
+                    <property name="nativeName">dataModificaRichiestaEconomale</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">dataMovimento</property>
+                    <property name="nativeName">dataMovimento</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">dettaglioPagamento</property>
+                    <property name="nativeName">dettaglioPagamento</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaRicevutaRichiestaEconomaleReportModel/richiestaEconomale/tipoRichiestaEconomale/rendiconto]#:#{intestazioneSettoreCorpo;STRING;../../cassaEconomale/variabiliStampa/intestazioneSettore},{intestazioneUfficioCorpo;STRING;../../cassaEconomale/variabiliStampa/intestazioneUfficio},{responsabileCassa;STRING;../../cassaEconomale/responsabile},{descrizioneValuta;STRING;../../../valutaDefault/descrizione},{importoFattura;BIGDECIMAL;../../importo},{descrizioneDellaRichiesta;STRING;../../descrizioneDellaRichiesta},{numeroMovimento;STRING;../../movimento/numeroMovimento},{descrizioneModPagDip;STRING;../../movimento/modalitaPagamentoDipendente/descrizione},{intestazioneCitta;STRING;../../cassaEconomale/variabiliStampa/intestazioneCitta},{dataStampa;DATE;../../../dataStampa},{dataModificaRichiestaEconomale;DATE;../../dataModificaRichiestaEconomale},{dataMovimento;DATE;../../movimento/dataMovimento},{dettaglioPagamento;STRING;../../movimento/dettaglioPagamento}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>intestazioneSettoreCorpo</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>intestazioneSettoreCorpo</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>intestazioneUfficioCorpo</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>intestazioneUfficioCorpo</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>responsabileCassa</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>responsabileCassa</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>descrizioneValuta</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>descrizioneValuta</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>importoFattura</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>importoFattura</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <property name="headerHeight">4in</property>
+            <page-header>
+                <grid id="49">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <property name="height">5.28125in</property>
+                    <property name="dataSet">DatiTestata</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">nomeEnte</property>
+                            <text-property name="displayName">nomeEnte</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["nomeEnte"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">intestazioneDirezione</property>
+                            <text-property name="displayName">intestazioneDirezione</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["intestazioneDirezione"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">intestazioneSettore</property>
+                            <text-property name="displayName">intestazioneSettore</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["intestazioneSettore"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">intestazioneUfficio</property>
+                            <text-property name="displayName">intestazioneUfficio</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["intestazioneUfficio"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">codiceCassa</property>
+                            <text-property name="displayName">codiceCassa</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["codiceCassa"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">descrizioneCassa</property>
+                            <text-property name="displayName">descrizioneCassa</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["descrizioneCassa"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">numeroImpegno</property>
+                            <text-property name="displayName">numeroImpegno</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["numeroImpegno"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">numeroCapitolo</property>
+                            <text-property name="displayName">numeroCapitolo</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["numeroCapitolo"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">numeroArticolo</property>
+                            <text-property name="displayName">numeroArticolo</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["numeroArticolo"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">denominazioneSoggetto</property>
+                            <text-property name="displayName">denominazioneSoggetto</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["denominazioneSoggetto"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">matricola</property>
+                            <text-property name="displayName">matricola</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["matricola"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">strutturaDiAppartenenza</property>
+                            <text-property name="displayName">strutturaDiAppartenenza</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["strutturaDiAppartenenza"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">numeroSospeso</property>
+                            <text-property name="displayName">numeroSospeso</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["numeroSospeso"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">annoSospeso</property>
+                            <text-property name="displayName">annoSospeso</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["annoSospeso"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                        <structure>
+                            <property name="name">annoImpegno</property>
+                            <text-property name="displayName">annoImpegno</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["annoImpegno"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                    </list-property>
+                    <column id="50"/>
+                    <column id="51"/>
+                    <row id="52">
+                        <property name="height">0.3854166666666667in</property>
+                        <property name="textAlign">center</property>
+                        <cell id="53">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                        </cell>
+                    </row>
+                    <row id="55">
+                        <cell id="56">
+                            <data id="338">
+                                <property name="dataSet">DatiTestata</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">nomeEnte</property>
+                                        <text-property name="displayName">nomeEnte</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["nomeEnte"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">nomeEnte</property>
+                            </data>
+                        </cell>
+                        <cell id="57"/>
+                    </row>
+                    <row id="58">
+                        <cell id="59">
+                            <data id="339">
+                                <property name="dataSet">DatiTestata</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">intestazioneDirezione</property>
+                                        <text-property name="displayName">intestazioneDirezione</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["intestazioneDirezione"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">intestazioneDirezione</property>
+                            </data>
+                        </cell>
+                        <cell id="60"/>
+                    </row>
+                    <row id="61">
+                        <cell id="62">
+                            <data id="340">
+                                <property name="dataSet">DatiTestata</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">intestazioneSettore</property>
+                                        <text-property name="displayName">intestazioneSettore</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["intestazioneSettore"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">intestazioneSettore</property>
+                            </data>
+                        </cell>
+                        <cell id="63"/>
+                    </row>
+                    <row id="64">
+                        <cell id="65">
+                            <data id="341">
+                                <property name="dataSet">DatiTestata</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">intestazioneUfficio</property>
+                                        <text-property name="displayName">intestazioneUfficio</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["intestazioneUfficio"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">intestazioneUfficio</property>
+                            </data>
+                        </cell>
+                        <cell id="66"/>
+                    </row>
+                    <row id="67">
+                        <cell id="68"/>
+                        <cell id="69"/>
+                    </row>
+                    <row id="70">
+                        <cell id="71"/>
+                        <cell id="72">
+                            <text-data id="343">
+                                <expression name="valueExpr">"CASSA "+row["codiceCassa"]+" " +row["descrizioneCassa"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="465">
+                        <property name="height">0.13541666666666666in</property>
+                        <cell id="466"/>
+                        <cell id="467"/>
+                    </row>
+                    <row id="73">
+                        <property name="height">0.25in</property>
+                        <cell id="74"/>
+                        <cell id="75">
+                            <text-data id="464">
+                                <expression name="valueExpr">"SOSPESO DI CASSA N: "+row["numeroSospeso"]+"/"+row["annoSospeso"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="76">
+                        <cell id="77"/>
+                        <cell id="78">
+                            <text-data id="344">
+                                <expression name="valueExpr">"Capitolo "+row["numeroCapitolo"]+"/"+row["numeroArticolo"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="79">
+                        <cell id="80"/>
+                        <cell id="81">
+                            <text-data id="345">
+                                <expression name="valueExpr">"Impegno " +row["annoImpegno"]+"/"+row["numeroImpegno"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="82">
+                        <cell id="83"/>
+                        <cell id="84"/>
+                    </row>
+                    <row id="85">
+                        <cell id="86">
+                            <text id="346">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Il/La sottoscritto/a]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="87"/>
+                    </row>
+                    <row id="88">
+                        <cell id="89">
+                            <data id="347">
+                                <property name="resultSetColumn">denominazioneSoggetto</property>
+                            </data>
+                        </cell>
+                        <cell id="90"/>
+                    </row>
+                    <row id="91">
+                        <cell id="92">
+                            <text-data id="348">
+                                <expression name="valueExpr">"Matricola "+row["matricola"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="93">
+                            <text-data id="353">
+                                <expression name="valueExpr">if(row["strutturaDiAppartenenza"]==null) {&#13;
+	"dir. ";&#13;
+}&#13;
+else {&#13;
+	"dir. "+row["strutturaDiAppartenenza"];&#13;
+}</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="349">
+                        <property name="height">0.5in</property>
+                        <property name="verticalAlign">bottom</property>
+                        <cell id="350">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <property name="textAlign">center</property>
+                            <text id="352">
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[DICHIARA]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="403">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <property name="fontSize">7pt</property>
+                    <property name="width">7.635416666666667in</property>
+                    <column id="416">
+                        <property name="width">0.7083333333333334in</property>
+                    </column>
+                    <column id="404">
+                        <property name="width">6.927083333333333in</property>
+                    </column>
+                    <row id="405">
+                        <cell id="415">
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">bottom</property>
+                        </cell>
+                        <cell id="406">
+                            <property name="textAlign">center</property>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid name="GridDatiCorpo" id="362">
+            <property name="height">11.604166666666666in</property>
+            <property name="dataSet">DatiCorpo</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">intestazioneSettoreCorpo</property>
+                    <text-property name="displayName">intestazioneSettoreCorpo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["intestazioneSettoreCorpo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">intestazioneUfficioCorpo</property>
+                    <text-property name="displayName">intestazioneUfficioCorpo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["intestazioneUfficioCorpo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">responsabileCassa</property>
+                    <text-property name="displayName">responsabileCassa</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["responsabileCassa"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">descrizioneValuta</property>
+                    <text-property name="displayName">descrizioneValuta</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descrizioneValuta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">importoFattura</property>
+                    <text-property name="displayName">importoFattura</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importoFattura"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">descrizioneDellaRichiesta</property>
+                    <text-property name="displayName">descrizioneDellaRichiesta</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descrizioneDellaRichiesta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">numeroMovimento</property>
+                    <text-property name="displayName">numeroMovimento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["numeroMovimento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dataOperazione</property>
+                    <text-property name="displayName">dataOperazione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dataMovimento"]</expression>
+                    <property name="dataType">date</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">descrizioneModPagDip</property>
+                    <text-property name="displayName">descrizioneModPagDip</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descrizioneModPagDip"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">intestazioneCitta</property>
+                    <text-property name="displayName">intestazioneCitta</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["intestazioneCitta"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dataStampa</property>
+                    <text-property name="displayName">dataStampa</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dataStampa"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">dataMovimento</property>
+                    <text-property name="displayName">dataMovimento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dataMovimento"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">dataModificaRichiestaEconomale</property>
+                    <text-property name="displayName">dataModificaRichiestaEconomale</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dataModificaRichiestaEconomale"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">dettaglioPagamento</property>
+                    <text-property name="displayName">dettaglioPagamento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dettaglioPagamento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dettaglioPagamentoCalc</property>
+                    <text-property name="displayName">dettaglioPagamentoCalc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dettaglioPagamentoCalc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="363"/>
+            <column id="364"/>
+            <column id="365"/>
+            <column id="366"/>
+            <row id="387">
+                <property name="borderBottomStyle">none</property>
+                <property name="borderLeftStyle">none</property>
+                <property name="borderRightStyle">none</property>
+                <property name="borderTopStyle">none</property>
+                <cell id="388">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <text-data id="359">
+                        <property name="textAlign">justify</property>
+                        <expression name="valueExpr">if (row["intestazioneSettoreCorpo"] ==null) {&#13;
+    var intestSettCorpo =" ";&#13;
+ }&#13;
+ else {&#13;
+  var intestSettCorpo =" del "+row["intestazioneSettoreCorpo"]+" ";&#13;
+  }&#13;
+  if (row["intestazioneUfficioCorpo"] ==null) {&#13;
+    var intestUffCorpo =" ";&#13;
+ }&#13;
+ else {&#13;
+  var intestUffCorpo =row["intestazioneUfficioCorpo"];&#13;
+  }&#13;
+if (row["responsabileCassa"] ==null) {&#13;
+    var respCassa =" ";&#13;
+ }&#13;
+ else {&#13;
+  var respCassa =", "+row["responsabileCassa"]+", ";&#13;
+  }&#13;
+  if (row["descrizioneValuta"] ==null) {&#13;
+    var descValuta =" ";&#13;
+ }&#13;
+ else {&#13;
+  var descValuta =row["descrizioneValuta"];&#13;
+  }&#13;
+if (row["descrizioneDellaRichiesta"] ==null) {&#13;
+    var descRich =" ";&#13;
+ }&#13;
+ else {&#13;
+  var descRich =row["descrizioneDellaRichiesta"];&#13;
+  }&#13;
+&#13;
+importPackage (Packages.java.text);&#13;
+importPackage (Packages.java.util);&#13;
+&#13;
+//Imposto il campo con la formattazione italiana del tipo #.###,00&#13;
+nf = NumberFormat.getInstance(Locale.ITALIAN).format(row["importoFattura"]);&#13;
+&#13;
+//se i numeri hanno come decimali 00, la formattazione non li considera.&#13;
+//devo aggiungerli&#13;
+if(nf.lastIndexOf(",")==-1) {&#13;
+	var mioVal = nf+",00";&#13;
+}&#13;
+else { // se il numero ha un solo decimale, devo aggiungere uno 0 finale.&#13;
+	if(nf.lastIndexOf(",")==nf.length()-2) {&#13;
+		var mioVal = nf+"0";  &#13;
+	 }		&#13;
+    else	{&#13;
+	      var mioVal = nf;&#13;
+  }&#13;
+}&#13;
+//Formatter.format(row["importoFattura"],"#,###.00")&#13;
+    //03/01/2017: tolte le variabili intestSettCorpo, intestUffCorpo su richiesta utente (regione)&#13;
+"di aver ricevuto dal Responsabile"+respCassa+" o dal suo delegato sotto indicato, la somma di "+descValuta+" " +mioVal+", quale anticipazione ai sensi del vigente Regolamento di Cassa Economale, per "+descRich+"."</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="382">
+                <property name="height">0.22916666666666666in</property>
+                <property name="borderBottomStyle">none</property>
+                <property name="borderLeftStyle">none</property>
+                <property name="borderRightStyle">none</property>
+                <property name="borderTopStyle">none</property>
+                <cell id="383">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="384">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="385">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="386">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+            </row>
+            <row id="367">
+                <property name="borderBottomStyle">none</property>
+                <property name="borderLeftStyle">none</property>
+                <property name="borderRightStyle">none</property>
+                <property name="borderTopStyle">solid</property>
+                <property name="borderTopWidth">thin</property>
+                <cell id="368">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <text-data id="392">
+                        <expression name="valueExpr">"Movimento N. "+row["numeroMovimento"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+                <cell id="369">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <data id="393">
+                        <property name="textAlign">right</property>
+                        <property name="resultSetColumn">descrizioneValuta</property>
+                    </data>
+                </cell>
+                <cell id="370">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <data id="394">
+                        <property name="backgroundAttachment">scroll</property>
+                        <property name="backgroundPositionX">0%</property>
+                        <property name="backgroundPositionY">0%</property>
+                        <property name="backgroundRepeat">repeat</property>
+                        <property name="fontFamily">"Times New Roman"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="fontVariant">normal</property>
+                        <property name="color">black</property>
+                        <property name="textLineThrough">none</property>
+                        <property name="textOverline">none</property>
+                        <property name="textUnderline">none</property>
+                        <property name="borderBottomColor">black</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">black</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">black</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">black</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">0pt</property>
+                        <property name="marginBottom">0pt</property>
+                        <property name="marginRight">0pt</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingBottom">1pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Currency</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                            <property name="locale">it_IT</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <property name="letterSpacing">normal</property>
+                        <property name="lineHeight">normal</property>
+                        <property name="orphans">2</property>
+                        <property name="textTransform">none</property>
+                        <property name="whiteSpace">normal</property>
+                        <property name="widows">2</property>
+                        <property name="wordSpacing">normal</property>
+                        <property name="display">block</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">auto</property>
+                        <property name="showIfBlank">false</property>
+                        <property name="canShrink">false</property>
+                        <property name="overflow">hidden</property>
+                        <property name="resultSetColumn">importoFattura</property>
+                    </data>
+                </cell>
+                <cell id="371">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <data id="395">
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">dd/MM/yyyy</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <property name="resultSetColumn">dataOperazione</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="372">
+                <property name="height">0.2604166666666667in</property>
+                <property name="borderBottomStyle">none</property>
+                <property name="borderLeftStyle">none</property>
+                <property name="borderRightStyle">none</property>
+                <property name="borderTopStyle">none</property>
+                <cell id="373">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="374">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="375">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="376">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <data id="396">
+                        <property name="textAlign">right</property>
+                        <property name="resultSetColumn">descrizioneModPagDip</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="473">
+                <property name="height">0.2604166666666667in</property>
+                <property name="borderBottomStyle">solid</property>
+                <property name="borderBottomWidth">thin</property>
+                <property name="borderLeftStyle">none</property>
+                <property name="borderRightStyle">none</property>
+                <property name="borderTopStyle">none</property>
+                <cell id="474">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="475">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="476">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <data id="472">
+                        <property name="textAlign">right</property>
+                        <property name="resultSetColumn">dettaglioPagamentoCalc</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="478">
+                <property name="height">0.13541666666666666in</property>
+                <cell id="479">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="480">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="481">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+                <cell id="482">
+                    <property name="fontFamily">"Times New Roman"</property>
+                </cell>
+            </row>
+            <row id="397">
+                <property name="height">0.4166666666666667in</property>
+                <cell id="398">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <text-data id="402">
+                        <expression name="valueExpr">if (row["intestazioneCitta"] ==null) {&#13;
+    var intestCitta =" ";&#13;
+ }&#13;
+ else {&#13;
+  var intestCitta =row["intestazioneCitta"];&#13;
+  }&#13;
+intestCitta+", "+Formatter.format(row["dataStampa"],"dd/MM/yyyy")</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="408">
+                <property name="height">1.3333333333333333in</property>
+                <property name="verticalAlign">bottom</property>
+                <cell id="409">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <text id="413">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[PER RICEVUTA]]></text-property>
+                    </text>
+                </cell>
+                <cell id="411">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <text id="414">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[L'INCARICATO]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

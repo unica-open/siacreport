@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_44_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_45_1</property>
+            <property name="value">BILR102</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_46_2</property>
+            <property name="value">p_cod_soggetto_46</property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_soggetto_46_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_tipo_fatture_437_3</property>
+            <property name="value">TUTTE</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_83_4</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_438_5</property>
+            <property name="value">p_data_pagamento_cec_da_438</property>
+        </structure>
+        <structure>
+            <property name="name">p_data_pagamento_cec_da_438_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_439_6</property>
+            <property name="value">p_data_pagamento_cec_a_439</property>
+        </structure>
+        <structure>
+            <property name="name">p_data_pagamento_cec_a_439_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_45_7</property>
+            <property name="value">BILR102</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_45_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_83_8</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_83_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_tipo_fatture_437_9</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">p_tipo_fatture_437_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_44_10</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_44_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_70_0</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_73_1</property>
+            <property name="value">2019</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Elenco Casse_71_2</property>
+            <property name="value">34</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_333_3</property>
+            <property name="value">BILR065</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__account_344_4</property>
+            <property name="value">CRP-CSI70604</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_345_5</property>
+            <property name="value">Data da_345</property>
+        </structure>
+        <structure>
+            <property name="name">Data da_345_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_346_6</property>
+            <property name="value">Data a_346</property>
+        </structure>
+        <structure>
+            <property name="name">Data a_346_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_347_7</property>
+            <property name="value">Numero impegno_347</property>
+        </structure>
+        <structure>
+            <property name="name">Numero impegno_347_type_</property>
+            <property name="value">decimal</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anticipo Spese Missione_337_8</property>
+            <property name="value">SI</property>
+        </structure>
+        <structure>
+            <property name="name">Anticipo Spese Missione_337_9</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">Anticipo Spese Missione_337_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_73_10</property>
+            <property name="value">2019</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_73_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_333_11</property>
+            <property name="value">BILR065</property>
+        </structure>
+        <structure>
+            <property name="name">report_333_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">account_344_12</property>
+            <property name="value">CRP-CSI70604</property>
+        </structure>
+        <structure>
+            <property name="name">account_344_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Elenco Casse_71_13</property>
+            <property name="value">34</property>
+        </structure>
+        <structure>
+            <property name="name">Elenco Casse_71_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Elenco Casse_71_expr_</property>
+            <property name="value">dataSetRow["cassaecon_id"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_70_14</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_70_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

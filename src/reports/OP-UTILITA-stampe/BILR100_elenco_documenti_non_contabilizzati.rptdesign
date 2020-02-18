@@ -1,0 +1,2322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ente_proprietario" id="44">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="anno_bilancio" id="83">
+            <text-property name="promptText">Anno documento</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="nome_report" id="45">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">BILR100</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_tipologia_doc" id="70">
+            <text-property name="promptText">Tipologia documento</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">DataSetTipologiaDoc</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["doc_fam_tipo_code"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["doc_fam_tipo_desc"]</expression>
+            <expression name="sortByColumn">dataSetRow["doc_fam_tipo_desc"]</expression>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">T</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_cod_tipo_doc_e" id="74">
+            <text-property name="promptText">Tipo documento entrata</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">DataSetTipoDocE</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["doc_tipo_code"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["desc_completa"]</expression>
+            <expression name="sortByColumn">dataSetRow["doc_tipo_code"]</expression>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">T</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_cod_tipo_doc_s" id="75">
+            <text-property name="promptText">Tipo documento spesa</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">DataSetTipoDocS</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["doc_tipo_code"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["desc_completa"]</expression>
+            <expression name="sortByColumn">dataSetRow["doc_tipo_code"]</expression>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">T</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_stato_doc" id="77">
+            <text-property name="promptText">Stato documento</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">DataSetStatoDoc</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["doc_stato_code"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["desc_completa"]</expression>
+            <expression name="sortByColumn">dataSetRow["doc_stato_code"]</expression>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">T</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_num_doc" id="78">
+            <text-property name="promptText">Numero documento</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_data_da" id="79">
+            <text-property name="helpText">gg/mm/aaaa</text-property>
+            <text-property name="promptText">Data emissione da</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">dd/MM/yyyy</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_data_a" id="80">
+            <text-property name="helpText">gg/mm/aaaa</text-property>
+            <text-property name="promptText">Data emissione a</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">dd/MM/yyyy</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="p_cod_soggetto" id="81">
+            <text-property name="promptText">Codice soggetto</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">${userconn}</property>
+            <property name="odaUser">${userdb}</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetTipologiaDoc" id="57">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_fam_tipo_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_fam_tipo_code</text-property>
+                    <text-property name="heading">doc_fam_tipo_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">doc_fam_tipo_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_fam_tipo_desc</text-property>
+                    <text-property name="heading">doc_fam_tipo_desc</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_ente_prop_id</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_fam_tipo_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">doc_fam_tipo_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_fam_tipo_code</property>
+                    <property name="nativeName">doc_fam_tipo_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">doc_fam_tipo_desc</property>
+                    <property name="nativeName">doc_fam_tipo_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select a.doc_fam_tipo_code, a.doc_fam_tipo_desc
+from siac_d_doc_fam_tipo a
+where a.ente_proprietario_id = ?
+and a.doc_fam_tipo_code in ('E','S')
+and a.data_cancellazione IS NULL
+UNION
+select 'T', 'TUTTI']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>doc_fam_tipo_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>doc_fam_tipo_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>doc_fam_tipo_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>doc_fam_tipo_desc</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>doc_fam_tipo_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>doc_fam_tipo_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetTipoDocE" id="59">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_tipo_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_tipo_code</text-property>
+                    <text-property name="heading">doc_tipo_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">doc_tipo_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_tipo_desc</text-property>
+                    <text-property name="heading">doc_tipo_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">desc_completa</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">desc_completa</text-property>
+                    <text-property name="heading">desc_completa</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_ente_prop_id1</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_tipo_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">doc_tipo_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">desc_completa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_tipo_code</property>
+                    <property name="nativeName">doc_tipo_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">doc_tipo_desc</property>
+                    <property name="nativeName">doc_tipo_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">desc_completa</property>
+                    <property name="nativeName">desc_completa</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select a.doc_tipo_code, a.doc_tipo_desc, a.doc_tipo_code||' - '||a.doc_tipo_desc desc_completa
+from  siac_d_doc_tipo a, siac_d_doc_fam_tipo b
+where a.ente_proprietario_id = ?
+and   a.doc_fam_tipo_id = b.doc_fam_tipo_id
+and   b.doc_fam_tipo_code = 'E'
+and   a.data_cancellazione IS NULL
+and   b.data_cancellazione IS NULL
+UNION
+select 'T', 'TUTTI', 'TUTTI']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>doc_tipo_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>doc_tipo_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>doc_tipo_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>doc_tipo_desc</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>doc_tipo_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>doc_tipo_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>desc_completa</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>desc_completa</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>desc_completa</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetTipoDocS" id="73">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_tipo_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_tipo_code</text-property>
+                    <text-property name="heading">doc_tipo_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">doc_tipo_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_tipo_desc</text-property>
+                    <text-property name="heading">doc_tipo_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">desc_completa</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">desc_completa</text-property>
+                    <text-property name="heading">desc_completa</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_ente_prop_id</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_tipo_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">doc_tipo_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">desc_completa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_tipo_code</property>
+                    <property name="nativeName">doc_tipo_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">doc_tipo_desc</property>
+                    <property name="nativeName">doc_tipo_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">desc_completa</property>
+                    <property name="nativeName">desc_completa</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select a.doc_tipo_code, a.doc_tipo_desc, a.doc_tipo_code||' - '||a.doc_tipo_desc desc_completa
+from  siac_d_doc_tipo a, siac_d_doc_fam_tipo b
+where a.ente_proprietario_id = ?
+and   a.doc_fam_tipo_id = b.doc_fam_tipo_id
+and   b.doc_fam_tipo_code = 'S'
+and   a.data_cancellazione IS NULL
+and   b.data_cancellazione IS NULL
+UNION
+select 'T', 'TUTTI', 'TUTTI']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>doc_tipo_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>doc_tipo_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>doc_tipo_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>doc_tipo_desc</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>doc_tipo_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>doc_tipo_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>desc_completa</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>desc_completa</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>desc_completa</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetStatoDoc" id="76">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">doc_stato_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_stato_code</text-property>
+                    <text-property name="heading">doc_stato_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">doc_stato_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_stato_desc</text-property>
+                    <text-property name="heading">doc_stato_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">desc_completa</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">desc_completa</text-property>
+                    <text-property name="heading">desc_completa</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_ente_prop_id</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">doc_stato_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">doc_stato_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">desc_completa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">doc_stato_code</property>
+                    <property name="nativeName">doc_stato_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">doc_stato_desc</property>
+                    <property name="nativeName">doc_stato_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">desc_completa</property>
+                    <property name="nativeName">desc_completa</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select a.doc_stato_code, a.doc_stato_desc, a.doc_stato_code||' - '||a.doc_stato_desc desc_completa
+from  siac_d_doc_stato a
+where a.ente_proprietario_id = ?
+and   a.data_cancellazione IS NULL
+UNION
+select 'T', 'TUTTI', 'TUTTI']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>doc_stato_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>doc_stato_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>doc_stato_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>doc_stato_desc</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>doc_stato_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>doc_stato_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>desc_completa</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>desc_completa</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>desc_completa</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetDocNonContab" id="82">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">nome_ente</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">nome_ente</text-property>
+                    <text-property name="heading">nome_ente</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">anno_documento</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">anno_documento</text-property>
+                    <text-property name="heading">anno_documento</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numero_documento</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">numero_documento</text-property>
+                    <text-property name="heading">numero_documento</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizione_documento</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">descrizione_documento</text-property>
+                    <text-property name="heading">descrizione_documento</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">data_emissione</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">data_emissione</text-property>
+                    <text-property name="heading">data_emissione</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">stato_documento</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">stato_documento</text-property>
+                    <text-property name="heading">stato_documento</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">stato_documento_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">stato_documento_desc</text-property>
+                    <text-property name="heading">stato_documento_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">soggetto</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">soggetto</text-property>
+                    <text-property name="heading">soggetto</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">soggetto_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">soggetto_desc</text-property>
+                    <text-property name="heading">soggetto_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo</text-property>
+                    <text-property name="heading">importo</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ente_prop_id</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">anno</property>
+                    <property name="paramName">anno_bilancio</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">tipologia_doc</property>
+                    <property name="paramName">p_tipologia_doc</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">cod_tipo_doc_e</property>
+                    <property name="paramName">p_cod_tipo_doc_e</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">cod_tipo_doc_s</property>
+                    <property name="paramName">p_cod_tipo_doc_s</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">stato_doc</property>
+                    <property name="paramName">p_stato_doc</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">num_doc</property>
+                    <property name="paramName">p_num_doc</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">data_da</property>
+                    <property name="paramName">p_data_da</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                    <property name="position">8</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">data_a</property>
+                    <property name="paramName">p_data_a</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                    <property name="position">9</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">cod_soggetto</property>
+                    <property name="paramName">p_cod_soggetto</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">10</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">nome_ente</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">anno_documento</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">numero_documento</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">tipo_documento</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">descrizione_documento</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">data_emissione</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">stato_documento</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">stato_documento_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">tipologia_documento</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">tipologia_documento_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">soggetto</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">soggetto_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">importo</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">nome_ente</property>
+                    <property name="nativeName">nome_ente</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">anno_documento</property>
+                    <property name="nativeName">anno_documento</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">numero_documento</property>
+                    <property name="nativeName">numero_documento</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">tipo_documento</property>
+                    <property name="nativeName">tipo_documento</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">descrizione_documento</property>
+                    <property name="nativeName">descrizione_documento</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">data_emissione</property>
+                    <property name="nativeName">data_emissione</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">stato_documento</property>
+                    <property name="nativeName">stato_documento</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">stato_documento_desc</property>
+                    <property name="nativeName">stato_documento_desc</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">tipologia_documento</property>
+                    <property name="nativeName">tipologia_documento</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">tipologia_documento_desc</property>
+                    <property name="nativeName">tipologia_documento_desc</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">soggetto</property>
+                    <property name="nativeName">soggetto</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">soggetto_desc</property>
+                    <property name="nativeName">soggetto_desc</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">importo</property>
+                    <property name="nativeName">importo</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * from  siac."BILR100_elenco_documenti_non_contabilizzati" (?,?,?,?,?,?,?,?,?,?)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>8</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>9</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>10</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>nome_ente</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>nome_ente</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>nome_ente</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>anno_documento</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>anno_documento</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>anno_documento</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>numero_documento</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>numero_documento</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>numero_documento</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tipo_documento</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tipo_documento</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tipo_documento</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>descrizione_documento</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>descrizione_documento</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>descrizione_documento</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>data_emissione</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>data_emissione</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>data_emissione</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>stato_documento</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>stato_documento</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>stato_documento</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>stato_documento_desc</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>stato_documento_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>stato_documento_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tipologia_documento</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tipologia_documento</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tipologia_documento</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tipologia_documento_desc</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tipologia_documento_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tipologia_documento_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>soggetto</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>soggetto</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>soggetto</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>soggetto_desc</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>soggetto_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>soggetto_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>importo</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>importo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>importo</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">300mm</property>
+            <property name="width">425mm</property>
+            <property name="orientation">landscape</property>
+            <property name="headerHeight">0.8in</property>
+            <page-header>
+                <grid id="371">
+                    <column id="372"/>
+                    <column id="373"/>
+                    <row id="374">
+                        <cell id="375">
+                            <property name="fontFamily">"Times New Roman"</property>
+                            <data id="381">
+                                <property name="dataSet">DataSetDocNonContab</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">nome_ente</property>
+                                        <text-property name="displayName">nome_ente</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["nome_ente"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">nome_ente</property>
+                            </data>
+                        </cell>
+                        <cell id="376">
+                            <text-data id="382">
+                                <property name="fontFamily">"Times New Roman"</property>
+                                <property name="textAlign">right</property>
+                                <expression name="valueExpr">Formatter.format(BirtDateTime.today(),'dd/MM/yyyy')</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="377">
+                        <cell id="378">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <text id="380">
+                                <property name="fontFamily">"Times New Roman"</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[ELENCO DOCUMENTI NON CONTABILIZZATI]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="TableEntrate" id="85">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="width">16.208333333333332in</property>
+            <property name="dataSet">DataSetDocNonContab</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">params["p_tipologia_doc"].value=='S'</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">nome_ente</property>
+                    <text-property name="displayName">nome_ente</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nome_ente"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">anno_documento</property>
+                    <text-property name="displayName">anno_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["anno_documento"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">numero_documento</property>
+                    <text-property name="displayName">numero_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["numero_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">descrizione_documento</property>
+                    <text-property name="displayName">descrizione_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descrizione_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">data_emissione</property>
+                    <text-property name="displayName">data_emissione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["data_emissione"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">stato_documento</property>
+                    <text-property name="displayName">stato_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["stato_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">stato_documento_desc</property>
+                    <text-property name="displayName">stato_documento_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["stato_documento_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">soggetto</property>
+                    <text-property name="displayName">soggetto</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["soggetto"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">soggetto_desc</property>
+                    <text-property name="displayName">soggetto_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["soggetto_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">importo</property>
+                    <text-property name="displayName">importo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">tipologia_documento</property>
+                    <text-property name="displayName">tipologia_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipologia_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">tipologia_documento_desc</property>
+                    <text-property name="displayName">tipologia_documento_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipologia_documento_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">tipo_documento</property>
+                    <text-property name="displayName">tipo_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipo_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="sort">
+                <structure>
+                    <expression name="key" type="javascript">row["anno_documento"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+                <structure>
+                    <expression name="key" type="javascript">row["tipo_documento"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+                <structure>
+                    <expression name="key" type="javascript">row["numero_documento"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">row["tipologia_documento"]</expression>
+                    <simple-property-list name="value1">
+                        <value>'E'</value>
+                    </simple-property-list>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <column id="119">
+                <property name="width">1.3229166666666667in</property>
+            </column>
+            <column id="212">
+                <property name="width">1.1041666666666667in</property>
+            </column>
+            <column id="208">
+                <property name="width">1.2708333333333333in</property>
+            </column>
+            <column id="120">
+                <property name="width">2.5208333333333335in</property>
+            </column>
+            <column id="121">
+                <property name="width">3.25in</property>
+            </column>
+            <column id="182">
+                <property name="width">0.96875in</property>
+            </column>
+            <column id="122">
+                <property name="width">1.3541666666666667in</property>
+            </column>
+            <column id="123">
+                <property name="width">3.1354166666666665in</property>
+            </column>
+            <column id="125">
+                <property name="width">1.28125in</property>
+            </column>
+            <header>
+                <row id="86">
+                    <cell id="87">
+                        <text id="138">
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Tipologia documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="209">
+                        <text id="213">
+                            <property name="textAlign">justify</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Anno documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="205">
+                        <text id="214">
+                            <property name="textAlign">justify</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Tipo documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="88">
+                        <text id="132">
+                            <property name="textAlign">justify</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Numero documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="89">
+                        <text id="133">
+                            <property name="textAlign">justify</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Descrizione documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="179">
+                        <text id="183">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Data emissione]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="90">
+                        <text id="135">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Stato documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="91">
+                        <text id="142">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Soggetto]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="93">
+                        <text id="144">
+                            <property name="textAlign">right</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Importo]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="97">
+                    <cell id="98">
+                        <data id="200">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">tipologia_documento_desc</property>
+                        </data>
+                    </cell>
+                    <cell id="210">
+                        <data id="215">
+                            <property name="textAlign">justify</property>
+                            <property name="resultSetColumn">anno_documento</property>
+                        </data>
+                    </cell>
+                    <cell id="206">
+                        <data id="218">
+                            <property name="resultSetColumn">tipo_documento</property>
+                        </data>
+                    </cell>
+                    <cell id="99">
+                        <data id="216">
+                            <property name="textAlign">justify</property>
+                            <property name="resultSetColumn">numero_documento</property>
+                        </data>
+                    </cell>
+                    <cell id="100">
+                        <data id="134">
+                            <property name="textAlign">justify</property>
+                            <property name="resultSetColumn">descrizione_documento</property>
+                        </data>
+                    </cell>
+                    <cell id="180">
+                        <data id="184">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy</property>
+                            </structure>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">data_emissione</property>
+                        </data>
+                    </cell>
+                    <cell id="101">
+                        <text-data id="137">
+                            <property name="textAlign">justify</property>
+                            <expression name="valueExpr">row["stato_documento"]+" - "+row["stato_documento_desc"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="102">
+                        <text-data id="148">
+                            <expression name="valueExpr">row["soggetto"]+' - '+row["soggetto_desc"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="104">
+                        <data id="147">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                <property name="locale">it_IT</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">importo</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="108">
+                    <cell id="109"/>
+                    <cell id="211"/>
+                    <cell id="207"/>
+                    <cell id="110"/>
+                    <cell id="111"/>
+                    <cell id="181"/>
+                    <cell id="112"/>
+                    <cell id="113"/>
+                    <cell id="115"/>
+                </row>
+            </footer>
+        </table>
+        <table name="TableSpese" id="313">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="width">16.208333333333332in</property>
+            <property name="dataSet">DataSetDocNonContab</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">params["p_tipologia_doc"].value=='E'</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">nome_ente</property>
+                    <text-property name="displayName">nome_ente</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nome_ente"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">anno_documento</property>
+                    <text-property name="displayName">anno_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["anno_documento"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">numero_documento</property>
+                    <text-property name="displayName">numero_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["numero_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">descrizione_documento</property>
+                    <text-property name="displayName">descrizione_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descrizione_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">data_emissione</property>
+                    <text-property name="displayName">data_emissione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["data_emissione"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">stato_documento</property>
+                    <text-property name="displayName">stato_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["stato_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">stato_documento_desc</property>
+                    <text-property name="displayName">stato_documento_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["stato_documento_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">soggetto</property>
+                    <text-property name="displayName">soggetto</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["soggetto"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">soggetto_desc</property>
+                    <text-property name="displayName">soggetto_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["soggetto_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">importo</property>
+                    <text-property name="displayName">importo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">tipologia_documento</property>
+                    <text-property name="displayName">tipologia_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipologia_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">tipologia_documento_desc</property>
+                    <text-property name="displayName">tipologia_documento_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipologia_documento_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">tipo_documento</property>
+                    <text-property name="displayName">tipo_documento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipo_documento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="sort">
+                <structure>
+                    <expression name="key" type="javascript">row["anno_documento"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+                <structure>
+                    <expression name="key" type="javascript">row["tipo_documento"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+                <structure>
+                    <expression name="key" type="javascript">row["numero_documento"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">row["tipologia_documento"]</expression>
+                    <simple-property-list name="value1">
+                        <value>'S'</value>
+                    </simple-property-list>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <column id="362">
+                <property name="width">1.3229166666666667in</property>
+            </column>
+            <column id="363">
+                <property name="width">1.1041666666666667in</property>
+            </column>
+            <column id="364">
+                <property name="width">1.2708333333333333in</property>
+            </column>
+            <column id="365">
+                <property name="width">2.5208333333333335in</property>
+            </column>
+            <column id="366">
+                <property name="width">3.25in</property>
+            </column>
+            <column id="367">
+                <property name="width">0.96875in</property>
+            </column>
+            <column id="368">
+                <property name="width">1.3541666666666667in</property>
+            </column>
+            <column id="369">
+                <property name="width">3.1354166666666665in</property>
+            </column>
+            <column id="370">
+                <property name="width">1.28125in</property>
+            </column>
+            <header>
+                <row id="314">
+                    <cell id="315">
+                        <text id="316">
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Tipologia documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="317">
+                        <text id="318">
+                            <property name="textAlign">justify</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Anno documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="319">
+                        <text id="320">
+                            <property name="textAlign">justify</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Tipo documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="321">
+                        <text id="322">
+                            <property name="textAlign">justify</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Numero documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="323">
+                        <text id="324">
+                            <property name="textAlign">justify</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Descrizione documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="325">
+                        <text id="326">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Data emissione]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="327">
+                        <text id="328">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Stato documento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="329">
+                        <text id="330">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Soggetto]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="331">
+                        <text id="332">
+                            <property name="textAlign">right</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Importo]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="333">
+                    <cell id="334">
+                        <data id="335">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">tipologia_documento_desc</property>
+                        </data>
+                    </cell>
+                    <cell id="336">
+                        <data id="337">
+                            <property name="textAlign">justify</property>
+                            <property name="resultSetColumn">anno_documento</property>
+                        </data>
+                    </cell>
+                    <cell id="338">
+                        <data id="339">
+                            <property name="resultSetColumn">tipo_documento</property>
+                        </data>
+                    </cell>
+                    <cell id="340">
+                        <data id="341">
+                            <property name="textAlign">justify</property>
+                            <property name="resultSetColumn">numero_documento</property>
+                        </data>
+                    </cell>
+                    <cell id="342">
+                        <data id="343">
+                            <property name="textAlign">justify</property>
+                            <property name="resultSetColumn">descrizione_documento</property>
+                        </data>
+                    </cell>
+                    <cell id="344">
+                        <data id="345">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yyyy</property>
+                            </structure>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">data_emissione</property>
+                        </data>
+                    </cell>
+                    <cell id="346">
+                        <text-data id="347">
+                            <property name="textAlign">justify</property>
+                            <expression name="valueExpr">row["stato_documento"]+" - "+row["stato_documento_desc"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="348">
+                        <text-data id="349">
+                            <expression name="valueExpr">row["soggetto"]+' - '+row["soggetto_desc"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
+                    </cell>
+                    <cell id="350">
+                        <data id="351">
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                <property name="locale">it_IT</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">importo</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="352">
+                    <cell id="353"/>
+                    <cell id="354"/>
+                    <cell id="355"/>
+                    <cell id="356"/>
+                    <cell id="357"/>
+                    <cell id="358"/>
+                    <cell id="359"/>
+                    <cell id="360"/>
+                    <cell id="361"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_1211_0</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_1</property>
+            <property name="value">BILR092</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_2</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Data da_1214_3</property>
+            <property name="value">01/01/2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Data a_1212_4</property>
+            <property name="value">30/04/2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_2180_5</property>
+            <property name="value">Codice PDCE_2180</property>
+        </structure>
+        <structure>
+            <property name="name">Codice PDCE_2180_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Codice Soggetto_2386_6</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Ordina per_2385_7</property>
+            <property name="value">Numero e data prima Nota</property>
+        </structure>
+        <structure>
+            <property name="name">Data da_1214_8</property>
+            <property name="value">2016-01-01</property>
+        </structure>
+        <structure>
+            <property name="name">Data da_1214_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_9</property>
+            <property name="value">BILR092</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_10</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Codice Soggetto_2386_11</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Codice Soggetto_2386_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Data a_1212_12</property>
+            <property name="value">2016-04-30</property>
+        </structure>
+        <structure>
+            <property name="name">Data a_1212_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">Ordina per_2385_13</property>
+            <property name="value">PNOTA</property>
+        </structure>
+        <structure>
+            <property name="name">Ordina per_2385_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_1211_14</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_1211_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

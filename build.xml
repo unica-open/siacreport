@@ -1,0 +1,207 @@
+<project basedir="." default="default" name="siacreport" xmlns:ivy="antlib:fr.jayasoft.ivy.ant">
+	<!-- -->
+	<property file="buildfiles/build.properties" />
+	<property environment="env" />
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: default                                    # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="default" description="verifica se eseguire il build per un solo environment specificato a linea di commando con -Dtarget=${target} o per tutti gli environment ">
+		<condition property="first-call" value="distribution">
+			<not>
+				<equals arg1="${target}" arg2="$${target}" />
+			</not>
+		</condition>
+		<!-- -->
+		<condition property="first-call" value="all-target">
+			<equals arg1="${target}" arg2="$${target}" />
+		</condition>
+		<!-- -->
+		<echo message="target: ${target}" />
+		<echo message="first-call: ${first-call}" />
+		<!-- -->
+		<antcall target="${first-call}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: all-target                                 # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="all-target" description="Lancia il build per le varie distribuzioni in sequenza">
+		<antcall target="distribution">
+			<param name="target" value="dev" />
+		</antcall>
+		<antcall target="distribution">
+			<param name="target" value="tst" />
+		</antcall>
+		<antcall target="distribution">
+			<param name="target" value="coll" />
+		</antcall>
+		<antcall target="distribution">
+			<param name="target" value="prod" />
+		</antcall>
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # target: init                                              # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="init" description="Inizializza lo script Ant">
+		<tstamp>
+			<format property="ANNO-COPYRIGHT" pattern="yyyy" />
+		</tstamp>
+		<!-- -->
+		<property environment="env" />
+
+		<condition property="target" value="dev">
+			<equals arg1="${target}" arg2="$${target}" />
+		</condition>
+		<!-- -->
+		<echo message=" target: ${target}" />
+		<!-- -->
+		<loadproperties srcFile="buildfiles/${target}.properties" />
+		<loadproperties srcFile="buildfiles/build.properties" />
+		<!-- -->
+		<property name="dist-target" value="${dist}/${target}" />
+		<property name="archives-target" value="${archives}/${target}" />		
+		<!-- -->
+
+		<!-- Aggiunta per gestione pacchetti sql e schema dei report birt -->
+		<property name="reports" value="${temp-target}/reports" />
+		<!--<property name="reports" value="${temp-target}/db" />-->
+
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # target: _create-tree-structure                             # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="_create-tree-structure" description="crea la struttura di cartelle necessarie al build">
+		<delete dir="${temp}" />
+		<mkdir dir="${dist-target}" />
+		<!-- mkdir dir="${temp-target}" /-->
+		<!--mkdir dir="${reports}/sql" /-->
+		<!-- mkdir dir="${reports}/rpt" /-->
+		<mkdir dir="${archives-target}" />
+	</target>
+
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: distribution                               # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="distribution" description="Costruisce il tar per la distribuzione." depends="packages-zip">
+		<delete failonerror="no">
+			<fileset dir="${dist-target}" includes="**/*.*" />
+		</delete>
+		<antcall target="packages-zip" />
+		
+		<tar tarfile="${dist-target}/${tar-report-outfilename}" longfile="warn">
+			<tarfileset dir="${archives-target}">				
+				<include name="${zip-reportrpt-outfilename}" />
+			</tarfileset>
+		</tar>		
+	</target>
+
+	<!-- depends="init, replace-placeholders" --> 
+	<target name="packages-zip" description="Costruisce un solo zip per i report di birt" depends="init, _create-tree-structure">
+		<zip destfile="${archives-target}/${zip-reportrpt-outfilename}" basedir="${main}/reports" update="true" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: clean-dist                                 # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-dist" description="Rimuove la cartella delle distribuzioni.">
+		<delete dir="${dist}" />
+	</target>
+
+
+	
+
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: clean-archives                             # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-archives" description="Rimuove la cartella degli archivi (war, ear, ...).">
+		<delete dir="${build}/archives" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: clean-temp                                 # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-temp" description="Rimuove la cartella dei files temporanei di build.">
+		<delete dir="${temp}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: clean-all                                  # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="clean-all" description="Rimuove tutte le cartelle temporanee." depends=" clean-dist, clean-archives,  clean-temp" />
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: show-vars                                  # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="show-vars" depends="init" description="Visualizza tutte le variabili impostate nei file di properties e/o da linea di comando">
+		<echo message="*****************************************" />
+		<echo message="********  ${product-name} environment  *******" />
+		<echo message="*****************************************" />
+		<echo message="Runtime :" />
+		<echo message="JAVA_HOME = ${env.JAVA_HOME}" />
+		<echo message="JAVA_HOME_CLIENT = ${env.JAVA_HOME_CLIENT}" />
+		<echo message="JAVA_HOME_SERVER = ${env.JAVA_HOME_SERVER}" />
+		<echo message="ANT_HOME = ${env.ANT_HOME}" />
+		<echo message="IVY_VERSION = ${env.IVY_VERSION}" />
+		<echo message="" />
+		<echo message="Classpath :" />
+		<echo message="CLASS_PATH = ${classpath}" />
+		<echo message="" />
+		<echo message="" />
+		<echo message="Application :" />
+		<echo message="VERSION = ${product-version}" />
+		<echo message="" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: about                                      # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="about" description="Visualizza l'elenco dei target pubblici dello script.">
+		<loadproperties srcFile="buildfiles/build.properties" />
+		<loadfile property="about" srcFile="buildfiles/about.txt" />
+		<echo message=" ${about}" />
+	</target>
+
+	<!-- -->
+	<!-- ############################################################# -->
+	<!-- # public target: about-custom                               # -->
+	<!-- ############################################################# -->
+	<!-- -->
+	<target name="about-custom" description="Visualizza l'elenco di tutti i target, pubblici e privati (equivalente a 'ant -projecthelp')">
+		<loadproperties srcfile="buildfiles/build.properties" />
+		<loadfile property="about-custom" srcfile="buildfiles/about-custom.txt" />
+		<echo message="${about-custom}" />
+		<java classname="org.apache.tools.ant.Main">
+			<arg value="-projecthelp" />
+		</java>
+	</target>
+
+</project>

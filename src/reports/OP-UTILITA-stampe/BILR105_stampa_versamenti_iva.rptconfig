@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_58_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2019</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_2</property>
+            <property name="value">BILR105</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1018_3</property>
+            <property name="value">Data mandato da_1018</property>
+        </structure>
+        <structure>
+            <property name="name">Data mandato da_1018_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1015_4</property>
+            <property name="value">Data mandato a_1015</property>
+        </structure>
+        <structure>
+            <property name="name">Data mandato a_1015_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1296_5</property>
+            <property name="value">Data trasmissione da_1296</property>
+        </structure>
+        <structure>
+            <property name="name">Data trasmissione da_1296_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1297_6</property>
+            <property name="value">Data trasmissione a_1297</property>
+        </structure>
+        <structure>
+            <property name="name">Data trasmissione a_1297_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Data Quietanza da_2100_7</property>
+            <property name="value">01/01/2019</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Data Quietanza a_2101_8</property>
+            <property name="value">31/07/2019</property>
+        </structure>
+        <structure>
+            <property name="name">Data Quietanza da_2100_9</property>
+            <property name="value">2019-01-01</property>
+        </structure>
+        <structure>
+            <property name="name">Data Quietanza da_2100_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_10</property>
+            <property name="value">BILR105</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_11</property>
+            <property name="value">2019</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Data Quietanza a_2101_12</property>
+            <property name="value">2019-07-31</property>
+        </structure>
+        <structure>
+            <property name="name">Data Quietanza a_2101_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_58_13</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_58_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

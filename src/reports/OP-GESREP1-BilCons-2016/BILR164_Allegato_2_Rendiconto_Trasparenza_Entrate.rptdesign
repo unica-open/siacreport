@@ -1,0 +1,2861 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">3472</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">3472</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">3472</property>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">4275</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">4275</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">4275</property>
+        </structure>
+    </list-property>
+    <property name="units">cm</property>
+    <property name="layoutPreference">fixed layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ente_proprietario" id="3401">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">29</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="anno_bilancio" id="1208">
+            <property name="hidden">false</property>
+            <text-property name="promptText">Anno di bilancio</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">2017</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report" id="3154">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">BILR048</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="data del giorno" id="3585">
+            <text-property name="promptText">data del giorno in stampa</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">S</value>
+            </simple-property-list>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">S</property>
+                    <property name="label">Con data del giorno</property>
+                </structure>
+                <structure>
+                    <property name="value">N</property>
+                    <property name="label">Senza data del giorno</property>
+                </structure>
+            </list-property>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="contabilia_db" id="3975">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">${userconn}</property>
+            <property name="odaUser">${userdb}</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">MTIz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="summed_by_tipologia" id="4097">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">titoloe_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">titoloe_code</text-property>
+                    <text-property name="heading">titoloe_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">titoloe_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">titoloe_desc</text-property>
+                    <text-property name="heading">titoloe_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tipologia_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">tipologia_code</text-property>
+                    <text-property name="heading">tipologia_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tipologia_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">tipologia_desc</text-property>
+                    <text-property name="heading">tipologia_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">accertato</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">accertato</text-property>
+                    <text-property name="heading">accertato</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">accertato_san</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">accertato_san</text-property>
+                    <text-property name="heading">accertato_san</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">incassato</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">incassato</text-property>
+                    <text-property name="heading">incassato</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">incassato_san</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">incassato_san</text-property>
+                    <text-property name="heading">incassato_san</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ente</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">anno</property>
+                    <property name="paramName">anno_bilancio</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">titoloe_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">titoloe_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">tipologia_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">tipologia_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">accertato</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">accertato_san</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">incassato</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">incassato_san</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">contabilia_db</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">titoloe_code</property>
+                    <property name="nativeName">titoloe_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">titoloe_desc</property>
+                    <property name="nativeName">titoloe_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">tipologia_code</property>
+                    <property name="nativeName">tipologia_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">tipologia_desc</property>
+                    <property name="nativeName">tipologia_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">accertato</property>
+                    <property name="nativeName">accertato</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">accertato_san</property>
+                    <property name="nativeName">accertato_san</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">incassato</property>
+                    <property name="nativeName">incassato</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">incassato_san</property>
+                    <property name="nativeName">incassato_san</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select titoloe_code, titoloe_desc, tipologia_code, tipologia_desc, sum(accertato) as accertato , sum(accertato_san) as accertato_san, sum(incassato) as incassato, sum(incassato_san) as incassato_san
+from "BILR164_rend_trasparenza_entrate" (?,?)
+group by titoloe_code, titoloe_desc, tipologia_code, tipologia_desc
+order by tipologia_code
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>titoloe_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>titoloe_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>titoloe_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>titoloe_desc</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>titoloe_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>titoloe_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tipologia_code</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tipologia_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tipologia_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tipologia_desc</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tipologia_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tipologia_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sum_accertato</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>sum_accertato</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sum_accertato</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sum_accertato_san</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>sum_accertato_san</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sum_accertato_san</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>incasato</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>incasato</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>incasato</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>incassato_sum</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>incassato_sum</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>incassato_sum</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DATI_998" id="3472">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">disavanzo_amministrazione</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">row["codice_importo"]=="DAM"&#13;
+&amp;&amp;row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                </structure>
+                <structure>
+                    <property name="name">fondo_cassa_ini_eser</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">row["codice_importo"]=="FCI"&#13;
+&amp;&amp;row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                </structure>
+                <structure>
+                    <property name="name">util_avanz_ammin</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">row["codice_importo"]=="AAM"&#13;
+&amp;&amp;row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                </structure>
+                <structure>
+                    <property name="name">fondo_pluri_parte_corr</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">row["codice_importo"]=="FPVSC"&#13;
+&amp;&amp;row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                </structure>
+                <structure>
+                    <property name="name">fondo_pluri_conto_capit</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">row["codice_importo"]=="FPVCC"&#13;
+&amp;&amp;row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">anno_competenza</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">anno_competenza</text-property>
+                    <text-property name="heading">anno_competenza</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo</text-property>
+                    <text-property name="heading">importo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizione</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">descrizione</text-property>
+                    <text-property name="heading">descrizione</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">posizione_nel_report</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">posizione_nel_report</text-property>
+                    <text-property name="heading">posizione_nel_report</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codice_importo</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">codice_importo</text-property>
+                    <text-property name="heading">codice_importo</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ente_id</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">anno</property>
+                    <property name="paramName">anno_bilancio</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">anno_competenza</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">importo</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">descrizione</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">posizione_nel_report</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">codice_importo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">disavanzo_amministrazione</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">fondo_cassa_ini_eser</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">util_avanz_ammin</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">fondo_pluri_parte_corr</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">fondo_pluri_conto_capit</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">contabilia_db</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">anno_competenza</property>
+                    <property name="nativeName">anno_competenza</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">importo</property>
+                    <property name="nativeName">importo</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">descrizione</property>
+                    <property name="nativeName">descrizione</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">posizione_nel_report</property>
+                    <property name="nativeName">posizione_nel_report</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">codice_importo</property>
+                    <property name="nativeName">codice_importo</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from "BILR998_tipo_capitolo_dei_report" (?,?)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>anno_competenza</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>anno_competenza</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>anno_competenza</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>importo</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>importo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>importo</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>descrizione</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>descrizione</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>descrizione</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>posizione_nel_report</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>posizione_nel_report</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>posizione_nel_report</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codice_importo</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>codice_importo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codice_importo</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="disavanzo_ds" id="4275">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">BILR164_calcolo_disavanzo</property>
+                    <property name="alias">disavanzo</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">disavanzo</text-property>
+                    <text-property name="heading">BILR164_calcolo_disavanzo</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ente</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">anno</property>
+                    <property name="paramName">anno_bilancio</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">disavanzo</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">contabilia_db</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">BILR164_calcolo_disavanzo</property>
+                    <property name="nativeName">BILR164_calcolo_disavanzo</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * from siac."BILR164_calcolo_disavanzo"(?,?)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>importo</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>importo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>importo</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="doubleframe" id="4013">
+            <property name="borderBottomStyle">double</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftStyle">double</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightStyle">double</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopStyle">double</property>
+            <property name="borderTopWidth">thin</property>
+        </style>
+        <style name="TitoloE_text" id="4110">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontWeight">bold</property>
+            <property name="fontStyle">italic</property>
+            <property name="textTransform">capitalize</property>
+            <property name="canShrink">true</property>
+        </style>
+        <style name="Contabilia_Currency" id="4111">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">8pt</property>
+            <property name="textLineThrough">none</property>
+            <property name="textOverline">none</property>
+            <property name="textUnderline">none</property>
+            <structure name="numberFormat">
+                <property name="category">Currency</property>
+                <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                <property name="locale">it_IT</property>
+            </structure>
+            <property name="textAlign">right</property>
+            <property name="canShrink">true</property>
+        </style>
+        <style name="Titoli" id="4157">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontWeight">400</property>
+            <property name="textTransform">capitalize</property>
+            <property name="canShrink">true</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <property name="topMargin">0.5cm</property>
+            <property name="leftMargin">0.25in</property>
+            <property name="bottomMargin">0.25in</property>
+            <property name="rightMargin">0.25in</property>
+            <property name="paddingTop">1pt</property>
+            <property name="paddingBottom">1pt</property>
+            <property name="canShrink">true</property>
+            <property name="overflow">auto</property>
+            <property name="headerHeight">45mm</property>
+            <property name="footerHeight">2cm</property>
+            <page-header>
+                <grid id="4280">
+                    <property name="fontSize">8pt</property>
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <property name="display">inline</property>
+                    <property name="height">4.7625cm</property>
+                    <property name="width">19.56cm</property>
+                    <column id="4281">
+                        <property name="suppressDuplicates">true</property>
+                        <property name="style">doubleframe</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="width">10.8mm</property>
+                    </column>
+                    <column id="4282">
+                        <property name="width">76.5mm</property>
+                    </column>
+                    <column id="4283">
+                        <property name="width">20.2mm</property>
+                    </column>
+                    <column id="4284">
+                        <property name="width">20.2mm</property>
+                    </column>
+                    <column id="4285">
+                        <property name="width">20.2mm</property>
+                    </column>
+                    <column id="4286">
+                        <property name="width">20.2mm</property>
+                    </column>
+                    <row id="4316">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="height">1.5875cm</property>
+                        <cell id="4317">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <text id="4240">
+                                <property name="fontSize">8pt</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<B>ENTI IN CONTABILITA' FINANZIARIA SOGGETTI AL DLGS 118/2011</B><BR>
+Regioni, Province autonome, enti regionali e enti locali<BR>
+Prospetto di cui all'articolo 8, comma 1, del Decreto Legge 24 aprile 2014, n. 66
+]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="4321">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <text id="4239">
+                                <property name="textAlign">right</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Allegato 2/a]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                    <row id="4301">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="paddingTop">0pt</property>
+                        <property name="paddingBottom">0pt</property>
+                        <property name="height">1.11125cm</property>
+                        <cell id="4302">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <text id="4315">
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Entrate<BR>
+Dati di rendiconto anno <VALUE-OF>params["anno_bilancio"].value</VALUE-OF>]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="4304"/>
+                        <cell id="4305">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                        </cell>
+                        <cell id="4306">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                        </cell>
+                        <cell id="4307">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                        </cell>
+                    </row>
+                    <row id="4287">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">double</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="height">0.6879166666666666cm</property>
+                        <cell id="4288">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">double</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">none</property>
+                            <text id="4308">
+                                <property name="fontSize">7pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingLeft">0pt</property>
+                                <property name="paddingRight">0pt</property>
+                                <property name="textAlign">center</property>
+                                <property name="textIndent">0em</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="height">19mm</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[TITOLO TIPOLOGIA]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="4289">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">2</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <text id="4309">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="widows">2</property>
+                                <property name="height">19mm</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[DENOMINAZIONE]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="4290">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="textAlign">center</property>
+                            <text id="4310">
+                                <property name="fontWeight">bold</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[COMPETENZA]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="4292">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">double</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopStyle">none</property>
+                            <text id="4311">
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[CASSA]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                    <row id="4294">
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <cell id="4297">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">none</property>
+                        </cell>
+                        <cell id="4298">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">none</property>
+                            <text id="4313">
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[di cui GESTIONE SANITARIA]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="4299">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">none</property>
+                        </cell>
+                        <cell id="4300">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">double</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopStyle">none</property>
+                            <text id="4312">
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[di cui GESTIONE SANITARIA]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="3438">
+                    <property name="fontSize">8pt</property>
+                    <property name="verticalAlign">bottom</property>
+                    <property name="height">1.74625cm</property>
+                    <column id="3439"/>
+                    <column id="3443"/>
+                    <row id="3440">
+                        <property name="verticalAlign">bottom</property>
+                        <property name="height">1.74625cm</property>
+                        <cell id="3441">
+                            <text id="3426">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">params["data del giorno"].value=='N'</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<value-of format="Long Date">new Date()</value-of>
+]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="3442">
+                            <text id="4367">
+                                <property name="textAlign">right</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<viewtime-value-of>pageNumber</viewtime-value-of>/<viewtime-value-of>totalPage</viewtime-value-of>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="3985">
+            <property name="borderBottomStyle">double</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderLeftStyle">double</property>
+            <property name="borderLeftWidth">medium</property>
+            <property name="borderRightStyle">double</property>
+            <property name="borderRightWidth">medium</property>
+            <property name="borderTopStyle">double</property>
+            <property name="borderTopWidth">medium</property>
+            <property name="width">19.56cm</property>
+            <property name="dataSet">summed_by_tipologia</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">titoloe_code</property>
+                    <text-property name="displayName">titoloe_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["titoloe_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">titoloe_desc</property>
+                    <text-property name="displayName">titoloe_desc</text-property>
+                    <expression name="expression" type="javascript">BirtStr.toLower(dataSetRow["titoloe_desc"])</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tipologia_code</property>
+                    <text-property name="displayName">tipologia_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipologia_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">tipologia_desc</property>
+                    <text-property name="displayName">tipologia_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipologia_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">accertato</property>
+                    <text-property name="displayName">accertato</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["accertato"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">accertato_san</property>
+                    <text-property name="displayName">accertato_san</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["accertato_san"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">incassato</property>
+                    <text-property name="displayName">incassato</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["incassato"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">incassato_san</property>
+                    <text-property name="displayName">incassato_san</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["incassato_san"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">cb_tipologia</property>
+                    <expression name="expression" type="javascript">BirtStr.left(row["tipologia_code"],5)</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">cb_sum_tit_accertato</property>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>titolo_group</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["accertato"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">cb_sum_titoli</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["cb_sum_tit_accertato"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">cb_sum_titoli_accertato_san</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["sum_bytit_accertato_san"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">sum_bytit_accertato_san</property>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>titolo_group</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["accertato_san"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">sum_bytit_incassato</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>titolo_group</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["incassato"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">sum_bytit_incassato_san</property>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>titolo_group</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["incassato_san"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">sum_tottitoli_incassato</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["sum_bytit_incassato"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">sum_tottitoli_incassato_san</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["sum_bytit_incassato_san"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">cb_totgen_accertato</property>
+                    <expression name="expression" type="javascript">row["cb_sum_tit_accertato"] + 1</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <expression name="expression" type="javascript">1</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">cb_totgen_col2</property>
+                    <expression name="expression" type="javascript">row["cb_sum_titoli_accertato_san"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">cb_totgen_col4</property>
+                    <expression name="expression" type="javascript">row["sum_tottitoli_incassato_san"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">cb_disavanzo</property>
+                    <expression name="expression" type="javascript">1</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <method name="onPageBreak"><![CDATA[ ]]></method>
+            <property name="repeatHeader">false</property>
+            <column id="4007">
+                <property name="fontSize">8pt</property>
+                <property name="width">10.8mm</property>
+            </column>
+            <column id="4008">
+                <property name="fontSize">8pt</property>
+                <property name="width">76.5mm</property>
+            </column>
+            <column id="4009">
+                <property name="fontSize">8pt</property>
+                <property name="width">20.2mm</property>
+            </column>
+            <column id="4010">
+                <property name="fontSize">8pt</property>
+                <property name="width">20.2mm</property>
+            </column>
+            <column id="4011">
+                <property name="fontSize">8pt</property>
+                <property name="width">20.2mm</property>
+            </column>
+            <column id="4012">
+                <property name="fontSize">8pt</property>
+                <property name="width">20.2mm</property>
+            </column>
+            <header>
+                <row id="3986">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="3987">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">2</property>
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="paddingLeft">0pt</property>
+                        <property name="paddingRight">0pt</property>
+                        <text id="4274">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textIndent">0em</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="height">19mm</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[TITOLO TIPOLOGIA]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="3988">
+                        <property name="colSpan">1</property>
+                        <property name="rowSpan">2</property>
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <text id="4112">
+                            <property name="fontWeight">bold</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="verticalAlign">middle</property>
+                            <property name="widows">2</property>
+                            <property name="height">19mm</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[DENOMINAZIONE]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="3989">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="4048">
+                            <property name="fontWeight">bold</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[COMPETENZA]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="3991">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="4049">
+                            <property name="fontWeight">bold</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[CASSA]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+                <row id="4050">
+                    <property name="borderBottomStyle">double</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr" type="javascript">true</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="4053">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                    </cell>
+                    <cell id="4054">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="4057">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[di cui GESTIONE SANITARIA]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="4055">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4056">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <text id="4058">
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[di cui GESTIONE SANITARIA]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+                <row id="4168">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <cell id="4169">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4170">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <label id="4218">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <text-property name="text">Fondo pluriennale vincolato per spese correnti</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4171">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4198">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="dataSet">DATI_998</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">anno_competenza</property>
+                                    <text-property name="displayName">anno_competenza</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">importo</property>
+                                    <text-property name="displayName">importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">descrizione</property>
+                                    <text-property name="displayName">descrizione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">posizione_nel_report</property>
+                                    <text-property name="displayName">posizione_nel_report</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">codice_importo</property>
+                                    <text-property name="displayName">codice_importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">disavanzo_amministrazione</property>
+                                    <text-property name="displayName">disavanzo_amministrazione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amministrazione"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_cassa_ini_eser</property>
+                                    <text-property name="displayName">fondo_cassa_ini_eser</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa_ini_eser"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">util_avanz_ammin</property>
+                                    <text-property name="displayName">util_avanz_ammin</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["util_avanz_ammin"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_parte_corr</property>
+                                    <text-property name="displayName">fondo_pluri_parte_corr</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_parte_corr"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_conto_capit</property>
+                                    <text-property name="displayName">fondo_pluri_conto_capit</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_conto_capit"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cb_fpv_sc</property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_parte_corr"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">cb_fpv_sc</property>
+                        </data>
+                    </cell>
+                    <cell id="4172">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4173">
+                        <property name="style">doubleframe</property>
+                        <property name="backgroundColor">silver</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4174">
+                        <property name="style">doubleframe</property>
+                        <property name="backgroundColor">silver</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                </row>
+                <row id="4175">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr" type="javascript">pageNumber > 1</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="4176">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4177">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <text id="4200">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Fondo pluriennale vincolato per spese in conto capitale]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="4178">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4199">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="dataSet">DATI_998</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">anno_competenza</property>
+                                    <text-property name="displayName">anno_competenza</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">importo</property>
+                                    <text-property name="displayName">importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">descrizione</property>
+                                    <text-property name="displayName">descrizione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">posizione_nel_report</property>
+                                    <text-property name="displayName">posizione_nel_report</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">codice_importo</property>
+                                    <text-property name="displayName">codice_importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">disavanzo_amministrazione</property>
+                                    <text-property name="displayName">disavanzo_amministrazione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amministrazione"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_cassa_ini_eser</property>
+                                    <text-property name="displayName">fondo_cassa_ini_eser</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa_ini_eser"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">util_avanz_ammin</property>
+                                    <text-property name="displayName">util_avanz_ammin</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["util_avanz_ammin"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_parte_corr</property>
+                                    <text-property name="displayName">fondo_pluri_parte_corr</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_parte_corr"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_conto_capit</property>
+                                    <text-property name="displayName">fondo_pluri_conto_capit</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_conto_capit"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cb_fpv_cc</property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_conto_capit"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">cb_fpv_cc</property>
+                        </data>
+                    </cell>
+                    <cell id="4179">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4180">
+                        <property name="style">doubleframe</property>
+                        <property name="backgroundColor">silver</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4181">
+                        <property name="style">doubleframe</property>
+                        <property name="backgroundColor">silver</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                </row>
+                <row id="4189">
+                    <cell id="4190">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4191">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <text id="4201">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Utilizzo Risultato di Amministrazione]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="4192">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4202">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="dataSet">DATI_998</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">anno_competenza</property>
+                                    <text-property name="displayName">anno_competenza</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">importo</property>
+                                    <text-property name="displayName">importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">descrizione</property>
+                                    <text-property name="displayName">descrizione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">posizione_nel_report</property>
+                                    <text-property name="displayName">posizione_nel_report</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">codice_importo</property>
+                                    <text-property name="displayName">codice_importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">disavanzo_amministrazione</property>
+                                    <text-property name="displayName">disavanzo_amministrazione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amministrazione"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_cassa_ini_eser</property>
+                                    <text-property name="displayName">fondo_cassa_ini_eser</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa_ini_eser"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">util_avanz_ammin</property>
+                                    <text-property name="displayName">util_avanz_ammin</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["util_avanz_ammin"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_parte_corr</property>
+                                    <text-property name="displayName">fondo_pluri_parte_corr</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_parte_corr"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_conto_capit</property>
+                                    <text-property name="displayName">fondo_pluri_conto_capit</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_conto_capit"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cb_utiliz_risamm</property>
+                                    <expression name="expression" type="javascript">dataSetRow["util_avanz_ammin"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">cb_utiliz_risamm</property>
+                        </data>
+                    </cell>
+                    <cell id="4193">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4194">
+                        <property name="style">doubleframe</property>
+                        <property name="backgroundColor">silver</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4195">
+                        <property name="style">doubleframe</property>
+                        <property name="backgroundColor">silver</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                </row>
+                <row id="4182">
+                    <cell id="4183">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4184">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <text id="4203">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[Fondo di Cassa all'1/1/<VALUE-OF>params["anno_bilancio"].value</VALUE-OF>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="4185">
+                        <property name="style">doubleframe</property>
+                        <property name="backgroundColor">silver</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4186">
+                        <property name="style">doubleframe</property>
+                        <property name="backgroundColor">silver</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                    <cell id="4187">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4204">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="dataSet">DATI_998</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">anno_competenza</property>
+                                    <text-property name="displayName">anno_competenza</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">importo</property>
+                                    <text-property name="displayName">importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">descrizione</property>
+                                    <text-property name="displayName">descrizione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">posizione_nel_report</property>
+                                    <text-property name="displayName">posizione_nel_report</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">codice_importo</property>
+                                    <text-property name="displayName">codice_importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">disavanzo_amministrazione</property>
+                                    <text-property name="displayName">disavanzo_amministrazione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amministrazione"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_cassa_ini_eser</property>
+                                    <text-property name="displayName">fondo_cassa_ini_eser</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa_ini_eser"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">util_avanz_ammin</property>
+                                    <text-property name="displayName">util_avanz_ammin</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["util_avanz_ammin"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_parte_corr</property>
+                                    <text-property name="displayName">fondo_pluri_parte_corr</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_parte_corr"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_conto_capit</property>
+                                    <text-property name="displayName">fondo_pluri_conto_capit</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_conto_capit"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cb_fondocassa_esercizio</property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa_ini_eser"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">cb_fondocassa_esercizio</property>
+                        </data>
+                    </cell>
+                    <cell id="4188">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                    </cell>
+                </row>
+            </header>
+            <group id="4030">
+                <property name="groupName">titolo_group</property>
+                <expression name="keyExpr" type="javascript">row["titoloe_code"]</expression>
+                <expression name="bookmark" type="javascript">"Titolo " + row["titoloe_code"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">"Titolo " + row["titoloe_code"]</expression>
+                    <property name="TOCStyle">doubleframe</property>
+                </structure>
+                <property name="repeatHeader">false</property>
+                <property name="hideDetail">false</property>
+                <property name="pageBreakInside">avoid</property>
+                <header>
+                    <row id="4031">
+                        <property name="borderTopStyle">double</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <cell id="4032">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <text-data id="4104">
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="fontStyle">italic</property>
+                                <property name="textAlign">center</property>
+                                <expression name="valueExpr">"TITOLO " + row["titoloe_code"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="4033">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <data id="4103">
+                                <property name="style">TitoloE_text</property>
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="resultSetColumn">titoloe_desc</property>
+                            </data>
+                        </cell>
+                        <cell id="4034">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                        </cell>
+                        <cell id="4035">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                        </cell>
+                        <cell id="4036">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                        </cell>
+                        <cell id="4037"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="4038">
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <cell id="4039">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <text-data id="4109">
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <expression name="valueExpr">row["titoloe_code"] + "0000"</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="4040">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <text-data id="4106">
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="fontStyle">italic</property>
+                                <expression name="valueExpr">"Totale Titolo " + row["titoloe_code"] + " : " + row["titoloe_desc"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="4041">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <data id="4108">
+                                <property name="style">Contabilia_Currency</property>
+                                <property name="resultSetColumn">cb_sum_tit_accertato</property>
+                            </data>
+                        </cell>
+                        <cell id="4042">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <data id="4224">
+                                <property name="style">Contabilia_Currency</property>
+                                <property name="resultSetColumn">sum_bytit_accertato_san</property>
+                            </data>
+                        </cell>
+                        <cell id="4043">
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <data id="4225">
+                                <property name="style">Contabilia_Currency</property>
+                                <property name="resultSetColumn">sum_bytit_incassato</property>
+                            </data>
+                        </cell>
+                        <cell id="4044">
+                            <data id="4226">
+                                <property name="style">Contabilia_Currency</property>
+                                <property name="resultSetColumn">sum_bytit_incassato_san</property>
+                            </data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="3993">
+                    <cell id="3994">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4105">
+                            <property name="fontSize">8pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">cb_tipologia</property>
+                        </data>
+                    </cell>
+                    <cell id="3995">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4102">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">tipologia_desc</property>
+                        </data>
+                    </cell>
+                    <cell id="3996">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4098">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">accertato</property>
+                        </data>
+                    </cell>
+                    <cell id="3997">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4099">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">accertato_san</property>
+                        </data>
+                    </cell>
+                    <cell id="3998">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4100">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">incassato</property>
+                        </data>
+                    </cell>
+                    <cell id="3999">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4101">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">incassato_san</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="4150">
+                    <property name="borderBottomStyle">double</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">double</property>
+                    <property name="borderTopWidth">medium</property>
+                    <cell id="4151">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <text id="4149">
+                            <property name="style">Titoli</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="fontStyle">italic</property>
+                            <property name="textAlign">center</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[TOTALE TITOLI]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="4153">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4167">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">cb_sum_titoli</property>
+                        </data>
+                    </cell>
+                    <cell id="4154">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4223">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">cb_sum_titoli_accertato_san</property>
+                        </data>
+                    </cell>
+                    <cell id="4155">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4227">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">sum_tottitoli_incassato</property>
+                        </data>
+                    </cell>
+                    <cell id="4156">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4228">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">sum_tottitoli_incassato_san</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="4158">
+                    <property name="borderBottomStyle">double</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderTopStyle">double</property>
+                    <property name="borderTopWidth">medium</property>
+                    <cell id="4159">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <text id="4165">
+                            <property name="style">Titoli</property>
+                            <property name="fontSize">8pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="fontStyle">italic</property>
+                            <property name="textAlign">center</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[TOTALE GENERALE DELLE ENTRATE]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="4161">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4270">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="dataSet">DATI_998</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">anno_competenza</property>
+                                    <text-property name="displayName">anno_competenza</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">importo</property>
+                                    <text-property name="displayName">importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">descrizione</property>
+                                    <text-property name="displayName">descrizione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">posizione_nel_report</property>
+                                    <text-property name="displayName">posizione_nel_report</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">codice_importo</property>
+                                    <text-property name="displayName">codice_importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">disavanzo_amministrazione</property>
+                                    <text-property name="displayName">disavanzo_amministrazione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amministrazione"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_cassa_ini_eser</property>
+                                    <text-property name="displayName">fondo_cassa_ini_eser</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa_ini_eser"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">util_avanz_ammin</property>
+                                    <text-property name="displayName">util_avanz_ammin</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["util_avanz_ammin"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_parte_corr</property>
+                                    <text-property name="displayName">fondo_pluri_parte_corr</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_parte_corr"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_conto_capit</property>
+                                    <text-property name="displayName">fondo_pluri_conto_capit</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_conto_capit"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cb_totgen_col1</property>
+                                    <expression name="expression" type="javascript">row._outer["cb_sum_titoli"] + &#13;
+dataSetRow["fondo_pluri_parte_corr"] + &#13;
+dataSetRow["fondo_pluri_conto_capit"] + &#13;
+dataSetRow["util_avanz_ammin"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">cb_totgen_col1</property>
+                        </data>
+                    </cell>
+                    <cell id="4162">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4272">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">cb_totgen_col2</property>
+                        </data>
+                    </cell>
+                    <cell id="4163">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4271">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="dataSet">DATI_998</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">anno_competenza</property>
+                                    <text-property name="displayName">anno_competenza</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">importo</property>
+                                    <text-property name="displayName">importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">descrizione</property>
+                                    <text-property name="displayName">descrizione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">posizione_nel_report</property>
+                                    <text-property name="displayName">posizione_nel_report</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
+                                    <property name="dataType">integer</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">codice_importo</property>
+                                    <text-property name="displayName">codice_importo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">disavanzo_amministrazione</property>
+                                    <text-property name="displayName">disavanzo_amministrazione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amministrazione"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_cassa_ini_eser</property>
+                                    <text-property name="displayName">fondo_cassa_ini_eser</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa_ini_eser"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">util_avanz_ammin</property>
+                                    <text-property name="displayName">util_avanz_ammin</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["util_avanz_ammin"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_parte_corr</property>
+                                    <text-property name="displayName">fondo_pluri_parte_corr</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_parte_corr"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_pluri_conto_capit</property>
+                                    <text-property name="displayName">fondo_pluri_conto_capit</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_pluri_conto_capit"]</expression>
+                                    <property name="dataType">float</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cb_totgen_col3</property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa_ini_eser"] +&#13;
+row._outer["sum_tottitoli_incassato"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">cb_totgen_col3</property>
+                        </data>
+                    </cell>
+                    <cell id="4164">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <data id="4273">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="resultSetColumn">cb_totgen_col4</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="4000">
+                    <cell id="4001">
+                        <property name="colSpan">2</property>
+                        <property name="rowSpan">1</property>
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">double</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="4166">
+                            <property name="fontSize">9pt</property>
+                            <property name="contentType">html</property>
+                            <text-property name="content"><![CDATA[<I><B>DISAVANZO FORMATOSI NELL'ESERCIZIO</B><BR/>
+(Totale generale delle spese di competenza <B>-</B>
+Totale generale delle entrate di competenza)</I>]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="4003">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">double</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="overflow">visible</property>
+                        <data id="4276">
+                            <property name="style">Contabilia_Currency</property>
+                            <property name="textAlign">right</property>
+                            <property name="dataSet">disavanzo_ds</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">disavanzo</property>
+                                    <text-property name="displayName">disavanzo</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">cb_disavanzo</property>
+                                    <expression name="expression" type="javascript">row["disavanzo"]</expression>
+                                    <property name="dataType">decimal</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">cb_disavanzo</property>
+                        </data>
+                    </cell>
+                    <cell id="4004">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">double</property>
+                        <property name="borderTopWidth">thin</property>
+                    </cell>
+                    <cell id="4005">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">double</property>
+                        <property name="borderTopWidth">thin</property>
+                    </cell>
+                    <cell id="4006">
+                        <property name="style">doubleframe</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">double</property>
+                        <property name="borderTopWidth">thin</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="header">
+            <property name="type">page</property>
+        </variable-element>
+        <variable-element name="ppp">
+            <expression name="value" type="javascript">-1</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_44_0</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_83_1</property>
+            <property name="value">2015</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_45_2</property>
+            <property name="value">BILR100</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_tipologia_doc_70_3</property>
+            <property name="value">TUTTI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_cod_tipo_doc_e_74_4</property>
+            <property name="value">TUTTI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_cod_tipo_doc_s_75_5</property>
+            <property name="value">TUTTI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_stato_doc_77_6</property>
+            <property name="value">TUTTI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_num_doc_78_7</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_79_8</property>
+            <property name="value">p_data_da_79</property>
+        </structure>
+        <structure>
+            <property name="name">p_data_da_79_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_80_9</property>
+            <property name="value">p_data_a_80</property>
+        </structure>
+        <structure>
+            <property name="name">p_data_a_80_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_cod_soggetto_81_10</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">p_stato_doc_77_11</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">p_stato_doc_77_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_stato_doc_77_expr_</property>
+            <property name="value">dataSetRow["doc_stato_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_45_12</property>
+            <property name="value">BILR100</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_45_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_tipo_doc_e_74_13</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_tipo_doc_e_74_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_tipo_doc_e_74_expr_</property>
+            <property name="value">dataSetRow["doc_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_83_14</property>
+            <property name="value">2015</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_83_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_tipo_doc_s_75_15</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_tipo_doc_s_75_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_tipo_doc_s_75_expr_</property>
+            <property name="value">dataSetRow["doc_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">p_tipologia_doc_70_16</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">p_tipologia_doc_70_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_tipologia_doc_70_expr_</property>
+            <property name="value">dataSetRow["doc_fam_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">p_num_doc_78_17</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">p_num_doc_78_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_44_18</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_44_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_soggetto_81_19</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">p_cod_soggetto_81_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_17_0</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_2</property>
+            <property name="value">BILR086</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Stato della Reversale_1281_3</property>
+            <property name="value">TUTTI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero reversale da_1013_4</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero reversale a_1014_5</property>
+            <property name="value">100</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1018_6</property>
+            <property name="value">Data reversale da_1018</property>
+        </structure>
+        <structure>
+            <property name="name">Data reversale da_1018_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1015_7</property>
+            <property name="value">Data reversale a_1015</property>
+        </structure>
+        <structure>
+            <property name="name">Data reversale a_1015_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Distinta_1273_8</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_9</property>
+            <property name="value">BILR086</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_10</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero reversale da_1013_11</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">Numero reversale da_1013_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Numero reversale a_1014_12</property>
+            <property name="value">100</property>
+        </structure>
+        <structure>
+            <property name="name">Numero reversale a_1014_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Stato della Reversale_1281_13</property>
+            <property name="value">TT</property>
+        </structure>
+        <structure>
+            <property name="name">Stato della Reversale_1281_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Stato della Reversale_1281_expr_</property>
+            <property name="value">dataSetRow["ord_stato_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_17_14</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_17_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Distinta_1273_15</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Numero Distinta_1273_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

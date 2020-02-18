@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_69_0</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_70_1</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_71_2</property>
+            <property name="value">BILR066</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipologia_294_3</property>
+            <property name="value">Tutte</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo Evento_295_4</property>
+            <property name="value">Tutti</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Evento_296_5</property>
+            <property name="value">Tutti</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_314_6</property>
+            <property name="value">num_prima_nota_314</property>
+        </structure>
+        <structure>
+            <property name="name">num_prima_nota_314_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_315_7</property>
+            <property name="value">num_prima_nota_def_315</property>
+        </structure>
+        <structure>
+            <property name="name">num_prima_nota_def_315_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Stato_73_8</property>
+            <property name="value">Tutti</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Conto economico patrimoniale_317_9</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_79_10</property>
+            <property name="value">Data Registrazione da_79</property>
+        </structure>
+        <structure>
+            <property name="name">Data Registrazione da_79_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_313_11</property>
+            <property name="value">Data Registrazione a_313</property>
+        </structure>
+        <structure>
+            <property name="name">Data Registrazione a_313_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">Evento_296_12</property>
+            <property name="value"> Tutti</property>
+        </structure>
+        <structure>
+            <property name="name">Evento_296_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Evento_296_expr_</property>
+            <property name="value">row["evento_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">Tipologia_294_13</property>
+            <property name="value"> Tutte</property>
+        </structure>
+        <structure>
+            <property name="name">Tipologia_294_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipologia_294_expr_</property>
+            <property name="value">row["causale_ep_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_70_14</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_70_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_71_15</property>
+            <property name="value">BILR066</property>
+        </structure>
+        <structure>
+            <property name="name">report_71_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Conto economico patrimoniale_317_16</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Conto economico patrimoniale_317_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Evento_295_17</property>
+            <property name="value"> Tutti</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Evento_295_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Evento_295_expr_</property>
+            <property name="value">row["evento_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">Stato_73_18</property>
+            <property name="value">Tutti</property>
+        </structure>
+        <structure>
+            <property name="name">Stato_73_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Stato_73_expr_</property>
+            <property name="value">dataSetRow["pnota_stato_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_69_19</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_69_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

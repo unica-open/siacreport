@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__paginaPartenza_1214_0</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">paginaPartenza_1214_1</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">paginaPartenza_1214_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">paginaPartenza_1214_expr_</property>
+            <property name="value">dataSetRow["numeroDiPagina"]</property>
+        </structure>
+    </list-property>
+</report>

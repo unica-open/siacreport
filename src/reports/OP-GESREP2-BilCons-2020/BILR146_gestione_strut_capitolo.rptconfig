@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_45_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__titolo_report_4579_1</property>
+            <property name="value">Piano Esecutivo di Gestione</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_2</property>
+            <property name="value">2018</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_3</property>
+            <property name="value">jyyjjy</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__descrizione_elemento_4580_4</property>
+            <property name="value">Capitolo</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_5</property>
+            <property name="value">BILR146</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_6</property>
+            <property name="value">Con data del giorno</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_7</property>
+            <property name="value">jyyjjy</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">descrizione_elemento_4580_8</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">descrizione_elemento_4580_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_9</property>
+            <property name="value">BILR146</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_10</property>
+            <property name="value">2018</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_11</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">titolo_report_4579_12</property>
+            <property name="value">PIANO ESECUTIVO DI GESTIONE</property>
+        </structure>
+        <structure>
+            <property name="name">titolo_report_4579_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_45_13</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_45_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_1211_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_1</property>
+            <property name="value">BILR106</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo Documento_1458_2</property>
+            <property name="value">Fattura Attiva</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Fattura_1214_3</property>
+            <property name="value">1/EL</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno Fattura_1212_4</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Codice Soggetto_1213_5</property>
+            <property name="value">213</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Documento_1458_6</property>
+            <property name="value">FTV</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Documento_1458_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Fattura_1212_7</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Fattura_1212_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_8</property>
+            <property name="value">BILR106</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Codice Soggetto_1213_9</property>
+            <property name="value">213</property>
+        </structure>
+        <structure>
+            <property name="name">Codice Soggetto_1213_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Fattura_1214_10</property>
+            <property name="value">1/EL</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Fattura_1214_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_1211_11</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_1211_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

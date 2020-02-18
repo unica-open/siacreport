@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_70_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_73_1</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__account_337_2</property>
+            <property name="value">2 -  ACCOUNT  - AMMINISTRATORE</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Elenco Casse_71_3</property>
+            <property name="value">01 - CASSA ECONOMALE</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Data da_1214_4</property>
+            <property name="value">01/01/2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Data a_1212_5</property>
+            <property name="value">31/12/2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_333_6</property>
+            <property name="value">BILR091</property>
+        </structure>
+        <structure>
+            <property name="name">Data da_1214_7</property>
+            <property name="value">2016-01-01</property>
+        </structure>
+        <structure>
+            <property name="name">Data da_1214_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_73_8</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_73_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_333_9</property>
+            <property name="value">BILR091</property>
+        </structure>
+        <structure>
+            <property name="name">report_333_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Elenco Casse_71_10</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">Elenco Casse_71_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Elenco Casse_71_expr_</property>
+            <property name="value">dataSetRow["cassaecon_id"]</property>
+        </structure>
+        <structure>
+            <property name="name">account_337_11</property>
+            <property name="value">2 -  ACCOUNT  - AMMINISTRATORE</property>
+        </structure>
+        <structure>
+            <property name="name">account_337_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Data a_1212_12</property>
+            <property name="value">2016-12-31</property>
+        </structure>
+        <structure>
+            <property name="name">Data a_1212_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_70_13</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_70_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

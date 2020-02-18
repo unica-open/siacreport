@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_69_0</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_70_1</property>
+            <property name="value">2015</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_71_2</property>
+            <property name="value">BILR070</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo Elaborazione_401_3</property>
+            <property name="value">Tutto</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo Estrazione_402_4</property>
+            <property name="value">Tutto</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Assessorato da_825_5</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Assessorato a_826_6</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Escludi capitolo di entrata_827_7</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Escludi capitolo di spesa_828_8</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Macroaggregato da_964_9</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Macroaggregato a_965_10</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo Finanziamento_979_11</property>
+            <property name="value">Q - QUALSIASI</property>
+        </structure>
+        <structure>
+            <property name="name">Assessorato a_826_12</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Assessorato a_826_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Finanziamento_979_13</property>
+            <property name="value">Q</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Finanziamento_979_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Finanziamento_979_expr_</property>
+            <property name="value">dataSetRow["code_tipo_fin"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_69_14</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_69_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Estrazione_402_15</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Estrazione_402_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Escludi capitolo di spesa_828_16</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Escludi capitolo di spesa_828_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_71_17</property>
+            <property name="value">BILR070</property>
+        </structure>
+        <structure>
+            <property name="name">report_71_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Elaborazione_401_18</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo Elaborazione_401_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Macroaggregato da_964_19</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Macroaggregato da_964_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Escludi capitolo di entrata_827_20</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Escludi capitolo di entrata_827_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_70_21</property>
+            <property name="value">2015</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_70_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Assessorato da_825_22</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Assessorato da_825_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Macroaggregato a_965_23</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Macroaggregato a_965_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

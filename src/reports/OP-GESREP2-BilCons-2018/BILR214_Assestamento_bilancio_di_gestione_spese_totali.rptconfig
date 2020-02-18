@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_3401_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2018</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Tipo di Variazione_8866_2</property>
+            <property name="value">VA - VARIAZIONE DI BILANCIO</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Variazione_72_3</property>
+            <property name="value">77</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8703_4</property>
+            <property name="value">Numero provvedimento di variazione di Bilancio_8703</property>
+        </structure>
+        <structure>
+            <property name="name">Numero provvedimento di variazione di Bilancio_8703_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno provvedimento di variazione di Bilancio_8704_5</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8705_6</property>
+            <property name="value">Tipo provvedimento di variazione di Bilancio_8705</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di Bilancio_8705_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di Bilancio_8705_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_old_3592_7</property>
+            <property name="value">BILR001</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_3154_8</property>
+            <property name="value">BILR211</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_9</property>
+            <property name="value">Con data del giorno</property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di Bilancio_8704_10</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di Bilancio_8704_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_11</property>
+            <property name="value">2018</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_3154_12</property>
+            <property name="value">BILR211</property>
+        </structure>
+        <structure>
+            <property name="name">report_3154_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo di Variazione_8866_13</property>
+            <property name="value">VA</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo di Variazione_8866_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo di Variazione_8866_expr_</property>
+            <property name="value">dataSetRow["variazione_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_14</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_72_15</property>
+            <property name="value">77</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_72_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_old_3592_16</property>
+            <property name="value">BILR001</property>
+        </structure>
+        <structure>
+            <property name="name">report_old_3592_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_17</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

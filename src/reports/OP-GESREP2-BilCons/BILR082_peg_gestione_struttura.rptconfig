@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_3816_0</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_3817_1</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_entrate_3818_2</property>
+            <property name="value">BILR001</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_spese_6361_3</property>
+            <property name="value">BILR002</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Direzione_6993_4</property>
+            <property name="value">A03 - AMMINISTRAZIONE, PERSONALE E SISTEMI INFORMATIVI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Settore_6994_5</property>
+            <property name="value">T - TUTTI</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_spese_6361_6</property>
+            <property name="value">BILR002</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_spese_6361_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_entrate_3818_7</property>
+            <property name="value">BILR001</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_entrate_3818_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_3817_8</property>
+            <property name="value">2016</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_3817_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione_6993_9</property>
+            <property name="value">A03</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione_6993_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Direzione_6993_expr_</property>
+            <property name="value">row["cod_direz"]</property>
+        </structure>
+        <structure>
+            <property name="name">Settore_6994_10</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">Settore_6994_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Settore_6994_expr_</property>
+            <property name="value">row["cod_sett"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3816_11</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3816_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>
