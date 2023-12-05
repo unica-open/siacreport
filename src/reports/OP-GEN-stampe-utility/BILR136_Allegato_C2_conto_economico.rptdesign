@@ -198,9 +198,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-            <property name="odaURL">${userconn}</property>
-            <property name="odaUser">${userdb}</property>
-            <encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
+			<property name="odaURL">${userconn}</property>
+			<property name="odaUser">${userdb}</property>
+			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -2116,6 +2116,318 @@ Somma</expression>
                     <expression name="expression" type="javascript">dataSetRow["cod_bil0"]</expression>
                     <property name="dataType">string</property>
                 </structure>
+                <structure>
+                    <property name="name">TotAvereLibereSestoLiv</property>
+                    <text-property name="displayName">TotAvereLibereSestoLiv</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoLivelloSesto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["importo_avere"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["tipo_pnota"]=='LIB' &amp;&amp; &#13;
+dataSetRow["id_pdce8"] == 0 &amp;&amp;&#13;
+dataSetRow["id_pdce7"] == 0</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotDareLibereSestoLiv</property>
+                    <text-property name="displayName">TotDareLibereSestoLiv</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoLivelloSesto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["importo_dare"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["tipo_pnota"]=='LIB' &amp;&amp; &#13;
+dataSetRow["id_pdce8"] == 0 &amp;&amp;&#13;
+dataSetRow["id_pdce7"] == 0</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotAvereIntegrSestoLiv</property>
+                    <text-property name="displayName">TotAvereIntegrSestoLiv</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoLivelloSesto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["importo_avere"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["tipo_pnota"]=='INT' &amp;&amp; &#13;
+dataSetRow["id_pdce8"] == 0 &amp;&amp;&#13;
+dataSetRow["id_pdce7"] == 0</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotDareIntegrSestoLiv</property>
+                    <text-property name="displayName">TotDareIntegrSestoLiv</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoLivelloSesto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["importo_dare"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["tipo_pnota"]=='INT' &amp;&amp; &#13;
+dataSetRow["id_pdce8"] == 0 &amp;&amp;&#13;
+dataSetRow["id_pdce7"] == 0</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoDareIntegSestoLiv</property>
+                    <text-property name="displayName">SaldoDareIntegSestoLiv</text-property>
+                    <expression name="expression" type="javascript">if (row["TotDareIntegrSestoLiv"]-row["TotAvereIntegrSestoLiv"]>=0) {&#13;
+   var Somma = row["TotDareIntegrSestoLiv"]-row["TotAvereIntegrSestoLiv"];&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoAverIntegSestoLiv</property>
+                    <text-property name="displayName">SaldoAverIntegSestoLiv</text-property>
+                    <expression name="expression" type="javascript">if (row["TotDareIntegrSestoLiv"]-row["TotAvereIntegrSestoLiv"]&lt;=0) {&#13;
+   var Somma = row["TotAvereIntegrSestoLiv"]-row["TotDareIntegrSestoLiv"];&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoDareLibereSestoLiv</property>
+                    <text-property name="displayName">SaldoDareLibereSestoLiv</text-property>
+                    <expression name="expression" type="javascript">if (row["TotDareLibereSestoLiv"]-row["TotAvereLibereSestoLiv"]>=0) {&#13;
+   var Somma = row["TotDareLibereSestoLiv"]-row["TotAvereLibereSestoLiv"];&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoAvereLibereSestoLiv</property>
+                    <text-property name="displayName">SaldoAvereLibereSestoLiv</text-property>
+                    <expression name="expression" type="javascript">if (row["TotDareLibereSestoLiv"]-row["TotAvereLibereSestoLiv"]&lt;=0) {&#13;
+   var Somma = row["TotAvereLibereSestoLiv"]-row["TotDareLibereSestoLiv"];&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoDareFineSestoLiv</property>
+                    <text-property name="displayName">SaldoDareFineSestoLiv</text-property>
+                    <expression name="expression" type="javascript">Ris1 = row["SaldoDareIntegSestoLiv"]+row["SaldoDareLibereSestoLiv"];&#13;
+Ris2 = row["SaldoAverIntegSestoLiv"]+row["SaldoAverIntegSestoLiv"];&#13;
+if (Ris1-Ris2>=0) {&#13;
+   var Somma = Ris1-Math.abs(Ris2);&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoAvereFineSestoLiv</property>
+                    <text-property name="displayName">SaldoAvereFineSestoLiv</text-property>
+                    <expression name="expression" type="javascript">Ris1 = row["SaldoDareIntegSestoLiv"]+row["SaldoDareLibereSestoLiv"];&#13;
+Ris2 = row["SaldoAverIntegSestoLiv"]+row["SaldoAvereLibereSestoLiv"];&#13;
+if (Ris1-Ris2&lt;=0) {&#13;
+   var Somma = Ris2-Math.abs(Ris1);&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotAvereIntegrSettimoLiv</property>
+                    <text-property name="displayName">TotAvereIntegrSettimoLiv</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoLivelloSettimo</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["importo_avere"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["tipo_pnota"]=='INT' &amp;&amp; &#13;
+dataSetRow["id_pdce8"] == 0</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotDareIntegrSettimoLiv</property>
+                    <text-property name="displayName">TotDareIntegrSettimoLiv</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoLivelloSettimo</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["importo_dare"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["tipo_pnota"]=='INT' &amp;&amp; &#13;
+dataSetRow["id_pdce8"] == 0</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotAvereLibereSettimoLiv</property>
+                    <text-property name="displayName">TotAvereLibereSettimoLiv</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoLivelloSettimo</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["importo_avere"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["tipo_pnota"]=='LIB' &amp;&amp; &#13;
+dataSetRow["id_pdce8"] == 0</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotDareLibereSettimoLiv</property>
+                    <text-property name="displayName">TotDareLibereSettimoLiv</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoLivelloSettimo</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["importo_dare"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr" type="javascript">dataSetRow["tipo_pnota"]=='LIB' &amp;&amp; &#13;
+dataSetRow["id_pdce8"] == 0</expression>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoDareFineSettimoLiv</property>
+                    <text-property name="displayName">SaldoDareFineSettimoLiv</text-property>
+                    <expression name="expression" type="javascript">Ris1 = row["SaldoDareIntegSettimoLiv"]+row["SaldoDareLibereSettimoLiv"];&#13;
+Ris2 = row["SaldoAverIntegSettimoLiv"]+row["SaldoAverIntegSettimoLiv"];&#13;
+if (Ris1-Ris2>=0) {&#13;
+   var Somma = Ris1-Math.abs(Ris2);&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoAvereFineSettimoLiv</property>
+                    <text-property name="displayName">SaldoAvereFineSettimoLiv</text-property>
+                    <expression name="expression" type="javascript">Ris1 = row["SaldoDareIntegSettimoLiv"]+row["SaldoDareLibereSettimoLiv"];&#13;
+Ris2 = row["SaldoAverIntegSettimoLiv"]+row["SaldoAvereLibereSettimoLiv"];&#13;
+if (Ris1-Ris2&lt;=0) {&#13;
+   var Somma = Ris2-Math.abs(Ris1);&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoDareIntegSettimoLiv</property>
+                    <text-property name="displayName">SaldoDareIntegSettimoLiv</text-property>
+                    <expression name="expression" type="javascript">if (row["TotDareIntegrSettimoLiv"]-row["TotAvereIntegrSettimoLiv"]>=0) {&#13;
+   var Somma = row["TotDareIntegrSettimoLiv"]-row["TotAvereIntegrSettimoLiv"];&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoAverIntegSettimoLiv</property>
+                    <text-property name="displayName">SaldoAverIntegSettimoLiv</text-property>
+                    <expression name="expression" type="javascript">if (row["TotDareIntegrSettimoLiv"]-row["TotAvereIntegrSettimoLiv"]&lt;=0) {&#13;
+   var Somma = row["TotAvereIntegrSettimoLiv"]-row["TotDareIntegrSettimoLiv"];&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoDareLibereSettimoLiv</property>
+                    <text-property name="displayName">SaldoDareLibereSettimoLiv</text-property>
+                    <expression name="expression" type="javascript">if (row["TotDareLibereSettimoLiv"]-row["TotAvereLibereSettimoLiv"]>=0) {&#13;
+   var Somma = row["TotDareLibereSettimoLiv"]-row["TotAvereLibereSettimoLiv"];&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">SaldoAvereLibereSettimoLiv</property>
+                    <text-property name="displayName">SaldoAvereLibereSettimoLiv</text-property>
+                    <expression name="expression" type="javascript">if (row["TotDareLibereSettimoLiv"]-row["TotAvereLibereSettimoLiv"]&lt;=0) {&#13;
+   var Somma = row["TotAvereLibereSettimoLiv"]-row["TotDareLibereSettimoLiv"];&#13;
+}&#13;
+else {&#13;
+	var Somma = 0;&#13;
+}&#13;
+Somma</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <property name="pageBreakInterval">1</property>
             <column id="1516">
@@ -2753,6 +3065,14 @@ Descr;</expression>
                 </list-property>
                 <header>
                     <row id="6088">
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">params["classificatori"].value==2 ||&#13;
+(params["classificatori"].value==1 &amp;&amp; params["Stampa conti al di sotto del livello di legge"].value=='N') ||&#13;
+row["id_pdce6"] == 0</expression>
+                            </structure>
+                        </list-property>
                         <cell id="6089"/>
                         <cell id="6176"/>
                         <cell id="6090"/>
@@ -2851,7 +3171,7 @@ Descr;</expression>
 (row["livello"]==8)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoDareIntegrate</property>
+                                <property name="resultSetColumn">SaldoDareIntegSestoLiv</property>
                             </data>
                         </cell>
                         <cell id="6100">
@@ -2927,7 +3247,7 @@ Descr;</expression>
 (row["livello"]==8)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoAvereIntegrate</property>
+                                <property name="resultSetColumn">SaldoAverIntegSestoLiv</property>
                             </data>
                         </cell>
                         <cell id="6101">
@@ -3003,7 +3323,7 @@ Descr;</expression>
 (row["livello"]==8)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoDareLibere</property>
+                                <property name="resultSetColumn">SaldoDareLibereSestoLiv</property>
                             </data>
                         </cell>
                         <cell id="6102">
@@ -3079,7 +3399,7 @@ Descr;</expression>
 (row["livello"]==8)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoAvereLibere</property>
+                                <property name="resultSetColumn">SaldoAvereLibereSestoLiv</property>
                             </data>
                         </cell>
                         <cell id="6103">
@@ -3155,7 +3475,7 @@ Descr;</expression>
 (row["livello"]==8)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoDareFine</property>
+                                <property name="resultSetColumn">SaldoDareFineSestoLiv</property>
                             </data>
                         </cell>
                         <cell id="6104">
@@ -3231,7 +3551,7 @@ Descr;</expression>
 (row["livello"]==8)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoAvereFine</property>
+                                <property name="resultSetColumn">SaldoAvereFineSestoLiv</property>
                             </data>
                         </cell>
                     </row>
@@ -3270,7 +3590,9 @@ Descr;</expression>
                         <list-property name="visibility">
                             <structure>
                                 <property name="format">all</property>
-                                <expression name="valueExpr" type="javascript">params["classificatori"].value==1&amp;&amp;params["Stampa conti al di sotto del livello di legge"].value=='N'</expression>
+                                <expression name="valueExpr" type="javascript">params["classificatori"].value==2 ||&#13;
+(params["classificatori"].value==1 &amp;&amp; params["Stampa conti al di sotto del livello di legge"].value=='N') ||&#13;
+row["id_pdce7"] == 0</expression>
                             </structure>
                         </list-property>
                         <cell id="6124"/>
@@ -3392,7 +3714,7 @@ Descr;</expression>
 (row["livello"]==6)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoDareIntegrate</property>
+                                <property name="resultSetColumn">SaldoDareIntegSettimoLiv</property>
                             </data>
                         </cell>
                         <cell id="6135">
@@ -3468,7 +3790,7 @@ Descr;</expression>
 (row["livello"]==6)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoAvereIntegrate</property>
+                                <property name="resultSetColumn">SaldoAverIntegSettimoLiv</property>
                             </data>
                         </cell>
                         <cell id="6136">
@@ -3544,7 +3866,7 @@ Descr;</expression>
 (row["livello"]==6)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoDareLibere</property>
+                                <property name="resultSetColumn">SaldoDareLibereSettimoLiv</property>
                             </data>
                         </cell>
                         <cell id="6137">
@@ -3620,7 +3942,7 @@ Descr;</expression>
 (row["livello"]==6)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoAvereLibere</property>
+                                <property name="resultSetColumn">SaldoAvereLibereSettimoLiv</property>
                             </data>
                         </cell>
                         <cell id="6138">
@@ -3696,7 +4018,7 @@ Descr;</expression>
 (row["livello"]==6)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoDareFine</property>
+                                <property name="resultSetColumn">SaldoDareFineSettimoLiv</property>
                             </data>
                         </cell>
                         <cell id="6139">
@@ -3772,7 +4094,7 @@ Descr;</expression>
 (row["livello"]==6)</expression>
                                     </structure>
                                 </list-property>
-                                <property name="resultSetColumn">SaldoAvereFine</property>
+                                <property name="resultSetColumn">SaldoAvereFineSettimoLiv</property>
                             </data>
                         </cell>
                     </row>
@@ -3805,9 +4127,13 @@ Descr;</expression>
                         <list-property name="visibility">
                             <structure>
                                 <property name="format">all</property>
-                                <expression name="valueExpr" type="javascript">params["classificatori"].value==1&#13;
-||&#13;
-(params["classificatori"].value==2&amp;&amp;params["Stampa conti al di sotto del livello di legge"].value=='N')</expression>
+                                <expression name="valueExpr" type="javascript">//params["classificatori"].value==1&#13;
+//||&#13;
+//(params["classificatori"].value==2&amp;&amp;params["Stampa conti al di sotto del livello di legge"].value=='N')&#13;
+&#13;
+params["classificatori"].value==2 ||&#13;
+(params["classificatori"].value==1&amp;&amp; params["Stampa conti al di sotto del livello di legge"].value=='N') ||&#13;
+row["id_pdce8"] == 0</expression>
                             </structure>
                         </list-property>
                         <cell id="2679"/>

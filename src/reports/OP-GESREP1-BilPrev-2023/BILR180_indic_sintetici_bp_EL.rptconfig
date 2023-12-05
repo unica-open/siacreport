@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_58_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2023</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_3</property>
+            <property name="value">BILR177</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_equi_bil_5273_4</property>
+            <property name="value">BILR006</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5283_5</property>
+            <property name="value">data_approv_bil_5283</property>
+        </structure>
+        <structure>
+            <property name="name">data_approv_bil_5283_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_6</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_7</property>
+            <property name="value">BILR177</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_8</property>
+            <property name="value">2023</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_58_9</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_58_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_equi_bil_5273_10</property>
+            <property name="value">BILR006</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_equi_bil_5273_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

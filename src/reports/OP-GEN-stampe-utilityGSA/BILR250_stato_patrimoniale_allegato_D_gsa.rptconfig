@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_26_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_5195_1</property>
+            <property name="value">2019</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_2</property>
+            <property name="value">BILR250</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Cod_bilancio_9771_3</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_6074_4</property>
+            <property name="value">DataPnotaDefDa_6074</property>
+        </structure>
+        <structure>
+            <property name="name">DataPnotaDefDa_6074_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_6075_5</property>
+            <property name="value">DataPnotaDefA_6075</property>
+        </structure>
+        <structure>
+            <property name="name">DataPnotaDefA_6075_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Stampa importi 0_6029_6</property>
+            <property name="value">SI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_7</property>
+            <property name="value">Con data del giorno</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_8</property>
+            <property name="value">BILR250</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_5195_9</property>
+            <property name="value">2019</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_5195_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_10</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Cod_bilancio_9771_11</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Cod_bilancio_9771_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Stampa importi 0_6029_12</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">Stampa importi 0_6029_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_13</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

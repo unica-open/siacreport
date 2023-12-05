@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte SPDX-License-Identifier: EUPL-1.2</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
@@ -341,9 +342,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-            <property name="odaURL">${userconn}</property>
-            <property name="odaUser">${userdb}</property>
-            <encrypted-property name="odaPassword" encryptionID="base64">pwddAA==</encrypted-property>
+			<property name="odaURL">${userconn}</property>
+			<property name="odaUser">${userdb}</property>
+			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -3799,6 +3800,441 @@ where ente_proprietario_id = (?)]]></xml-property>
   </design:ResultSets>
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="variabili_report_anno_prec" id="3833">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">fpv_spese_correnti</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">var annoPrec = (new Number(params["anno_bilancio"].value)-1).toString();&#13;
+&#13;
+row["codice_importo"]=="FPVSC"&#13;
+&amp;&amp; row["anno_competenza"]==annoPrec</expression>
+                </structure>
+                <structure>
+                    <property name="name">fpv_spese_conto_capitale</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">var annoPrec = (new Number(params["anno_bilancio"].value)-1).toString();&#13;
+&#13;
+row["codice_importo"]=="FPVCC"&#13;
+&amp;&amp; row["anno_competenza"]==annoPrec</expression>
+                </structure>
+                <structure>
+                    <property name="name">avanzo_amministrazione</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">var annoPrec = (new Number(params["anno_bilancio"].value)-1).toString();&#13;
+&#13;
+row["codice_importo"]=="AAM" &#13;
+&amp;&amp; row["anno_competenza"]==annoPrec</expression>
+                </structure>
+                <structure>
+                    <property name="name">fondo_cassa</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">var annoPrec = (new Number(params["anno_bilancio"].value)-1).toString();&#13;
+&#13;
+row["codice_importo"]=="FCI"&#13;
+&amp;&amp; row["anno_competenza"]==annoPrec</expression>
+                </structure>
+                <structure>
+                    <property name="name">di_cui</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">row["codice_importo"]=="di_cui_ava_amm"&#13;
+&amp;&amp;row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                </structure>
+                <structure>
+                    <property name="name">disavanzo_amm_anno</property>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">var annoPrec = (new Number(params["anno_bilancio"].value)-1).toString();&#13;
+&#13;
+row["codice_importo"]=="DAM"&#13;
+&amp;&amp; row["anno_competenza"]== annoPrec</expression>
+                </structure>
+                <structure>
+                    <property name="name">disav_debito_non_contr_anno</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value">row["importo"]</expression>
+                        </structure>
+                    </list-property>
+                    <expression name="filterExpr">var annoPrec = (new Number(params["anno_bilancio"].value)-1).toString();&#13;
+&#13;
+row["codice_importo"]=="DDANC"&#13;
+&amp;&amp; row["anno_competenza"]== annoPrec</expression>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">anno_competenza</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">anno_competenza</text-property>
+                    <text-property name="heading">anno_competenza</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo</text-property>
+                    <text-property name="heading">importo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizione</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">descrizione</text-property>
+                    <text-property name="heading">descrizione</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">posizione_nel_report</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">posizione_nel_report</text-property>
+                    <text-property name="heading">posizione_nel_report</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codice_importo</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">codice_importo</text-property>
+                    <text-property name="heading">codice_importo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tipo_capitolo_cod</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">tipo_capitolo_cod</text-property>
+                    <text-property name="heading">tipo_capitolo_cod</text-property>
+                </structure>
+            </list-property>
+            <list-property name="filter"/>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ente</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">anno</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <expression name="defaultValue" type="javascript">(new Number(params["anno_bilancio"].value)-1).toString()</expression>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">anno_competenza</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">importo</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">descrizione</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">posizione_nel_report</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">codice_importo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">tipo_capitolo_cod</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">fpv_spese_correnti</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">fpv_spese_conto_capitale</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">avanzo_amministrazione</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">fondo_cassa</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">di_cui</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">disavanzo_amm_anno</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">disav_debito_non_contr_anno</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">anno_competenza</property>
+                    <property name="nativeName">anno_competenza</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">importo</property>
+                    <property name="nativeName">importo</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">descrizione</property>
+                    <property name="nativeName">descrizione</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">posizione_nel_report</property>
+                    <property name="nativeName">posizione_nel_report</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">codice_importo</property>
+                    <property name="nativeName">codice_importo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">tipo_capitolo_cod</property>
+                    <property name="nativeName">tipo_capitolo_cod</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from "BILR000_tipo_capitolo_dei_report" (?,?,'G')
+order by posizione_nel_report]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>anno_competenza</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>anno_competenza</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>anno_competenza</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>importo</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>importo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>importo</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>descrizione</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>descrizione</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>descrizione</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>posizione_nel_report</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>posizione_nel_report</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>posizione_nel_report</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codice_importo</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>codice_importo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codice_importo</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
     </data-sets>
     <styles>
         <style name="report" id="4">
@@ -4333,107 +4769,156 @@ where ente_proprietario_id = (?)]]></xml-property>
                     <property name="borderLeftWidth">medium</property>
                     <property name="borderTopStyle">solid</property>
                     <property name="borderTopWidth">medium</property>
-                    <grid id="3612">
-                        <column id="3613"/>
-                        <row id="3614">
-                            <cell id="3615">
-                                <data id="3616">
-                                    <property name="backgroundAttachment">scroll</property>
-                                    <property name="backgroundPositionX">0%</property>
-                                    <property name="backgroundPositionY">0%</property>
-                                    <property name="backgroundRepeat">repeat</property>
-                                    <property name="fontFamily">sans-serif</property>
-                                    <property name="fontSize">10pt</property>
-                                    <property name="fontWeight">normal</property>
-                                    <property name="fontStyle">normal</property>
-                                    <property name="fontVariant">normal</property>
-                                    <property name="color">black</property>
-                                    <property name="textLineThrough">none</property>
-                                    <property name="textOverline">none</property>
-                                    <property name="textUnderline">none</property>
-                                    <property name="borderBottomColor">black</property>
-                                    <property name="borderBottomStyle">none</property>
-                                    <property name="borderBottomWidth">medium</property>
-                                    <property name="borderLeftColor">black</property>
-                                    <property name="borderLeftStyle">none</property>
-                                    <property name="borderLeftWidth">medium</property>
-                                    <property name="borderRightColor">black</property>
-                                    <property name="borderRightStyle">none</property>
-                                    <property name="borderRightWidth">medium</property>
-                                    <property name="borderTopColor">black</property>
-                                    <property name="borderTopStyle">none</property>
-                                    <property name="borderTopWidth">medium</property>
-                                    <property name="marginTop">0pt</property>
-                                    <property name="marginLeft">0pt</property>
-                                    <property name="marginBottom">0pt</property>
-                                    <property name="marginRight">0pt</property>
-                                    <property name="paddingTop">1pt</property>
-                                    <property name="paddingLeft">1pt</property>
-                                    <property name="paddingBottom">1pt</property>
-                                    <property name="paddingRight">1pt</property>
-                                    <structure name="numberFormat">
-                                        <property name="category">Currency</property>
-                                        <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
-                                    </structure>
-                                    <property name="textAlign">right</property>
-                                    <property name="letterSpacing">normal</property>
-                                    <property name="lineHeight">normal</property>
-                                    <property name="orphans">2</property>
-                                    <property name="textTransform">none</property>
-                                    <property name="whiteSpace">normal</property>
-                                    <property name="widows">2</property>
-                                    <property name="wordSpacing">normal</property>
-                                    <property name="display">block</property>
-                                    <property name="pageBreakAfter">auto</property>
-                                    <property name="pageBreakBefore">auto</property>
-                                    <property name="pageBreakInside">auto</property>
-                                    <property name="showIfBlank">false</property>
-                                    <property name="canShrink">false</property>
-                                    <property name="overflow">hidden</property>
-                                    <property name="dataSet">variabili_report1</property>
-                                    <list-property name="boundDataColumns">
-                                        <structure>
-                                            <property name="name">anno_competenza</property>
-                                            <text-property name="displayName">anno_competenza</text-property>
-                                            <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
-                                            <property name="dataType">string</property>
-                                        </structure>
-                                        <structure>
-                                            <property name="name">importo</property>
-                                            <text-property name="displayName">importo</text-property>
-                                            <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
-                                            <property name="dataType">decimal</property>
-                                        </structure>
-                                        <structure>
-                                            <property name="name">descrizione</property>
-                                            <text-property name="displayName">descrizione</text-property>
-                                            <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
-                                            <property name="dataType">string</property>
-                                        </structure>
-                                        <structure>
-                                            <property name="name">posizione_nel_report</property>
-                                            <text-property name="displayName">posizione_nel_report</text-property>
-                                            <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
-                                            <property name="dataType">integer</property>
-                                        </structure>
-                                        <structure>
-                                            <property name="name">codice_importo</property>
-                                            <text-property name="displayName">codice_importo</text-property>
-                                            <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
-                                            <property name="dataType">string</property>
-                                        </structure>
-                                        <structure>
-                                            <property name="name">disavanzo_amm_prec</property>
-                                            <text-property name="displayName">disavanzo_amm_prec</text-property>
-                                            <expression name="expression" type="javascript">dataSetRow["disavanzo_amm_prec"]</expression>
-                                            <property name="dataType">float</property>
-                                        </structure>
-                                    </list-property>
-                                    <property name="resultSetColumn">disavanzo_amm_prec</property>
-                                </data>
-                            </cell>
-                        </row>
-                    </grid>
+                    <data id="11216">
+                        <property name="backgroundAttachment">scroll</property>
+                        <property name="backgroundPositionX">0%</property>
+                        <property name="backgroundPositionY">0%</property>
+                        <property name="backgroundRepeat">repeat</property>
+                        <property name="fontFamily">sans-serif</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="fontVariant">normal</property>
+                        <property name="color">black</property>
+                        <property name="textLineThrough">none</property>
+                        <property name="textOverline">none</property>
+                        <property name="textUnderline">none</property>
+                        <property name="borderBottomColor">black</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">black</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">black</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">black</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">0pt</property>
+                        <property name="marginBottom">0pt</property>
+                        <property name="marginRight">0pt</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingBottom">1pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Currency</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <property name="letterSpacing">normal</property>
+                        <property name="lineHeight">normal</property>
+                        <property name="orphans">2</property>
+                        <property name="textTransform">none</property>
+                        <property name="whiteSpace">normal</property>
+                        <property name="widows">2</property>
+                        <property name="wordSpacing">normal</property>
+                        <property name="display">block</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">auto</property>
+                        <property name="showIfBlank">false</property>
+                        <property name="canShrink">false</property>
+                        <property name="overflow">hidden</property>
+                        <list-property name="mapRules">
+                            <structure>
+                                <expression name="testExpr" type="javascript">row["disavanzo_amm_prec"]</expression>
+                                <property name="operator">is-null</property>
+                                <text-property name="display">0,00</text-property>
+                            </structure>
+                        </list-property>
+                        <property name="dataSet">variabili_report_anno_prec</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">anno_competenza</property>
+                                <text-property name="displayName">anno_competenza</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">importo</property>
+                                <text-property name="displayName">importo</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">descrizione</property>
+                                <text-property name="displayName">descrizione</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">posizione_nel_report</property>
+                                <text-property name="displayName">posizione_nel_report</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">codice_importo</property>
+                                <text-property name="displayName">codice_importo</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tipo_capitolo_cod</property>
+                                <text-property name="displayName">tipo_capitolo_cod</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tipo_capitolo_cod"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">fpv_spese_correnti</property>
+                                <text-property name="displayName">fpv_spese_correnti</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["fpv_spese_correnti"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">fpv_spese_conto_capitale</property>
+                                <text-property name="displayName">fpv_spese_conto_capitale</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["fpv_spese_conto_capitale"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">avanzo_amministrazione</property>
+                                <text-property name="displayName">avanzo_amministrazione</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["avanzo_amministrazione"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">fondo_cassa</property>
+                                <text-property name="displayName">fondo_cassa</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["fondo_cassa"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">di_cui</property>
+                                <text-property name="displayName">di_cui</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["di_cui"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disavanzo_amm_anno</property>
+                                <text-property name="displayName">disavanzo_amm_anno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disavanzo_amm_anno"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disav_debito_non_contr_anno</property>
+                                <text-property name="displayName">disav_debito_non_contr_anno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disav_debito_non_contr_anno"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disavanzo_amm_prec</property>
+                                <text-property name="displayName">disavanzo_amm_prec</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disavanzo_amm_anno"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">disavanzo_amm_prec</property>
+                    </data>
                 </cell>
                 <cell id="3264">
                     <property name="borderBottomStyle">solid</property>
@@ -11010,8 +11495,60 @@ dataSetRow["previsioni_anno_prec_comp"]</expression>
                         <property name="borderRightWidth">1px</property>
                         <property name="borderTopStyle">solid</property>
                         <property name="borderTopWidth">1px</property>
-                        <grid id="3617">
-                            <property name="dataSet">variabili_report1</property>
+                        <data id="11217">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">12pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Currency</property>
+                                <property name="pattern">#,##0.00;(#,##0.00){RoundingMode=UNNECESSARY}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="dataSet">variabili_report_anno_prec</property>
                             <list-property name="boundDataColumns">
                                 <structure>
                                     <property name="name">anno_competenza</property>
@@ -11044,126 +11581,63 @@ dataSetRow["previsioni_anno_prec_comp"]</expression>
                                     <property name="dataType">string</property>
                                 </structure>
                                 <structure>
-                                    <property name="name">disavanzo_amm_prec</property>
-                                    <text-property name="displayName">disavanzo_amm_prec</text-property>
-                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amm_prec"]</expression>
+                                    <property name="name">tipo_capitolo_cod</property>
+                                    <text-property name="displayName">tipo_capitolo_cod</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["tipo_capitolo_cod"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fpv_spese_correnti</property>
+                                    <text-property name="displayName">fpv_spese_correnti</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fpv_spese_correnti"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fpv_spese_conto_capitale</property>
+                                    <text-property name="displayName">fpv_spese_conto_capitale</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fpv_spese_conto_capitale"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">avanzo_amministrazione</property>
+                                    <text-property name="displayName">avanzo_amministrazione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["avanzo_amministrazione"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">fondo_cassa</property>
+                                    <text-property name="displayName">fondo_cassa</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["fondo_cassa"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">di_cui</property>
+                                    <text-property name="displayName">di_cui</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["di_cui"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">disavanzo_amm_anno</property>
+                                    <text-property name="displayName">disavanzo_amm_anno</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amm_anno"]</expression>
+                                    <property name="dataType">decimal</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">disav_debito_non_contr_anno</property>
+                                    <text-property name="displayName">disav_debito_non_contr_anno</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["disav_debito_non_contr_anno"]</expression>
                                     <property name="dataType">float</property>
                                 </structure>
                                 <structure>
                                     <property name="name">tot_generale_anno_prec</property>
                                     <text-property name="displayName">tot_generale_anno_prec</text-property>
-                                    <expression name="expression" type="javascript">row["disavanzo_amm_prec"]+row._outer["TotaleStanzaAnnoPrecMissioni"]</expression>
-                                    <property name="dataType">decimal</property>
+                                    <expression name="expression" type="javascript">dataSetRow["disavanzo_amm_anno"]+row._outer["TotaleStanzaAnnoPrecMissioni"]</expression>
+                                    <property name="dataType">float</property>
                                     <property name="allowExport">true</property>
                                 </structure>
                             </list-property>
-                            <column id="3618"/>
-                            <row id="3619">
-                                <cell id="3620">
-                                    <data id="3621">
-                                        <property name="backgroundAttachment">scroll</property>
-                                        <property name="backgroundPositionX">0%</property>
-                                        <property name="backgroundPositionY">0%</property>
-                                        <property name="backgroundRepeat">repeat</property>
-                                        <property name="fontFamily">sans-serif</property>
-                                        <property name="fontSize">12pt</property>
-                                        <property name="fontWeight">bold</property>
-                                        <property name="fontStyle">normal</property>
-                                        <property name="fontVariant">normal</property>
-                                        <property name="color">black</property>
-                                        <property name="textLineThrough">none</property>
-                                        <property name="textOverline">none</property>
-                                        <property name="textUnderline">none</property>
-                                        <property name="borderBottomColor">black</property>
-                                        <property name="borderBottomStyle">none</property>
-                                        <property name="borderBottomWidth">medium</property>
-                                        <property name="borderLeftColor">black</property>
-                                        <property name="borderLeftStyle">none</property>
-                                        <property name="borderLeftWidth">medium</property>
-                                        <property name="borderRightColor">black</property>
-                                        <property name="borderRightStyle">none</property>
-                                        <property name="borderRightWidth">medium</property>
-                                        <property name="borderTopColor">black</property>
-                                        <property name="borderTopStyle">none</property>
-                                        <property name="borderTopWidth">medium</property>
-                                        <property name="marginTop">0pt</property>
-                                        <property name="marginLeft">0pt</property>
-                                        <property name="marginBottom">0pt</property>
-                                        <property name="marginRight">0pt</property>
-                                        <property name="paddingTop">1pt</property>
-                                        <property name="paddingLeft">1pt</property>
-                                        <property name="paddingBottom">1pt</property>
-                                        <property name="paddingRight">1pt</property>
-                                        <structure name="numberFormat">
-                                            <property name="category">Currency</property>
-                                            <property name="pattern">#,##0.00;(#,##0.00){RoundingMode=UNNECESSARY}</property>
-                                        </structure>
-                                        <property name="textAlign">right</property>
-                                        <property name="letterSpacing">normal</property>
-                                        <property name="lineHeight">normal</property>
-                                        <property name="orphans">2</property>
-                                        <property name="textTransform">none</property>
-                                        <property name="whiteSpace">normal</property>
-                                        <property name="widows">2</property>
-                                        <property name="wordSpacing">normal</property>
-                                        <property name="display">block</property>
-                                        <property name="pageBreakAfter">auto</property>
-                                        <property name="pageBreakBefore">auto</property>
-                                        <property name="pageBreakInside">auto</property>
-                                        <property name="showIfBlank">false</property>
-                                        <property name="canShrink">false</property>
-                                        <property name="overflow">hidden</property>
-                                        <property name="dataSet">variabili_report1</property>
-                                        <list-property name="boundDataColumns">
-                                            <structure>
-                                                <property name="name">anno_competenza</property>
-                                                <text-property name="displayName">anno_competenza</text-property>
-                                                <expression name="expression" type="javascript">dataSetRow["anno_competenza"]</expression>
-                                                <property name="dataType">string</property>
-                                            </structure>
-                                            <structure>
-                                                <property name="name">importo</property>
-                                                <text-property name="displayName">importo</text-property>
-                                                <expression name="expression" type="javascript">dataSetRow["importo"]</expression>
-                                                <property name="dataType">decimal</property>
-                                            </structure>
-                                            <structure>
-                                                <property name="name">descrizione</property>
-                                                <text-property name="displayName">descrizione</text-property>
-                                                <expression name="expression" type="javascript">dataSetRow["descrizione"]</expression>
-                                                <property name="dataType">string</property>
-                                            </structure>
-                                            <structure>
-                                                <property name="name">posizione_nel_report</property>
-                                                <text-property name="displayName">posizione_nel_report</text-property>
-                                                <expression name="expression" type="javascript">dataSetRow["posizione_nel_report"]</expression>
-                                                <property name="dataType">integer</property>
-                                            </structure>
-                                            <structure>
-                                                <property name="name">codice_importo</property>
-                                                <text-property name="displayName">codice_importo</text-property>
-                                                <expression name="expression" type="javascript">dataSetRow["codice_importo"]</expression>
-                                                <property name="dataType">string</property>
-                                            </structure>
-                                            <structure>
-                                                <property name="name">disavanzo_amm_prec</property>
-                                                <text-property name="displayName">disavanzo_amm_prec</text-property>
-                                                <expression name="expression" type="javascript">dataSetRow["disavanzo_amm_prec"]</expression>
-                                                <property name="dataType">float</property>
-                                            </structure>
-                                            <structure>
-                                                <property name="name">tot_generale_anno_prec</property>
-                                                <text-property name="displayName">tot_generale_anno_prec</text-property>
-                                                <expression name="expression" type="javascript">row["disavanzo_amm_prec"]+row._outer._outer["TotaleStanzaAnnoPrecMissioni"]</expression>
-                                                <property name="dataType">decimal</property>
-                                                <property name="allowExport">true</property>
-                                            </structure>
-                                        </list-property>
-                                        <property name="resultSetColumn">tot_generale_anno_prec</property>
-                                    </data>
-                                </cell>
-                            </row>
-                        </grid>
+                            <property name="resultSetColumn">tot_generale_anno_prec</property>
+                        </data>
                     </cell>
                     <cell id="320">
                         <property name="borderBottomStyle">solid</property>

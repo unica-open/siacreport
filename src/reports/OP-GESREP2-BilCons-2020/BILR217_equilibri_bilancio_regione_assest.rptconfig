@@ -14,15 +14,19 @@
             <property name="value"></property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__nome_report_3930_3</property>
+            <property name="name">__isdisplay__Numero Variazione_72_3</property>
+            <property name="value">22</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_3930_4</property>
             <property name="value">BILR006</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__data del giorno_3585_4</property>
+            <property name="name">__isdisplay__data del giorno_3585_5</property>
             <property name="value">Con data del giorno</property>
         </structure>
         <structure>
-            <property name="name">Titolo aggiuntivo_11211_5</property>
+            <property name="name">Titolo aggiuntivo_11211_6</property>
             <property name="value"></property>
         </structure>
         <structure>
@@ -30,7 +34,7 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">nome_report_3930_6</property>
+            <property name="name">nome_report_3930_7</property>
             <property name="value">BILR006</property>
         </structure>
         <structure>
@@ -38,7 +42,7 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">anno_bilancio_1208_7</property>
+            <property name="name">anno_bilancio_1208_8</property>
             <property name="value">2019</property>
         </structure>
         <structure>
@@ -46,7 +50,7 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">data del giorno_3585_8</property>
+            <property name="name">data del giorno_3585_9</property>
             <property name="value">S</property>
         </structure>
         <structure>
@@ -54,7 +58,15 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_3044_9</property>
+            <property name="name">Numero Variazione_72_10</property>
+            <property name="value">22</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_72_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3044_11</property>
             <property name="value">2</property>
         </structure>
         <structure>

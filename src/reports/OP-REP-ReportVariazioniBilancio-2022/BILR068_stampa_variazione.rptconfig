@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_3401_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_3154_2</property>
+            <property name="value">BILR068</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Variazione_3402_3</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno Variazione_6771_4</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5193_5</property>
+            <property name="value">Organo emettitore delibera_5193</property>
+        </structure>
+        <structure>
+            <property name="name">Organo emettitore delibera_5193_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Organo emettitore delibera_5193_expr_</property>
+            <property name="value">dataSetRow["msg_stampa"]</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_6</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Variazione_6771_7</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Variazione_6771_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_3154_8</property>
+            <property name="value">BILR068</property>
+        </structure>
+        <structure>
+            <property name="name">report_3154_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_3402_9</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_3402_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_10</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

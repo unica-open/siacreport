@@ -2186,6 +2186,27 @@ else if (row["codice_raggruppamento"]=='B') {&#13;
                     <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">Anno</property>
+                    <text-property name="displayName">Anno</text-property>
+                    <expression name="expression" type="javascript">params["anno_bilancio"].value</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">anno_meno_1</property>
+                    <text-property name="displayName">anno_meno_1</text-property>
+                    <expression name="expression" type="javascript">params["anno_bilancio"].value</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno_meno_1</property>
+                    <text-property name="displayName">Anno_meno_1</text-property>
+                    <expression name="expression" type="javascript">(new Number(params["anno_bilancio"].value)-1).toString()</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <property name="pageBreakInterval">400</property>
             <column id="3690">
@@ -2232,22 +2253,20 @@ else if (row["codice_raggruppamento"]=='B') {&#13;
                         <property name="borderLeftWidth">thin</property>
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <text id="3721">
+                        <text-data id="11216">
                             <property name="fontWeight">bold</property>
-                            <property name="textAlign">center</property>
-                            <property name="contentType">auto</property>
-                            <text-property name="content"><![CDATA[Anno]]></text-property>
-                        </text>
+                            <expression name="valueExpr">"Anno " +row["Anno"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
                     </cell>
                     <cell id="3714">
                         <property name="borderLeftStyle">solid</property>
                         <property name="borderLeftWidth">thin</property>
-                        <text id="3722">
+                        <text-data id="11217">
                             <property name="fontWeight">bold</property>
-                            <property name="textAlign">center</property>
-                            <property name="contentType">auto</property>
-                            <text-property name="content"><![CDATA[Anno -1]]></text-property>
-                        </text>
+                            <expression name="valueExpr">"Anno " +row["Anno_meno_1"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
                     </cell>
                     <cell id="3724">
                         <property name="borderLeftStyle">solid</property>

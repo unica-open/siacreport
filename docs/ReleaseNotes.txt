@@ -4,224 +4,436 @@ SIAC BIL REPORT
 
 Funzionalità rilasciate
 
- build 07/10/2019 versione 4.12.0
-  SIAC-6843
-  SIAC-7014
-  SIAC-7036
-  
- build 24/07/2019 versione 4.11.0
-  SIAC-6854
-  SIAC-6719
-
- build 26/06/2019 versione 4.10.0
-  SIAC-6844
-  SIAC-6845
-  SIAC-6875
-  SIAC-6912
-   
- build 29/05/2019 versione 4.9.0
-  SIAC-6799
-  SIAC-6797
-  SIAC-6853
-  SIAC-6849
-  SIAC-6611
-  SIAC-6856
-  
- build 29/04/2019 versione 4.8.0
-  SIAC-6694
-  SIAC-6789
-  SIAC-6745
-  
-  
- build 27/03/2019 versione 4.7.0
-  SIAC-6623 (Attenzione, nelle cartelle Cartelle OP-GESREP1-BilPrev-2018 e OP-GESREP2-BilPrev-2018 occorre cancellare il report: BILR171_Allegato_B_Fondo_Pluriennale_vincolato_gestione).
-  SIAC-6729
-  SIAC-6734
-  SIAC-6740
-
- build 06/03/2019 versione 4.6.0
-  SIAC-6331
-  
- build 13/02/2019 versione 4.5.0
-  SIAC-6257
-  SIAC-6664
-  SIAC-6629
-
- build 23/01/2019 versione 4.4.0
-  SIAC-6533
-
- build 09/01/2019 versione 4.3.0
-  SIAC-6511
-
- build 22/11/2018 versione 4.2.0 
-  SIAC-6543(.1)
-  SIAC-6566 (Patch)
+build 30/10/2023 versione 4.49.0
+ Siac-task issue #212
  
- build 22/11/2018 versione 4.2.0 
-  SIAC-6543(.1)
+build 30/09/2023 versione 4.48.0
+ siac-tasks Issue #186
+ 
+build 31/08/2023 versione 4.47.0
+ siac-tasks#165
+ SIAC-8854
+ 
+build 14/07/2023 versione 4.46.0
+ SIAC-8866
+ 
+build 31/05/2023 versione 4.45.0
+ siac-task-issues #106
+ siac-task-issues #87
+ SIAC-8857
+ siac-task-issue #24
+ 
+build 31/03/2023 versione 4.44.0
+ siac-tasks-Issues#49
+ siac-tasks-Issues#70
+ SIAC-8335
+ 
+build 30/11/2022 versione 4.43.0
+ SIAC-8803
+ SIAC-8805
+ SIAC-8849
+ SIAC-8836
+ SIAC-8874
+ 
+build 28/10/2022 versione 4.42.0
+ SIAC-8789
+ SIAC-8664
+ SIAC-8656
+ SIAC-8820
+ 
+build 30/09/2022 versione 4.41.0
+ SIAC-8796
+ SIAC-8718
+ 
+build 29/07/2022 versione 4.40.0
+ SIAC-8788
+ 
+build 29/07/2022 versione 4.39.0
+ SIAC-8757
+ SIAC-8756
+ 
+build 31/05/2022 versione 4.38.0
+ SIAC-8715
+ SIAC-8724
+ SIAC-8721
+ SIAC-8714
+ 
+build 29/04/2022 versione 4.37.0
+ SIAC-8680
+ SIAC-8634
+ 
+build 31/03/2022 versione 4.36.0
+ SIAC-8412
+ SIAC-8642
+
+build 28/01/2022 versione 4.35.0
+ SIAC-8520
+ SIAC-8564
+ SIAC-8385
+ SIAC-8567
+ SIAC-8575
+ SIAC-8623
+ 
+build 30/12/2021 versione 4.34.0
+ SIAC-8238
+ SIAC-8514
+ SIAC-8522
+ SIAC-8515
+ SIAC-8545
+
+ 
+build 26/11/2021 versione 4.33.0
+ SIAC-8298
+ SIAC-8484
+ 
+build 31/10/2021 versione 4.32.0
+ SIAC-8344
+ 
+build 30/09/2021 versione 4.31.0
+ SIAC-8337
+	
+build 30/09/2021 versione 4.30.0
+ SIAC-8297
+ SIAC-8329
+ 
+build 30/07/2021 versione 4.29.0
+ SIAC-8139
+ SIAC-8152
+ SIAC-8285
+ SIAC-8294
+ SIAC-8295
+ SIAC-8299
+ 
+build 28/06/2021 versione 4.28.0
+ SIAC-7790
+ 
+build 28/05/2021 versione 4.27.0
+ SIAC-8176
+ SIAC-8179
+ SIAC-8162
+ SIAC-8179
+ SIAC-8202
+ SIAC-8204
+ SIAC-8000
+ SIAC-8205
+ 
+build 30/04/2021 versione 4.26.0
+ SIAC-8103
+ SIAC-8172
+ SIAC-7874
+ 
+build 29/01/2021 versione 4.25.0
+ SIAC-7940
+ SIAC-7878
+ SIAC-7974
+ SIAC-7981
+ SIAC-7762
+ SIAC-7933
+ SIAC-8019
+ 
+build 18/12/2020 versione 4.24.0
+ SIAC-7887
+ SIAC-7865
+ SIAC-7883
+ SIAC-7877
+ SIAC-7875
+ SIAC-7929
+ 
+build 30/10/2020 versione 4.23.0
+ SIAC-7702
+ SIAC-7761
+ SIAC-7797
+ SIAC-7767
+ SIAC-7841
+ SIAC-7812
+ SIAC-7866
+ 
+build 29/07/2020 versione 4.22.0
+ SIAC-7676
+
+build 26/06/2020 versione 4.21.0
+ SIAC-7655
+ SIAC-7671
+ SIAC-7656
+ SIAC-7670
+ SIAC-7666
+ SIAC-7669
+ SIAC-7673
+ SIAC-7674
+ SIAC-7675
+ 
+build 29/05/2020 versione 4.20.0
+ SIAC-7570
+ SIAC-7195
+
+build 30/04/2020 versione 4.19.0
+ SIAC-7527
+ SIAC-6864
+ SIAC-7498
+ SIAC-7465
+ SIAC-7426
+ SIAC-7582
+ 
+build 18/03/2020 versione 4.18.0
+ SIAC-7192
+
+build 28/02/2020 versione 4.17.0
+ SIAC-7410
+ SIAC-7424
+
+build 12/02/2020 versione 4.17.0
+ SIAC-7366
+ SIAC-7392
+ 
+build 28/01/2020 versione 4.16.0
+ SIAC-7311
+ SIAC-7162
+ SIAC-7332
+ SIAC-7291
+ SIAC-7278
+ 
+build 18/12/2019 versione 4.15.0
+ SIAC-7249
+ SIAC-7261
+ SIAC-7226
+ SIAC-7275
+ SIAC-6868
+ SIAC-7289
+build 27/11/2019 versione 4.14.0
+ SIAC-7041
+ SIAC-7211
+ SIAC-7212
+ SIAC-7213
+ SIAC-7214
+ SIAC-7221
+ SIAC-7229
+
+build 22/10/2019 versione 4.13.0
+ SIAC-7012
+ SIAC-7074
+ SIAC-7075
+ SIAC-7076
+ SIAC-7079
+ SIAC-7096
+
+build 07/10/2019 versione 4.12.0
+ SIAC-6843
+ SIAC-7014
+ SIAC-7036
+
+build 24/07/2019 versione 4.11.0
+ SIAC-6854
+ SIAC-6719
+
+build 26/06/2019 versione 4.10.0
+ SIAC-6844
+ SIAC-6845
+ SIAC-6875
+ SIAC-6912
+
+build 29/05/2019 versione 4.9.0
+ SIAC-6799
+ SIAC-6797
+ SIAC-6853
+ SIAC-6849
+ SIAC-6611
+ SIAC-6856
+
+build 29/04/2019 versione 4.8.0
+ SIAC-6694
+ SIAC-6789
+ SIAC-6745
 
 
- build 08/11/2018 versione 4.1.0 
-  SIAC-6486
+build 27/03/2019 versione 4.7.0
+ SIAC-6623 (Attenzione, nelle cartelle Cartelle OP-GESREP1-BilPrev-2018 e OP-GESREP2-BilPrev-2018 occorre cancellare il report: BILR171_Allegato_B_Fondo_Pluriennale_vincolato_gestione).
+ SIAC-6729
+ SIAC-6734
+ SIAC-6740
 
- build 25/10/2018 versione 4.0.0 
-  SIAC-6464
-  incremento versione per modifiche architettura
-  
+build 06/03/2019 versione 4.6.0
+ SIAC-6331
 
- build 18/10/2018 versione 3.47.0 
-  SIAC-6461
+build 13/02/2019 versione 4.5.0
+ SIAC-6257
+ SIAC-6664
+ SIAC-6629
 
- 
- build 11/10/2018 versione 3.46.0 
-  SIAC-6454
-  SIAC-6360
-  
- build 04/10/2018 versione 3.45.0 
-  SIAC-6333
- 
- build 27/09/2018 versione 3.44.0 
-  SIAC-6433
-  SIAC-6334
-  
- build 20/09/2018 versione 3.43.0 
-  SIAC-6335
-  
- build 06/09/2018 versione 3.42.0 
-  SIAC-6266
-  
- build 26/07/2018 versione 3.41.0 
-  SIAC-6314
-  SIAC-6341
-  SIAC-6345
- 
- build 19/07/2018 versione 3.40.0 
-  SIAC-6271
-  SIAC-6345
-  
- build 12/07/2018 versione 3.39.0 
-  SIAC-6320
-  
- build 05/07/2018 versione 3.38.0 
-  SIAC-6237
-  SIAC-6283
-  SIAC-6270
-  
- build 28/06/2018 versione 3.37.0 
-  SIAC-6216
-  SIAC-6217
-  SIAC-6250
-  SIAC-6256
-    
- build 21/06/2018 versione 3.36.0 
-  SIAC-6239
-  
- build 14/06/2018 versione 3.35.0 
-  SIAC-6200
-  SIAC-6201
-  SIAC-6190
-  SIAC-6244
-  SIAC-6245
-  
- build 07/06/2018 versione 3.34.0 
-  SIAC-6224
-  SIAC-6197
- 
- build 24/05/2018 versione 3.33.0 
-  SIAC-6163
-  SIAC-6076
-  SIAC-6167
-  SIAC-6191
-  
- build 17/05/2018 versione 3.32.0 
-  SIAC-6152
-  SIAC-6144
-  
- build 10/05/2018 versione 3.31.0 
-  SIAC-6131
-  SIAC-6142
-  
- build 03/05/2018 versione 3.30.0 
-  SIAC-6055
-  
- build 26/04/2018 versione 3.29.0 
-  SIAC-6114
-  SIAC-6115
-  SIAC-6117
-  
- build 19/04/2018 versione 3.28.0 
-  SIAC-6089
-  SIAC-6109
-  SIAC-5427
-  
- build 12/04/2018 versione 3.27.0 
-  SIAC-6065
-  SIAC-6118
-  
- build 05/04/2018 versione 3.26.0 
-  SIAC-5463
-  SIAC-6071
-  SIAC-6094
-  SIAC-6093
-  
- build 29/03/2018 versione 3.25.0 
-  SIAC-5901
- 
- build 22/03/2018 versione 3.24.0 
-  SIAC-5900
-  SIAC-6036
- 
- build 15/03/2018 versione 3.23.0 
+build 23/01/2019 versione 4.4.0
+ SIAC-6533
+
+build 09/01/2019 versione 4.3.0
+ SIAC-6511
+
+build 22/11/2018 versione 4.2.0
+ SIAC-6543(.1)
+ SIAC-6566 (Patch)
+
+build 22/11/2018 versione 4.2.0
+ SIAC-6543(.1)
+
+
+build 08/11/2018 versione 4.1.0
+ SIAC-6486
+
+build 25/10/2018 versione 4.0.0
+ SIAC-6464
+ incremento versione per modifiche architettura
+
+
+build 18/10/2018 versione 3.47.0
+ SIAC-6461
+
+
+build 11/10/2018 versione 3.46.0
+ SIAC-6454
+ SIAC-6360
+
+build 04/10/2018 versione 3.45.0
+ SIAC-6333
+
+build 27/09/2018 versione 3.44.0
+ SIAC-6433
+ SIAC-6334
+
+build 20/09/2018 versione 3.43.0
+ SIAC-6335
+
+build 06/09/2018 versione 3.42.0
+ SIAC-6266
+
+build 26/07/2018 versione 3.41.0
+ SIAC-6314
+ SIAC-6341
+ SIAC-6345
+
+build 19/07/2018 versione 3.40.0
+ SIAC-6271
+ SIAC-6345
+
+build 12/07/2018 versione 3.39.0
+ SIAC-6320
+
+build 05/07/2018 versione 3.38.0
+ SIAC-6237
+ SIAC-6283
+ SIAC-6270
+
+build 28/06/2018 versione 3.37.0
+ SIAC-6216
+ SIAC-6217
+ SIAC-6250
+ SIAC-6256
+
+build 21/06/2018 versione 3.36.0
+ SIAC-6239
+
+build 14/06/2018 versione 3.35.0
+ SIAC-6200
+ SIAC-6201
+ SIAC-6190
+ SIAC-6244
+ SIAC-6245
+
+build 07/06/2018 versione 3.34.0
+ SIAC-6224
+ SIAC-6197
+
+build 24/05/2018 versione 3.33.0
+ SIAC-6163
+ SIAC-6076
+ SIAC-6167
+ SIAC-6191
+
+build 17/05/2018 versione 3.32.0
+ SIAC-6152
+ SIAC-6144
+
+build 10/05/2018 versione 3.31.0
+ SIAC-6131
+ SIAC-6142
+
+build 03/05/2018 versione 3.30.0
+ SIAC-6055
+
+build 26/04/2018 versione 3.29.0
+ SIAC-6114
+ SIAC-6115
+ SIAC-6117
+
+build 19/04/2018 versione 3.28.0
+ SIAC-6089
+ SIAC-6109
+ SIAC-5427
+
+build 12/04/2018 versione 3.27.0
+ SIAC-6065
+ SIAC-6118
+
+build 05/04/2018 versione 3.26.0
+ SIAC-5463
+ SIAC-6071
+ SIAC-6094
+ SIAC-6093
+
+build 29/03/2018 versione 3.25.0
+ SIAC-5901
+
+build 22/03/2018 versione 3.24.0
+ SIAC-5900
+ SIAC-6036
+
+build 15/03/2018 versione 3.23.0
  SIAC-6010
  SIAC-5303
  SIAC-5986
- 
- build 22/02/2018 versione 3.22.0 
+
+build 22/02/2018 versione 3.22.0
  SIAC-5942
  SIAC-5472
  SIAC-5866
  SIAC-5884
- 
-build 15/02/2018 versione 3.21.0 
- SIAC-5809 
- 
-build 18/01/2018 versione 3.20.0 
+
+build 15/02/2018 versione 3.21.0
+ SIAC-5809
+
+build 18/01/2018 versione 3.20.0
  SIAC-5781
- 
-build 11/01/2018 versione 3.19.0 
+
+build 11/01/2018 versione 3.19.0
  SIAC-5714
 
 build 21/12/2017 versione 3.18.0
  SIAC-5525
- 
+
 build 14/12/2017 versione 3.17.0
  SIAC-5556
- 
+
 build 23/11/2017 versione 3.16.0
  SIAC-5478
- 
+
 build 16/11/2017 versione 3.15.0
  SIAC-5420
  SIAC-5530
  SIAC-5338
- 
+
 build 09/11/2017 versione 3.14.0
  SIAC-5521
- 
+
 build 26/10/2017 versione 3.13.0
  SIAC-5329
  SIAC-5289
- 
+
 build 12/10/2017 versione 3.11.0
  SIAC-5271
  SIAC-5352
- 
+
 build 05/10/2017 versione 3.10.0
  SIAC-5255
  SIAC-5119
 
 build 28/09/2017 versione 3.9.0
- SIAC-5306 
+ SIAC-5306
 
 build 31/08/2017 versione 3.5.0
  SIAC-5157

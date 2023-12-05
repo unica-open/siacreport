@@ -838,6 +838,11 @@
                         <property name="name">attivita_desc</property>
                         <property name="dataType">string</property>
                     </structure>
+                    <structure>
+                        <property name="position">50</property>
+                        <property name="name">conto_tesoreria</property>
+                        <property name="dataType">string</property>
+                    </structure>
                 </list-property>
             </structure>
             <property name="dataSource">DataSourceMandati</property>
@@ -847,343 +852,300 @@
                     <property name="name">nome_ente</property>
                     <property name="nativeName">nome_ente</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">2</property>
                     <property name="name">partita_iva_ente</property>
                     <property name="nativeName">partita_iva_ente</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">3</property>
                     <property name="name">anno_ese_finanz</property>
                     <property name="nativeName">anno_ese_finanz</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">4</property>
                     <property name="name">anno_mandato</property>
                     <property name="nativeName">anno_mandato</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">5</property>
                     <property name="name">numero_mandato</property>
                     <property name="nativeName">numero_mandato</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">6</property>
                     <property name="name">data_mandato</property>
                     <property name="nativeName">data_mandato</property>
                     <property name="dataType">date</property>
-                    <property name="nativeDataType">91</property>
                 </structure>
                 <structure>
                     <property name="position">7</property>
                     <property name="name">desc_mandato</property>
                     <property name="nativeName">desc_mandato</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">8</property>
                     <property name="name">benef_codice</property>
                     <property name="nativeName">benef_codice</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">9</property>
                     <property name="name">benef_cod_fiscale</property>
                     <property name="nativeName">benef_cod_fiscale</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">10</property>
                     <property name="name">benef_partita_iva</property>
                     <property name="nativeName">benef_partita_iva</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">11</property>
                     <property name="name">benef_nome</property>
                     <property name="nativeName">benef_nome</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">12</property>
                     <property name="name">stato_mandato</property>
                     <property name="nativeName">stato_mandato</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">13</property>
                     <property name="name">importo_lordo_mandato</property>
                     <property name="nativeName">importo_lordo_mandato</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">14</property>
                     <property name="name">tipo_ritenuta_irpef</property>
                     <property name="nativeName">tipo_ritenuta_irpef</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">15</property>
                     <property name="name">codice_tributo_irpef</property>
                     <property name="nativeName">codice_tributo_irpef</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">16</property>
                     <property name="name">importo_ritenuta_irpef</property>
                     <property name="nativeName">importo_ritenuta_irpef</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">17</property>
                     <property name="name">importo_netto_irpef</property>
                     <property name="nativeName">importo_netto_irpef</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">18</property>
                     <property name="name">importo_imponibile_irpef</property>
                     <property name="nativeName">importo_imponibile_irpef</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">19</property>
                     <property name="name">codice_risc</property>
                     <property name="nativeName">codice_risc</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">20</property>
                     <property name="name">tipo_ritenuta_inps</property>
                     <property name="nativeName">tipo_ritenuta_inps</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">21</property>
                     <property name="name">codice_tributo_inps</property>
                     <property name="nativeName">codice_tributo_inps</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">22</property>
                     <property name="name">importo_ritenuta_inps</property>
                     <property name="nativeName">importo_ritenuta_inps</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">23</property>
                     <property name="name">importo_netto_inps</property>
                     <property name="nativeName">importo_netto_inps</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">24</property>
                     <property name="name">importo_imponibile_inps</property>
                     <property name="nativeName">importo_imponibile_inps</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">25</property>
                     <property name="name">importo_ente_inps</property>
                     <property name="nativeName">importo_ente_inps</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">26</property>
                     <property name="name">tipo_ritenuta_irap</property>
                     <property name="nativeName">tipo_ritenuta_irap</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">27</property>
                     <property name="name">importo_ritenuta_irap</property>
                     <property name="nativeName">importo_ritenuta_irap</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">28</property>
                     <property name="name">importo_netto_irap</property>
                     <property name="nativeName">importo_netto_irap</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">29</property>
                     <property name="name">importo_imponibile_irap</property>
                     <property name="nativeName">importo_imponibile_irap</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">30</property>
                     <property name="name">codice_ritenuta_irap</property>
                     <property name="nativeName">codice_ritenuta_irap</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">31</property>
                     <property name="name">desc_ritenuta_irap</property>
                     <property name="nativeName">desc_ritenuta_irap</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">32</property>
                     <property name="name">importo_ente_irap</property>
                     <property name="nativeName">importo_ente_irap</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">33</property>
                     <property name="name">display_error</property>
                     <property name="nativeName">display_error</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">34</property>
                     <property name="name">tipo_ritenuta_irpeg</property>
                     <property name="nativeName">tipo_ritenuta_irpeg</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">35</property>
                     <property name="name">codice_tributo_irpeg</property>
                     <property name="nativeName">codice_tributo_irpeg</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">36</property>
                     <property name="name">importo_ritenuta_irpeg</property>
                     <property name="nativeName">importo_ritenuta_irpeg</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">37</property>
                     <property name="name">importo_netto_irpeg</property>
                     <property name="nativeName">importo_netto_irpeg</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">38</property>
                     <property name="name">importo_imponibile_irpeg</property>
                     <property name="nativeName">importo_imponibile_irpeg</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">39</property>
                     <property name="name">codice_ritenuta_irpeg</property>
                     <property name="nativeName">codice_ritenuta_irpeg</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">40</property>
                     <property name="name">desc_ritenuta_irpeg</property>
                     <property name="nativeName">desc_ritenuta_irpeg</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">41</property>
                     <property name="name">importo_ente_irpeg</property>
                     <property name="nativeName">importo_ente_irpeg</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">42</property>
                     <property name="name">code_caus_770</property>
                     <property name="nativeName">code_caus_770</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">43</property>
                     <property name="name">desc_caus_770</property>
                     <property name="nativeName">desc_caus_770</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">44</property>
                     <property name="name">code_caus_esenz</property>
                     <property name="nativeName">code_caus_esenz</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">45</property>
                     <property name="name">desc_caus_esenz</property>
                     <property name="nativeName">desc_caus_esenz</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">46</property>
                     <property name="name">attivita_inizio</property>
                     <property name="nativeName">attivita_inizio</property>
                     <property name="dataType">date</property>
-                    <property name="nativeDataType">91</property>
                 </structure>
                 <structure>
                     <property name="position">47</property>
                     <property name="name">attivita_fine</property>
                     <property name="nativeName">attivita_fine</property>
                     <property name="dataType">date</property>
-                    <property name="nativeDataType">91</property>
                 </structure>
                 <structure>
                     <property name="position">48</property>
                     <property name="name">attivita_code</property>
                     <property name="nativeName">attivita_code</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">49</property>
                     <property name="name">attivita_desc</property>
                     <property name="nativeName">attivita_desc</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">50</property>
+                    <property name="name">conto_tesoreria</property>
+                    <property name="nativeName">conto_tesoreria</property>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select distinct *
@@ -1896,7 +1858,7 @@ strTipo+mioPeriodo;</expression>
     </page-setup>
     <body>
         <table name="TableMandatiIRPEF" id="17">
-            <property name="width">11.135416666666666in</property>
+            <property name="width">11.177083333333334in</property>
             <property name="dataSet">DataSetDatiMandato</property>
             <list-property name="visibility">
                 <structure>
@@ -2204,6 +2166,52 @@ strTipo+mioPeriodo;</expression>
                     <expression name="expression" type="javascript">dataSetRow["desc_caus_esenz"]</expression>
                     <property name="dataType">string</property>
                 </structure>
+                <structure>
+                    <property name="name">attivita_inizio</property>
+                    <text-property name="displayName">attivita_inizio</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_inizio"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_fine</property>
+                    <text-property name="displayName">attivita_fine</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_fine"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_code</property>
+                    <text-property name="displayName">attivita_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_desc</property>
+                    <text-property name="displayName">attivita_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">conto_tesoreria</property>
+                    <text-property name="displayName">conto_tesoreria</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["conto_tesoreria"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TotRitenuteIrpefTributoConto</property>
+                    <text-property name="displayName">TotRitenuteIrpefTributoConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_ritenuta_irpef"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <list-property name="filter">
                 <structure>
@@ -2233,25 +2241,28 @@ strTipo+mioPeriodo;</expression>
             <column id="2125">
                 <property name="width">0.625in</property>
             </column>
+            <column id="2242">
+                <property name="width">0.5833333333333334in</property>
+            </column>
             <column id="52">
-                <property name="width">1.1979166666666667in</property>
+                <property name="width">1.0208333333333333in</property>
             </column>
             <column id="53">
-                <property name="width">1.1979166666666667in</property>
+                <property name="width">1.0208333333333333in</property>
             </column>
             <column id="54">
-                <property name="width">1.125in</property>
+                <property name="width">1.0208333333333333in</property>
             </column>
             <column id="55">
-                <property name="width">0.6770833333333334in</property>
+                <property name="width">0.75in</property>
             </column>
             <column id="56">
-                <property name="width">1.1979166666666667in</property>
+                <property name="width">1.0416666666666667in</property>
             </column>
             <header>
                 <row id="18">
                     <cell id="19">
-                        <property name="colSpan">11</property>
+                        <property name="colSpan">12</property>
                         <property name="rowSpan">1</property>
                     </cell>
                 </row>
@@ -2263,6 +2274,7 @@ strTipo+mioPeriodo;</expression>
                     <cell id="1371"/>
                     <cell id="2128"/>
                     <cell id="2118"/>
+                    <cell id="2235"/>
                     <cell id="1372"/>
                     <cell id="1373"/>
                     <cell id="1374"/>
@@ -2308,6 +2320,12 @@ strTipo+mioPeriodo;</expression>
                             <text-property name="content"><![CDATA[Causale Esenz.]]></text-property>
                         </text>
                     </cell>
+                    <cell id="2236">
+                        <text id="2243">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Conto]]></text-property>
+                        </text>
+                    </cell>
                     <cell id="1238">
                         <text id="1247">
                             <property name="contentType">auto</property>
@@ -2340,8 +2358,8 @@ strTipo+mioPeriodo;</expression>
                     </cell>
                 </row>
             </header>
-            <group id="1260">
-                <property name="groupName">GruppoCodTributo</property>
+            <group id="2297">
+                <property name="groupName">GruppoConto</property>
                 <expression name="keyExpr" type="javascript">row["codice_tributo_irpef"]</expression>
                 <structure name="toc">
                     <expression name="expressionValue" type="javascript">row["codice_tributo_irpef"]</expression>
@@ -2360,22 +2378,8 @@ strTipo+mioPeriodo;</expression>
                     </structure>
                 </list-property>
                 <footer>
-                    <row id="1307">
-                        <property name="height">0.08in</property>
-                        <cell id="1308"/>
-                        <cell id="1309"/>
-                        <cell id="1310"/>
-                        <cell id="1311"/>
-                        <cell id="2131"/>
-                        <cell id="2121"/>
-                        <cell id="1312"/>
-                        <cell id="1313"/>
-                        <cell id="1314"/>
-                        <cell id="1315"/>
-                        <cell id="1316"/>
-                    </row>
-                    <row id="1271">
-                        <cell id="1272">
+                    <row id="2311">
+                        <cell id="2312">
                             <property name="colSpan">3</property>
                             <property name="rowSpan">1</property>
                             <text id="1282">
@@ -2384,14 +2388,144 @@ strTipo+mioPeriodo;</expression>
                                 <text-property name="content"><![CDATA[Codice Tributo:]]></text-property>
                             </text>
                         </cell>
-                        <cell id="1275">
+                        <cell id="2329">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
                             <data id="1776">
                                 <property name="textAlign">center</property>
                                 <property name="resultSetColumn">codice_tributo_irpef</property>
                             </data>
                         </cell>
-                        <cell id="2132"/>
-                        <cell id="2122"/>
+                        <cell id="2346"/>
+                        <cell id="2347"/>
+                        <cell id="2348"/>
+                        <cell id="2319">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <text id="2325">
+                                <property name="textAlign">right</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Totale delle ritenute:]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="2321">
+                            <data id="2326">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotRitenuteIrpefTributoConto</property>
+                            </data>
+                        </cell>
+                        <cell id="2322"/>
+                        <cell id="2323"/>
+                    </row>
+                    <row id="2333">
+                        <property name="height">0.2in</property>
+                        <cell id="2334"/>
+                        <cell id="2335"/>
+                        <cell id="2336"/>
+                        <cell id="2337"/>
+                        <cell id="2338"/>
+                        <cell id="2339"/>
+                        <cell id="2340"/>
+                        <cell id="2341"/>
+                        <cell id="2342"/>
+                        <cell id="2343"/>
+                        <cell id="2344"/>
+                        <cell id="2345"/>
+                    </row>
+                </footer>
+            </group>
+            <group id="1260">
+                <property name="groupName">GruppoCodTributo</property>
+                <expression name="keyExpr" type="javascript">row["codice_tributo_irpef"]+row["conto_tesoreria"]</expression>
+                <property name="hideDetail">false</property>
+                <list-property name="sort">
+                    <structure>
+                        <expression name="key" type="javascript">row["codice_tributo_irpef"]</expression>
+                        <property name="direction">asc</property>
+                        <property name="strength">-1</property>
+                    </structure>
+                    <structure>
+                        <expression name="key" type="javascript">row["conto_tesoreria"]</expression>
+                        <property name="direction">asc</property>
+                        <property name="strength">-1</property>
+                    </structure>
+                    <structure>
+                        <expression name="key" type="javascript">row["numero_mandato"]</expression>
+                        <property name="direction">asc</property>
+                        <property name="strength">-1</property>
+                    </structure>
+                </list-property>
+                <footer>
+                    <row id="1271">
+                        <cell id="1272">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <text id="2324">
+                                <property name="textAlign">right</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Codice Conto/Tributo:]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1275">
+                            <property name="colSpan">4</property>
+                            <property name="rowSpan">1</property>
+                            <text-data id="2332">
+                                <expression name="valueExpr">row["codice_tributo_irpef"]+" / "+row["conto_tesoreria"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
                         <cell id="1276">
                             <property name="colSpan">2</property>
                             <property name="rowSpan">1</property>
@@ -2463,13 +2597,14 @@ strTipo+mioPeriodo;</expression>
                         <cell id="1280"/>
                     </row>
                     <row id="1779">
-                        <property name="height">0.3in</property>
+                        <property name="height">0.2in</property>
                         <cell id="1780"/>
                         <cell id="1781"/>
                         <cell id="1782"/>
                         <cell id="1783"/>
                         <cell id="2133"/>
                         <cell id="2123"/>
+                        <cell id="2240"/>
                         <cell id="1784"/>
                         <cell id="1785"/>
                         <cell id="1786"/>
@@ -2514,6 +2649,12 @@ strTipo+mioPeriodo;</expression>
                         <data id="2138">
                             <property name="textAlign">center</property>
                             <property name="resultSetColumn">code_caus_esenz</property>
+                        </data>
+                    </cell>
+                    <cell id="2237">
+                        <data id="2244">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">conto_tesoreria</property>
                         </data>
                     </cell>
                     <cell id="2058">
@@ -2720,6 +2861,7 @@ strTipo+mioPeriodo;</expression>
                     </cell>
                     <cell id="2134"/>
                     <cell id="2124"/>
+                    <cell id="2241"/>
                     <cell id="43">
                         <property name="colSpan">2</property>
                         <property name="rowSpan">1</property>
@@ -2793,7 +2935,7 @@ strTipo+mioPeriodo;</expression>
             </footer>
         </table>
         <table name="TableMandatiINPS" id="1389">
-            <property name="width">11.177083333333334in</property>
+            <property name="width">11.145833333333334in</property>
             <property name="dataSet">DataSetDatiMandato</property>
             <list-property name="visibility">
                 <structure>
@@ -3174,6 +3316,92 @@ strTipo+mioPeriodo;</expression>
                     <expression name="expression" type="javascript">dataSetRow["attivita_desc"]</expression>
                     <property name="dataType">string</property>
                 </structure>
+                <structure>
+                    <property name="name">conto_tesoreria</property>
+                    <text-property name="displayName">conto_tesoreria</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["conto_tesoreria"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TotImpLordoInpsConto</property>
+                    <text-property name="displayName">TotImpLordoInpsConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_lordo_mandato"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotImpInponInpsConto</property>
+                    <text-property name="displayName">TotImpInponInpsConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_imponibile_inps"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotImpRitenInpsConto</property>
+                    <text-property name="displayName">TotImpRitenInpsConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_ritenuta_inps"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotImpRitenInpsEnteConto</property>
+                    <text-property name="displayName">TotImpRitenInpsEnteConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_ente_inps"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotImpNettoInpsConto</property>
+                    <text-property name="displayName">TotImpNettoInpsConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_netto_inps"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <list-property name="filter">
                 <structure>
@@ -3186,7 +3414,7 @@ strTipo+mioPeriodo;</expression>
                 </structure>
             </list-property>
             <column id="1485">
-                <property name="width">2.03125in</property>
+                <property name="width">1.8229166666666667in</property>
             </column>
             <column id="1486">
                 <property name="width">0.4166666666666667in</property>
@@ -3203,28 +3431,31 @@ strTipo+mioPeriodo;</expression>
             <column id="2169">
                 <property name="width">0.7708333333333334in</property>
             </column>
+            <column id="2196">
+                <property name="width">0.5833333333333334in</property>
+            </column>
             <column id="1489">
-                <property name="width">1.09375in</property>
+                <property name="width">1.0208333333333333in</property>
             </column>
             <column id="1490">
-                <property name="width">1.09375in</property>
+                <property name="width">1.0104166666666667in</property>
             </column>
             <column id="1491">
-                <property name="width">1.09375in</property>
+                <property name="width">1.0104166666666667in</property>
             </column>
             <column id="1765">
-                <property name="width">1.09375in</property>
+                <property name="width">1.0104166666666667in</property>
             </column>
             <column id="1492">
                 <property name="width">0.75in</property>
             </column>
             <column id="1493">
-                <property name="width">1.0104166666666667in</property>
+                <property name="width">0.9270833333333334in</property>
             </column>
             <header>
                 <row id="1390">
                     <cell id="1391">
-                        <property name="colSpan">12</property>
+                        <property name="colSpan">13</property>
                         <property name="rowSpan">1</property>
                     </cell>
                 </row>
@@ -3236,6 +3467,7 @@ strTipo+mioPeriodo;</expression>
                     <cell id="2182"/>
                     <cell id="2171"/>
                     <cell id="2164"/>
+                    <cell id="2191"/>
                     <cell id="1398"/>
                     <cell id="1399"/>
                     <cell id="1400"/>
@@ -3282,6 +3514,12 @@ strTipo+mioPeriodo;</expression>
                             <text-property name="content"><![CDATA[Al]]></text-property>
                         </text>
                     </cell>
+                    <cell id="2192">
+                        <text id="2197">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Conto]]></text-property>
+                        </text>
+                    </cell>
                     <cell id="1412">
                         <text id="1413">
                             <property name="contentType">auto</property>
@@ -3320,6 +3558,318 @@ strTipo+mioPeriodo;</expression>
                     </cell>
                 </row>
             </header>
+            <group id="2199">
+                <property name="groupName">GruppoConto</property>
+                <expression name="keyExpr" type="javascript">row["conto_tesoreria"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["conto_tesoreria"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <footer>
+                    <row id="2214">
+                        <cell id="2215">
+                            <property name="colSpan">7</property>
+                            <property name="rowSpan">1</property>
+                            <text-data id="2228">
+                                <property name="textAlign">right</property>
+                                <expression name="valueExpr">"Totale Conto "+row["conto_tesoreria"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="2222">
+                            <data id="2229">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotImpLordoInpsConto</property>
+                            </data>
+                        </cell>
+                        <cell id="2223">
+                            <data id="2230">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotImpInponInpsConto</property>
+                            </data>
+                        </cell>
+                        <cell id="2224">
+                            <data id="2231">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotImpRitenInpsConto</property>
+                            </data>
+                        </cell>
+                        <cell id="2225">
+                            <data id="2232">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotImpRitenInpsEnteConto</property>
+                            </data>
+                        </cell>
+                        <cell id="2226"/>
+                        <cell id="2227">
+                            <data id="2233">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotImpNettoInpsConto</property>
+                            </data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
             <detail>
                 <row id="1494">
                     <cell id="1495">
@@ -3462,6 +4012,12 @@ strTipo+mioPeriodo;</expression>
                             <property name="canShrink">false</property>
                             <property name="overflow">hidden</property>
                             <property name="resultSetColumn">attivita_fine</property>
+                        </data>
+                    </cell>
+                    <cell id="2193">
+                        <data id="2198">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">conto_tesoreria</property>
                         </data>
                     </cell>
                     <cell id="1498">
@@ -3775,6 +4331,7 @@ strTipo+mioPeriodo;</expression>
                     <cell id="2185"/>
                     <cell id="2174"/>
                     <cell id="2167"/>
+                    <cell id="2194"/>
                     <cell id="1507"/>
                     <cell id="1508"/>
                     <cell id="1509"/>
@@ -3795,6 +4352,7 @@ strTipo+mioPeriodo;</expression>
                     <cell id="2186"/>
                     <cell id="2175"/>
                     <cell id="2168"/>
+                    <cell id="2195"/>
                     <cell id="1480">
                         <data id="1514">
                             <property name="backgroundAttachment">scroll</property>
@@ -4242,7 +4800,7 @@ strTipo+mioPeriodo;</expression>
                     <text-property name="displayName">TotRitenuteIrapCodRitenuta</text-property>
                     <property name="dataType">float</property>
                     <simple-property-list name="aggregateOn">
-                        <value>GruppoCodiceRitenuta</value>
+                        <value>GruppoRitenuta</value>
                     </simple-property-list>
                     <property name="aggregateFunction">SUM</property>
                     <list-property name="arguments">
@@ -4379,7 +4937,7 @@ strTipo+mioPeriodo;</expression>
                     <text-property name="displayName">TotImponibileIrapCodRitenuta</text-property>
                     <property name="dataType">float</property>
                     <simple-property-list name="aggregateOn">
-                        <value>GruppoCodiceRitenuta</value>
+                        <value>GruppoRitenuta</value>
                     </simple-property-list>
                     <property name="aggregateFunction">SUM</property>
                     <list-property name="arguments">
@@ -4399,6 +4957,92 @@ strTipo+mioPeriodo;</expression>
                         <structure>
                             <property name="name">Expression</property>
                             <expression name="value" type="javascript">row["importo_imponibile_irap"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">code_caus_770</property>
+                    <text-property name="displayName">code_caus_770</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["code_caus_770"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">desc_caus_770</property>
+                    <text-property name="displayName">desc_caus_770</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["desc_caus_770"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">code_caus_esenz</property>
+                    <text-property name="displayName">code_caus_esenz</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["code_caus_esenz"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">desc_caus_esenz</property>
+                    <text-property name="displayName">desc_caus_esenz</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["desc_caus_esenz"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_inizio</property>
+                    <text-property name="displayName">attivita_inizio</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_inizio"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_fine</property>
+                    <text-property name="displayName">attivita_fine</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_fine"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_code</property>
+                    <text-property name="displayName">attivita_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_desc</property>
+                    <text-property name="displayName">attivita_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">conto_tesoreria</property>
+                    <text-property name="displayName">conto_tesoreria</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["conto_tesoreria"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TotImponibileIrapCodRitenutaConto</property>
+                    <text-property name="displayName">TotImponibileIrapCodRitenutaConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoCodiceRitenutaConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_imponibile_irap"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotRitenuteIrapCodRitenutaConto</property>
+                    <text-property name="displayName">TotRitenuteIrapCodRitenutaConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoCodiceRitenutaConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_ente_irap"]</expression>
                         </structure>
                     </list-property>
                     <property name="allowExport">true</property>
@@ -4430,6 +5074,9 @@ strTipo+mioPeriodo;</expression>
             <column id="1709">
                 <property name="width">0.7291666666666666in</property>
             </column>
+            <column id="2254">
+                <property name="width">0.7291666666666666in</property>
+            </column>
             <column id="2112">
                 <property name="width">1.4270833333333333in</property>
             </column>
@@ -4439,7 +5086,7 @@ strTipo+mioPeriodo;</expression>
             <header>
                 <row id="1613">
                     <cell id="1614">
-                        <property name="colSpan">5</property>
+                        <property name="colSpan">6</property>
                         <property name="rowSpan">1</property>
                     </cell>
                 </row>
@@ -4448,91 +5095,31 @@ strTipo+mioPeriodo;</expression>
                     <cell id="1616"/>
                     <cell id="1617"/>
                     <cell id="1618"/>
+                    <cell id="2246"/>
                     <cell id="2104"/>
                     <cell id="1622"/>
                 </row>
             </header>
-            <group id="1644">
-                <property name="groupName">GruppoCodiceRitenuta</property>
+            <group id="2349">
+                <property name="groupName">GruppoRitenuta</property>
                 <expression name="keyExpr" type="javascript">row["codice_ritenuta_irap"]</expression>
                 <structure name="toc">
                     <expression name="expressionValue" type="javascript">row["codice_ritenuta_irap"]</expression>
                 </structure>
                 <property name="hideDetail">false</property>
-                <header>
-                    <row id="1716">
-                        <cell id="1717">
-                            <property name="colSpan">5</property>
-                            <property name="rowSpan">1</property>
-                            <text-data id="1734">
-                                <property name="textAlign">left</property>
-                                <expression name="valueExpr">"CODICE RITENUTA "+row["codice_ritenuta_irap"]+ " - "+row["desc_ritenuta_irap"]</expression>
-                                <property name="contentType">html</property>
-                            </text-data>
-                        </cell>
-                    </row>
-                    <row id="1725">
-                        <property name="borderBottomStyle">solid</property>
-                        <property name="borderBottomWidth">thin</property>
-                        <cell id="1726">
-                            <text id="1627">
-                                <property name="textAlign">center</property>
-                                <property name="contentType">auto</property>
-                                <text-property name="content"><![CDATA[Beneficiario]]></text-property>
-                            </text>
-                        </cell>
-                        <cell id="1727">
-                            <text id="1629">
-                                <property name="textAlign">center</property>
-                                <property name="contentType">auto</property>
-                                <text-property name="content"><![CDATA[Anno]]></text-property>
-                            </text>
-                        </cell>
-                        <cell id="1728">
-                            <text id="1631">
-                                <property name="textAlign">center</property>
-                                <property name="contentType">auto</property>
-                                <text-property name="content"><![CDATA[Mandato]]></text-property>
-                            </text>
-                        </cell>
-                        <cell id="2106">
-                            <text id="2113">
-                                <property name="textAlign">center</property>
-                                <property name="contentType">auto</property>
-                                <text-property name="content"><![CDATA[Imponibile]]></text-property>
-                            </text>
-                        </cell>
-                        <cell id="1731">
-                            <text id="1639">
-                                <property name="textAlign">center</property>
-                                <property name="contentType">auto</property>
-                                <text-property name="content"><![CDATA[IRAP]]></text-property>
-                            </text>
-                        </cell>
-                    </row>
-                </header>
                 <footer>
-                    <row id="1676">
-                        <property name="height">0.3020833333333333in</property>
-                        <cell id="1677"/>
-                        <cell id="1678"/>
-                        <cell id="1679"/>
-                        <cell id="2108"/>
-                        <cell id="1683"/>
-                    </row>
-                    <row id="1686">
-                        <cell id="1687">
-                            <property name="colSpan">1</property>
-                            <property name="rowSpan">1</property>
+                    <row id="2357">
+                        <cell id="2358">
                             <text-data id="1739">
                                 <property name="textAlign">right</property>
                                 <expression name="valueExpr">"TOTALE "+row["codice_ritenuta_irap"]</expression>
                                 <property name="contentType">html</property>
                             </text-data>
                         </cell>
-                        <cell id="1736"/>
-                        <cell id="1737"/>
-                        <cell id="2109">
+                        <cell id="2359"/>
+                        <cell id="2360"/>
+                        <cell id="2361"/>
+                        <cell id="2362">
                             <data id="2115">
                                 <property name="backgroundAttachment">scroll</property>
                                 <property name="backgroundPositionX">0%</property>
@@ -4590,7 +5177,7 @@ strTipo+mioPeriodo;</expression>
                                 <property name="resultSetColumn">TotImponibileIrapCodRitenuta</property>
                             </data>
                         </cell>
-                        <cell id="1693">
+                        <cell id="2363">
                             <data id="1694">
                                 <property name="backgroundAttachment">scroll</property>
                                 <property name="backgroundPositionX">0%</property>
@@ -4649,6 +5236,222 @@ strTipo+mioPeriodo;</expression>
                             </data>
                         </cell>
                     </row>
+                    <row id="2364">
+                        <property name="height">0.198in</property>
+                        <cell id="2365"/>
+                        <cell id="2366"/>
+                        <cell id="2367"/>
+                        <cell id="2368"/>
+                        <cell id="2369"/>
+                        <cell id="2370"/>
+                    </row>
+                </footer>
+            </group>
+            <group id="1644">
+                <property name="groupName">GruppoCodiceRitenutaConto</property>
+                <expression name="keyExpr" type="javascript">row["codice_ritenuta_irap"]+row["conto_tesoreria"]</expression>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="1716">
+                        <cell id="1717">
+                            <property name="colSpan">6</property>
+                            <property name="rowSpan">1</property>
+                            <text-data id="1734">
+                                <property name="textAlign">left</property>
+                                <expression name="valueExpr">"CODICE RITENUTA "+row["codice_ritenuta_irap"]+ " - "+row["desc_ritenuta_irap"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="1725">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <cell id="1726">
+                            <text id="1627">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Beneficiario]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1727">
+                            <text id="1629">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Anno]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1728">
+                            <text id="1631">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Mandato]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="2248">
+                            <text id="2255">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Conto]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="2106">
+                            <text id="2113">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Imponibile]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="1731">
+                            <text id="1639">
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[IRAP]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="1676">
+                        <property name="height">0.3020833333333333in</property>
+                        <cell id="1677">
+                            <text-data id="2372">
+                                <property name="textAlign">right</property>
+                                <expression name="valueExpr">"TOTALE "+row["codice_ritenuta_irap"]+ " / "+row["conto_tesoreria"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="1678"/>
+                        <cell id="1679"/>
+                        <cell id="2250"/>
+                        <cell id="2108">
+                            <data id="2373">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotImponibileIrapCodRitenutaConto</property>
+                            </data>
+                        </cell>
+                        <cell id="1683">
+                            <data id="2374">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotRitenuteIrapCodRitenutaConto</property>
+                            </data>
+                        </cell>
+                    </row>
+                    <row id="1686">
+                        <property name="height">0.19791666666666666in</property>
+                        <cell id="1687">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                        </cell>
+                        <cell id="1736"/>
+                        <cell id="1737"/>
+                        <cell id="2251"/>
+                        <cell id="2109"/>
+                        <cell id="1693"/>
+                    </row>
                 </footer>
             </group>
             <detail>
@@ -4669,6 +5472,12 @@ strTipo+mioPeriodo;</expression>
                         <data id="2079">
                             <property name="textAlign">right</property>
                             <property name="resultSetColumn">numero_mandato</property>
+                        </data>
+                    </cell>
+                    <cell id="2249">
+                        <data id="2256">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">conto_tesoreria</property>
                         </data>
                     </cell>
                     <cell id="2107">
@@ -4795,6 +5604,7 @@ strTipo+mioPeriodo;</expression>
                     <cell id="1741"/>
                     <cell id="1742"/>
                     <cell id="1743"/>
+                    <cell id="2252"/>
                     <cell id="2110"/>
                     <cell id="1744"/>
                 </row>
@@ -4807,6 +5617,7 @@ strTipo+mioPeriodo;</expression>
                     </cell>
                     <cell id="1699"/>
                     <cell id="1700"/>
+                    <cell id="2253"/>
                     <cell id="2111">
                         <data id="2116">
                             <property name="backgroundAttachment">scroll</property>
@@ -4927,7 +5738,7 @@ strTipo+mioPeriodo;</expression>
             </footer>
         </table>
         <table name="TableMandatiIRPEG" id="1891">
-            <property name="width">11.177083333333334in</property>
+            <property name="width">11.135416666666666in</property>
             <property name="dataSet">DataSetDatiMandato</property>
             <list-property name="visibility">
                 <structure>
@@ -5264,6 +6075,52 @@ strTipo+mioPeriodo;</expression>
                     <expression name="expression" type="javascript">dataSetRow["desc_caus_esenz"]</expression>
                     <property name="dataType">string</property>
                 </structure>
+                <structure>
+                    <property name="name">attivita_inizio</property>
+                    <text-property name="displayName">attivita_inizio</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_inizio"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_fine</property>
+                    <text-property name="displayName">attivita_fine</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_fine"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_code</property>
+                    <text-property name="displayName">attivita_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_desc</property>
+                    <text-property name="displayName">attivita_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">conto_tesoreria</property>
+                    <text-property name="displayName">conto_tesoreria</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["conto_tesoreria"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TotRitenuteIrpegConto</property>
+                    <text-property name="displayName">TotRitenuteIrpegConto</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GrppoTributoConto</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["importo_ritenuta_irpeg"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <list-property name="filter">
                 <structure>
@@ -5293,25 +6150,28 @@ strTipo+mioPeriodo;</expression>
             <column id="2148">
                 <property name="width">0.625in</property>
             </column>
+            <column id="2266">
+                <property name="width">0.625in</property>
+            </column>
             <column id="2011">
-                <property name="width">1.1979166666666667in</property>
+                <property name="width">1.0208333333333333in</property>
             </column>
             <column id="2012">
-                <property name="width">1.1979166666666667in</property>
+                <property name="width">1.0208333333333333in</property>
             </column>
             <column id="2013">
-                <property name="width">1.1354166666666667in</property>
+                <property name="width">1.0208333333333333in</property>
             </column>
             <column id="2014">
                 <property name="width">0.6770833333333334in</property>
             </column>
             <column id="2015">
-                <property name="width">1.2291666666666667in</property>
+                <property name="width">1.03125in</property>
             </column>
             <header>
                 <row id="1892">
                     <cell id="1893">
-                        <property name="colSpan">11</property>
+                        <property name="colSpan">12</property>
                         <property name="rowSpan">1</property>
                     </cell>
                 </row>
@@ -5323,6 +6183,7 @@ strTipo+mioPeriodo;</expression>
                     <cell id="1898"/>
                     <cell id="2150"/>
                     <cell id="2140"/>
+                    <cell id="2258"/>
                     <cell id="1899"/>
                     <cell id="1900"/>
                     <cell id="1901"/>
@@ -5366,6 +6227,13 @@ strTipo+mioPeriodo;</expression>
                         <text id="2160">
                             <property name="contentType">auto</property>
                             <text-property name="content"><![CDATA[Causale Esenz.]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="2259">
+                        <text id="2267">
+                            <property name="textAlign">center</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Conto]]></text-property>
                         </text>
                     </cell>
                     <cell id="1913">
@@ -5423,6 +6291,7 @@ strTipo+mioPeriodo;</expression>
                         <cell id="1959"/>
                         <cell id="2153"/>
                         <cell id="2143"/>
+                        <cell id="2261"/>
                         <cell id="1960"/>
                         <cell id="1961"/>
                         <cell id="1962"/>
@@ -5447,6 +6316,7 @@ strTipo+mioPeriodo;</expression>
                         </cell>
                         <cell id="2154"/>
                         <cell id="2144"/>
+                        <cell id="2262"/>
                         <cell id="1970">
                             <property name="colSpan">2</property>
                             <property name="rowSpan">1</property>
@@ -5525,11 +6395,135 @@ strTipo+mioPeriodo;</expression>
                         <cell id="1980"/>
                         <cell id="2155"/>
                         <cell id="2145"/>
+                        <cell id="2263"/>
                         <cell id="1981"/>
                         <cell id="1982"/>
                         <cell id="1983"/>
                         <cell id="1984"/>
                         <cell id="1985"/>
+                    </row>
+                </footer>
+            </group>
+            <group id="2375">
+                <property name="groupName">GrppoTributoConto</property>
+                <expression name="keyExpr" type="javascript">row["codice_tributo_irpeg"]+row["conto_tesoreria"]</expression>
+                <property name="hideDetail">false</property>
+                <list-property name="sort">
+                    <structure>
+                        <expression name="key" type="javascript">row["codice_tributo_irpeg"]</expression>
+                        <property name="direction">asc</property>
+                        <property name="strength">-1</property>
+                    </structure>
+                    <structure>
+                        <expression name="key" type="javascript">row["conto_tesoreria"]</expression>
+                        <property name="direction">asc</property>
+                        <property name="strength">-1</property>
+                    </structure>
+                </list-property>
+                <footer>
+                    <row id="2389">
+                        <cell id="2390">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <text id="2415">
+                                <property name="textAlign">right</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Codice Tributo/Conto:]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="2393">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <text-data id="2416">
+                                <expression name="valueExpr">row["codice_tributo_irpeg"]+ " / " +row["conto_tesoreria"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="2396"/>
+                        <cell id="2397">
+                            <property name="colSpan">2</property>
+                            <property name="rowSpan">1</property>
+                            <text id="2417">
+                                <property name="textAlign">right</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[Totale delle ritenute:]]></text-property>
+                            </text>
+                        </cell>
+                        <cell id="2399">
+                            <data id="2418">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">sans-serif</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">TotRitenuteIrpegConto</property>
+                            </data>
+                        </cell>
+                        <cell id="2400"/>
+                        <cell id="2401"/>
+                    </row>
+                    <row id="2402">
+                        <property name="height">0.19791666666666666in</property>
+                        <cell id="2403"/>
+                        <cell id="2404"/>
+                        <cell id="2405"/>
+                        <cell id="2406"/>
+                        <cell id="2407"/>
+                        <cell id="2408"/>
+                        <cell id="2409"/>
+                        <cell id="2410"/>
+                        <cell id="2411"/>
+                        <cell id="2412"/>
+                        <cell id="2413"/>
+                        <cell id="2414"/>
                     </row>
                 </footer>
             </group>
@@ -5569,6 +6563,11 @@ strTipo+mioPeriodo;</expression>
                         <data id="2162">
                             <property name="textAlign">center</property>
                             <property name="resultSetColumn">code_caus_esenz</property>
+                        </data>
+                    </cell>
+                    <cell id="2260">
+                        <data id="2268">
+                            <property name="resultSetColumn">conto_tesoreria</property>
                         </data>
                     </cell>
                     <cell id="2086">
@@ -5774,6 +6773,7 @@ strTipo+mioPeriodo;</expression>
                     </cell>
                     <cell id="2156"/>
                     <cell id="2146"/>
+                    <cell id="2264"/>
                     <cell id="1991"/>
                     <cell id="1992"/>
                     <cell id="1993"/>
@@ -5790,6 +6790,7 @@ strTipo+mioPeriodo;</expression>
                     </cell>
                     <cell id="2157"/>
                     <cell id="2147"/>
+                    <cell id="2265"/>
                     <cell id="2001">
                         <property name="colSpan">2</property>
                         <property name="rowSpan">1</property>
@@ -6117,6 +7118,60 @@ strTipo+mioPeriodo;</expression>
                     <property name="name">codice_tributo_irpeg</property>
                     <text-property name="displayName">codice_tributo_irpeg</text-property>
                     <expression name="expression" type="javascript">dataSetRow["codice_tributo_irpeg"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">code_caus_770</property>
+                    <text-property name="displayName">code_caus_770</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["code_caus_770"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">desc_caus_770</property>
+                    <text-property name="displayName">desc_caus_770</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["desc_caus_770"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">code_caus_esenz</property>
+                    <text-property name="displayName">code_caus_esenz</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["code_caus_esenz"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">desc_caus_esenz</property>
+                    <text-property name="displayName">desc_caus_esenz</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["desc_caus_esenz"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_inizio</property>
+                    <text-property name="displayName">attivita_inizio</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_inizio"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_fine</property>
+                    <text-property name="displayName">attivita_fine</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_fine"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_code</property>
+                    <text-property name="displayName">attivita_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attivita_desc</property>
+                    <text-property name="displayName">attivita_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attivita_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">conto_tesoreria</property>
+                    <text-property name="displayName">conto_tesoreria</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["conto_tesoreria"]</expression>
                     <property name="dataType">string</property>
                 </structure>
             </list-property>

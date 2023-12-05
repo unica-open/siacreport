@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte SPDX-License-Identifier: EUPL-1.2</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
@@ -111,9 +112,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-			<property name="odaURL">${userconn}</property>
-			<property name="odaUser">${userdb}</property>
-			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
+            <property name="odaURL">${userconn}</property>
+            <property name="odaUser">${userdb}</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">pwddAA==</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -459,26 +460,31 @@ where ente_proprietario_id =?
                     </structure>
                     <structure>
                         <property name="position">8</property>
+                        <property name="name">disav_debito_autor_non_contr</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
                         <property name="name">totale_residui_passivi_residui</property>
                         <property name="dataType">float</property>
                     </structure>
                     <structure>
-                        <property name="position">9</property>
+                        <property name="position">10</property>
                         <property name="name">totale_residui_passivi_competenza</property>
                         <property name="dataType">float</property>
                     </structure>
                     <structure>
-                        <property name="position">10</property>
+                        <property name="position">11</property>
                         <property name="name">totale_residui_passivi_tutto</property>
                         <property name="dataType">float</property>
                     </structure>
                     <structure>
-                        <property name="position">11</property>
+                        <property name="position">12</property>
                         <property name="name">totale_pagamenti_tutto</property>
                         <property name="dataType">float</property>
                     </structure>
                     <structure>
-                        <property name="position">12</property>
+                        <property name="position">13</property>
                         <property name="name">totale_fpv_tutto</property>
                         <property name="dataType">float</property>
                     </structure>
@@ -526,6 +532,12 @@ where ente_proprietario_id =?
                     <property name="position">7</property>
                     <property name="name">totale_importo_fpv_cc</property>
                     <property name="nativeName">totale_importo_fpv_cc</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">disav_debito_autor_non_contr</property>
+                    <property name="nativeName">disav_debito_autor_non_contr</property>
                     <property name="dataType">decimal</property>
                 </structure>
             </list-property>
@@ -1492,9 +1504,8 @@ from "BILR000_tipo_capitolo_dei_report" (?,?,'G')]]></xml-property>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="risultato_amm"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="risultato_amm" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">entrate_prev_accertamento</property>
@@ -1674,9 +1685,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_FONDO_CREDITI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_FONDO_CREDITI_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">accant_residui_perenti</property>
@@ -1688,9 +1698,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_RESIDUI_PERENTI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_RESIDUI_PERENTI_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">accant_fondo_anticip</property>
@@ -1702,9 +1711,9 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_FONDO_ANTICIP"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">//è stata eliminata la variabile ACCANT_FONDO_ANTICIP_GEST perchè si usa quella condivisa con i report BILR052 e BILR150&#13;
+row["codice_importo"]=='di_cui_ant_liq_spese_rend'&#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">accant_fondo_perdite</property>
@@ -1716,9 +1725,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_FONDO_PERDITE"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_FONDO_PERDITE_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">accant_fondo_contenz</property>
@@ -1730,9 +1738,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_FONDO_CONTENZ"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_FONDO_CONTENZ_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">vincol_da_leggi</property>
@@ -1744,9 +1751,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_DA_LEGGI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_DA_LEGGI_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">vincol_da_trasf</property>
@@ -1758,9 +1764,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_DA_TRASF"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_DA_TRASF_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">vincol_da_mutui</property>
@@ -1772,9 +1777,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_DA_MUTUI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_DA_MUTUI_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">vincol_attr_ente</property>
@@ -1786,9 +1790,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_ATTR_ENTE"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_ATTR_ENTE_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">vincol_altri</property>
@@ -1800,9 +1803,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_ALTRI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="VINCOL_ALTRI_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">invest_totale</property>
@@ -1814,9 +1816,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="INVEST_TOTALE"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="INVEST_TOTALE_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">accant_altri</property>
@@ -1828,9 +1829,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_ALTRI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="ACCANT_ALTRI_GEST"  &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">quota_vinc_leggi</property>
@@ -1842,9 +1842,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="QUOTA_VINC_LEGGI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="QUOTA_VINC_LEGGI" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">quota_vinc_trasf</property>
@@ -1870,9 +1869,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="QUOTA_VINC_MUTUI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="QUOTA_VINC_MUTUI" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">quota_vinc_ente</property>
@@ -1884,9 +1882,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="QUOTA_VINC_ENTE"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="QUOTA_VINC_ENTE" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">quota_vinc_altri</property>
@@ -1898,9 +1895,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="QUOTA_VINC_ALTRI"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="QUOTA_VINC_ALTRI" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">di_cui_da_accertamenti</property>
@@ -1912,9 +1908,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="di_cui_da_accertamenti"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="di_cui_da_accertamenti_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
                 <structure>
                     <property name="name">pagam_azioni_esecutive</property>
@@ -1926,9 +1921,8 @@ row["anno_competenza"]==params["anno_bilancio"].value</expression>
                             <expression name="value">row["importo"]</expression>
                         </structure>
                     </list-property>
-                    <expression name="filterExpr">row["codice_importo"]=="pagam_azioni_esecutive"&#13;
-&amp;&amp;&#13;
-row["anno_competenza"]==params["anno_bilancio"].value</expression>
+                    <expression name="filterExpr">row["codice_importo"]=="pagam_azioni_esecutive_GEST" &#13;
+&amp;&amp; row["anno_competenza"]==params["anno_bilancio"].value</expression>
                 </structure>
             </list-property>
             <list-property name="columnHints">
@@ -2553,7 +2547,7 @@ order by posizione_nel_report]]></xml-property>
     <body>
         <grid name="GripPrincipale" id="3588">
             <property name="fontFamily">"Times New Roman"</property>
-            <property name="height">12.333333333333334in</property>
+            <property name="height">12.4375in</property>
             <property name="width">7.739583333333333in</property>
             <property name="dataSet">variabili_report1</property>
             <list-property name="boundDataColumns">
@@ -2917,7 +2911,7 @@ dataSetRow["accant_fondo_perdite"]+dataSetRow["accant_fondo_contenz"]+dataSetRow
                 <property name="width">1.1979166666666667in</property>
             </column>
             <row id="3594">
-                <property name="height">0.40625in</property>
+                <property name="height">0.2916666666666667in</property>
                 <cell id="3595">
                     <property name="colSpan">1</property>
                     <property name="rowSpan">2</property>
@@ -6749,7 +6743,7 @@ row._outer._outer._outer["pagam_azioni_esecutive"]</expression>
                     <property name="borderTopStyle">none</property>
                     <text id="3798">
                         <property name="contentType">auto</property>
-                        <text-property name="content"><![CDATA[Fondo anticipazioni liquidità DL 35 del 2013 e successive modifiche e rifinanziamenti]]></text-property>
+                        <text-property name="content"><![CDATA[Fondo anticipazioni liquidità]]></text-property>
                     </text>
                 </cell>
                 <cell id="3773">
@@ -7949,40 +7943,6 @@ row._outer._outer._outer["pagam_azioni_esecutive"]</expression>
                     <property name="borderRightWidth">thin</property>
                 </cell>
             </row>
-            <row id="3905">
-                <property name="height">0.1in</property>
-                <cell id="3906">
-                    <property name="borderBottomStyle">none</property>
-                    <property name="borderLeftStyle">solid</property>
-                    <property name="borderLeftWidth">thin</property>
-                    <property name="borderRightStyle">none</property>
-                    <property name="borderTopStyle">none</property>
-                </cell>
-                <cell id="3907">
-                    <property name="borderBottomStyle">none</property>
-                    <property name="borderLeftStyle">none</property>
-                    <property name="borderRightStyle">none</property>
-                    <property name="borderTopStyle">none</property>
-                </cell>
-                <cell id="3908">
-                    <property name="borderBottomStyle">none</property>
-                    <property name="borderLeftStyle">none</property>
-                    <property name="borderRightStyle">none</property>
-                    <property name="borderTopStyle">none</property>
-                </cell>
-                <cell id="3909">
-                    <property name="borderBottomStyle">none</property>
-                    <property name="borderLeftStyle">none</property>
-                    <property name="borderRightStyle">none</property>
-                    <property name="borderTopStyle">none</property>
-                </cell>
-                <cell id="3910">
-                    <property name="borderLeftStyle">solid</property>
-                    <property name="borderLeftWidth">thin</property>
-                    <property name="borderRightStyle">solid</property>
-                    <property name="borderRightWidth">thin</property>
-                </cell>
-            </row>
             <row id="3912">
                 <cell id="3913">
                     <property name="colSpan">4</property>
@@ -8302,6 +8262,174 @@ row._outer._outer._outer["pagam_azioni_esecutive"]</expression>
                             </cell>
                         </row>
                     </grid>
+                </cell>
+            </row>
+            <row id="11216">
+                <property name="height">0.2708333333333333in</property>
+                <cell id="11217">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <property name="textAlign">right</property>
+                    <text id="11222">
+                        <property name="fontWeight">normal</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[F) di cui Disavanzo da debito autorizzato e non contratto]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11221">
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <data id="11223">
+                        <property name="backgroundAttachment">scroll</property>
+                        <property name="backgroundPositionX">0%</property>
+                        <property name="backgroundPositionY">0%</property>
+                        <property name="backgroundRepeat">repeat</property>
+                        <property name="fontFamily">"Times New Roman"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="fontVariant">normal</property>
+                        <property name="color">black</property>
+                        <property name="textLineThrough">none</property>
+                        <property name="textOverline">none</property>
+                        <property name="textUnderline">none</property>
+                        <property name="borderBottomColor">black</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">black</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">black</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">black</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">0pt</property>
+                        <property name="marginBottom">0pt</property>
+                        <property name="marginRight">0pt</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingBottom">1pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Currency</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                            <property name="locale">it_IT</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <property name="letterSpacing">normal</property>
+                        <property name="lineHeight">normal</property>
+                        <property name="orphans">2</property>
+                        <property name="textTransform">none</property>
+                        <property name="whiteSpace">normal</property>
+                        <property name="widows">2</property>
+                        <property name="wordSpacing">normal</property>
+                        <property name="display">block</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">auto</property>
+                        <property name="showIfBlank">false</property>
+                        <property name="canShrink">false</property>
+                        <property name="overflow">hidden</property>
+                        <property name="dataSet">DataSetDatiSpese</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">pr_totale_pagam_residui</property>
+                                <text-property name="displayName">pr_totale_pagam_residui</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["pr_totale_pagam_residui"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">pc_totale_pagam_competenza</property>
+                                <text-property name="displayName">pc_totale_pagam_competenza</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["pc_totale_pagam_competenza"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">rs_totale_residui_passivi</property>
+                                <text-property name="displayName">rs_totale_residui_passivi</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["rs_totale_residui_passivi"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">r_totale_riaccertamenti_residui</property>
+                                <text-property name="displayName">r_totale_riaccertamenti_residui</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["r_totale_riaccertamenti_residui"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">i_totale_importo_impegni</property>
+                                <text-property name="displayName">i_totale_importo_impegni</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["i_totale_importo_impegni"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totale_importo_fpv_parte_corr</property>
+                                <text-property name="displayName">totale_importo_fpv_parte_corr</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["totale_importo_fpv_parte_corr"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totale_importo_fpv_cc</property>
+                                <text-property name="displayName">totale_importo_fpv_cc</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["totale_importo_fpv_cc"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disav_debito_autor_non_contr</property>
+                                <text-property name="displayName">disav_debito_autor_non_contr</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disav_debito_autor_non_contr"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totale_residui_passivi_residui</property>
+                                <text-property name="displayName">totale_residui_passivi_residui</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["totale_residui_passivi_residui"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totale_residui_passivi_competenza</property>
+                                <text-property name="displayName">totale_residui_passivi_competenza</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["totale_residui_passivi_competenza"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totale_residui_passivi_tutto</property>
+                                <text-property name="displayName">totale_residui_passivi_tutto</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["totale_residui_passivi_tutto"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totale_pagamenti_tutto</property>
+                                <text-property name="displayName">totale_pagamenti_tutto</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["totale_pagamenti_tutto"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">totale_fpv_tutto</property>
+                                <text-property name="displayName">totale_fpv_tutto</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["totale_fpv_tutto"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">f_disav_debito_autor_non_contr</property>
+                                <text-property name="displayName">f_disav_debito_autor_non_contr</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disav_debito_autor_non_contr"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">f_disav_debito_autor_non_contr</property>
+                    </data>
                 </cell>
             </row>
             <row id="3920">

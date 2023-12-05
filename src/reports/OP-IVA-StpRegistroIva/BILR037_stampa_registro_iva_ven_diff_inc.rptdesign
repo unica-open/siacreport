@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte SPDX-License-Identifier: EUPL-1.2</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
@@ -7,7 +8,7 @@
     <property name="imageDPI">96</property>
     <data-sources>
         <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="RegistroIva" id="7">
-            <property name="FILELIST">../xml_per_prove/RegistroIvaVenditeIvaImmediataBozzaAprile.xml</property>
+            <property name="FILELIST">../xml_per_prove/VenditeIvaDifferitaIncassatiFebbraio.xml</property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -161,6 +162,11 @@ mioNumDoc;</expression>
                     <property name="onColumnLayout">false</property>
                     <text-property name="heading">imposta</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">dataOperazione</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">dataOperazione</text-property>
+                </structure>
             </list-property>
             <list-property name="parameters"/>
             <structure name="cachedMetaData">
@@ -267,6 +273,11 @@ mioNumDoc;</expression>
                     </structure>
                     <structure>
                         <property name="position">21</property>
+                        <property name="name">dataOperazione</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
                         <property name="name">numero_documento_trasf</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -414,8 +425,15 @@ mioNumDoc;</expression>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">dataOperazione</property>
+                    <property name="nativeName">dataOperazione</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaRegistroIvaReportModel/datiIva/acquistiVendite/vendita/totale]#:#{numeroProtocolloDefinitivo;STRING;../subdocumentoIva/numeroProtocolloDefinitivo},{dataProtocolloDefinitivo;DATE;../subdocumentoIva/dataProtocolloDefinitivo},{numeroOrdinativoDocumento;STRING;../subdocumentoIva/numeroOrdinativoDocumento},{dataEmissione;DATE;../documento/dataEmissione},{numero;STRING;../documento/numero},{codice_tipo_documento;STRING;../documento/tipoDocumento/codice},{descrizione_tipo_documento;STRING;../documento/tipoDocumento/descrizione},{codiceSoggetto;STRING;../documento/soggetto/codiceSoggetto},{denominazione;STRING;../documento/soggetto/denominazione},{codice_attivita_iva;STRING;../subdocumentoIva/attivitaIva/codice},{descrizione_attivita_iva;STRING;../subdocumentoIva/attivitaIva/descrizione},{codice_iva;STRING;../aliquotaSubdocumentoIva/aliquotaIva/codice},{descrizione_iva;STRING;../aliquotaSubdocumentoIva/aliquotaIva/descrizione},{totale;BIGDECIMAL;../aliquotaSubdocumentoIva/totale},{flagRilevanteIRAP;STRING;../subdocumentoIva/flagRilevanteIRAP},{numeroProtocolloProvvisorio;STRING;../subdocumentoIva/numeroProtocolloProvvisorio},{dataProtocolloProvvisorio;DATE;../subdocumentoIva/dataProtocolloProvvisorio},{numero_quota;STRING;../subdocumentoIva/subdocumentoEntrata/numero},{imponibile;BIGDECIMAL;../aliquotaSubdocumentoIva/imponibile},{imposta;BIGDECIMAL;../aliquotaSubdocumentoIva/imposta}#:#<"ns3","http:%%siac.csi.it%fin2%data%1.0";"xsi","http:%%www.w3.org%2001%XMLSchema-instance">]]></xml-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaRegistroIvaReportModel/datiIva/acquistiVendite/vendita/totale]#:#{numeroProtocolloDefinitivo;STRING;../subdocumentoIva/numeroProtocolloDefinitivo},{dataProtocolloDefinitivo;DATE;../subdocumentoIva/dataProtocolloDefinitivo},{numeroOrdinativoDocumento;STRING;../subdocumentoIva/numeroOrdinativoDocumento},{dataEmissione;DATE;../documento/dataEmissione},{numero;STRING;../documento/numero},{codice_tipo_documento;STRING;../documento/tipoDocumento/codice},{descrizione_tipo_documento;STRING;../documento/tipoDocumento/descrizione},{codiceSoggetto;STRING;../documento/soggetto/codiceSoggetto},{denominazione;STRING;../documento/soggetto/denominazione},{codice_attivita_iva;STRING;../subdocumentoIva/attivitaIva/codice},{descrizione_attivita_iva;STRING;../subdocumentoIva/attivitaIva/descrizione},{codice_iva;STRING;../aliquotaSubdocumentoIva/aliquotaIva/codice},{descrizione_iva;STRING;../aliquotaSubdocumentoIva/aliquotaIva/descrizione},{totale;BIGDECIMAL;../aliquotaSubdocumentoIva/totale},{flagRilevanteIRAP;STRING;../subdocumentoIva/flagRilevanteIRAP},{numeroProtocolloProvvisorio;STRING;../subdocumentoIva/numeroProtocolloProvvisorio},{dataProtocolloProvvisorio;DATE;../subdocumentoIva/dataProtocolloProvvisorio},{numero_quota;STRING;../subdocumentoIva/subdocumentoEntrata/numero},{imponibile;BIGDECIMAL;../aliquotaSubdocumentoIva/imponibile},{imposta;BIGDECIMAL;../aliquotaSubdocumentoIva/imposta},{dataOperazione;DATE;../documento/dataOperazione}#:#<"ns3","http:%%siac.csi.it%fin2%data%1.0";"xsi","http:%%www.w3.org%2001%XMLSchema-instance">]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -1503,6 +1521,7 @@ row["numeroDiPagina"].toString()-1);]]></method>
                 <structure>
                     <property name="columnName">tipoStampa</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">tipoStampa</text-property>
                 </structure>
             </list-property>
@@ -3053,6 +3072,12 @@ mioNome+" - "+mioSedime+"  "+mioDenom+" , "+mioNumCiv+" - "+mioCap+"  "+mioComun
                                     <expression name="expression" type="javascript">dataSetRow["numero_documento_trasf"]</expression>
                                     <property name="dataType">string</property>
                                 </structure>
+                                <structure>
+                                    <property name="name">dataOperazione</property>
+                                    <text-property name="displayName">dataOperazione</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["dataOperazione"]</expression>
+                                    <property name="dataType">date</property>
+                                </structure>
                             </list-property>
                             <property name="pageBreakInterval">5</property>
                             <list-property name="sort">
@@ -3962,7 +3987,7 @@ Ordinativo]]></text-property>
                                         <text id="2650">
                                             <property name="fontSize">8pt</property>
                                             <property name="contentType">auto</property>
-                                            <text-property name="content"><![CDATA[Data Doc.]]></text-property>
+                                            <text-property name="content"><![CDATA[Data]]></text-property>
                                         </text>
                                     </cell>
                                     <cell id="2651">
@@ -4056,7 +4081,7 @@ Ordinativo]]></text-property>
                                         <property name="fontFamily">"Times New Roman"</property>
                                         <property name="borderRightStyle">solid</property>
                                         <property name="borderRightWidth">thin</property>
-                                        <data id="2983">
+                                        <data id="3298">
                                             <property name="backgroundAttachment">scroll</property>
                                             <property name="backgroundPositionX">0%</property>
                                             <property name="backgroundPositionY">0%</property>
@@ -4110,7 +4135,7 @@ Ordinativo]]></text-property>
                                             <property name="showIfBlank">false</property>
                                             <property name="canShrink">false</property>
                                             <property name="overflow">hidden</property>
-                                            <property name="resultSetColumn">dataEmissione</property>
+                                            <property name="resultSetColumn">dataOperazione</property>
                                         </data>
                                     </cell>
                                     <cell id="2666">

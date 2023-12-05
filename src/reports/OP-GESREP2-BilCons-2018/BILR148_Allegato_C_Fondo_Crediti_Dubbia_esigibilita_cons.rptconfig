@@ -3,26 +3,38 @@
     <list-property name="configVars">
         <structure>
             <property name="name">__isdisplay__ente_proprietario_26_0</property>
-            <property name="value">4</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_27_1</property>
-            <property name="value">2017</property>
+            <property name="value">2021</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__data del giorno_3585_2</property>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_3</property>
             <property name="value">Con data del giorno</property>
         </structure>
         <structure>
-            <property name="name">anno_bilancio_27_3</property>
-            <property name="value">2017</property>
+            <property name="name">Titolo aggiuntivo_11211_4</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_27_5</property>
+            <property name="value">2021</property>
         </structure>
         <structure>
             <property name="name">anno_bilancio_27_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">data del giorno_3585_4</property>
+            <property name="name">data del giorno_3585_6</property>
             <property name="value">S</property>
         </structure>
         <structure>
@@ -30,8 +42,8 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_26_5</property>
-            <property name="value">4</property>
+            <property name="name">ente_proprietario_26_7</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">ente_proprietario_26_type_</property>

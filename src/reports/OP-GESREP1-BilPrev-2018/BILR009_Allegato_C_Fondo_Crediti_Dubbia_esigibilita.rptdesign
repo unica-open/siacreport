@@ -51,7 +51,7 @@
             </structure>
         </scalar-parameter>
         <scalar-parameter name="anno_competenza" id="2568">
-            <text-property name="promptText">anno_competenza</text-property>
+            <text-property name="promptText">Anno competenza</text-property>
             <property name="valueType">static</property>
             <property name="isRequired">true</property>
             <property name="dataType">string</property>
@@ -109,9 +109,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-			<property name="odaURL">${userconn}</property>
-			<property name="odaUser">${userdb}</property>
-			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
+            <property name="odaURL">${userconn}</property>
+            <property name="odaUser">${userdb}</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">pwddAA==</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -3227,7 +3227,7 @@ from "BILR009_Allegato_C_Fondo_Crediti_Dubbia_esigibilita" (?,?,?);]]></xml-prop
                                 <property name="showIfBlank">false</property>
                                 <property name="canShrink">false</property>
                                 <property name="overflow">hidden</property>
-                                <expression name="valueExpr">"EsercizioFinanziario "+params["anno_competenza"].value</expression>
+                                <expression name="valueExpr">"Esercizio Finanziario "+params["anno_competenza"].value</expression>
                                 <property name="contentType">html</property>
                             </text-data>
                         </cell>

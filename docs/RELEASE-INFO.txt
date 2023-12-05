@@ -1,0 +1,4 @@
+product_version: 5.20.0
+component_version: 5.18.0
+pl_commit_id: 2c716d947e2e1fcaaadd542fd88c753b60555191
+csi_commit_id: x

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte SPDX-License-Identifier: EUPL-1.2</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
@@ -2871,7 +2872,7 @@ from "BILR241_stampa_variazione_bozza_pluriennale_spese" (?,?,?)]]></xml-propert
             <page-header>
                 <grid id="3403">
                     <property name="fontFamily">"Times New Roman"</property>
-                    <property name="width">11.469in</property>
+                    <property name="width">11.46875in</property>
                     <property name="dataSet">DatiEnteProp</property>
                     <list-property name="boundDataColumns">
                         <structure>
@@ -2891,10 +2892,10 @@ from "BILR241_stampa_variazione_bozza_pluriennale_spese" (?,?,?)]]></xml-propert
                         <property name="width">2.6041666666666665in</property>
                     </column>
                     <column id="3407">
-                        <property name="width">4.177083333333333in</property>
+                        <property name="width">3.9479166666666665in</property>
                     </column>
                     <column id="3408">
-                        <property name="width">1.0729166666666667in</property>
+                        <property name="width">1.46875in</property>
                     </column>
                     <row id="3409">
                         <property name="borderBottomStyle">solid</property>
@@ -2947,18 +2948,18 @@ from "BILR241_stampa_variazione_bozza_pluriennale_spese" (?,?,?)]]></xml-propert
                         </cell>
                         <cell id="3414">
                             <grid id="6399">
-                                <property name="width">1.03in</property>
+                                <property name="width">1.4166666666666667in</property>
                                 <column id="6411">
                                     <property name="width">0.3645833333333333in</property>
                                 </column>
                                 <column id="6400">
-                                    <property name="width">0.3125in</property>
+                                    <property name="width">0.3958333333333333in</property>
                                 </column>
                                 <column id="6401">
                                     <property name="width">0.16666666666666666in</property>
                                 </column>
                                 <column id="6402">
-                                    <property name="width">0.19791666666666666in</property>
+                                    <property name="width">0.4895833333333333in</property>
                                 </column>
                                 <row id="6403">
                                     <cell id="6410">
@@ -9065,32 +9066,6 @@ dataSetRow["flag_visualizzazione"]!=-111</expression>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
-                    <property name="name">TotaleCassaIniz</property>
-                    <text-property name="displayName">TotaleCassaIniz</text-property>
-                    <property name="dataType">float</property>
-                    <property name="aggregateFunction">SUM</property>
-                    <list-property name="arguments">
-                        <structure>
-                            <property name="name">Expression</property>
-                            <expression name="value" type="javascript">row["cassa"]</expression>
-                        </structure>
-                    </list-property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">TotaleResiduoIniz</property>
-                    <text-property name="displayName">TotaleResiduoIniz</text-property>
-                    <property name="dataType">float</property>
-                    <property name="aggregateFunction">SUM</property>
-                    <list-property name="arguments">
-                        <structure>
-                            <property name="name">Expression</property>
-                            <expression name="value" type="javascript">row["residuo"]</expression>
-                        </structure>
-                    </list-property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
                     <property name="name">TotaleVariazPosStanzMovimentato</property>
                     <text-property name="displayName">TotaleVariazPosStanzMovimentato</text-property>
                     <property name="dataType">float</property>
@@ -10010,6 +9985,32 @@ mioVisualizza1;</expression>
                     <text-property name="displayName">TotaleSaldoVariazStanzMovimentatoAnno2</text-property>
                     <expression name="expression" type="javascript">row["TotaleVariazPosStanzMovimentatoAnno2"]-row["TotaleVariazNegStanzMovimentatoAnno2"]</expression>
                     <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotaleCassaIniz</property>
+                    <text-property name="displayName">TotaleCassaIniz</text-property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["cassa"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotaleResiduoIniz</property>
+                    <text-property name="displayName">TotaleResiduoIniz</text-property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["residuo"]</expression>
+                        </structure>
+                    </list-property>
                     <property name="allowExport">true</property>
                 </structure>
             </list-property>
@@ -12960,7 +12961,7 @@ row["tot_flag_gruppo_macroagg"]==0</expression>
                     <cell id="7257">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <data id="7332">
+                        <data id="11214">
                             <property name="backgroundAttachment">scroll</property>
                             <property name="backgroundPositionX">0%</property>
                             <property name="backgroundPositionY">0%</property>
@@ -13014,13 +13015,6 @@ row["tot_flag_gruppo_macroagg"]==0</expression>
                             <property name="showIfBlank">false</property>
                             <property name="canShrink">false</property>
                             <property name="overflow">hidden</property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["TotaleCassaInizMovimentato"]</expression>
-                                    <property name="operator">is-null</property>
-                                    <text-property name="display">0,00</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">TotaleCassaIniz</property>
                         </data>
                     </cell>
@@ -13114,7 +13108,7 @@ row["tot_flag_gruppo_macroagg"]==0</expression>
                     <cell id="7245">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <data id="7333">
+                        <data id="11215">
                             <property name="backgroundAttachment">scroll</property>
                             <property name="backgroundPositionX">0%</property>
                             <property name="backgroundPositionY">0%</property>
@@ -13168,13 +13162,6 @@ row["tot_flag_gruppo_macroagg"]==0</expression>
                             <property name="showIfBlank">false</property>
                             <property name="canShrink">false</property>
                             <property name="overflow">hidden</property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["TotaleResiduoInizMovimentato"]</expression>
-                                    <property name="operator">is-null</property>
-                                    <text-property name="display">0,00</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">TotaleResiduoIniz</property>
                         </data>
                     </cell>

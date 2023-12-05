@@ -2,7 +2,6 @@
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <property name="units">in</property>
-    <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
     <property name="bidiLayoutOrientation">ltr</property>
     <property name="imageDPI">96</property>
@@ -58,6 +57,8 @@
             <property name="dataSetName">AnniProspetto</property>
             <expression name="valueExpr" type="javascript">dataSetRow["anno"]</expression>
             <expression name="labelExpr" type="javascript">dataSetRow["anno"]</expression>
+            <expression name="sortByColumn">dataSetRow["anno"]</expression>
+            <property name="sortDirection">asc</property>
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
@@ -67,7 +68,7 @@
             <property name="paramType">simple</property>
             <property name="controlType">list-box</property>
             <property name="mustMatch">true</property>
-            <property name="fixedOrder">true</property>
+            <property name="fixedOrder">false</property>
             <structure name="format">
                 <property name="category">Unformatted</property>
             </structure>
@@ -310,92 +311,7 @@ union select ?+2 anno]]></xml-property>
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
         <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetDatiDaGestione" id="11231">
-            <list-property name="columnHints">
-                <structure>
-                    <property name="columnName">missione_code</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">missione_code</text-property>
-                    <text-property name="heading">missione_code</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">missione_desc</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">missione_desc</text-property>
-                    <text-property name="heading">missione_desc</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">programma_code</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">programma_code</text-property>
-                    <text-property name="heading">programma_code</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">programma_desc</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">programma_desc</text-property>
-                    <text-property name="heading">programma_desc</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">importi_capitoli</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">importi_capitoli</text-property>
-                    <text-property name="heading">importi_capitoli</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">importo_avanzo</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">importo_avanzo</text-property>
-                    <text-property name="heading">importo_avanzo</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">spese_impegnate</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">spese_impegnate</text-property>
-                    <text-property name="heading">spese_impegnate</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">importo_avanzo_anno1</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">importo_avanzo_anno1</text-property>
-                    <text-property name="heading">importo_avanzo_anno1</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">spese_impegnate_anno1</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">spese_impegnate_anno1</text-property>
-                    <text-property name="heading">spese_impegnate_anno1</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">importo_avanzo_anno2</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">importo_avanzo_anno2</text-property>
-                    <text-property name="heading">importo_avanzo_anno2</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">spese_impegnate_anno2</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">spese_impegnate_anno2</text-property>
-                    <text-property name="heading">spese_impegnate_anno2</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">importo_avanzo_anno_succ</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">importo_avanzo_anno_succ</text-property>
-                    <text-property name="heading">importo_avanzo_anno_succ</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">spese_impegnate_anno_succ</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">spese_impegnate_anno_succ</text-property>
-                    <text-property name="heading">spese_impegnate_anno_succ</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">missioneprogramma</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">missioneprogramma</text-property>
-                    <text-property name="heading">missioneprogramma</text-property>
-                </structure>
-            </list-property>
+            <list-property name="columnHints"/>
             <list-property name="parameters">
                 <structure>
                     <property name="name">p_ente</property>
@@ -404,6 +320,7 @@ union select ?+2 anno]]></xml-property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                     <property name="position">1</property>
+                    <property name="isOptional">false</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -414,6 +331,7 @@ union select ?+2 anno]]></xml-property>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                     <property name="position">2</property>
+                    <property name="isOptional">false</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -424,6 +342,7 @@ union select ?+2 anno]]></xml-property>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                     <property name="position">3</property>
+                    <property name="isOptional">false</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -497,6 +416,11 @@ union select ?+2 anno]]></xml-property>
                     </structure>
                     <structure>
                         <property name="position">14</property>
+                        <property name="name">spese_impegnate_da_prev</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
                         <property name="name">missioneprogramma</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -509,98 +433,90 @@ union select ?+2 anno]]></xml-property>
                     <property name="name">missione_code</property>
                     <property name="nativeName">missione_code</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">2</property>
                     <property name="name">missione_desc</property>
                     <property name="nativeName">missione_desc</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
-                    <property name="position">2</property>
+                    <property name="position">3</property>
                     <property name="name">programma_code</property>
                     <property name="nativeName">programma_code</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">4</property>
                     <property name="name">programma_desc</property>
                     <property name="nativeName">programma_desc</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
-                    <property name="position">3</property>
+                    <property name="position">5</property>
                     <property name="name">importi_capitoli</property>
                     <property name="nativeName">importi_capitoli</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">6</property>
                     <property name="name">importo_avanzo</property>
                     <property name="nativeName">importo_avanzo</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">7</property>
                     <property name="name">spese_impegnate</property>
                     <property name="nativeName">spese_impegnate</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">8</property>
                     <property name="name">importo_avanzo_anno1</property>
                     <property name="nativeName">importo_avanzo_anno1</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">9</property>
                     <property name="name">spese_impegnate_anno1</property>
                     <property name="nativeName">spese_impegnate_anno1</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">10</property>
                     <property name="name">importo_avanzo_anno2</property>
                     <property name="nativeName">importo_avanzo_anno2</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">11</property>
                     <property name="name">spese_impegnate_anno2</property>
                     <property name="nativeName">spese_impegnate_anno2</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">12</property>
                     <property name="name">importo_avanzo_anno_succ</property>
                     <property name="nativeName">importo_avanzo_anno_succ</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">13</property>
                     <property name="name">spese_impegnate_anno_succ</property>
                     <property name="nativeName">spese_impegnate_anno_succ</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">14</property>
+                    <property name="name">spese_impegnate_da_prev</property>
+                    <property name="nativeName">spese_impegnate_da_prev</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
                     <property name="name">missioneprogramma</property>
                     <property name="nativeName">missioneprogramma</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select 
@@ -617,6 +533,7 @@ sum(importo_avanzo_anno2) as importo_avanzo_anno2,
 sum(spese_impegnate_anno2) as spese_impegnate_anno2,
 sum(importo_avanzo_anno_succ) as importo_avanzo_anno_succ,
 sum(spese_impegnate_anno_succ) as spese_impegnate_anno_succ,
+sum(spese_impegnate_da_prev) as spese_impegnate_da_prev,
 missione_code||programma_code as missioneprogramma
 from "BILR011_allegato_fpv_previsione_con_dati_gestione" (?,?,?)
 group by missione_code, missione_desc, programma_code,programma_desc, missioneprogramma
@@ -638,6 +555,9 @@ group by missione_code, missione_desc, programma_code,programma_desc, missionepr
           <design:scale>0</design:scale>
           <design:nullability>Unknown</design:nullability>
         </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes/>
+        </design:inputAttributes>
       </design:ParameterDefinition>
     </parameter>
     <parameter>
@@ -653,6 +573,9 @@ group by missione_code, missione_desc, programma_code,programma_desc, missionepr
           <design:scale>0</design:scale>
           <design:nullability>Unknown</design:nullability>
         </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes/>
+        </design:inputAttributes>
       </design:ParameterDefinition>
     </parameter>
     <parameter>
@@ -668,6 +591,9 @@ group by missione_code, missione_desc, programma_code,programma_desc, missionepr
           <design:scale>0</design:scale>
           <design:nullability>Unknown</design:nullability>
         </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes/>
+        </design:inputAttributes>
       </design:ParameterDefinition>
     </parameter>
   </DataSetParameters>
@@ -996,7 +922,32 @@ group by missione_code, missione_desc, programma_code,programma_desc, missionepr
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
         <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DatiColonnaHAnniPrec" id="3679">
-            <list-property name="columnHints"/>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">missione</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">missione</text-property>
+                    <text-property name="heading">missione</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">programma</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">programma</text-property>
+                    <text-property name="heading">programma</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">imp_colonna_h</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">imp_colonna_h</text-property>
+                    <text-property name="heading">imp_colonna_h</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mispro</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">mispro</text-property>
+                    <text-property name="heading">mispro</text-property>
+                </structure>
+            </list-property>
             <list-property name="parameters">
                 <structure>
                     <property name="name">ente</property>
@@ -1064,24 +1015,28 @@ group by missione_code, missione_desc, programma_code,programma_desc, missionepr
                     <property name="name">missione</property>
                     <property name="nativeName">missione</property>
                     <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">2</property>
                     <property name="name">programma</property>
                     <property name="nativeName">programma</property>
                     <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">3</property>
                     <property name="name">imp_colonna_h</property>
                     <property name="nativeName">imp_colonna_h</property>
                     <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">4</property>
                     <property name="name">mispro</property>
                     <property name="nativeName">mispro</property>
                     <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select missione,
@@ -1106,9 +1061,6 @@ from "fnc_lancio_BILR011_anni_precedenti_gestione" (?,?,?)]]></xml-property>
           <design:scale>0</design:scale>
           <design:nullability>Unknown</design:nullability>
         </design:attributes>
-        <design:inputAttributes>
-          <design:elementAttributes/>
-        </design:inputAttributes>
       </design:ParameterDefinition>
     </parameter>
     <parameter>
@@ -1124,9 +1076,6 @@ from "fnc_lancio_BILR011_anni_precedenti_gestione" (?,?,?)]]></xml-property>
           <design:scale>0</design:scale>
           <design:nullability>Unknown</design:nullability>
         </design:attributes>
-        <design:inputAttributes>
-          <design:elementAttributes/>
-        </design:inputAttributes>
       </design:ParameterDefinition>
     </parameter>
     <parameter>
@@ -1142,13 +1091,6 @@ from "fnc_lancio_BILR011_anni_precedenti_gestione" (?,?,?)]]></xml-property>
           <design:scale>0</design:scale>
           <design:nullability>Unknown</design:nullability>
         </design:attributes>
-        <design:inputAttributes>
-          <design:elementAttributes>
-            <design:defaultValues>
-              <design:values>2020</design:values>
-            </design:defaultValues>
-          </design:elementAttributes>
-        </design:inputAttributes>
       </design:ParameterDefinition>
     </parameter>
   </DataSetParameters>
@@ -1330,6 +1272,12 @@ from "fnc_lancio_BILR011_anni_precedenti_gestione" (?,?,?)]]></xml-property>
                     <text-property name="heading">fondo_plur_anno_h</text-property>
                 </structure>
                 <structure>
+                    <property name="columnName">spese_da_impeg_anno1_d2</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">spese_da_impeg_anno1_d2</text-property>
+                    <text-property name="heading">spese_da_impeg_anno1_d2</text-property>
+                </structure>
+                <structure>
                     <property name="columnName">mispro</property>
                     <property name="analysis">dimension</property>
                     <text-property name="displayName">mispro</text-property>
@@ -1458,6 +1406,11 @@ from "fnc_lancio_BILR011_anni_precedenti_gestione" (?,?,?)]]></xml-property>
                     </structure>
                     <structure>
                         <property name="position">18</property>
+                        <property name="name">spese_da_impeg_anno1_d2</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
                         <property name="name">mispro</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -1586,6 +1539,13 @@ from "fnc_lancio_BILR011_anni_precedenti_gestione" (?,?,?)]]></xml-property>
                 </structure>
                 <structure>
                     <property name="position">18</property>
+                    <property name="name">spese_da_impeg_anno1_d2</property>
+                    <property name="nativeName">spese_da_impeg_anno1_d2</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
                     <property name="name">mispro</property>
                     <property name="nativeName">mispro</property>
                     <property name="dataType">string</property>
@@ -2514,6 +2474,12 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                     <text-property name="displayName">DataSetDatiDaGestione::spese_impegnate</text-property>
                 </structure>
                 <structure>
+                    <property name="columnName">DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                    <property name="alias">spese_impegnate_da_prev</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">DataSetDatiDaGestione::spese_impegnate_da_prev</text-property>
+                </structure>
+                <structure>
                     <property name="columnName">DataSetDatiDaGestione::importo_avanzo_anno_succ</property>
                     <property name="alias">importo_avanzo_anno_succ</property>
                     <property name="analysis">measure</property>
@@ -2524,7 +2490,7 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                 <structure>
                     <property name="name">DataSetDatiDaGestione::p_ente</property>
                     <property name="dataType">integer</property>
-                    <property name="position">1</property>
+                    <property name="position">0</property>
                     <property name="isOptional">false</property>
                     <property name="allowNull">false</property>
                     <property name="isInput">true</property>
@@ -2533,7 +2499,7 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                 <structure>
                     <property name="name">DataSetDatiDaGestione::p_anno_bil</property>
                     <property name="dataType">string</property>
-                    <property name="position">2</property>
+                    <property name="position">1</property>
                     <property name="isOptional">false</property>
                     <property name="allowNull">false</property>
                     <property name="isInput">true</property>
@@ -2542,7 +2508,7 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                 <structure>
                     <property name="name">DataSetDatiDaGestione::p__anno_prospetto</property>
                     <property name="dataType">string</property>
-                    <property name="position">3</property>
+                    <property name="position">2</property>
                     <property name="isOptional">false</property>
                     <property name="allowNull">false</property>
                     <property name="isInput">true</property>
@@ -2551,7 +2517,7 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                 <structure>
                     <property name="name">DatiColonnaHAnniPrec::ente</property>
                     <property name="dataType">integer</property>
-                    <property name="position">4</property>
+                    <property name="position">3</property>
                     <property name="isOptional">false</property>
                     <property name="allowNull">false</property>
                     <property name="isInput">true</property>
@@ -2560,7 +2526,7 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                 <structure>
                     <property name="name">DatiColonnaHAnniPrec::anno</property>
                     <property name="dataType">string</property>
-                    <property name="position">5</property>
+                    <property name="position">4</property>
                     <property name="isOptional">false</property>
                     <property name="allowNull">false</property>
                     <property name="isInput">true</property>
@@ -2569,7 +2535,7 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                 <structure>
                     <property name="name">DatiColonnaHAnniPrec::anno_prospetto</property>
                     <property name="dataType">string</property>
-                    <property name="position">6</property>
+                    <property name="position">5</property>
                     <expression name="defaultValue">2020</expression>
                     <property name="isOptional">false</property>
                     <property name="allowNull">false</property>
@@ -2646,26 +2612,31 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                     </structure>
                     <structure>
                         <property name="position">14</property>
+                        <property name="name">DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
                         <property name="name">DataSetDatiDaGestione::missioneprogramma</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">15</property>
+                        <property name="position">16</property>
                         <property name="name">DatiColonnaHAnniPrec::missione</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">16</property>
+                        <property name="position">17</property>
                         <property name="name">DatiColonnaHAnniPrec::programma</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">17</property>
+                        <property name="position">18</property>
                         <property name="name">DatiColonnaHAnniPrec::imp_colonna_h</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">18</property>
+                        <property name="position">19</property>
                         <property name="name">DatiColonnaHAnniPrec::mispro</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -2688,6 +2659,12 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
         </joint-data-set>
         <joint-data-set name="UnioneDatiComplessivi" id="11365">
             <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FPV::spese_da_impeg_anno1_d2</property>
+                    <property name="alias">spese_da_impeg_anno1_d2</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">FPV::spese_da_impeg_anno1_d2</text-property>
+                </structure>
                 <structure>
                     <property name="columnName">FPV::mispro</property>
                     <property name="alias">mispro</property>
@@ -2801,6 +2778,12 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                     <property name="alias">DataSetDatiDaGestione::spese_impegnate</property>
                     <property name="analysis">measure</property>
                     <text-property name="displayName">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                    <property name="alias">DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">FPV::programma_tipo_code</property>
@@ -3079,96 +3062,106 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                     </structure>
                     <structure>
                         <property name="position">18</property>
+                        <property name="name">FPV::spese_da_impeg_anno1_d2</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
                         <property name="name">FPV::mispro</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">19</property>
+                        <property name="position">20</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::missione_code</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">20</property>
+                        <property name="position">21</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::missione_desc</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">21</property>
+                        <property name="position">22</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::programma_code</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">22</property>
+                        <property name="position">23</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::programma_desc</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">23</property>
+                        <property name="position">24</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::importi_capitoli</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">24</property>
+                        <property name="position">25</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">25</property>
+                        <property name="position">26</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">26</property>
+                        <property name="position">27</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno1</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">27</property>
+                        <property name="position">28</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno1</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">28</property>
+                        <property name="position">29</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno2</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">29</property>
+                        <property name="position">30</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno2</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">30</property>
+                        <property name="position">31</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno_succ</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">31</property>
+                        <property name="position">32</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno_succ</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">32</property>
+                        <property name="position">33</property>
+                        <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
                         <property name="name">UnioneDatiGestione::DataSetDatiDaGestione::missioneprogramma</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">33</property>
+                        <property name="position">35</property>
                         <property name="name">UnioneDatiGestione::DatiColonnaHAnniPrec::missione</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">34</property>
+                        <property name="position">36</property>
                         <property name="name">UnioneDatiGestione::DatiColonnaHAnniPrec::programma</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">35</property>
+                        <property name="position">37</property>
                         <property name="name">UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">36</property>
+                        <property name="position">38</property>
                         <property name="name">UnioneDatiGestione::DatiColonnaHAnniPrec::mispro</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -3186,6 +3179,809 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
                     <property name="rightDataSet">UnioneDatiGestione</property>
                     <expression name="leftExpression">dataSetRow["mispro"]</expression>
                     <expression name="rightExpression">dataSetRow["DataSetDatiDaGestione::missioneprogramma"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DatiColonnaD_AnnoPrec" id="11397">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">miss_pro</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">miss_pro</text-property>
+                    <text-property name="heading">miss_pro</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">colonna_d_anno_prec</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">colonna_d_anno_prec</text-property>
+                    <text-property name="heading">colonna_d_anno_prec</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_ente</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_anno_bil</property>
+                    <property name="paramName">anno_bilancio</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_anno_prospetto</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <expression name="defaultValue" type="javascript">(new Number(params["Anno Prospetto"].value) - 1).toString()</expression>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">miss_pro</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">colonna_d_anno_prec</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">miss_pro</property>
+                    <property name="nativeName">miss_pro</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">colonna_d_anno_prec</property>
+                    <property name="nativeName">colonna_d_anno_prec</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[
+select programma_code miss_pro, sum(spese_da_impeg_anno1_d) colonna_d_anno_prec
+from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato" (?,?,?)
+group by programma_code
+
+/*
+select cl2.classif_code miss_pro,
+COALESCE(sum(e.cronop_elem_det_importo),0) colonna_d_anno_prec
+from siac_t_programma pr, siac_t_cronop a, 
+     siac_t_bil b, siac_t_periodo c,
+     siac_t_cronop_elem d, siac_d_bil_elem_tipo dt,
+     siac_t_cronop_elem_det e, siac_t_periodo f,
+     siac_r_cronop_elem_class rcl2, siac_d_class_tipo clt2, siac_t_class cl2,
+     siac_r_cronop_stato stc , siac_d_cronop_stato stct,
+     siac_r_programma_stato stpr, siac_d_programma_stato stprt
+where pr.programma_id=a.programma_id
+      and a.bil_id = b.bil_id
+      and b.periodo_id=c.periodo_id
+      and d.cronop_id=a.cronop_id
+      and d.cronop_elem_id=e.cronop_elem_id
+      and dt.elem_tipo_id=d.elem_tipo_id
+      and rcl2.cronop_elem_id = d.cronop_elem_id
+      and rcl2.classif_id=cl2.classif_id
+      and cl2.classif_tipo_id=clt2.classif_tipo_id
+      and e.periodo_id = f.periodo_id
+      and stc.cronop_id=a.cronop_id
+      and stc.cronop_stato_id=stct.cronop_stato_id
+      and stpr.programma_id=pr.programma_id
+      and stpr.programma_stato_id=stprt.programma_stato_id                              
+      and pr.ente_proprietario_id= ?
+      and c.anno=? -- anno bilancio
+      and a.usato_per_fpv::boolean = true
+      and e.anno_entrata = (?::integer -1)::varchar -- anno prospetto           
+      and f.anno::integer=?::integer  -- anno prospetto + 1
+      and clt2.classif_tipo_code='PROGRAMMA'
+      and stct.cronop_stato_code='VA'
+      and stprt.programma_stato_code='VA'
+      and stpr.data_cancellazione is null
+      and stc.data_cancellazione is null
+      and a.data_cancellazione is null
+      and pr.data_cancellazione is null
+      and b.data_cancellazione is null
+      and c.data_cancellazione is null
+      and d.data_cancellazione is null
+      and e.data_cancellazione is null
+      and rcl2.data_cancellazione is null
+group by cl2.classif_code          
+*/
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>classif_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>classif_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>classif_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>coalesce</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>coalesce</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>coalesce</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="UnioneDatiComplessiviFinale" id="11399">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::missione_tipo_code</property>
+                    <property name="alias">FPV::missione_tipo_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::missione_tipo_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_desc</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::missione_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::missione_tipo_desc</property>
+                    <property name="alias">FPV::missione_tipo_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::missione_tipo_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DatiColonnaD_AnnoPrec::miss_pro</property>
+                    <property name="alias">miss_pro</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DatiColonnaD_AnnoPrec::miss_pro</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::programma_desc</property>
+                    <property name="alias">FPV::programma_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::programma_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_code</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::programma_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::missione_desc</property>
+                    <property name="alias">FPV::missione_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::missione_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importi_capitoli</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::importi_capitoli</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importi_capitoli</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno1</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_desc</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::programma_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno2</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno2</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::mispro</property>
+                    <property name="alias">UnioneDatiGestione::DatiColonnaHAnniPrec::mispro</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::mispro</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h</property>
+                    <property name="alias">UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::programma_code</property>
+                    <property name="alias">FPV::programma_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::programma_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::mispro</property>
+                    <property name="alias">FPV::mispro</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::mispro</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno2_e</property>
+                    <property name="alias">FPV::spese_da_impeg_anno2_e</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno2_e</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::missione_code</property>
+                    <property name="alias">FPV::missione_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::missione_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::spese_impe_anni_prec_b</property>
+                    <property name="alias">FPV::spese_impe_anni_prec_b</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_impe_anni_prec_b</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::spese_da_impeg_anni_succ_f</property>
+                    <property name="alias">FPV::spese_da_impeg_anni_succ_f</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_anni_succ_f</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::programma</property>
+                    <property name="alias">UnioneDatiGestione::DatiColonnaHAnniPrec::programma</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::programma</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::fondo_plur_anno_prec_a</property>
+                    <property name="alias">FPV::fondo_plur_anno_prec_a</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::fondo_plur_anno_prec_a</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno_succ</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno_succ</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno_succ</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missioneprogramma</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::missioneprogramma</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missioneprogramma</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno2</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno2</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::fondo_plur_anno_h</property>
+                    <property name="alias">FPV::fondo_plur_anno_h</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::fondo_plur_anno_h</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DatiColonnaD_AnnoPrec::colonna_d_anno_prec</property>
+                    <property name="alias">colonna_d_anno_prec</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">DatiColonnaD_AnnoPrec::colonna_d_anno_prec</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::bil_anno</property>
+                    <property name="alias">FPV::bil_anno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::bil_anno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d</property>
+                    <property name="alias">FPV::spese_da_impeg_anno1_d</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_code</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::missione_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::programma_tipo_desc</property>
+                    <property name="alias">FPV::programma_tipo_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::programma_tipo_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::missione</property>
+                    <property name="alias">UnioneDatiGestione::DatiColonnaHAnniPrec::missione</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::missione</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::quota_fond_plur_anni_prec_c</property>
+                    <property name="alias">FPV::quota_fond_plur_anni_prec_c</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::quota_fond_plur_anni_prec_c</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d2</property>
+                    <property name="alias">FPV::spese_da_impeg_anno1_d2</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno1</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::spese_da_impeg_non_def_g</property>
+                    <property name="alias">FPV::spese_da_impeg_non_def_g</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_non_def_g</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::FPV::programma_tipo_code</property>
+                    <property name="alias">FPV::programma_tipo_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::programma_tipo_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno_succ</property>
+                    <property name="alias">UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno_succ</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno_succ</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::ente</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">0</property>
+                    <expression name="defaultValue">1</expression>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::anno</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::anno_prosp</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::p_ente</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::p_anno_bil</property>
+                    <property name="dataType">string</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::p__anno_prospetto</property>
+                    <property name="dataType">string</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::ente</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::anno</property>
+                    <property name="dataType">string</property>
+                    <property name="position">7</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::anno_prospetto</property>
+                    <property name="dataType">string</property>
+                    <property name="position">8</property>
+                    <expression name="defaultValue">2020</expression>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">DatiColonnaD_AnnoPrec::p_ente</property>
+                    <property name="dataType">integer</property>
+                    <property name="position">9</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">DatiColonnaD_AnnoPrec::p_anno_bil</property>
+                    <property name="dataType">string</property>
+                    <property name="position">10</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">DatiColonnaD_AnnoPrec::p_anno_prospetto</property>
+                    <property name="dataType">string</property>
+                    <property name="position">11</property>
+                    <expression name="defaultValue">(new Number(params["Anno Prospetto"].value) - 1).toString()</expression>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::bil_anno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::missione_tipo_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::missione_tipo_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::missione_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::missione_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::programma_tipo_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::programma_tipo_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::programma_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::programma_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::fondo_plur_anno_prec_a</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::spese_impe_anni_prec_b</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::quota_fond_plur_anni_prec_c</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_anno2_e</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_anni_succ_f</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_non_def_g</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::fondo_plur_anno_h</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d2</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">UnioneDatiComplessivi::FPV::mispro</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importi_capitoli</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno1</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno1</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno2</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno2</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno_succ</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno_succ</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missioneprogramma</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">35</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::missione</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">36</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::programma</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">38</property>
+                        <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::mispro</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">39</property>
+                        <property name="name">DatiColonnaD_AnnoPrec::miss_pro</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">40</property>
+                        <property name="name">DatiColonnaD_AnnoPrec::colonna_d_anno_prec</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>UnioneDatiComplessivi</value>
+                <value>DatiColonnaD_AnnoPrec</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">UnioneDatiComplessivi</property>
+                    <property name="rightDataSet">DatiColonnaD_AnnoPrec</property>
+                    <expression name="leftExpression">dataSetRow["FPV::programma_code"]</expression>
+                    <expression name="rightExpression">dataSetRow["miss_pro"]</expression>
                 </structure>
             </list-property>
         </joint-data-set>
@@ -3401,7 +4197,7 @@ from "BILR011_Allegato_B_Fondo_Pluriennale_vincolato"(?,?,?)]]></xml-property>
         <table name="TableDatiPrevisione" id="11245">
             <property name="fontFamily">"Times New Roman"</property>
             <property name="width">11.135416666666666in</property>
-            <property name="dataSet">UnioneDatiComplessivi</property>
+            <property name="dataSet">UnioneDatiComplessiviFinale</property>
             <list-property name="boundDataColumns">
                 <structure>
                     <property name="name">FPV::bil_anno</property>
@@ -3675,8 +4471,21 @@ else dataSetRow["UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h"]</expr
                 <structure>
                     <property name="name">SpeseImpeAnniPrecB</property>
                     <text-property name="displayName">SpeseImpeAnniPrecB</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
-dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"];</expression>
+                    <expression name="expression" type="javascript">//SIAC-8515 se l'anno prospetto è maggiore dell'anno bilancio, nella colonna B devo sommare l'importo della&#13;
+//colonna D dell'anno precedente.&#13;
+if(parseInt(params["Anno Prospetto"].value)   > parseInt(params["anno_bilancio"].value)) {&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"]+&#13;
+	dataSetRow["DatiColonnaD_AnnoPrec::colonna_d_anno_prec"]-&#13;
+	//8/3/2023 SIAC-886.&#13;
+	//devo sottrarre gli importi degli impegni di "spese_impegnate" eventualmente già presenti nella colonna D&#13;
+	//dell'anno precedente.&#13;
+	dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev"];&#13;
+}&#13;
+else {&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"];&#13;
+}</expression>
                     <property name="dataType">float</property>
                     <property name="allowExport">true</property>
                 </structure>
@@ -3691,8 +4500,21 @@ dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"];</expre
                     <list-property name="arguments">
                         <structure>
                             <property name="name">Expression</property>
-                            <expression name="value" type="javascript">dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
-dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"];</expression>
+                            <expression name="value" type="javascript">//SIAC-8515 se l'anno prospetto è maggiore dell'anno bilancio, nella colonna B devo sommare l'importo della&#13;
+//colonna D dell'anno precedente.&#13;
+if(parseInt(params["Anno Prospetto"].value)   > parseInt(params["anno_bilancio"].value)) {&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"]+&#13;
+	dataSetRow["DatiColonnaD_AnnoPrec::colonna_d_anno_prec"]-&#13;
+//8/3/2023 SIAC-886.&#13;
+	//devo sottrarre gli importi degli impegni di "spese_impegnate" eventualmente già presenti nella colonna D&#13;
+	//dell'anno precedente.&#13;
+	dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev"];&#13;
+}&#13;
+else {&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"];&#13;
+}</expression>
                         </structure>
                     </list-property>
                     <property name="allowExport">true</property>
@@ -3705,8 +4527,21 @@ dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"];</expre
                     <list-property name="arguments">
                         <structure>
                             <property name="name">Expression</property>
-                            <expression name="value" type="javascript">dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
-dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"];</expression>
+                            <expression name="value" type="javascript">//SIAC-8515 se l'anno prospetto è maggiore dell'anno bilancio, nella colonna B devo sommare l'importo della&#13;
+//colonna D dell'anno precedente.&#13;
+if(parseInt(params["Anno Prospetto"].value)   > parseInt(params["anno_bilancio"].value)) {&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"]+&#13;
+	dataSetRow["DatiColonnaD_AnnoPrec::colonna_d_anno_prec"]-&#13;
+	//8/3/2023 SIAC-886.&#13;
+	//devo sottrarre gli importi degli impegni di "spese_impegnate" eventualmente già presenti nella colonna D&#13;
+	//dell'anno precedente.	&#13;
+	dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev"];&#13;
+}&#13;
+else {&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]+&#13;
+	dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"];&#13;
+}</expression>
                         </structure>
                     </list-property>
                     <property name="allowExport">true</property>
@@ -3902,6 +4737,390 @@ row["TotFinaleSpeseDaImpegNonDefG"]</expression>
                     <property name="dataType">float</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::bil_anno</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::bil_anno</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::bil_anno"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::missione_tipo_code</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::missione_tipo_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::missione_tipo_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::missione_tipo_desc</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::missione_tipo_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::missione_tipo_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::missione_code</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::missione_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::missione_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::missione_desc</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::missione_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::missione_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::programma_tipo_code</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::programma_tipo_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::programma_tipo_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::programma_tipo_desc</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::programma_tipo_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::programma_tipo_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::programma_code</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::programma_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::programma_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::programma_desc</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::programma_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::programma_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::fondo_plur_anno_prec_a</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::fondo_plur_anno_prec_a</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::fondo_plur_anno_prec_a"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::spese_impe_anni_prec_b</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_impe_anni_prec_b</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::spese_impe_anni_prec_b"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::quota_fond_plur_anni_prec_c</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::quota_fond_plur_anni_prec_c</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::quota_fond_plur_anni_prec_c"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_anno2_e</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno2_e</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::spese_da_impeg_anno2_e"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_anni_succ_f</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_anni_succ_f</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::spese_da_impeg_anni_succ_f"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_non_def_g</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_non_def_g</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::spese_da_impeg_non_def_g"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::fondo_plur_anno_h</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::fondo_plur_anno_h</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::fondo_plur_anno_h"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::mispro</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::mispro</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::mispro"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_code</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_desc</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missione_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_code</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_desc</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::programma_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importi_capitoli</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importi_capitoli</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importi_capitoli"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno1</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno1</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno1"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno1</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno1</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno1"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno2</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno2"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno2</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno2"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno_succ</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno_succ</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo_anno_succ"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno_succ</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno_succ</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_anno_succ"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missioneprogramma</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missioneprogramma</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::missioneprogramma"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::missione</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::missione</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::missione"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::programma</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::programma</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::programma"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::imp_colonna_h"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::mispro</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::mispro</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DatiColonnaHAnniPrec::mispro"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DatiColonnaD_AnnoPrec::miss_pro</property>
+                    <text-property name="displayName">DatiColonnaD_AnnoPrec::miss_pro</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DatiColonnaD_AnnoPrec::miss_pro"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DatiColonnaD_AnnoPrec::colonna_d_anno_prec</property>
+                    <text-property name="displayName">DatiColonnaD_AnnoPrec::colonna_d_anno_prec</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DatiColonnaD_AnnoPrec::colonna_d_anno_prec"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d2</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::FPV::spese_da_impeg_anno1_d2"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</property>
+                    <text-property name="displayName">UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">avanzo</property>
+                    <text-property name="displayName">avanzo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::importo_avanzo"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">impegni</property>
+                    <text-property name="displayName">impegni</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">colonna_d_prec</property>
+                    <text-property name="displayName">colonna_d_prec</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DatiColonnaD_AnnoPrec::colonna_d_anno_prec"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">spese_imp_da_prev</property>
+                    <text-property name="displayName">spese_imp_da_prev</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UnioneDatiComplessivi::UnioneDatiGestione::DataSetDatiDaGestione::spese_impegnate_da_prev"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tot_impegni</property>
+                    <text-property name="displayName">tot_impegni</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoMissione</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["impegni"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tot_colonna_d</property>
+                    <text-property name="displayName">tot_colonna_d</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoMissione</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["colonna_d_prec"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tot_avanzo</property>
+                    <text-property name="displayName">tot_avanzo</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoMissione</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["avanzo"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tot_spese_imp_da_prev</property>
+                    <text-property name="displayName">tot_spese_imp_da_prev</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoMissione</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["spese_imp_da_prev"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tot_impegni_finale</property>
+                    <text-property name="displayName">tot_impegni_finale</text-property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["impegni"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tot_avanzo_finale</property>
+                    <text-property name="displayName">tot_avanzo_finale</text-property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["avanzo"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tot_colonna_d_finale</property>
+                    <text-property name="displayName">tot_colonna_d_finale</text-property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["colonna_d_prec"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">tot_spese_imp_da_prev_finale</property>
+                    <text-property name="displayName">tot_spese_imp_da_prev_finale</text-property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["spese_imp_da_prev"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <column id="11279">
                 <property name="width">0.34375in</property>
@@ -3955,7 +5174,7 @@ row["TotFinaleSpeseDaImpegNonDefG"]</expression>
                             <property name="textAlign">center</property>
                             <property name="verticalAlign">middle</property>
                             <property name="contentType">auto</property>
-                            <text-property name="content"><![CDATA[MISSIONI E PROGRAMMI]]></text-property>
+                            <text-property name="content"><![CDATA[MISSIONI E PROGRAMMI ]]></text-property>
                         </text>
                     </cell>
                     <cell id="11249">

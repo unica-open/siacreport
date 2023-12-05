@@ -9,7 +9,7 @@
         <structure>
             <property name="name">queryTimeOut</property>
             <property name="id">1521</property>
-        </structure>
+        </structure>   
         <structure>
             <property name="name">rowFetchSize</property>
             <property name="id">1521</property>
@@ -2115,6 +2115,8 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
             <property name="headerHeight">0.7in</property>
             <page-header>
                 <grid id="1211">
+                    <property name="height">0.7291666666666666in</property>
+                    <property name="width">15.177in</property>
                     <property name="dataSet">DataSetDatiCapSpesa</property>
                     <list-property name="boundDataColumns">
                         <structure>
@@ -2364,25 +2366,19 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <property name="dataType">string</property>
                         </structure>
                     </list-property>
-                    <column id="1212"/>
-                    <column id="1213"/>
+                    <column id="1212">
+                        <property name="width">13.822916666666666in</property>
+                    </column>
                     <row id="1214">
                         <cell id="1215">
                             <data id="1220">
                                 <property name="resultSetColumn">nome_ente</property>
                             </data>
                         </cell>
-                        <cell id="1216">
-                            <text id="1221">
-                                <property name="textAlign">right</property>
-                                <property name="contentType">html</property>
-                                <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
-                            </text>
-                        </cell>
                     </row>
                     <row id="1217">
                         <cell id="1218">
-                            <property name="colSpan">2</property>
+                            <property name="colSpan">1</property>
                             <property name="rowSpan">1</property>
                             <text-data id="1438">
                                 <property name="textAlign">center</property>
@@ -2393,12 +2389,19 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     </row>
                 </grid>
             </page-header>
+            <page-footer>
+                <text id="1221">
+                    <property name="textAlign">left</property>
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
         </simple-master-page>
     </page-setup>
     <body>
         <table name="TableSpesePrevisione" id="1763">
             <property name="fontFamily">"Times New Roman"</property>
-            <property name="width">11.65625in</property>
+            <property name="width">15.177in</property>
             <property name="dataSet">DataSetDatiCapSpesa</property>
             <list-property name="visibility">
                 <structure>
@@ -2661,6 +2664,27 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">Anno1</property>
+                    <text-property name="displayName">Anno</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno2</property>
+                    <text-property name="displayName">Anno2</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)+1</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno3</property>
+                    <text-property name="displayName">Anno3</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)+2</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <list-property name="sort">
                 <structure>
@@ -2690,106 +2714,115 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                 </structure>
             </list-property>
             <column id="1969">
-                <property name="width">0.5208333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1970">
-                <property name="width">0.40625in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1971">
-                <property name="width">0.2604166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1972">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1973">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1974">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1975">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1976">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1977">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1978">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1979">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1980">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1981">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1982">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1983">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1984">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1985">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1986">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1987">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1988">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1989">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1990">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1991">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1992">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1993">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1994">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1995">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1996">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1997">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1998">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1999">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2000">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2001">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2002">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
+            </column>
+            <column id="2332">
+                <property name="width">39px</property>
+            </column>
+            <column id="2338">
+                <property name="width">39px</property>
+            </column>
+            <column id="2326">
+                <property name="width">39px</property>
             </column>
             <header>
                 <row id="1764">
@@ -2801,6 +2834,9 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <text-property name="content"><![CDATA[CAPITOLI DI SPESA - PREVISIONE]]></text-property>
                         </text>
                     </cell>
+                    <cell id="2327"/>
+                    <cell id="2333"/>
+                    <cell id="2321"/>
                 </row>
                 <row id="1767">
                     <cell id="1768">
@@ -2903,7 +2939,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1801">
-                            <expression name="valueExpr">"Importi iniziali "+params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -2911,7 +2947,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1803">
-                            <expression name="valueExpr">"Importi iniziali "+(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -2919,7 +2955,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1805">
-                            <expression name="valueExpr">"Importi iniziali "+(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -2927,7 +2963,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1807">
-                            <expression name="valueExpr">"Stanziamenti "+params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -2935,7 +2971,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1809">
-                            <expression name="valueExpr">"Stanziamenti "+(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -2943,10 +2979,13 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1811">
-                            <expression name="valueExpr">"Stanziamenti "+(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
+                    <cell id="2328"/>
+                    <cell id="2334"/>
+                    <cell id="2322"/>
                 </row>
                 <row id="1812">
                     <cell id="1813"/>
@@ -3073,6 +3112,9 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <text-property name="content"><![CDATA[Cassa]]></text-property>
                         </text>
                     </cell>
+                    <cell id="2329"/>
+                    <cell id="2335"/>
+                    <cell id="2323"/>
                 </row>
             </header>
             <detail>
@@ -4191,6 +4233,9 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <property name="resultSetColumn">cassa_anno2</property>
                         </data>
                     </cell>
+                    <cell id="2330"/>
+                    <cell id="2336"/>
+                    <cell id="2324"/>
                 </row>
             </detail>
             <footer>
@@ -4230,12 +4275,15 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     <cell id="1966"/>
                     <cell id="1967"/>
                     <cell id="1968"/>
+                    <cell id="2331"/>
+                    <cell id="2337"/>
+                    <cell id="2325"/>
                 </row>
             </footer>
         </table>
         <table name="TableSpeseGestione" id="1224">
             <property name="fontFamily">"Times New Roman"</property>
-            <property name="width">11.65625in</property>
+            <property name="width">15.177in</property>
             <property name="dataSet">DataSetDatiCapSpesa</property>
             <list-property name="visibility">
                 <structure>
@@ -4517,6 +4565,27 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">Anno1</property>
+                    <text-property name="displayName">Anno1</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno2</property>
+                    <text-property name="displayName">Anno2</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)+1</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno3</property>
+                    <text-property name="displayName">Anno3</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)+2</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <list-property name="sort">
                 <structure>
@@ -4546,115 +4615,115 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                 </structure>
             </list-property>
             <column id="1435">
-                <property name="width">0.5208333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1330">
-                <property name="width">0.40625in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1331">
-                <property name="width">0.2604166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1332">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1333">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1334">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1335">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1336">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1337">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1338">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1339">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1340">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1341">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1342">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1343">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1344">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1345">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1346">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1347">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1348">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1349">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1350">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1351">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1352">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1353">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1354">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1355">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1356">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1357">
-                <property name="width">0.21875in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1358">
-                <property name="width">0.23958333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1359">
-                <property name="width">0.19791666666666666in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1360">
-                <property name="width">0.21875in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1361">
-                <property name="width">0.23958333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1362">
-                <property name="width">0.17708333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2253">
-                <property name="width">0.20833333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2247">
-                <property name="width">0.20833333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2241">
-                <property name="width">0.5520833333333334in</property>
+                <property name="width">39px</property>
             </column>
             <header>
                 <row id="1385">
@@ -4768,7 +4837,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1475">
-                            <expression name="valueExpr">"Importi iniziali "+params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -4776,7 +4845,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1476">
-                            <expression name="valueExpr">"Importi iniziali "+(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -4784,7 +4853,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1477">
-                            <expression name="valueExpr">"Importi iniziali "+(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -4792,7 +4861,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1499">
-                            <expression name="valueExpr">"Stanziamenti "+params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -4800,7 +4869,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1500">
-                            <expression name="valueExpr">"Stanziamenti "+(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -4808,7 +4877,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1501">
-                            <expression name="valueExpr">"Stanziamenti "+(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -4822,6 +4891,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     </cell>
                 </row>
                 <row id="1439">
+                    <property name="height">0.2604166666666667in</property>
                     <cell id="1440"/>
                     <cell id="1441"/>
                     <cell id="1442"/>
@@ -4948,19 +5018,19 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     </cell>
                     <cell id="2250">
                         <text-data id="2255">
-                            <expression name="valueExpr">params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
                     <cell id="2244">
                         <text-data id="2256">
-                            <expression name="valueExpr">(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
                     <cell id="2238">
                         <text-data id="2257">
-                            <expression name="valueExpr">(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -6303,7 +6373,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
         </table>
         <table name="TableEntratePrevisione" id="2003">
             <property name="fontFamily">"Times New Roman"</property>
-            <property name="width">11.65625in</property>
+            <property name="width">15.177in</property>
             <property name="dataSet">DataSetDatiCapEntrata</property>
             <list-property name="visibility">
                 <structure>
@@ -6542,6 +6612,27 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">Anno1</property>
+                    <text-property name="displayName">Anno1</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno2</property>
+                    <text-property name="displayName">Anno2</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)+1</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno3</property>
+                    <text-property name="displayName">Anno3</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)+2</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <list-property name="sort">
                 <structure>
@@ -6571,103 +6662,115 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                 </structure>
             </list-property>
             <column id="2203">
-                <property name="width">0.5208333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2204">
-                <property name="width">0.40625in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2205">
-                <property name="width">0.2604166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2206">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2207">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2208">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2209">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2210">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2211">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2212">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2213">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2214">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2215">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2216">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2217">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2218">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2219">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2220">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2221">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2222">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2223">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2224">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2225">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2226">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2227">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2228">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2229">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2230">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2231">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2232">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2233">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2234">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2235">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
+            </column>
+            <column id="2320">
+                <property name="width">39px</property>
+            </column>
+            <column id="2314">
+                <property name="width">39px</property>
+            </column>
+            <column id="2308">
+                <property name="width">39px</property>
+            </column>
+            <column id="2302">
+                <property name="width">39px</property>
             </column>
             <header>
                 <row id="2004">
@@ -6679,6 +6782,10 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <text-property name="content"><![CDATA[CAPITOLI DI ENTRATA - PREVISIONE]]></text-property>
                         </text>
                     </cell>
+                    <cell id="2315"/>
+                    <cell id="2309"/>
+                    <cell id="2303"/>
+                    <cell id="2297"/>
                 </row>
                 <row id="2007">
                     <cell id="2008">
@@ -6775,7 +6882,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="2039">
-                            <expression name="valueExpr">"Importi iniziali "+params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -6783,7 +6890,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="2041">
-                            <expression name="valueExpr">"Importi iniziali "+(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -6791,7 +6898,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="2043">
-                            <expression name="valueExpr">"Importi iniziali "+(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -6799,7 +6906,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="2045">
-                            <expression name="valueExpr">"Stanziamenti "+params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -6807,7 +6914,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="2047">
-                            <expression name="valueExpr">"Stanziamenti "+(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -6815,10 +6922,14 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="2049">
-                            <expression name="valueExpr">"Stanziamenti "+(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
+                    <cell id="2316"/>
+                    <cell id="2310"/>
+                    <cell id="2304"/>
+                    <cell id="2298"/>
                 </row>
                 <row id="2050">
                     <cell id="2051"/>
@@ -6944,6 +7055,10 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <text-property name="content"><![CDATA[Cassa]]></text-property>
                         </text>
                     </cell>
+                    <cell id="2317"/>
+                    <cell id="2311"/>
+                    <cell id="2305"/>
+                    <cell id="2299"/>
                 </row>
             </header>
             <detail>
@@ -8050,6 +8165,10 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <property name="resultSetColumn">cassa_anno2</property>
                         </data>
                     </cell>
+                    <cell id="2318"/>
+                    <cell id="2312"/>
+                    <cell id="2306"/>
+                    <cell id="2300"/>
                 </row>
             </detail>
             <footer>
@@ -8088,12 +8207,16 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     <cell id="2200"/>
                     <cell id="2201"/>
                     <cell id="2202"/>
+                    <cell id="2319"/>
+                    <cell id="2313"/>
+                    <cell id="2307"/>
+                    <cell id="2301"/>
                 </row>
             </footer>
         </table>
         <table name="TableEntrateGestione" id="1522">
             <property name="fontFamily">"Times New Roman"</property>
-            <property name="width">11.145833333333334in</property>
+            <property name="width">15.177in</property>
             <property name="dataSet">DataSetDatiCapEntrata</property>
             <list-property name="visibility">
                 <structure>
@@ -8350,6 +8473,27 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">Anno1</property>
+                    <text-property name="displayName">Anno1</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno2</property>
+                    <text-property name="displayName">Anno2</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)+1</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno3</property>
+                    <text-property name="displayName">Anno3</text-property>
+                    <expression name="expression" type="javascript">parseInt(params["anno_bilancio"].value)+2</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <list-property name="sort">
                 <structure>
@@ -8379,112 +8523,115 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                 </structure>
             </list-property>
             <column id="1728">
-                <property name="width">0.5208333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1729">
-                <property name="width">0.40625in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1730">
-                <property name="width">0.2604166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1731">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1732">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1733">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1734">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1735">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1737">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1738">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1739">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1740">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1741">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1742">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1743">
-                <property name="width">0.3333333333333333in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1744">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1745">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1746">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1747">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1748">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1749">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1750">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1751">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1752">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1753">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1754">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1755">
-                <property name="width">0.3229166666666667in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1756">
-                <property name="width">0.20833333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1757">
-                <property name="width">0.22916666666666666in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1758">
-                <property name="width">0.17708333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1759">
-                <property name="width">0.28125in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1760">
-                <property name="width">0.3125in</property>
+                <property name="width">39px</property>
             </column>
             <column id="1761">
-                <property name="width">0.22916666666666666in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2278">
-                <property name="width">0.23958333333333334in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2272">
-                <property name="width">0.21875in</property>
+                <property name="width">39px</property>
             </column>
             <column id="2266">
-                <property name="width">0.1875in</property>
+                <property name="width">39px</property>
+            </column>
+            <column id="2296">
+                <property name="width">39px</property>
             </column>
             <header>
                 <row id="1523">
@@ -8496,6 +8643,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <text-property name="content"><![CDATA[CAPITOLI DI ENTRATA - GESTIONE]]></text-property>
                         </text>
                     </cell>
+                    <cell id="2291"/>
                 </row>
                 <row id="1526">
                     <cell id="1527">
@@ -8592,7 +8740,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1560">
-                            <expression name="valueExpr">"Importi iniziali "+params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -8600,7 +8748,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1562">
-                            <expression name="valueExpr">"Importi iniziali "+(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -8608,7 +8756,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1564">
-                            <expression name="valueExpr">"Importi iniziali "+(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">"Importi iniziali "+row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -8616,7 +8764,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1566">
-                            <expression name="valueExpr">"Stanziamenti "+params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -8624,7 +8772,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1568">
-                            <expression name="valueExpr">"Stanziamenti "+(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -8632,7 +8780,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                         <property name="colSpan">3</property>
                         <property name="rowSpan">1</property>
                         <text-data id="1570">
-                            <expression name="valueExpr">"Stanziamenti "+(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">"Stanziamenti "+row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
@@ -8644,6 +8792,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <text-property name="content"><![CDATA[Disponibilità competenza]]></text-property>
                         </text>
                     </cell>
+                    <cell id="2292"/>
                 </row>
                 <row id="1571">
                     <cell id="1572"/>
@@ -8771,22 +8920,23 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     </cell>
                     <cell id="2275">
                         <text-data id="2282">
-                            <expression name="valueExpr">params["anno_bilancio"].value</expression>
+                            <expression name="valueExpr">row["Anno1"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
                     <cell id="2269">
                         <text-data id="2281">
-                            <expression name="valueExpr">(parseInt(params["anno_bilancio"].value)+1)</expression>
+                            <expression name="valueExpr">row["Anno2"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
                     <cell id="2263">
                         <text-data id="2280">
-                            <expression name="valueExpr">(parseInt(params["anno_bilancio"].value)+2)</expression>
+                            <expression name="valueExpr">row["Anno3"]</expression>
                             <property name="contentType">html</property>
                         </text-data>
                     </cell>
+                    <cell id="2293"/>
                 </row>
             </header>
             <detail>
@@ -10067,6 +10217,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                             <property name="resultSetColumn">disp_stanz_anno2</property>
                         </data>
                     </cell>
+                    <cell id="2294"/>
                 </row>
             </detail>
             <footer>
@@ -10108,6 +10259,7 @@ from "BILR093_elenco_capitoli_entrate" (?, ?, ?, ?)]]></xml-property>
                     <cell id="2277"/>
                     <cell id="2271"/>
                     <cell id="2265"/>
+                    <cell id="2295"/>
                 </row>
             </footer>
         </table>

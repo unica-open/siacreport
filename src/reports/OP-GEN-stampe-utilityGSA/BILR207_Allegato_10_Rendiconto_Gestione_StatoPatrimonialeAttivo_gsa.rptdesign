@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte&#13;
+SPDX-License-Identifier: EUPL-1.2</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <list-property name="propertyBindings">
         <structure>
@@ -49,6 +51,41 @@
                 <property name="category">Unformatted</property>
             </structure>
         </scalar-parameter>
+        <parameter-group name="DatePrimaNota" id="6073">
+            <text-property name="displayName">Data Definitiva della Prima Nota</text-property>
+            <parameters>
+                <scalar-parameter name="DataPnotaDefDa" id="6074">
+                    <text-property name="helpText">Inserire una data nel formato: gg/mm/aaaa</text-property>
+                    <text-property name="promptText">Da</text-property>
+                    <property name="valueType">static</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataType">date</property>
+                    <property name="distinct">true</property>
+                    <list-property name="selectionList"/>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">text-box</property>
+                    <structure name="format">
+                        <property name="category">Custom</property>
+                        <property name="pattern">dd/MM/yyyy</property>
+                    </structure>
+                </scalar-parameter>
+                <scalar-parameter name="DataPnotaDefA" id="6075">
+                    <text-property name="helpText">Inserire una data nel formato: gg/mm/aaaa</text-property>
+                    <text-property name="promptText">A</text-property>
+                    <property name="valueType">static</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataType">date</property>
+                    <property name="distinct">true</property>
+                    <list-property name="selectionList"/>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">text-box</property>
+                    <structure name="format">
+                        <property name="category">Custom</property>
+                        <property name="pattern">dd/MM/yyyy</property>
+                    </structure>
+                </scalar-parameter>
+            </parameters>
+        </parameter-group>
         <scalar-parameter name="report" id="71">
             <property name="hidden">true</property>
             <property name="valueType">static</property>
@@ -314,6 +351,12 @@ else  true</expression>
                     <text-property name="displayName">importo_avere</text-property>
                     <text-property name="heading">importo_avere</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
+                </structure>
             </list-property>
             <list-property name="filter">
                 <structure>
@@ -355,6 +398,26 @@ else  true</expression>
                     <property name="nativeDataType">12</property>
                     <property name="position">3</property>
                     <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_data_pnota_da</property>
+                    <property name="paramName">DataPnotaDefDa</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_data_pnota_a</property>
+                    <property name="paramName">DataPnotaDefA</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                    <property name="position">5</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -463,11 +526,16 @@ else  true</expression>
                     </structure>
                     <structure>
                         <property name="position">21</property>
+                        <property name="name">display_error</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
                         <property name="name">saldo</property>
                         <property name="dataType">float</property>
                     </structure>
                     <structure>
-                        <property name="position">22</property>
+                        <property name="position">23</property>
                         <property name="name">importi_esistono</property>
                         <property name="dataType">boolean</property>
                     </structure>
@@ -595,8 +663,14 @@ else  true</expression>
                     <property name="nativeName">importo_avere</property>
                     <property name="dataType">decimal</property>
                 </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
+                </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[select * from siac."BILR206_rendiconto_gestione_gsa" (?,?,?)]]></xml-property>
+            <xml-property name="queryText"><![CDATA[select * from siac."BILR206_rendiconto_gestione_gsa" (?,?,?,?,?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -640,6 +714,36 @@ else  true</expression>
             <design:position>3</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
           <design:scale>0</design:scale>
           <design:nullability>Unknown</design:nullability>
@@ -986,6 +1090,12 @@ else {&#13;
             <property name="fontFamily">"Times New Roman"</property>
             <property name="width">11.135416666666666in</property>
             <property name="dataSet">DataSet</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                </structure>
+            </list-property>
             <list-property name="boundDataColumns">
                 <structure>
                     <property name="name">tipo_codifica</property>
@@ -1260,6 +1370,12 @@ else {&#13;
                     <text-property name="displayName">importo_codice_bilancio</text-property>
                     <expression name="expression" type="javascript">dataSetRow["importo_codice_bilancio"]</expression>
                     <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <list-property name="sort">
@@ -2152,5 +2268,165 @@ else {&#13;
                 </row>
             </footer>
         </table>
+        <grid id="6076">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">18pt</property>
+            <property name="dataSet">DataSet</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">row["display_error"] == ""</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">tipo_codifica</property>
+                    <text-property name="displayName">tipo_codifica</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipo_codifica"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">codice_codifica</property>
+                    <text-property name="displayName">codice_codifica</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["codice_codifica"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">descrizione_codifica</property>
+                    <text-property name="displayName">descrizione_codifica</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descrizione_codifica"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">livello_codifica</property>
+                    <text-property name="displayName">livello_codifica</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["livello_codifica"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_codice_bilancio</property>
+                    <text-property name="displayName">importo_codice_bilancio</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_codice_bilancio"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">codice_raggruppamento</property>
+                    <text-property name="displayName">codice_raggruppamento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["codice_raggruppamento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">descr_raggruppamento</property>
+                    <text-property name="displayName">descr_raggruppamento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["descr_raggruppamento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">codice_codifica_albero</property>
+                    <text-property name="displayName">codice_codifica_albero</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["codice_codifica_albero"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">valore_importo</property>
+                    <text-property name="displayName">valore_importo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["valore_importo"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">codice_subraggruppamento</property>
+                    <text-property name="displayName">codice_subraggruppamento</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["codice_subraggruppamento"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">classif_id_liv1</property>
+                    <text-property name="displayName">classif_id_liv1</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["classif_id_liv1"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">classif_id_liv2</property>
+                    <text-property name="displayName">classif_id_liv2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["classif_id_liv2"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">classif_id_liv3</property>
+                    <text-property name="displayName">classif_id_liv3</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["classif_id_liv3"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">classif_id_liv4</property>
+                    <text-property name="displayName">classif_id_liv4</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["classif_id_liv4"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">classif_id_liv5</property>
+                    <text-property name="displayName">classif_id_liv5</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["classif_id_liv5"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">classif_id_liv6</property>
+                    <text-property name="displayName">classif_id_liv6</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["classif_id_liv6"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">pdce_conto_code</property>
+                    <text-property name="displayName">pdce_conto_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pdce_conto_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">pdce_conto_descr</property>
+                    <text-property name="displayName">pdce_conto_descr</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pdce_conto_descr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_dare</property>
+                    <text-property name="displayName">importo_dare</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_dare"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_avere</property>
+                    <text-property name="displayName">importo_avere</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_avere"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">saldo</property>
+                    <text-property name="displayName">saldo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["saldo"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">importi_esistono</property>
+                    <text-property name="displayName">importi_esistono</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importi_esistono"]</expression>
+                    <property name="dataType">boolean</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="6077"/>
+            <row id="6078">
+                <cell id="6079">
+                    <property name="textAlign">center</property>
+                    <data id="6080">
+                        <property name="resultSetColumn">display_error</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
     </body>
 </report>

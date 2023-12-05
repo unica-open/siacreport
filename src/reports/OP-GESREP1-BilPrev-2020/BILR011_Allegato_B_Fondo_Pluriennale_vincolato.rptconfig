@@ -7,7 +7,7 @@
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_1208_1</property>
-            <property name="value">2019</property>
+            <property name="value">2023</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
@@ -15,7 +15,7 @@
         </structure>
         <structure>
             <property name="name">__isdisplay__Anno Prospetto_3586_3</property>
-            <property name="value">2019</property>
+            <property name="value">2024</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__data del giorno_3585_4</property>
@@ -31,7 +31,7 @@
         </structure>
         <structure>
             <property name="name">anno_bilancio_1208_6</property>
-            <property name="value">2019</property>
+            <property name="value">2023</property>
         </structure>
         <structure>
             <property name="name">anno_bilancio_1208_type_</property>
@@ -47,7 +47,7 @@
         </structure>
         <structure>
             <property name="name">Anno Prospetto_3586_8</property>
-            <property name="value">2019</property>
+            <property name="value">2024</property>
         </structure>
         <structure>
             <property name="name">Anno Prospetto_3586_type_</property>

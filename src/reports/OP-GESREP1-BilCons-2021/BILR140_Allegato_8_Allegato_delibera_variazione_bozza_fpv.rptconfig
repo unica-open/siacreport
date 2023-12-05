@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_26_0</property>
+            <property name="value">3</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_5195_1</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno Competenza_3586_3</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno delibera_5197_4</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero della delibera_5188_5</property>
+            <property name="value">2584</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__tipo_atto_8702_6</property>
+            <property name="value">PROPOSTA di DETERMINA (STILO)</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Organo emettitore delibera_5193_7</property>
+            <property name="value">Giunta</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Variazione_3402_8</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_9</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_atto_8702_10</property>
+            <property name="value">PDD</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_atto_8702_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_atto_8702_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_5195_11</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_5195_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero della delibera_5188_12</property>
+            <property name="value">2584</property>
+        </structure>
+        <structure>
+            <property name="name">Numero della delibera_5188_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_3402_13</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_3402_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Organo emettitore delibera_5193_14</property>
+            <property name="value">di Giunta</property>
+        </structure>
+        <structure>
+            <property name="name">Organo emettitore delibera_5193_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Organo emettitore delibera_5193_expr_</property>
+            <property name="value">dataSetRow["msg_stampa"]</property>
+        </structure>
+        <structure>
+            <property name="name">Anno delibera_5197_15</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">Anno delibera_5197_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_16</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_expr_</property>
+            <property name="value">dataSetRow["anno"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_17</property>
+            <property name="value">3</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

@@ -33189,6 +33189,16 @@ stock residui al 1° gennaio
                         <property name="canShrink">false</property>
                         <property name="overflow">hidden</property>
                         <property name="dataSet">DataSetDatiVariabSintetici</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">pdf</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                            <structure>
+                                <property name="format">xls</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                        </list-property>
                         <list-property name="boundDataColumns">
                             <structure>
                                 <property name="name">voce_conf_ind_codice</property>
@@ -33283,8 +33293,9 @@ stock residui al 1° gennaio
                             <structure>
                                 <property name="name">9.5_indic_tempest_pagam</property>
                                 <text-property name="displayName">9.5_indic_tempest_pagam</text-property>
-                                <expression name="expression" type="javascript">if(dataSetRow["somma_imp_pagati_rnd"] != 0) {&#13;
-	dataSetRow["giorni_effett_rnd"] / dataSetRow["somma_imp_pagati_rnd"];&#13;
+                                <expression name="expression" type="javascript">//SIAC-8756. Questo campo serve per XBRL. Deve essere diviso per 100.&#13;
+if(dataSetRow["somma_imp_pagati_rnd"] != 0) {&#13;
+	(dataSetRow["giorni_effett_rnd"] / dataSetRow["somma_imp_pagati_rnd"]) /100;&#13;
 }&#13;
 else {&#13;
 	0;&#13;
@@ -33294,6 +33305,287 @@ else {&#13;
                             </structure>
                         </list-property>
                         <property name="resultSetColumn">9.5_indic_tempest_pagam</property>
+                    </data>
+                    <data id="11216">
+                        <property name="backgroundAttachment">scroll</property>
+                        <property name="backgroundPositionX">0%</property>
+                        <property name="backgroundPositionY">0%</property>
+                        <property name="backgroundRepeat">repeat</property>
+                        <property name="fontFamily">"Times New Roman"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="fontVariant">normal</property>
+                        <property name="color">black</property>
+                        <property name="textLineThrough">none</property>
+                        <property name="textOverline">none</property>
+                        <property name="textUnderline">none</property>
+                        <property name="borderBottomColor">black</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">black</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">black</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">black</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">0pt</property>
+                        <property name="marginBottom">0pt</property>
+                        <property name="marginRight">0pt</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingBottom">1pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Currency</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">right</property>
+                        <property name="letterSpacing">normal</property>
+                        <property name="lineHeight">normal</property>
+                        <property name="orphans">2</property>
+                        <property name="textTransform">none</property>
+                        <property name="whiteSpace">normal</property>
+                        <property name="widows">2</property>
+                        <property name="wordSpacing">normal</property>
+                        <property name="display">block</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">auto</property>
+                        <property name="showIfBlank">false</property>
+                        <property name="canShrink">false</property>
+                        <property name="overflow">hidden</property>
+                        <property name="dataSet">DataSetDatiVariabSintetici</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">voce_conf_ind_codice</property>
+                                <text-property name="displayName">voce_conf_ind_codice</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["voce_conf_ind_codice"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">voce_conf_ind_desc</property>
+                                <text-property name="displayName">voce_conf_ind_desc</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["voce_conf_ind_desc"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">conf_ind_valore_anno</property>
+                                <text-property name="displayName">conf_ind_valore_anno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["conf_ind_valore_anno"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">conf_ind_valore_anno_1</property>
+                                <text-property name="displayName">conf_ind_valore_anno_1</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["conf_ind_valore_anno_1"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">conf_ind_valore_anno_2</property>
+                                <text-property name="displayName">conf_ind_valore_anno_2</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["conf_ind_valore_anno_2"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ripiano_disav_rnd</property>
+                                <text-property name="displayName">ripiano_disav_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ripiano_disav_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">somm_utilizzi_rnd</property>
+                                <text-property name="displayName">somm_utilizzi_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["somm_utilizzi_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">anticip_tesoreria_rnd</property>
+                                <text-property name="displayName">anticip_tesoreria_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["anticip_tesoreria_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">max_previsto_norma_rnd</property>
+                                <text-property name="displayName">max_previsto_norma_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["max_previsto_norma_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">margine_corr_comp_rnd</property>
+                                <text-property name="displayName">margine_corr_comp_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["margine_corr_comp_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">accens_prest_rinegoz_rnd</property>
+                                <text-property name="displayName">accens_prest_rinegoz_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["accens_prest_rinegoz_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">giorni_effett_rnd</property>
+                                <text-property name="displayName">giorni_effett_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["giorni_effett_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">somma_imp_pagati_rnd</property>
+                                <text-property name="displayName">somma_imp_pagati_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["somma_imp_pagati_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">impegni_estinz_anticip_rnd</property>
+                                <text-property name="displayName">impegni_estinz_anticip_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["impegni_estinz_anticip_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">debito_finanz_anno_prec_rnd</property>
+                                <text-property name="displayName">debito_finanz_anno_prec_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["debito_finanz_anno_prec_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disav_amm_eser_prec_rnd</property>
+                                <text-property name="displayName">disav_amm_eser_prec_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disav_amm_eser_prec_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disav_amm_eser_corso_rnd</property>
+                                <text-property name="displayName">disav_amm_eser_corso_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disav_amm_eser_corso_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tot_disav_eser_prec_rnd</property>
+                                <text-property name="displayName">tot_disav_eser_prec_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tot_disav_eser_prec_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tot_disav_amm_rnd</property>
+                                <text-property name="displayName">tot_disav_amm_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tot_disav_amm_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disav_iscrit_spesa_rnd</property>
+                                <text-property name="displayName">disav_iscrit_spesa_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disav_iscrit_spesa_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">patrimonio_netto_rnd</property>
+                                <text-property name="displayName">patrimonio_netto_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["patrimonio_netto_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">importo_debiti_fuori_bil_ricon_rnd</property>
+                                <text-property name="displayName">importo_debiti_fuori_bil_ricon_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["importo_debiti_fuori_bil_ricon_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">importo_debiti_fuori_bil_corso_ricon_rnd</property>
+                                <text-property name="displayName">importo_debiti_fuori_bil_corso_ricon_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["importo_debiti_fuori_bil_corso_ricon_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">importo_debiti_fuori_bil_ricon_corso_finanz_rnd</property>
+                                <text-property name="displayName">importo_debiti_fuori_bil_ricon_corso_finanz_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["importo_debiti_fuori_bil_ricon_corso_finanz_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">input_colonna_a_rnd</property>
+                                <text-property name="displayName">input_colonna_a_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["input_colonna_a_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">input_colonna_c_rnd</property>
+                                <text-property name="displayName">input_colonna_c_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["input_colonna_c_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">a_ris_amm_presunto_rnd</property>
+                                <text-property name="displayName">a_ris_amm_presunto_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["a_ris_amm_presunto_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">b_tot_parte_accant_rnd</property>
+                                <text-property name="displayName">b_tot_parte_accant_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["b_tot_parte_accant_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">c_tot_parte_vinc_rnd</property>
+                                <text-property name="displayName">c_tot_parte_vinc_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["c_tot_parte_vinc_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">d_tot_dest_invest_rnd</property>
+                                <text-property name="displayName">d_tot_dest_invest_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["d_tot_dest_invest_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">e_tot_parte_disp_rnd</property>
+                                <text-property name="displayName">e_tot_parte_disp_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["e_tot_parte_disp_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">utilizzo_fondo_anticip_rnd</property>
+                                <text-property name="displayName">utilizzo_fondo_anticip_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["utilizzo_fondo_anticip_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">popolaz_residente_rnd</property>
+                                <text-property name="displayName">popolaz_residente_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["popolaz_residente_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disav_debito_aut_non_contr_rnd</property>
+                                <text-property name="displayName">disav_debito_aut_non_contr_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disav_debito_aut_non_contr_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">disav_ammin_lettera_e_rnd</property>
+                                <text-property name="displayName">disav_ammin_lettera_e_rnd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["disav_ammin_lettera_e_rnd"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">9.5_indic_tempest_pagam_pdf</property>
+                                <text-property name="displayName">9.5_indic_tempest_pagam_pdf</text-property>
+                                <expression name="expression" type="javascript">//SIAC-8756. Questo campo serve per PDF ed Excel. Non c'e' la divisione per 100.&#13;
+if(dataSetRow["somma_imp_pagati_rnd"] != 0) {&#13;
+	dataSetRow["giorni_effett_rnd"] / dataSetRow["somma_imp_pagati_rnd"];&#13;
+}&#13;
+else {&#13;
+	0;&#13;
+}</expression>
+                                <property name="dataType">float</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">9.5_indic_tempest_pagam_pdf</property>
                     </data>
                 </cell>
                 <cell id="5952">

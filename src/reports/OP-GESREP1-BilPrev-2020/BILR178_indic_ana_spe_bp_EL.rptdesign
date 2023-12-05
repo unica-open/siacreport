@@ -69,7 +69,7 @@
             <text-property name="helpText">Formato data: gg/mm/aaaa</text-property>
             <text-property name="promptText">Data approvazione Bilancio di Previsione</text-property>
             <property name="valueType">static</property>
-            <property name="isRequired">true</property>
+            <property name="isRequired">false</property>
             <property name="dataType">date</property>
             <property name="distinct">true</property>
             <list-property name="selectionList"/>
@@ -100,9 +100,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-            <property name="odaURL">${userconn}</property>
-            <property name="odaUser">${userdb}</property>
-            <encrypted-property name="odaPassword" encryptionID="base64">pwddAA==</encrypted-property>
+			<property name="odaURL">${userconn}</property>
+			<property name="odaUser">${userdb}</property>
+			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -1360,7 +1360,24 @@ from "fnc_bilr_calcolo_dati_rend_spese_anni_prec"(?,?)
                             <property name="rowSpan">1</property>
                             <text-data id="3617">
                                 <property name="textAlign">center</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">params["data_approv_bil"].value == null || params["data_approv_bil"].value==""</expression>
+                                    </structure>
+                                </list-property>
                                 <expression name="valueExpr">"Bilancio di previsione esercizi "+row["Anno1"]+", "+row["Anno2"]+", "+row["Anno3"]+", approvato il "+Formatter.format(params["data_approv_bil"].value,'dd/MM/yyyy');</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                            <text-data id="11216">
+                                <property name="textAlign">center</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">params["data_approv_bil"].value != null &amp;&amp; params["data_approv_bil"].value !=""</expression>
+                                    </structure>
+                                </list-property>
+                                <expression name="valueExpr">"Bilancio di previsione esercizi "+row["Anno1"]+", "+row["Anno2"]+", "+row["Anno3"]</expression>
                                 <property name="contentType">html</property>
                             </text-data>
                         </cell>
@@ -1760,6 +1777,9 @@ from "fnc_bilr_calcolo_dati_rend_spese_anni_prec"(?,?)
                     <property name="name">TotaleStanziatoMissProgrFpvAnno3</property>
                     <text-property name="displayName">TotaleStanziatoMissProgrFpvAnno3</text-property>
                     <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoMissioneProgramma</value>
+                    </simple-property-list>
                     <property name="aggregateFunction">SUM</property>
                     <list-property name="arguments">
                         <structure>

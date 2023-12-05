@@ -56,7 +56,7 @@
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
-                <value type="constant">BILR175</value>
+                <value type="constant">BILR172</value>
             </simple-property-list>
             <list-property name="selectionList"/>
             <property name="paramType">simple</property>
@@ -1759,6 +1759,9 @@ from "fnc_bilr_calcolo_dati_rend_spese_anni_prec"(?,?)
                     <property name="name">TotaleStanziatoMissProgrFpvAnno3</property>
                     <text-property name="displayName">TotaleStanziatoMissProgrFpvAnno3</text-property>
                     <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>GruppoMissioneProgramma</value>
+                    </simple-property-list>
                     <property name="aggregateFunction">SUM</property>
                     <list-property name="arguments">
                         <structure>
@@ -2102,6 +2105,20 @@ else {&#13;
                     <text-property name="displayName">tot_missione_code</text-property>
                     <expression name="expression" type="javascript">row["code_missione"]</expression>
                     <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">num</property>
+                    <text-property name="displayName">num</text-property>
+                    <expression name="expression" type="javascript">row["TotaleStanziatoMissProgrFpvAnno3"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">denom</property>
+                    <text-property name="displayName">denom</text-property>
+                    <expression name="expression" type="javascript">row["TotaleStanziatoFpvAnno3"]</expression>
+                    <property name="dataType">float</property>
                     <property name="allowExport">true</property>
                 </structure>
             </list-property>

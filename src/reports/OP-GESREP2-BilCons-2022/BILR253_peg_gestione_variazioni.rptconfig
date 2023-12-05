@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_3816_0</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_3817_1</property>
+            <property name="value">2021</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Variazione_72_3</property>
+            <property name="value">22</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8703_4</property>
+            <property name="value">Numero provvedimento di variazione di Bilancio_8703</property>
+        </structure>
+        <structure>
+            <property name="name">Numero provvedimento di variazione di Bilancio_8703_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno provvedimento di variazione di Bilancio_8704_5</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8705_6</property>
+            <property name="value">Tipo provvedimento di variazione di Bilancio_8705</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di Bilancio_8705_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di Bilancio_8705_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Articolo_11217_7</property>
+            <property name="value">NO</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_11219_8</property>
+            <property name="value">BILR253</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_9</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di Bilancio_8704_10</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di Bilancio_8704_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_11219_11</property>
+            <property name="value">BILR253</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_11219_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_3817_12</property>
+            <property name="value">2021</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_3817_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_72_13</property>
+            <property name="value">22</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_72_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Articolo_11217_14</property>
+            <property name="value">NO</property>
+        </structure>
+        <structure>
+            <property name="name">Articolo_11217_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3816_15</property>
+            <property name="value">5</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3816_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

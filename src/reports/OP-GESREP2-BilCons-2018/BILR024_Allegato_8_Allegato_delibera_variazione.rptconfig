@@ -7,75 +7,31 @@
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_5195_1</property>
-            <property name="value">2017</property>
+            <property name="value">2022</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__Anno Competenza_9907_2</property>
-            <property name="value">2017</property>
-        </structure>
-        <structure>
-            <property name="name">__isdisplay__Anno delibera_5197_3</property>
-            <property name="value">2017</property>
-        </structure>
-        <structure>
-            <property name="name">__isdisplay__Numero della delibera_5188_4</property>
-            <property name="value">4710</property>
-        </structure>
-        <structure>
-            <property name="name">__isdisplay__tipo_atto_8702_5</property>
-            <property name="value">DELIBERAZIONE GIUNTA REGIONALE</property>
-        </structure>
-        <structure>
-            <property name="name">__isdisplay__Numero Variazione_3402_6</property>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
             <property name="value"></property>
         </structure>
         <structure>
-            <property name="name">__isnull_5194_7</property>
-            <property name="value">Data della delibera di variazione_5194</property>
+            <property name="name">__isdisplay__Anno Competenza_9907_3</property>
+            <property name="value">2023</property>
         </structure>
         <structure>
-            <property name="name">Data della delibera di variazione_5194_type_</property>
-            <property name="value">date</property>
+            <property name="name">__isdisplay__Anno delibera_5197_4</property>
+            <property name="value"></property>
         </structure>
         <structure>
-            <property name="name">__isnull_5191_8</property>
-            <property name="value">Data protocollo delibera variazione_5191</property>
+            <property name="name">__isnull_5188_5</property>
+            <property name="value">Numero della delibera_5188</property>
         </structure>
         <structure>
-            <property name="name">Data protocollo delibera variazione_5191_type_</property>
-            <property name="value">date</property>
+            <property name="name">Numero della delibera_5188_type_</property>
+            <property name="value">integer</property>
         </structure>
         <structure>
-            <property name="name">__isnull_5192_9</property>
-            <property name="value">Numero protocollo provvedimento di variazione_5192</property>
-        </structure>
-        <structure>
-            <property name="name">Numero protocollo provvedimento di variazione_5192_type_</property>
-            <property name="value">string</property>
-        </structure>
-        <structure>
-            <property name="name">__isdisplay__Organo emettitore delibera_5193_10</property>
-            <property name="value">Consiglio</property>
-        </structure>
-        <structure>
-            <property name="name">__isnull_5189_11</property>
-            <property name="value">Anno esercizio della delibera precedente_5189</property>
-        </structure>
-        <structure>
-            <property name="name">Anno esercizio della delibera precedente_5189_type_</property>
-            <property name="value">string</property>
-        </structure>
-        <structure>
-            <property name="name">__isnull_4974_12</property>
-            <property name="value">Numero della delibera precedente_4974</property>
-        </structure>
-        <structure>
-            <property name="name">Numero della delibera precedente_4974_type_</property>
-            <property name="value">string</property>
-        </structure>
-        <structure>
-            <property name="name">tipo_atto_8702_13</property>
-            <property name="value">DG</property>
+            <property name="name">__isnull_8702_6</property>
+            <property name="value">tipo_atto_8702</property>
         </structure>
         <structure>
             <property name="name">tipo_atto_8702_type_</property>
@@ -86,55 +42,151 @@
             <property name="value">dataSetRow["attoamm_tipo_code"]</property>
         </structure>
         <structure>
-            <property name="name">anno_bilancio_5195_14</property>
-            <property name="value">2017</property>
-        </structure>
-        <structure>
-            <property name="name">anno_bilancio_5195_type_</property>
-            <property name="value">string</property>
-        </structure>
-        <structure>
-            <property name="name">Numero della delibera_5188_15</property>
-            <property name="value">4710</property>
-        </structure>
-        <structure>
-            <property name="name">Numero della delibera_5188_type_</property>
-            <property name="value">integer</property>
-        </structure>
-        <structure>
-            <property name="name">Numero Variazione_3402_16</property>
-            <property name="value"></property>
-        </structure>
-        <structure>
-            <property name="name">Numero Variazione_3402_type_</property>
-            <property name="value">string</property>
-        </structure>
-        <structure>
-            <property name="name">Organo emettitore delibera_5193_17</property>
-            <property name="value">Consiglio</property>
+            <property name="name">__isnull_5193_7</property>
+            <property name="value">Organo emettitore delibera_5193</property>
         </structure>
         <structure>
             <property name="name">Organo emettitore delibera_5193_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">Anno delibera_5197_18</property>
-            <property name="value">2017</property>
+            <property name="name">Organo emettitore delibera_5193_expr_</property>
+            <property name="value">dataSetRow["msg_stampa"]</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Variazione_3402_8</property>
+            <property name="value">41</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5194_9</property>
+            <property name="value">Data della delibera di variazione_5194</property>
+        </structure>
+        <structure>
+            <property name="name">Data della delibera di variazione_5194_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5191_10</property>
+            <property name="value">Data protocollo delibera variazione_5191</property>
+        </structure>
+        <structure>
+            <property name="name">Data protocollo delibera variazione_5191_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero protocollo provvedimento di variazione_5192_11</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno esercizio della delibera precedente_5189_12</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero della delibera precedente_4974_13</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_14</property>
+            <property name="value">BILR024</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__FondoCassa_12043_15</property>
+            <property name="value">SI</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_16</property>
+            <property name="value">Con data del giorno</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_17</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno esercizio della delibera precedente_5189_18</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno esercizio della delibera precedente_5189_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_19</property>
+            <property name="value">BILR024</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_89_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">FondoCassa_12043_20</property>
+            <property name="value">SI</property>
+        </structure>
+        <structure>
+            <property name="name">FondoCassa_12043_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero della delibera precedente_4974_21</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Numero della delibera precedente_4974_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero protocollo provvedimento di variazione_5192_22</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Numero protocollo provvedimento di variazione_5192_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_5195_23</property>
+            <property name="value">2022</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_5195_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_24</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_3402_25</property>
+            <property name="value">41</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_3402_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno delibera_5197_26</property>
+            <property name="value"></property>
         </structure>
         <structure>
             <property name="name">Anno delibera_5197_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">Anno Competenza_9907_19</property>
-            <property name="value">2017</property>
+            <property name="name">Anno Competenza_9907_27</property>
+            <property name="value">2023</property>
         </structure>
         <structure>
             <property name="name">Anno Competenza_9907_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_26_20</property>
+            <property name="name">ente_proprietario_26_28</property>
             <property name="value">2</property>
         </structure>
         <structure>

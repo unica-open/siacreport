@@ -7,7 +7,7 @@
     <property name="imageDPI">96</property>
     <data-sources>
         <oda-data-source extensionID="org.eclipse.datatools.enablement.oda.xml" name="DataSourceAllegatoAtto" id="49">
-            <property name="FILELIST">../xml_per_prove/stampaallegato2_DURC_SOGG_CESSIONE.xml</property>
+            <property name="FILELIST">../xml_per_prove/stampaAllegatoAttoReportModel_CheckList.xml</property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -151,6 +151,11 @@
                     <property name="onColumnLayout">false</property>
                     <text-property name="heading">dataInserimento</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">hasChecklist</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">hasChecklist</text-property>
+                </structure>
             </list-property>
             <list-property name="parameters"/>
             <structure name="cachedMetaData">
@@ -269,6 +274,11 @@
                         <property name="position">23</property>
                         <property name="name">dataInserimento</property>
                         <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">hasChecklist</property>
+                        <property name="dataType">string</property>
                     </structure>
                 </list-property>
             </structure>
@@ -435,8 +445,15 @@
                     <property name="dataType">date</property>
                     <property name="nativeDataType">91</property>
                 </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">hasChecklist</property>
+                    <property name="nativeName">hasChecklist</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaAllegatoAttoReportModel/strutturaAmministrativoContabileCDR/tipoClassificatore]#:#{strutAmmContCodice;STRING;../codice},{strutAmmContDescrizione;STRING;../descrizione},{attoAmministrativoAnno;STRING;../../allegatoAtto/attoAmministrativo/anno},{attoAmministrativoNumero;STRING;../../allegatoAtto/attoAmministrativo/numero},{versioneInvioFirma;STRING;../../allegatoAtto/versioneInvioFirma},{codiceCDC;STRING;../../allegatoAtto/attoAmministrativo/strutturaAmmContabile/codice},{descrizioneCDC;STRING;../../allegatoAtto/attoAmministrativo/strutturaAmmContabile/descrizione},{id_ente_proprietario;STRING;../../allegatoAtto/ente/uid},{nome_ente_proprietario;STRING;../../allegatoAtto/ente/nome},{responsabileContabile;STRING;../../allegatoAtto/responsabileContabile},{responsabileAmministrativo;STRING;../../allegatoAtto/responsabileAmministrativo},{causale;STRING;../../allegatoAtto/causale},{denominazioneEnte;STRING;../../soggettoProponente/denominazione},{totaleAtto;DOUBLE;../../totaleAtto},{totaleSplitCommerciale;DOUBLE;../../totaleSplitCommerciale},{totaleSplitIstituzionale;DOUBLE;../../totaleSplitIstituzionale},{totaleReverseChange;DOUBLE;../../totaleReverseChange},{hasRitenute;BOOLEAN;../../hasRitenute},{codiceTipoAtto;STRING;../../allegatoAtto/attoAmministrativo/tipoAtto/codice},{causaleAllegatoAtto;STRING;../../allegatoAtto/causale},{dataCompletamento;DATE;../../dataCompletamento},{dataScadenza;DATE;../../dataScadenza},{dataInserimento;DATE;../../dataInserimento}]]></xml-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaAllegatoAttoReportModel/strutturaAmministrativoContabileCDR/tipoClassificatore]#:#{strutAmmContCodice;STRING;../codice},{strutAmmContDescrizione;STRING;../descrizione},{attoAmministrativoAnno;STRING;../../allegatoAtto/attoAmministrativo/anno},{attoAmministrativoNumero;STRING;../../allegatoAtto/attoAmministrativo/numero},{versioneInvioFirma;STRING;../../allegatoAtto/versioneInvioFirma},{codiceCDC;STRING;../../allegatoAtto/attoAmministrativo/strutturaAmmContabile/codice},{descrizioneCDC;STRING;../../allegatoAtto/attoAmministrativo/strutturaAmmContabile/descrizione},{id_ente_proprietario;STRING;../../allegatoAtto/ente/uid},{nome_ente_proprietario;STRING;../../allegatoAtto/ente/nome},{responsabileContabile;STRING;../../allegatoAtto/responsabileContabile},{responsabileAmministrativo;STRING;../../allegatoAtto/responsabileAmministrativo},{causale;STRING;../../allegatoAtto/causale},{denominazioneEnte;STRING;../../soggettoProponente/denominazione},{totaleAtto;DOUBLE;../../totaleAtto},{totaleSplitCommerciale;DOUBLE;../../totaleSplitCommerciale},{totaleSplitIstituzionale;DOUBLE;../../totaleSplitIstituzionale},{totaleReverseChange;DOUBLE;../../totaleReverseChange},{hasRitenute;BOOLEAN;../../hasRitenute},{codiceTipoAtto;STRING;../../allegatoAtto/attoAmministrativo/tipoAtto/codice},{causaleAllegatoAtto;STRING;../../allegatoAtto/causale},{dataCompletamento;DATE;../../dataCompletamento},{dataScadenza;DATE;../../dataScadenza},{dataInserimento;DATE;../../dataInserimento},{hasChecklist;STRING;../../hasChecklist}]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -1231,6 +1248,11 @@ annoImp+numImp+NumSubImp;</expression>
                     <property name="onColumnLayout">false</property>
                     <text-property name="heading">MotivAssenzaCIG</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">hasCapitoliSottoConto</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">hasCapitoliSottoConto</text-property>
+                </structure>
             </list-property>
             <list-property name="parameters"/>
             <structure name="cachedMetaData">
@@ -1338,6 +1360,11 @@ annoImp+numImp+NumSubImp;</expression>
                     <structure>
                         <property name="position">21</property>
                         <property name="name">MotivAssenzaCIG</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">hasCapitoliSottoConto</property>
                         <property name="dataType">string</property>
                     </structure>
                 </list-property>
@@ -1491,8 +1518,15 @@ annoImp+numImp+NumSubImp;</expression>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                 </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">hasCapitoliSottoConto</property>
+                    <property name="nativeName">hasCapitoliSottoConto</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaAllegatoAttoReportModel/elenchi/elenco/impegniSubimpegni/impegnoSubimpegno]#:#{NumElenco;INT;../../elencoDocumentiAllegato/numero},{codiceSoggetto;STRING;../../soggetto/codiceSoggetto},{descrizioneModPagSoggetto;STRING;../../modalitaPagamentoSoggetto/descrizione},{importoImpegno;DOUBLE;/importo},{numeroImpegno;STRING;/impegno/numero},{annoMovimentoImpegno;STRING;/impegno/annoMovimento},{numeroCapitolo;STRING;/impegno/capitoloUscitaGestione/numeroCapitolo},{numeroArticolo;STRING;/impegno/capitoloUscitaGestione/numeroArticolo},{numeroAttoAmministrativo;STRING;/impegno/attoAmministrativo/numero},{annoAttoAmministrativo;STRING;/impegno/attoAmministrativo/anno},{codiceTipoAttoAmministrativo;STRING;/impegno/attoAmministrativo/tipoAtto/codice},{cigImpegnoOLD;STRING;/impegno/cig},{cupImpegnoOLD;STRING;/impegno/cup},{totaleImpegni;DOUBLE;/importo},{numeroSubImpegno;STRING;/subImpegno/numero},{totaleImportoDaDedurreImpegno;DOUBLE;/totaleImportoDaDedurre},{cigImpegno;STRING;/cig},{cupImpegno;STRING;/cup},{uidModPag;INT;../../modalitaPagamentoSoggetto/uid},{MotivAssenzaCIG_OLD;STRING;/impegno/siopeAssenzaMotivazione/descrizione},{MotivAssenzaCIG;STRING;/siopeAssenzaMotivazioneDescr}]]></xml-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaAllegatoAttoReportModel/elenchi/elenco/impegniSubimpegni/impegnoSubimpegno]#:#{NumElenco;INT;../../elencoDocumentiAllegato/numero},{codiceSoggetto;STRING;../../soggetto/codiceSoggetto},{descrizioneModPagSoggetto;STRING;../../modalitaPagamentoSoggetto/descrizione},{importoImpegno;DOUBLE;/importo},{numeroImpegno;STRING;/impegno/numero},{annoMovimentoImpegno;STRING;/impegno/annoMovimento},{numeroCapitolo;STRING;/impegno/capitoloUscitaGestione/numeroCapitolo},{numeroArticolo;STRING;/impegno/capitoloUscitaGestione/numeroArticolo},{numeroAttoAmministrativo;STRING;/impegno/attoAmministrativo/numero},{annoAttoAmministrativo;STRING;/impegno/attoAmministrativo/anno},{codiceTipoAttoAmministrativo;STRING;/impegno/attoAmministrativo/tipoAtto/codice},{cigImpegnoOLD;STRING;/impegno/cig},{cupImpegnoOLD;STRING;/impegno/cup},{totaleImpegni;DOUBLE;/importo},{numeroSubImpegno;STRING;/subImpegno/numero},{totaleImportoDaDedurreImpegno;DOUBLE;/totaleImportoDaDedurre},{cigImpegno;STRING;/cig},{cupImpegno;STRING;/cup},{uidModPag;INT;../../modalitaPagamentoSoggetto/uid},{MotivAssenzaCIG_OLD;STRING;/impegno/siopeAssenzaMotivazione/descrizione},{MotivAssenzaCIG;STRING;/siopeAssenzaMotivazioneDescr},{hasCapitoliSottoConto;STRING;../../hasCapitoliSottoConto}]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -1759,6 +1793,11 @@ miaDataDurc;</expression>
                     <property name="onColumnLayout">false</property>
                     <text-property name="heading">dataFineValiditaDurcSoggettoCessione</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">codiceFiscaleEstero</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">codiceFiscaleEstero</text-property>
+                </structure>
             </list-property>
             <list-property name="parameters"/>
             <structure name="cachedMetaData">
@@ -1940,6 +1979,11 @@ miaDataDurc;</expression>
                     </structure>
                     <structure>
                         <property name="position">36</property>
+                        <property name="name">codiceFiscaleEstero</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
                         <property name="name">dataFineValiditaDurcCalcolata</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -2192,8 +2236,15 @@ miaDataDurc;</expression>
                     <property name="dataType">date</property>
                     <property name="nativeDataType">91</property>
                 </structure>
+                <structure>
+                    <property name="position">36</property>
+                    <property name="name">codiceFiscaleEstero</property>
+                    <property name="nativeName">codiceFiscaleEstero</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaAllegatoAttoReportModel/elenchi/elenco]#:#{NumElenco;INT;/elencoDocumentiAllegato/numero},{codiceSoggetto;STRING;/soggetto/codiceSoggetto},{codiceFiscale;STRING;/soggetto/codiceFiscale},{partitaIvaSoggetto;STRING;/soggetto/partitaIva},{denominazioneSoggetto;STRING;/soggetto/denominazione},{denominazioneIndirizzoPREC;STRING;/soggetto/indirizzi/denominazione},{checkPrincipale;STRING;/soggetto/indirizzi/checkPrincipale},{capIndirizzoPREC;STRING;/soggetto/indirizzi/cap},{comuneIndirizzoPREC;STRING;/soggetto/indirizzi/comune},{provinciaIndirizzoPREC;STRING;/soggetto/indirizzi/provincia},{descrizioneModPagSoggetto;STRING;/modalitaPagamentoSoggetto/descrizione},{contoCorrenteModPagSoggetto;STRING;/modalitaPagamentoSoggetto/contoCorrente},{ibanModPagSoggetto;STRING;/modalitaPagamentoSoggetto/iban},{bicModPagSoggetto;STRING;/modalitaPagamentoSoggetto/bic},{codiceModAccredito;STRING;/modalitaPagamentoSoggetto/modalitaAccreditoSoggetto/codice},{descrizioneModalitaAccredito;STRING;/modalitaPagamentoSoggetto/modalitaAccreditoSoggetto/descrizione},{CessioneDescrizioneModPagSoggetto;STRING;/modalitaPagamentoSoggetto/modalitaPagamentoSoggettoCessione2/descrizione},{CessioneIban;STRING;/modalitaPagamentoSoggetto/modalitaPagamentoSoggettoCessione2/iban},{CessioneContoCorrente;STRING;/modalitaPagamentoSoggetto/modalitaPagamentoSoggettoCessione2/contoCorrente},{totaleImpegni;DOUBLE;/totaleImpegni},{totaleImportoDaDedurreMovimento;STRING;/totaleImportoDaDedurre},{sedimeOLD;STRING;/soggetto/indirizzi/sedime},{numeroCivicoOLD;STRING;/soggetto/indirizzi/numeroCivico},{denominazioneIndirizzo;STRING;/indirizzoSoggetto/denominazione},{capIndirizzo;STRING;/indirizzoSoggetto/cap},{comuneIndirizzo;STRING;/indirizzoSoggetto/comune},{provinciaIndirizzo;STRING;/indirizzoSoggetto/provincia},{codiceSoggettoCessione;STRING;/soggettoCessione/codiceSoggetto},{denominazioneSoggettoCessione;STRING;/soggettoCessione/denominazione},{uidModPag;INT;/modalitaPagamentoSoggetto/uid},{sedime;STRING;/indirizzoSoggetto/sedime},{numeroCivico;STRING;/indirizzoSoggetto/numeroCivico},{denominazioneSedeSecondaria;STRING;/sedeSecondariaSoggetto/denominazione},{dataFineValiditaDurcSoggetto;DATE;/soggetto/dataFineValiditaDurc},{dataFineValiditaDurcSoggettoCessione;DATE;/soggettoCessione/dataFineValiditaDurc}]]></xml-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaAllegatoAttoReportModel/elenchi/elenco]#:#{NumElenco;INT;/elencoDocumentiAllegato/numero},{codiceSoggetto;STRING;/soggetto/codiceSoggetto},{codiceFiscale;STRING;/soggetto/codiceFiscale},{partitaIvaSoggetto;STRING;/soggetto/partitaIva},{denominazioneSoggetto;STRING;/soggetto/denominazione},{denominazioneIndirizzoPREC;STRING;/soggetto/indirizzi/denominazione},{checkPrincipale;STRING;/soggetto/indirizzi/checkPrincipale},{capIndirizzoPREC;STRING;/soggetto/indirizzi/cap},{comuneIndirizzoPREC;STRING;/soggetto/indirizzi/comune},{provinciaIndirizzoPREC;STRING;/soggetto/indirizzi/provincia},{descrizioneModPagSoggetto;STRING;/modalitaPagamentoSoggetto/descrizione},{contoCorrenteModPagSoggetto;STRING;/modalitaPagamentoSoggetto/contoCorrente},{ibanModPagSoggetto;STRING;/modalitaPagamentoSoggetto/iban},{bicModPagSoggetto;STRING;/modalitaPagamentoSoggetto/bic},{codiceModAccredito;STRING;/modalitaPagamentoSoggetto/modalitaAccreditoSoggetto/codice},{descrizioneModalitaAccredito;STRING;/modalitaPagamentoSoggetto/modalitaAccreditoSoggetto/descrizione},{CessioneDescrizioneModPagSoggetto;STRING;/modalitaPagamentoSoggetto/modalitaPagamentoSoggettoCessione2/descrizione},{CessioneIban;STRING;/modalitaPagamentoSoggetto/modalitaPagamentoSoggettoCessione2/iban},{CessioneContoCorrente;STRING;/modalitaPagamentoSoggetto/modalitaPagamentoSoggettoCessione2/contoCorrente},{totaleImpegni;DOUBLE;/totaleImpegni},{totaleImportoDaDedurreMovimento;STRING;/totaleImportoDaDedurre},{sedimeOLD;STRING;/soggetto/indirizzi/sedime},{numeroCivicoOLD;STRING;/soggetto/indirizzi/numeroCivico},{denominazioneIndirizzo;STRING;/indirizzoSoggetto/denominazione},{capIndirizzo;STRING;/indirizzoSoggetto/cap},{comuneIndirizzo;STRING;/indirizzoSoggetto/comune},{provinciaIndirizzo;STRING;/indirizzoSoggetto/provincia},{codiceSoggettoCessione;STRING;/soggettoCessione/codiceSoggetto},{denominazioneSoggettoCessione;STRING;/soggettoCessione/denominazione},{uidModPag;INT;/modalitaPagamentoSoggetto/uid},{sedime;STRING;/indirizzoSoggetto/sedime},{numeroCivico;STRING;/indirizzoSoggetto/numeroCivico},{denominazioneSedeSecondaria;STRING;/sedeSecondariaSoggetto/denominazione},{dataFineValiditaDurcSoggetto;DATE;/soggetto/dataFineValiditaDurc},{dataFineValiditaDurcSoggettoCessione;DATE;/soggettoCessione/dataFineValiditaDurc},{codiceFiscaleEstero;STRING;/soggetto/codiceFiscaleEstero}]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -3205,6 +3256,1156 @@ tipoDocSpesa+annoDocSpesa+docSpesa;</expression>
                 </ex-property>
             </list-property>
         </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="Dat SetCheckList" id="1098">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">hasChecklist</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">hasChecklist</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">soggettoCreditoreLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">soggettoCreditoreLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">soggettoCreditoreValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">soggettoCreditoreValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sommaDovutaLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">sommaDovutaLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sommaDovutaValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">sommaDovutaValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">causaleLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">causaleLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">causaleValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">causaleValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modalitaPagamentoLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">modalitaPagamentoLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modalitaPagamentoValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">modalitaPagamentoValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">scadenzaLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">scadenzaLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">scadenzaValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">scadenzaValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">estremiProvvedimentoDirigenzialeLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">estremiProvvedimentoDirigenzialeLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">estremiProvvedimentoDirigenzialeValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">estremiProvvedimentoDirigenzialeValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">allegatiLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">allegatiLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">allegatiValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">allegatiValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">esigibileSpesaLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">esigibileSpesaLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">esigibileSpesaValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">esigibileSpesaValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">congruitaSpesaSommaImpegnataLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">congruitaSpesaSommaImpegnataLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">congruitaSpesaSommaImpegnataValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">congruitaSpesaSommaImpegnataValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">applicazioneNormativaFiscaleLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">applicazioneNormativaFiscaleLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">applicazioneNormativaFiscaleValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">applicazioneNormativaFiscaleValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ivaLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ivaLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ivaValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ivaValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">entrataVincolataLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">entrataVincolataLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">entrataVincolataValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">entrataVincolataValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">accertamentoLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">accertamentoLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">accertamentoValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">accertamentoValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">incassoLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">incassoLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">incassoValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">incassoValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cigLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">cigLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cigValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">cigValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cupLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">cupLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cupValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">cupValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">contributivaLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">contributivaLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">contributivaValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">contributivaValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pubblicazioneLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">pubblicazioneLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pubblicazioneValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">pubblicazioneValue</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">regolaritaContabileLabel</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">regolaritaContabileLabel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">regolaritaContabileValue</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">regolaritaContabileValue</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">hasChecklist</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">soggettoCreditoreLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">soggettoCreditoreValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">sommaDovutaLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">sommaDovutaValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">causaleLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">causaleValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">modalitaPagamentoLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">modalitaPagamentoValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">scadenzaLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">scadenzaValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">estremiProvvedimentoDirigenzialeLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">estremiProvvedimentoDirigenzialeValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">allegatiLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">allegatiValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">esigibileSpesaLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">esigibileSpesaValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">congruitaSpesaSommaImpegnataLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">congruitaSpesaSommaImpegnataValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">applicazioneNormativaFiscaleLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">applicazioneNormativaFiscaleValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">ivaLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">ivaValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">entrataVincolataLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">entrataVincolataValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">accertamentoLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">accertamentoValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">incassoLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">incassoValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">cigLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">cigValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">cupLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">cupValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
+                        <property name="name">contributivaLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">35</property>
+                        <property name="name">contributivaValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">36</property>
+                        <property name="name">pubblicazioneLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
+                        <property name="name">pubblicazioneValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">38</property>
+                        <property name="name">regolaritaContabileLabel</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">39</property>
+                        <property name="name">regolaritaContabileValue</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">DataSourceAllegatoAtto</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">hasChecklist</property>
+                    <property name="nativeName">hasChecklist</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">soggettoCreditoreLabel</property>
+                    <property name="nativeName">soggettoCreditoreLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">soggettoCreditoreValue</property>
+                    <property name="nativeName">soggettoCreditoreValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">sommaDovutaLabel</property>
+                    <property name="nativeName">sommaDovutaLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">sommaDovutaValue</property>
+                    <property name="nativeName">sommaDovutaValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">causaleLabel</property>
+                    <property name="nativeName">causaleLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">causaleValue</property>
+                    <property name="nativeName">causaleValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">modalitaPagamentoLabel</property>
+                    <property name="nativeName">modalitaPagamentoLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">modalitaPagamentoValue</property>
+                    <property name="nativeName">modalitaPagamentoValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">scadenzaLabel</property>
+                    <property name="nativeName">scadenzaLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">scadenzaValue</property>
+                    <property name="nativeName">scadenzaValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">estremiProvvedimentoDirigenzialeLabel</property>
+                    <property name="nativeName">estremiProvvedimentoDirigenzialeLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">estremiProvvedimentoDirigenzialeValue</property>
+                    <property name="nativeName">estremiProvvedimentoDirigenzialeValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">allegatiLabel</property>
+                    <property name="nativeName">allegatiLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">allegatiValue</property>
+                    <property name="nativeName">allegatiValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">esigibileSpesaLabel</property>
+                    <property name="nativeName">esigibileSpesaLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">esigibileSpesaValue</property>
+                    <property name="nativeName">esigibileSpesaValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">congruitaSpesaSommaImpegnataLabel</property>
+                    <property name="nativeName">congruitaSpesaSommaImpegnataLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">congruitaSpesaSommaImpegnataValue</property>
+                    <property name="nativeName">congruitaSpesaSommaImpegnataValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">applicazioneNormativaFiscaleLabel</property>
+                    <property name="nativeName">applicazioneNormativaFiscaleLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">applicazioneNormativaFiscaleValue</property>
+                    <property name="nativeName">applicazioneNormativaFiscaleValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">ivaLabel</property>
+                    <property name="nativeName">ivaLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">ivaValue</property>
+                    <property name="nativeName">ivaValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">entrataVincolataLabel</property>
+                    <property name="nativeName">entrataVincolataLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">entrataVincolataValue</property>
+                    <property name="nativeName">entrataVincolataValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">accertamentoLabel</property>
+                    <property name="nativeName">accertamentoLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">accertamentoValue</property>
+                    <property name="nativeName">accertamentoValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">incassoLabel</property>
+                    <property name="nativeName">incassoLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">incassoValue</property>
+                    <property name="nativeName">incassoValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">cigLabel</property>
+                    <property name="nativeName">cigLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">cigValue</property>
+                    <property name="nativeName">cigValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">32</property>
+                    <property name="name">cupLabel</property>
+                    <property name="nativeName">cupLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">33</property>
+                    <property name="name">cupValue</property>
+                    <property name="nativeName">cupValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">34</property>
+                    <property name="name">contributivaLabel</property>
+                    <property name="nativeName">contributivaLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">35</property>
+                    <property name="name">contributivaValue</property>
+                    <property name="nativeName">contributivaValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">36</property>
+                    <property name="name">pubblicazioneLabel</property>
+                    <property name="nativeName">pubblicazioneLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">37</property>
+                    <property name="name">pubblicazioneValue</property>
+                    <property name="nativeName">pubblicazioneValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">38</property>
+                    <property name="name">regolaritaContabileLabel</property>
+                    <property name="nativeName">regolaritaContabileLabel</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">39</property>
+                    <property name="name">regolaritaContabileValue</property>
+                    <property name="nativeName">regolaritaContabileValue</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaAllegatoAttoReportModel/]#:#{hasChecklist;STRING;hasChecklist},{soggettoCreditoreLabel;STRING;allegatoAttoChecklist/soggettoCreditore/label},{soggettoCreditoreValue;STRING;allegatoAttoChecklist/soggettoCreditore/value},{sommaDovutaLabel;STRING;allegatoAttoChecklist/sommaDovuta/label},{sommaDovutaValue;STRING;allegatoAttoChecklist/sommaDovuta/value},{causaleLabel;STRING;allegatoAttoChecklist/causale/label},{causaleValue;STRING;allegatoAttoChecklist/causale/value},{modalitaPagamentoLabel;STRING;allegatoAttoChecklist/modalitaPagamento/label},{modalitaPagamentoValue;STRING;allegatoAttoChecklist/modalitaPagamento/value},{scadenzaLabel;STRING;allegatoAttoChecklist/scadenza/label},{scadenzaValue;STRING;allegatoAttoChecklist/scadenza/value},{estremiProvvedimentoDirigenzialeLabel;STRING;allegatoAttoChecklist/estremiProvvedimentoDirigenziale/label},{estremiProvvedimentoDirigenzialeValue;STRING;allegatoAttoChecklist/estremiProvvedimentoDirigenziale/value},{allegatiLabel;STRING;allegatoAttoChecklist/allegati/label},{allegatiValue;STRING;allegatoAttoChecklist/allegati/value},{esigibileSpesaLabel;STRING;allegatoAttoChecklist/esigibileSpesa/label},{esigibileSpesaValue;STRING;allegatoAttoChecklist/esigibileSpesa/value},{congruitaSpesaSommaImpegnataLabel;STRING;allegatoAttoChecklist/congruitaSpesaSommaImpegnata/label},{congruitaSpesaSommaImpegnataValue;STRING;allegatoAttoChecklist/congruitaSpesaSommaImpegnata/value},{applicazioneNormativaFiscaleLabel;STRING;allegatoAttoChecklist/applicazioneNormativaFiscale/label},{applicazioneNormativaFiscaleValue;STRING;allegatoAttoChecklist/applicazioneNormativaFiscale/value},{ivaLabel;STRING;allegatoAttoChecklist/iva/label},{ivaValue;STRING;allegatoAttoChecklist/iva/value},{entrataVincolataLabel;STRING;allegatoAttoChecklist/entrataVincolata/label},{entrataVincolataValue;STRING;allegatoAttoChecklist/entrataVincolata/value},{accertamentoLabel;STRING;allegatoAttoChecklist/accertamento/label},{accertamentoValue;STRING;allegatoAttoChecklist/accertamento/value},{incassoLabel;STRING;allegatoAttoChecklist/incasso/label},{incassoValue;STRING;allegatoAttoChecklist/incasso/value},{cigLabel;STRING;allegatoAttoChecklist/cig/label},{cigValue;STRING;allegatoAttoChecklist/cig/value},{cupLabel;STRING;allegatoAttoChecklist/cup/label},{cupValue;STRING;allegatoAttoChecklist/cup/value},{contributivaLabel;STRING;allegatoAttoChecklist/contributiva/label},{contributivaValue;STRING;allegatoAttoChecklist/contributiva/value},{pubblicazioneLabel;STRING;allegatoAttoChecklist/pubblicazione/label},{pubblicazioneValue;STRING;allegatoAttoChecklist/pubblicazione/value},{regolaritaContabileLabel;STRING;allegatoAttoChecklist/regolaritaContabile/label},{regolaritaContabileValue;STRING;allegatoAttoChecklist/regolaritaContabile/value}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>soggettoCreditoreLabel</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>soggettoCreditoreLabel</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>soggettoCreditoreValue</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>soggettoCreditoreValue</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sommaDovutaLabel</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sommaDovutaLabel</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sommaDovutaValue</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sommaDovutaValue</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>causaleLabel</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>causaleLabel</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>causaleValue</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>causaleValue</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modalitaPagamentoLabel</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modalitaPagamentoLabel</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modalitaPagamentoValue</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modalitaPagamentoValue</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.enablement.oda.xml.dataSet" name="DataSetSottoConti" id="1319">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">descrizioneArticoloDisplay</property>
+                    <expression name="expression">if(row["descrizioneArticolo"] == null) ""&#13;
+else row["descrizioneArticolo"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">codiceSottoconto</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">codiceSottoconto</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizioneSottoconto</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">descrizioneSottoconto</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">annoCapitolo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">annoCapitolo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numeroCapitolo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">numeroCapitolo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">numeroArticolo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">numeroArticolo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizioneCapitolo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">descrizioneCapitolo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">descrizioneArticolo</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">descrizioneArticolo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codiceSoggetto</property>
+                    <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">codiceSoggetto</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">uidModPag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">uidModPag</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">codiceSottoconto</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">descrizioneSottoconto</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">annoCapitolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">numeroCapitolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">numeroArticolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">descrizioneCapitolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">descrizioneArticolo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">codiceSoggetto</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">uidModPag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">descrizioneArticoloDisplay</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">DataSourceAllegatoAtto</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">codiceSottoconto</property>
+                    <property name="nativeName">codiceSottoconto</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">descrizioneSottoconto</property>
+                    <property name="nativeName">descrizioneSottoconto</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">annoCapitolo</property>
+                    <property name="nativeName">annoCapitolo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">numeroCapitolo</property>
+                    <property name="nativeName">numeroCapitolo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">numeroArticolo</property>
+                    <property name="nativeName">numeroArticolo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">descrizioneCapitolo</property>
+                    <property name="nativeName">descrizioneCapitolo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">descrizioneArticolo</property>
+                    <property name="nativeName">descrizioneArticolo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">codiceSoggetto</property>
+                    <property name="nativeName">codiceSoggetto</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">uidModPag</property>
+                    <property name="nativeName">uidModPag</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/stampaAllegatoAttoReportModel/elenchi/elenco/capitoliSottoConto/capitoloSottoConto]#:#{codiceSottoconto;STRING;/sottoConto/codice},{descrizioneSottoconto;STRING;/sottoConto/descrizione},{annoCapitolo;STRING;/annoCapitolo},{numeroCapitolo;STRING;/numeroCapitolo},{numeroArticolo;STRING;/numeroArticolo},{descrizioneCapitolo;STRING;/descrizione},{descrizioneArticolo;STRING;/descrizioneArticolo},{codiceSoggetto;STRING;../../soggetto/codiceSoggetto},{uidModPag;STRING;../../modalitaPagamentoSoggetto/uid}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hasCapitoliSottoConto</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hasCapitoliSottoConto</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codiceSottoconto</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codiceSottoconto</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>annoCapitolo</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>annoCapitolo</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>numeroCapitolo</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>numeroCapitolo</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>numeroArticolo</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>numeroArticolo</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>MAX_ROW</name>
+                    <value>-1</value>
+                </ex-property>
+                <ex-property>
+                    <name>XML_FILE</name>
+                </ex-property>
+            </list-property>
+        </oda-data-set>
     </data-sets>
     <styles>
         <style name="report" id="4">
@@ -3470,6 +4671,12 @@ tipoDocSpesa+annoDocSpesa+docSpesa;</expression>
                     <expression name="expression" type="javascript">dataSetRow["dataCompletamento"]</expression>
                     <property name="dataType">date</property>
                     <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">hasChecklist</property>
+                    <text-property name="displayName">hasChecklist</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["hasChecklist"]</expression>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <column id="8">
@@ -4011,20 +5218,34 @@ miaStampa;</expression>
                         <list-property name="visibility">
                             <structure>
                                 <property name="format">all</property>
-                                <expression name="valueExpr" type="javascript">//Regione Piemonte.&#13;
+                                <expression name="valueExpr" type="javascript">//Regione Piemonte senza check-list&#13;
 //row["id_ente_proprietario"]==4 ||row["id_ente_proprietario"]==5&#13;
-row["id_ente_proprietario"]!=2</expression>
+row["id_ente_proprietario"]!=2 || BirtStr.toUpper(row["hasChecklist"]) == "TRUE"</expression>
                             </structure>
                         </list-property>
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Verificata la corrispondenza ai requisiti del provvedimento di impegno e, ove occorre, la sussidiarietà di un’adeguata documentazione contabile e/o rendicontazione, nonché effettuati l’istruttoria e le verifiche ed  i controlli previsti dal Manuale Operativo di cui all’art. 3 del D.P.G.R. 18/R del 2001, si dichiara di avere apposto il “visto di regolarità amministrativa e contabile” e si liquidano le somme a seguire.]]></text-property>
+                    </text>
+                    <text id="1318">
+                        <property name="textAlign">justify</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">//Regione Piemonte con check-list.&#13;
+//row["id_ente_proprietario"]==4 ||row["id_ente_proprietario"]==5&#13;
+row["id_ente_proprietario"]!=2 || BirtStr.toUpper(row["hasChecklist"]) == "FALSE"</expression>
+                            </structure>
+                        </list-property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Verificata la corrispondenza ai requisiti del provvedimento di impegno e, ove occorre, la sussidiarietà di un'adeguata documentazione contabile e/o rendicontazione, nonché effettuati l'istruttoria sulle condizioni che rendono certa, liquida ed esigibile la spesa nel rispetto delle disposizioni legislative e regolamentari vigenti risultante dalla check list allegata, si dichiara di avere apposto il "visto di regolarità amministrativa e contabile" e si liquidano le somme a seguire.]]></text-property>
                     </text>
                     <text id="649">
                         <property name="textAlign">justify</property>
                         <list-property name="visibility">
                             <structure>
                                 <property name="format">all</property>
-                                <expression name="valueExpr" type="javascript">row["id_ente_proprietario"]!=4</expression>
+                                <expression name="valueExpr" type="javascript">//AIPO&#13;
+row["id_ente_proprietario"]!=4</expression>
                             </structure>
                         </list-property>
                         <property name="contentType">auto</property>
@@ -4035,7 +5256,8 @@ row["id_ente_proprietario"]!=2</expression>
                         <list-property name="visibility">
                             <structure>
                                 <property name="format">all</property>
-                                <expression name="valueExpr" type="javascript">row["id_ente_proprietario"]!= 5</expression>
+                                <expression name="valueExpr" type="javascript">//CRP&#13;
+row["id_ente_proprietario"]!= 5</expression>
                             </structure>
                         </list-property>
                         <property name="contentType">auto</property>
@@ -4046,7 +5268,7 @@ row["id_ente_proprietario"]!=2</expression>
                         <list-property name="visibility">
                             <structure>
                                 <property name="format">all</property>
-                                <expression name="valueExpr" type="javascript">//dicitura utilizzata per tutti tranne regione (2), AIPO (4) e Consgilio (5)&#13;
+                                <expression name="valueExpr" type="javascript">//dicitura utilizzata per tutti tranne regione (2), AIPO (4) e Consiglio (5)&#13;
 row["id_ente_proprietario"]==2 || row["id_ente_proprietario"]==4 ||row["id_ente_proprietario"]==5</expression>
                             </structure>
                         </list-property>
@@ -4285,6 +5507,12 @@ row["id_ente_proprietario"]==2 || row["id_ente_proprietario"]==4 ||row["id_ente_
                     <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">codiceFiscaleEstero</property>
+                    <text-property name="displayName">codiceFiscaleEstero</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["codiceFiscaleEstero"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
             </list-property>
             <column id="640">
                 <property name="width">1.4375in</property>
@@ -4299,13 +5527,13 @@ row["id_ente_proprietario"]==2 || row["id_ente_proprietario"]==4 ||row["id_ente_
                 <property name="width">0.2708333333333333in</property>
             </column>
             <column id="644">
-                <property name="width">1.9375in</property>
+                <property name="width">2.09375in</property>
             </column>
             <column id="645">
-                <property name="width">0.9375in</property>
+                <property name="width">0.84375in</property>
             </column>
             <column id="646">
-                <property name="width">1.5625in</property>
+                <property name="width">1.5in</property>
             </column>
             <group id="479">
                 <property name="groupName">GruppoNumElenco</property>
@@ -4517,34 +5745,70 @@ capIndir+comuneIndir+provIndir;</expression>
                             </text-data>
                         </cell>
                     </row>
-                    <row id="508">
+                    <row id="1076">
                         <property name="borderLeftStyle">solid</property>
                         <property name="borderLeftWidth">thin</property>
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <cell id="509">
-                            <text id="510">
-                                <property name="contentType">auto</property>
-                                <text-property name="content"><![CDATA[Codice fiscale]]></text-property>
-                            </text>
-                        </cell>
-                        <cell id="511">
-                            <property name="colSpan">4</property>
+                        <cell id="1077">
+                            <property name="colSpan">7</property>
                             <property name="rowSpan">1</property>
-                            <data id="512">
-                                <property name="resultSetColumn">codiceFiscale</property>
-                            </data>
-                        </cell>
-                        <cell id="513">
-                            <text id="514">
-                                <property name="contentType">auto</property>
-                                <text-property name="content"><![CDATA[Partiva IVA]]></text-property>
-                            </text>
-                        </cell>
-                        <cell id="515">
-                            <data id="516">
-                                <property name="resultSetColumn">partitaIvaSoggetto</property>
-                            </data>
+                            <grid id="1084">
+                                <property name="width">7.854166666666667in</property>
+                                <column id="1085">
+                                    <property name="width">1.40625in</property>
+                                </column>
+                                <column id="1086">
+                                    <property name="width">1.4166666666666667in</property>
+                                </column>
+                                <column id="1087">
+                                    <property name="width">1.25in</property>
+                                </column>
+                                <column id="1088">
+                                    <property name="width">1.4479166666666667in</property>
+                                </column>
+                                <column id="1089">
+                                    <property name="width">0.84375in</property>
+                                </column>
+                                <column id="1090">
+                                    <property name="width">1.4895833333333333in</property>
+                                </column>
+                                <row id="1091">
+                                    <cell id="1092">
+                                        <text id="510">
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Codice fiscale]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1093">
+                                        <data id="512">
+                                            <property name="resultSetColumn">codiceFiscale</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1094">
+                                        <text id="1073">
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Codice fiscale estero]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1095">
+                                        <data id="1075">
+                                            <property name="resultSetColumn">codiceFiscaleEstero</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="1096">
+                                        <text id="514">
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Partiva IVA]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1097">
+                                        <data id="516">
+                                            <property name="resultSetColumn">partitaIvaSoggetto</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
                         </cell>
                     </row>
                     <row id="1054">
@@ -4883,6 +6147,24 @@ else {&#13;
                                         <property name="name">MotivAssenzaCIG</property>
                                         <text-property name="displayName">MotivAssenzaCIG</text-property>
                                         <expression name="expression" type="javascript">dataSetRow["MotivAssenzaCIG"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">cigImpegno_1</property>
+                                        <text-property name="displayName">cigImpegno</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["cigImpegno"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">MotivAssenzaCIG_OLD</property>
+                                        <text-property name="displayName">MotivAssenzaCIG_OLD</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["MotivAssenzaCIG_OLD"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">hasCapitoliSottoConto</property>
+                                        <text-property name="displayName">hasCapitoliSottoConto</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["hasCapitoliSottoConto"]</expression>
                                         <property name="dataType">string</property>
                                     </structure>
                                 </list-property>
@@ -5615,6 +6897,284 @@ annoImp+numImp+NumSubImp;</expression>
                                     </row>
                                 </detail>
                                 <footer>
+                                    <row id="1359">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">BirtStr.toUpper(row["hasCapitoliSottoConto"])=="FALSE" ||&#13;
+row["hasCapitoliSottoConto"] ==null</expression>
+                                            </structure>
+                                        </list-property>
+                                        <cell id="1360"/>
+                                        <cell id="1361">
+                                            <property name="colSpan">6</property>
+                                            <property name="rowSpan">1</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                            <property name="borderTopStyle">none</property>
+                                            <table name="TableSottoconti" id="1328">
+                                                <property name="width">7.822916666666667in</property>
+                                                <property name="dataSet">DataSetSottoConti</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">codiceSottoconto</property>
+                                                        <text-property name="displayName">codiceSottoconto</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["codiceSottoconto"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">descrizioneSottoconto</property>
+                                                        <text-property name="displayName">descrizioneSottoconto</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["descrizioneSottoconto"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">annoCapitolo</property>
+                                                        <text-property name="displayName">annoCapitolo</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["annoCapitolo"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">numeroCapitolo</property>
+                                                        <text-property name="displayName">numeroCapitolo</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["numeroCapitolo"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">numeroArticolo</property>
+                                                        <text-property name="displayName">numeroArticolo</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["numeroArticolo"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">descrizioneCapitolo</property>
+                                                        <text-property name="displayName">descrizioneCapitolo</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["descrizioneCapitolo"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">descrizioneArticolo</property>
+                                                        <text-property name="displayName">descrizioneArticolo</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["descrizioneArticoloDisplay"]</expression>
+                                                        <property name="dataType">string</property>
+                                                        <property name="allowExport">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">Capitolo_art</property>
+                                                        <text-property name="displayName">Capitolo_art</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["numeroCapitolo"] + "/" +dataSetRow["numeroArticolo"]</expression>
+                                                        <property name="dataType">string</property>
+                                                        <property name="allowExport">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">descrizioneArticoloDisplay</property>
+                                                        <text-property name="displayName">descrizioneArticoloDisplay</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["descrizioneArticoloDisplay"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">descrizioneArticolo_1</property>
+                                                        <text-property name="displayName">descrizioneArticolo</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["descrizioneArticolo"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">codiceSoggetto</property>
+                                                        <text-property name="displayName">codiceSoggetto</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["codiceSoggetto"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">uidModPag</property>
+                                                        <text-property name="displayName">uidModPag</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["uidModPag"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">eq</property>
+                                                        <expression name="expr" type="javascript">row["codiceSoggetto"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value>row._outer._outer["codiceSoggetto"]</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="operator">eq</property>
+                                                        <expression name="expr" type="javascript">row["uidModPag"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value>row._outer._outer["uidModPag"]</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <column id="1347">
+                                                    <property name="width">0.7291666666666666in</property>
+                                                </column>
+                                                <column id="1348">
+                                                    <property name="width">3.125in</property>
+                                                </column>
+                                                <column id="1349">
+                                                    <property name="width">1.7708333333333333in</property>
+                                                </column>
+                                                <column id="1377">
+                                                    <property name="width">0.8333333333333334in</property>
+                                                </column>
+                                                <column id="1351">
+                                                    <property name="width">1.3645833333333333in</property>
+                                                </column>
+                                                <header>
+                                                    <row id="1329">
+                                                        <cell id="1330">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderLeftStyle">solid</property>
+                                                            <property name="borderLeftWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <text id="1352">
+                                                                <property name="contentType">auto</property>
+                                                                <text-property name="content"><![CDATA[Capitolo]]></text-property>
+                                                            </text>
+                                                        </cell>
+                                                        <cell id="1331">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <text id="1353">
+                                                                <property name="contentType">auto</property>
+                                                                <text-property name="content"><![CDATA[Descrizione Capitolo]]></text-property>
+                                                            </text>
+                                                        </cell>
+                                                        <cell id="1332">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <text id="1354">
+                                                                <property name="contentType">auto</property>
+                                                                <text-property name="content"><![CDATA[Descrizione Articolo]]></text-property>
+                                                            </text>
+                                                        </cell>
+                                                        <cell id="1375">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <text id="1378">
+                                                                <property name="contentType">auto</property>
+                                                                <text-property name="content"><![CDATA[Codice Sottoconto]]></text-property>
+                                                            </text>
+                                                        </cell>
+                                                        <cell id="1334">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <text id="1356">
+                                                                <property name="contentType">auto</property>
+                                                                <text-property name="content"><![CDATA[Descrizione Sottoconto]]></text-property>
+                                                            </text>
+                                                        </cell>
+                                                    </row>
+                                                </header>
+                                                <detail>
+                                                    <row id="1335">
+                                                        <cell id="1336">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderLeftStyle">solid</property>
+                                                            <property name="borderLeftWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <data id="1358">
+                                                                <property name="resultSetColumn">Capitolo_art</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="1337">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <data id="1367">
+                                                                <property name="resultSetColumn">descrizioneCapitolo</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="1338">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <data id="1368">
+                                                                <property name="resultSetColumn">descrizioneArticolo</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="1376">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <data id="1370">
+                                                                <list-property name="mapRules">
+                                                                    <structure>
+                                                                        <expression name="testExpr" type="javascript">row["codiceSottoconto"]</expression>
+                                                                        <property name="operator">is-null</property>
+                                                                    </structure>
+                                                                </list-property>
+                                                                <property name="resultSetColumn">codiceSottoconto</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="1340">
+                                                            <property name="borderBottomStyle">solid</property>
+                                                            <property name="borderBottomWidth">thin</property>
+                                                            <property name="borderRightStyle">solid</property>
+                                                            <property name="borderRightWidth">thin</property>
+                                                            <property name="borderTopStyle">solid</property>
+                                                            <property name="borderTopWidth">thin</property>
+                                                            <property name="verticalAlign">middle</property>
+                                                            <data id="1379">
+                                                                <list-property name="mapRules">
+                                                                    <structure>
+                                                                        <expression name="testExpr" type="javascript">row["descrizioneSottoconto"]</expression>
+                                                                        <property name="operator">is-null</property>
+                                                                    </structure>
+                                                                </list-property>
+                                                                <property name="resultSetColumn">descrizioneSottoconto</property>
+                                                            </data>
+                                                        </cell>
+                                                    </row>
+                                                </detail>
+                                            </table>
+                                        </cell>
+                                    </row>
                                     <row id="572">
                                         <cell id="573"/>
                                         <cell id="574">
@@ -6636,6 +8196,7 @@ annoImp+numImp+NumSubImp;</expression>
             </group>
         </table>
         <grid name="GridResponsabili" id="651">
+            <property name="fontFamily">"Times New Roman"</property>
             <property name="height">3.5625in</property>
             <property name="dataSet">DataSetTestata</property>
             <list-property name="boundDataColumns">
@@ -6747,7 +8308,7 @@ annoImp+numImp+NumSubImp;</expression>
                             <cell id="721">
                                 <text-data id="727">
                                     <expression name="valueExpr">"Annotazioni: "+row["annotazioniAllegatoAtto"]</expression>
-                                    <property name="contentType">html</property>
+                                    <property name="contentType">auto</property>
                                 </text-data>
                             </cell>
                         </row>
@@ -6761,7 +8322,7 @@ annoImp+numImp+NumSubImp;</expression>
                             <cell id="723">
                                 <text-data id="729">
                                     <expression name="valueExpr">"Altri allegati: "+row["altriAllegatiAllegatoAtto"]</expression>
-                                    <property name="contentType">html</property>
+                                    <property name="contentType">auto</property>
                                 </text-data>
                             </cell>
                         </row>
@@ -6775,7 +8336,7 @@ annoImp+numImp+NumSubImp;</expression>
                             <cell id="725">
                                 <text-data id="730">
                                     <expression name="valueExpr">"Note in allegato: "+row["noteAllegatoAtto"]</expression>
-                                    <property name="contentType">html</property>
+                                    <property name="contentType">auto</property>
                                 </text-data>
                             </cell>
                         </row>
@@ -6885,9 +8446,540 @@ annoImp+numImp+NumSubImp;</expression>
                     <property name="rowSpan">1</property>
                     <text id="845">
                         <property name="contentType">auto</property>
-                        <text-property name="content"><![CDATA[Il Dirigente dichiara che il presente atto di liquidazione è efficace ai sensi del D.lgs 33/2013.]]></text-property>
+                        <text-property name="content"><![CDATA[Il Dirigente / Responsabile dichiara che il presente atto di liquidazione è efficace ai sensi del D.lgs 33/2013.]]></text-property>
                     </text>
                 </cell>
+            </row>
+        </grid>
+        <grid name="GridCheckList" id="1253">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">12pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="pageBreakBefore">always</property>
+            <property name="height">21.260416666666668in</property>
+            <property name="dataSet">Dat SetCheckList</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">BirtStr.toUpper(row["hasChecklist"])=="FALSE"</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">hasChecklist</property>
+                    <text-property name="displayName">hasChecklist</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["hasChecklist"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">soggettoCreditoreLabel</property>
+                    <text-property name="displayName">soggettoCreditoreLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["soggettoCreditoreLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">soggettoCreditoreValue</property>
+                    <text-property name="displayName">soggettoCreditoreValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["soggettoCreditoreValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">sommaDovutaLabel</property>
+                    <text-property name="displayName">sommaDovutaLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["sommaDovutaLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">sommaDovutaValue</property>
+                    <text-property name="displayName">sommaDovutaValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["sommaDovutaValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">causaleLabel</property>
+                    <text-property name="displayName">causaleLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["causaleLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">causaleValue</property>
+                    <text-property name="displayName">causaleValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["causaleValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">modalitaPagamentoLabel</property>
+                    <text-property name="displayName">modalitaPagamentoLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["modalitaPagamentoLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">modalitaPagamentoValue</property>
+                    <text-property name="displayName">modalitaPagamentoValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["modalitaPagamentoValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">scadenzaLabel</property>
+                    <text-property name="displayName">scadenzaLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["scadenzaLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">scadenzaValue</property>
+                    <text-property name="displayName">scadenzaValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["scadenzaValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">estremiProvvedimentoDirigenzialeLabel</property>
+                    <text-property name="displayName">estremiProvvedimentoDirigenzialeLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["estremiProvvedimentoDirigenzialeLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">estremiProvvedimentoDirigenzialeValue</property>
+                    <text-property name="displayName">estremiProvvedimentoDirigenzialeValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["estremiProvvedimentoDirigenzialeValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">allegatiLabel</property>
+                    <text-property name="displayName">allegatiLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["allegatiLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">allegatiValue</property>
+                    <text-property name="displayName">allegatiValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["allegatiValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">esigibileSpesaLabel</property>
+                    <text-property name="displayName">esigibileSpesaLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["esigibileSpesaLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">esigibileSpesaValue</property>
+                    <text-property name="displayName">esigibileSpesaValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["esigibileSpesaValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">congruitaSpesaSommaImpegnataLabel</property>
+                    <text-property name="displayName">congruitaSpesaSommaImpegnataLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["congruitaSpesaSommaImpegnataLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">congruitaSpesaSommaImpegnataValue</property>
+                    <text-property name="displayName">congruitaSpesaSommaImpegnataValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["congruitaSpesaSommaImpegnataValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">applicazioneNormativaFiscaleLabel</property>
+                    <text-property name="displayName">applicazioneNormativaFiscaleLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["applicazioneNormativaFiscaleLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">applicazioneNormativaFiscaleValue</property>
+                    <text-property name="displayName">applicazioneNormativaFiscaleValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["applicazioneNormativaFiscaleValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ivaLabel</property>
+                    <text-property name="displayName">ivaLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ivaLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ivaValue</property>
+                    <text-property name="displayName">ivaValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ivaValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">entrataVincolataLabel</property>
+                    <text-property name="displayName">entrataVincolataLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["entrataVincolataLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">entrataVincolataValue</property>
+                    <text-property name="displayName">entrataVincolataValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["entrataVincolataValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">accertamentoLabel</property>
+                    <text-property name="displayName">accertamentoLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["accertamentoLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">accertamentoValue</property>
+                    <text-property name="displayName">accertamentoValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["accertamentoValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">incassoLabel</property>
+                    <text-property name="displayName">incassoLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["incassoLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">incassoValue</property>
+                    <text-property name="displayName">incassoValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["incassoValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cigLabel</property>
+                    <text-property name="displayName">cigLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cigLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cigValue</property>
+                    <text-property name="displayName">cigValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cigValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cupLabel</property>
+                    <text-property name="displayName">cupLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cupLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">contributivaLabel</property>
+                    <text-property name="displayName">contributivaLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["contributivaLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">contributivaValue</property>
+                    <text-property name="displayName">contributivaValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["contributivaValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">pubblicazioneLabel</property>
+                    <text-property name="displayName">pubblicazioneLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pubblicazioneLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">pubblicazioneValue</property>
+                    <text-property name="displayName">pubblicazioneValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["pubblicazioneValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">regolaritaContabileLabel</property>
+                    <text-property name="displayName">regolaritaContabileLabel</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["regolaritaContabileLabel"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">regolaritaContabileValue</property>
+                    <text-property name="displayName">regolaritaContabileValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["regolaritaContabileValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cupValue</property>
+                    <text-property name="displayName">cupValue</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cupValue"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="1254"/>
+            <row id="1255">
+                <property name="height">0.4583333333333333in</property>
+                <cell id="1256">
+                    <property name="verticalAlign">middle</property>
+                    <text id="1291">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Il dirigente certifica che l'atto contabile ha le seguenti caratteristiche:]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="1257">
+                <cell id="1258">
+                    <text-data id="1293">
+                        <property name="textAlign">left</property>
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["soggettoCreditoreValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["soggettoCreditoreValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["soggettoCreditoreValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Individuazione del soggetto creditore, fiscalmente identificato: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1259">
+                <cell id="1260">
+                    <text-data id="1294">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["sommaDovutaValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["sommaDovutaValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["sommaDovutaValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Somma dovuta e Causale: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1261">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">true</expression>
+                    </structure>
+                </list-property>
+                <cell id="1262">
+                    <text-data id="1295">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["causaleValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["causaleValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["causaleValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Causale: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1263">
+                <cell id="1264">
+                    <text-data id="1296">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["modalitaPagamentoValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["modalitaPagamentoValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["modalitaPagamentoValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Modalità di pagamento: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1265">
+                <cell id="1266">
+                    <text-data id="1297">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["scadenzaValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["scadenzaValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["scadenzaValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Scadenza: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1267">
+                <cell id="1268">
+                    <text-data id="1298">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["estremiProvvedimentoDirigenzialeValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["estremiProvvedimentoDirigenzialeValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["estremiProvvedimentoDirigenzialeValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Anno, numero impegno ed estremi del provvedimento dirigenziale: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1269">
+                <cell id="1270">
+                    <text-data id="1299">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["allegatiValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["allegatiValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["allegatiValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Documenti allegati (fattura, nota di credito, rendicontazioni): \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1271">
+                <cell id="1272">
+                    <text-data id="1300">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["esigibileSpesaValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["esigibileSpesaValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["esigibileSpesaValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Verificate le condizioni che rendono certa, liquida ed esigibile la spesa: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1273">
+                <cell id="1274">
+                    <text-data id="1301">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["congruitaSpesaSommaImpegnataValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["congruitaSpesaSommaImpegnataValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["congruitaSpesaSommaImpegnataValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Congruità della spesa da liquidare con la somma impegnata: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1275">
+                <cell id="1276">
+                    <text-data id="1302">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["applicazioneNormativaFiscaleValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["applicazioneNormativaFiscaleValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["applicazioneNormativaFiscaleValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Corretta applicazione della normativa fiscale e previdenziale: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1277">
+                <cell id="1278">
+                    <text-data id="1303">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["ivaValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["ivaValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["ivaValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Corretta indicazione del regime IVA: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1279">
+                <cell id="1280">
+                    <text-data id="1304">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["entrataVincolataValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["entrataVincolataValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["entrataVincolataValue"]) ;&#13;
+&#13;
+if(row["accertamentoValue"] != null) var valoreCampoAcc= row["accertamentoValue"];&#13;
+else var valoreCampoAcc= "" ;&#13;
+&#13;
+if(row["incassoValue"] != null) var valoreCampoIncasso= row["incassoValue"];&#13;
+else var valoreCampoIncasso= "" ;&#13;
+&#13;
+if(valoreCampo == "SI") {&#13;
+	"&lt;ul>&lt;li>La spesa è finanziata da entrata vincolata: \"" + valoreCampo+"\";&lt;ul>&lt;li>N° accertamento: \"" + valoreCampoAcc+"\";&lt;li>N° incasso: \"" + valoreCampoIncasso+"\";&lt;/ul>";&#13;
+}&#13;
+else {&#13;
+	"&lt;ul>&lt;li>La spesa è finanziata da entrata vincolata: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";&#13;
+}</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1281">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">true</expression>
+                    </structure>
+                </list-property>
+                <cell id="1282">
+                    <text-data id="1305">
+                        <expression name="valueExpr">if(row["accertamentoValue"] != null) var valoreCampo= row["accertamentoValue"];&#13;
+else var valoreCampo= "" ;&#13;
+&#13;
+"&lt;ul>&lt;li>&amp;nbsp;&amp;nbsp;&amp;nbsp;N° accertamento : \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1283">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">true</expression>
+                    </structure>
+                </list-property>
+                <cell id="1284">
+                    <text-data id="1306">
+                        <expression name="valueExpr">if(row["incassoValue"] != null) var valoreCampo= row["incassoValue"];&#13;
+else var valoreCampo= "" ;&#13;
+&#13;
+"&lt;ul>&lt;li>&amp;nbsp;&amp;nbsp;&amp;nbsp;N° incasso: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1285">
+                <cell id="1286">
+                    <text-data id="1307">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["cigValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["cigValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["cigValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Correttezza del CIG ovvero della causa di esclusione: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1287">
+                <cell id="1288">
+                    <text-data id="1308">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["cupValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["cupValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["cupValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Correttezza del CUP: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1289">
+                <cell id="1290">
+                    <text-data id="1309">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["contributivaValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["contributivaValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["contributivaValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Esito favorevole della verifica di regolarità contributiva: \"" + valoreCampo+"\";&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1310">
+                <cell id="1311">
+                    <text-data id="1312">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["pubblicazioneValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["pubblicazioneValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["pubblicazioneValue"]) ;&#13;
+&#13;
+"&lt;ul>&lt;li>Dichiarazione di adempimento degli obblighi di pubblicazione di cui al d.lgs 33/2013: \"" + valoreCampo+"\".&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1313">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">true</expression>
+                    </structure>
+                </list-property>
+                <cell id="1314">
+                    <text-data id="1315">
+                        <expression name="valueExpr">if(BirtStr.toUpper(row["regolaritaContabileValue"]) != "SI" &amp;&amp; &#13;
+	BirtStr.toUpper(row["regolaritaContabileValue"]) != "NO" ) var valoreCampo= "Non rileva";&#13;
+else var valoreCampo= BirtStr.toUpper(row["regolaritaContabileValue"]) ;&#13;
+&#13;
+&#13;
+"&lt;ul>&lt;li>Verificato il rispetto di tutti i requisiti applicabili alla fattispecie di cui all'atto di liquidazione in oggetto si dichiara che il controllo preventivo di regolarità contabile ha dato esito positivo: \"" + valoreCampo+"\".&lt;/li>&lt;/ul>";</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1316">
+                <property name="height">0.21875in</property>
+                <cell id="1317"/>
             </row>
         </grid>
     </body>

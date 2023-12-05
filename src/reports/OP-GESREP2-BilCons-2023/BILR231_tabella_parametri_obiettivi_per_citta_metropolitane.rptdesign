@@ -1,0 +1,2818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
+    <simple-property-list name="includeResource">
+        <value>FileRisorseSIAC</value>
+    </simple-property-list>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ente_proprietario" id="58">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="anno_bilancio" id="1208">
+            <property name="hidden">false</property>
+            <text-property name="promptText">Anno di bilancio</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="nome_report" id="11212">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">BILR231</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="data del giorno" id="3585">
+            <text-property name="promptText">data del giorno in stampa</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">S</value>
+            </simple-property-list>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">S</property>
+                    <property name="label">Con data del giorno</property>
+                </structure>
+                <structure>
+                    <property name="value">N</property>
+                    <property name="label">Senza data del giorno</property>
+                </structure>
+            </list-property>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="89">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+			<property name="odaURL">${userconn}</property>
+			<property name="odaUser">${userdb}</property>
+			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetDatiEnte" id="3418">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ente_denominazione</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ente_denominazione</text-property>
+                    <text-property name="heading">ente_denominazione</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_ente_prop</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ente_denominazione</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ente_denominazione</property>
+                    <property name="nativeName">ente_denominazione</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select ente_denominazione
+from siac_t_ente_proprietario
+where ente_proprietario_id = ?
+	and data_cancellazione IS NULL]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ente_denominazione</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ente_denominazione</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ente_denominazione</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetIndicatori" id="11217">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">importo_p1</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo_p1</text-property>
+                    <text-property name="heading">importo_p1</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo_p2</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo_p2</text-property>
+                    <text-property name="heading">importo_p2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo_p3</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo_p3</text-property>
+                    <text-property name="heading">importo_p3</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo_p4</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo_p4</text-property>
+                    <text-property name="heading">importo_p4</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo_p5</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo_p5</text-property>
+                    <text-property name="heading">importo_p5</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo_p6</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo_p6</text-property>
+                    <text-property name="heading">importo_p6</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo_p7</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo_p7</text-property>
+                    <text-property name="heading">importo_p7</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">importo_p8</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">importo_p8</text-property>
+                    <text-property name="heading">importo_p8</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_ente_prop</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_anno</property>
+                    <property name="paramName">anno_bilancio</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_nome_report</property>
+                    <property name="paramName">nome_report</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">importo_p1</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">importo_p2</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">importo_p3</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">importo_p4</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">importo_p5</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">importo_p6</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">importo_p7</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">importo_p8</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">nome_ente</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">sigla_prov</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">provincia</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">display_error</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">importo_p1</property>
+                    <property name="nativeName">importo_p1</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">importo_p2</property>
+                    <property name="nativeName">importo_p2</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">importo_p3</property>
+                    <property name="nativeName">importo_p3</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">importo_p4</property>
+                    <property name="nativeName">importo_p4</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">importo_p5</property>
+                    <property name="nativeName">importo_p5</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">importo_p6</property>
+                    <property name="nativeName">importo_p6</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">importo_p7</property>
+                    <property name="nativeName">importo_p7</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">importo_p8</property>
+                    <property name="nativeName">importo_p8</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">nome_ente</property>
+                    <property name="nativeName">nome_ente</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">sigla_prov</property>
+                    <property name="nativeName">sigla_prov</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">provincia</property>
+                    <property name="nativeName">provincia</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from "BILR228_parametri_obiettivi_per_comuni"(?,?,?)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>code_result</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>code_result</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>code_result</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>display_error</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>display_error</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>display_error</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <property name="headerHeight">1in</property>
+            <page-header>
+                <grid name="GridTestata" id="1209">
+                    <property name="fontFamily">"Times New Roman"</property>
+                    <property name="fontSize">12pt</property>
+                    <property name="width">7.697916666666667in</property>
+                    <property name="dataSet">DataSetDatiEnte</property>
+                    <list-property name="boundDataColumns">
+                        <structure>
+                            <property name="name">ente_denominazione</property>
+                            <text-property name="displayName">ente_denominazione</text-property>
+                            <expression name="expression" type="javascript">dataSetRow["ente_denominazione"]</expression>
+                            <property name="dataType">string</property>
+                        </structure>
+                    </list-property>
+                    <column id="1210">
+                        <property name="width">7.697916666666667in</property>
+                    </column>
+                    <row id="1213">
+                        <cell id="1214">
+                            <text-data id="11216">
+                                <expression name="valueExpr">params["nome_report"].value + " - "+row["ente_denominazione"]</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                    </row>
+                    <row id="3429">
+                        <cell id="3430">
+                            <property name="colSpan">1</property>
+                            <property name="rowSpan">1</property>
+                            <text id="11218">
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[B1. TABELLA DEI PARAMETRI OBIETTIVI PER I COMUNI AI FINI DELL'ACCERTAMENTO DELLA CONDIZIONE DI ENTE STRUTTURALMENTE DEFICITARIO]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <grid id="11415">
+                    <column id="11416"/>
+                    <row id="11417">
+                        <cell id="11418">
+                            <property name="textAlign">left</property>
+                            <text id="2446">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">params["data del giorno"].value=='N'</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[<value-of>new Date()</value-of> ]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid name="GridPrincipale" id="11219">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">12pt</property>
+            <property name="height">10.135416666666666in</property>
+            <property name="width">7.739583333333333in</property>
+            <property name="dataSet">DataSetIndicatori</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">importo_p1</property>
+                    <text-property name="displayName">importo_p1</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_p1"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_p2</property>
+                    <text-property name="displayName">importo_p2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_p2"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_p3</property>
+                    <text-property name="displayName">importo_p3</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_p3"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_p4</property>
+                    <text-property name="displayName">importo_p4</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_p4"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_p5</property>
+                    <text-property name="displayName">importo_p5</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_p5"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_p6</property>
+                    <text-property name="displayName">importo_p6</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_p6"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_p7</property>
+                    <text-property name="displayName">importo_p7</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_p7"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">importo_p8</property>
+                    <text-property name="displayName">importo_p8</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["importo_p8"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ContaIndicatoriFuoriSoglia</property>
+                    <text-property name="displayName">ContaIndicatoriFuoriSoglia</text-property>
+                    <expression name="expression" type="javascript">var ContaIndic = 0;&#13;
+if (dataSetRow["importo_p1"]> 41/100) ContaIndic=ContaIndic+1;&#13;
+if (dataSetRow["importo_p2"] &lt; 21/100 ) ContaIndic=ContaIndic+1;&#13;
+if(dataSetRow["importo_p3"] > 0/100) ContaIndic=ContaIndic+1;&#13;
+if(dataSetRow["importo_p4"] > 15/100) ContaIndic=ContaIndic+1;&#13;
+if(dataSetRow["importo_p5"] > 1.2/100) ContaIndic=ContaIndic+1;&#13;
+if(dataSetRow["importo_p6"] > 1/100) ContaIndic=ContaIndic+1;&#13;
+if(dataSetRow["importo_p7"] > 0.6/100) ContaIndic=ContaIndic+1;&#13;
+if(dataSetRow["importo_p8"] &lt; 45/100) ContaIndic=ContaIndic+1;&#13;
+&#13;
+ContaIndic;</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Conta</property>
+                    <text-property name="displayName">Conta</text-property>
+                    <expression name="expression" type="javascript">row["ContaIndicatoriFuoriSoglia"]</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">nome_ente</property>
+                    <text-property name="displayName">nome_ente</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nome_ente"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">sigla_prov</property>
+                    <text-property name="displayName">sigla_prov</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["sigla_prov"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">provincia</property>
+                    <text-property name="displayName">provincia</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["provincia"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">nome_ente_1</property>
+                    <text-property name="displayName">nome_ente</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nome_ente"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="11220">
+                <property name="width">0.7291666666666666in</property>
+            </column>
+            <column id="11221">
+                <property name="width">5.208333333333333in</property>
+            </column>
+            <column id="11222">
+                <property name="width">0.90625in</property>
+            </column>
+            <column id="11223">
+                <property name="width">0.8958333333333334in</property>
+            </column>
+            <row id="11444">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] == ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11445">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <data id="11330">
+                        <property name="fontSize">18pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="resultSetColumn">display_error</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="11446">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11447">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="11451">
+                        <property name="width">7.666666666666667in</property>
+                        <column id="11452">
+                            <property name="width">1.1041666666666667in</property>
+                        </column>
+                        <column id="11453">
+                            <property name="width">4.78125in</property>
+                        </column>
+                        <row id="11456">
+                            <cell id="11457">
+                                <text id="11461">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Provincia di]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="11458">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <data id="11494">
+                                    <property name="resultSetColumn">provincia</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="11489">
+                            <cell id="11490">
+                                <text id="11492">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Città Metropolitana di]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="11491">
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <data id="11496">
+                                    <property name="resultSetColumn">nome_ente</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="11465">
+                <property name="height">0.2708333333333333in</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11466">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="11224">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11225"/>
+                <cell id="11226"/>
+                <cell id="11227">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <text id="11280">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Barrare la condizione che ricorre]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="11229">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11230">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11345">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[P1]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11231">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11380">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Indicatore 1.1 (Incidenza Spese Rigide - ripiano disavanzo, personale e debito - su entrate correnti) maggiore del 41%]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11232">
+                    <property name="backgroundImageType">embed</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11488">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p1"] &lt;= 41/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11470">
+                        <property name="fontFamily">"Times New Roman"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="fontVariant">normal</property>
+                        <property name="color">black</property>
+                        <property name="textLineThrough">none</property>
+                        <property name="textOverline">none</property>
+                        <property name="textUnderline">none</property>
+                        <property name="borderBottomColor">black</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">black</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">black</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">black</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">0pt</property>
+                        <property name="marginBottom">0pt</property>
+                        <property name="marginRight">0pt</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingBottom">1pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <property name="display">block</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">auto</property>
+                        <property name="showIfBlank">false</property>
+                        <property name="overflow">hidden</property>
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p1"] > 41/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_4.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11233">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11424">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p1"] > 41/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11471">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p1"] &lt;= 41/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="11234">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11235">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11346">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[P2]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11236">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11381">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Indicatore 2.8 (Incidenza degli incassi delle entrate proprie sulle previsioni definitive di parte corrente) minore del 21%]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11237">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11425">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p2"] >= 21/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11472">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p2"] &lt; 21/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_5.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11238">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11433">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p2"] &lt; 21/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11473">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p2"] >= 21/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="11239">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11240">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11347">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[P3]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11241">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11382">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Indicatore 3.2 (Anticipazioni chiuse solo contabilmente) maggiore di 0]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11242">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11426">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p3"] &lt;= 0/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11474">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p3"] > 0/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_5.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11243">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11434">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p3"] > 0/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11475">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p3"] &lt;= 0/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="11244">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11245">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11348">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[P4]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11246">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11383">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Indicatore 10.3 (Sostenibiltà debiti finanziari) maggiore del 15%]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11247">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11427">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p4"] &lt;= 15/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11476">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p4"] > 15/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_5.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11248">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11435">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p4"] > 15/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11477">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p4"] &lt;= 15/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="11249">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11250">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11349">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[P5]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11251">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11384">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Indicatore 12.4 (Sostenibilità disavanzo effettivamente a carico dell'esercizio) maggiore dell'1,20%]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11252">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11428">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p5"] &lt;= 1.2/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11478">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p5"] > 1.2/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_5.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11253">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11436">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p5"] > 1.2/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11479">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p5"] &lt;= 1.2/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="11254">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11255">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11350">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[P6]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11256">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11385">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Indicatore 13.1 (Debiti riconosciuti e finanziati) maggiore dell'1%]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11257">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11430">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p6"] &lt;= 1/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11480">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p6"] > 1/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_5.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11258">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11437">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p6"] > 1/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11481">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p6"] &lt;= 1/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="11259">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11260">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11351">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[P7]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11261">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11386">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[[Indicatore 13.2 (Debiti in corso di riconoscimento) + Indicatore 13.3 (Debiti riconosciuti e in corso di finanziamento)] maggiore dello 0,60%]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11262">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11429">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p7"] &lt;= 0.6/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11482">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p7"] > 0.6/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_5.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11263">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11438">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p7"] > 0.6/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11483">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p7"] &lt;= 0.6/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="11264">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11265">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11359">
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[P8]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11266">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11387">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Indicatore concernente l'effettiva capacità di riscossione (riferito al totale delle entrate) minore del 45%]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11267">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11431">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p8"] >= 45/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11484">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p8"] &lt; 45/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_5.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11268">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11439">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p8"] &lt; 45/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11485">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["importo_p8"] >= 45/100</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+            <row id="11388">
+                <property name="height">0.14583333333333334in</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11389"/>
+                <cell id="11390"/>
+                <cell id="11391"/>
+                <cell id="11392"/>
+            </row>
+            <row id="11269">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11270">
+                    <property name="colSpan">4</property>
+                    <property name="rowSpan">1</property>
+                    <text id="11378">
+                        <property name="textAlign">justify</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Gli enti locali che presentano almeno la metà dei parametri deficitari (la condizione "SI" identifica il parametro deficitario) sono strutturalmente deficitari ai sensi dell'articolo 242, comma 1, Tuel.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="11393">
+                <property name="height">0.14583333333333334in</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11394"/>
+                <cell id="11395"/>
+                <cell id="11396"/>
+                <cell id="11397"/>
+            </row>
+            <row id="11274">
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr" type="javascript">row["display_error"] != ""</expression>
+                    </structure>
+                </list-property>
+                <cell id="11275">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <text id="11379">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Sulla base dei parametri suindicati l'ente è da considerarsi in condizioni strutturalmente deficitarie]]></text-property>
+                    </text>
+                </cell>
+                <cell id="11277">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11432">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["ContaIndicatoriFuoriSoglia"] &lt; 4</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_barrato5.jpg</property>
+                    </image>
+                    <image id="11486">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["ContaIndicatoriFuoriSoglia"] >= 4</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">si_5.jpg</property>
+                    </image>
+                </cell>
+                <cell id="11278">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="verticalAlign">middle</property>
+                    <image id="11440">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["ContaIndicatoriFuoriSoglia"] >= 4</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_barrato6.jpg</property>
+                    </image>
+                    <image id="11487">
+                        <property name="height">45px</property>
+                        <property name="width">77px</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["ContaIndicatoriFuoriSoglia"] &lt; 4</expression>
+                            </structure>
+                        </list-property>
+                        <property name="source">embed</property>
+                        <property name="imageName">no_6.jpg</property>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">Immagine SI.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAYAFADASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9XNN/Z1+Lnh/ToNX8IeN/hz4p0m9jXV/7C8d+CEe8Z3Af+zbb
+                VtOltltLTaEjSa40/ULmJmklke7+WFZ/+Fu+N/hv8vxB/ZfmnhT/AEq61j4carp3irStOsx995IrpdO1
+                Wa4QLI7W9lp1yzp5QhM0rmFPf/hx/wAk80H/ALB1v/6KWtqgDwb4W/ta/s8/GDx3Y+ENJ8SeBrTx7qPm
+                eV4L1u2XQ/FibI2mPmaNepDqEX7lDMPMgXdCVlXMbK59f/4Vx4e/6AOjf+AUX/xNZPx+8J+AfGnwa8Q2
+                fxS0zwfq3w+htDf67B4qt7afRkt7Yi4M1ytwDCI4jEJd0nCGMNkbcj4w/wCEm/ZP0b978CPij8QNKubL
+                /UQfs+XeseNNC8J7uG3+H9Mh1LQrL7SDOR9q08edIbmePNxG0yAH0N8XP2rPgR8C/iBd+GvE9xplhqGl
+                WceoaxcReGrm703w5byBzHLqd9Dbva6cjhHKm7liDBSRkU/Uv2nfgzpfx38K/DZ9Nv5fFnjbTv7W0WK3
+                8A6pcWV5aYQtP9tjs2tERPMiEheVfLMsYfaXUH80LLx5+0v8NP23Pir45+B2t6/4y0qwtrK7+JOifGXS
+                vDvhy3v9Mh0ma5tdWums9QS9tLy4t1itrf8A4ktiiosSXqebZ3DG/Y/ttfGz42/tlfAbx74q8F+IP2e/
+                Dnin4b64/h6z0L4eTfEHVLTS7iTRi72jaZdXEhnaNYZo5r3R7eC0Z1iltr0DczoLmaUn626LlqSXlrya
+                PspNpOyTqJq9u2nr7l/Oy5tfWOp+vn/CuPD3/QB0b/wCi/8Aia5/4pal8NPgd4EvvFPjWfwN4P8ADOl+
+                X9s1fW3tdPsLTzJFij8yeXbGm6R0QbiMs6gckCvnr4F/C/4cftif2pHJ+098X/jJqHhfylvdLtvHS+Dt
+                V8HSzbw1vqNl4ci0m5huHaFlaDVI2lhe2lREhbzw3r/wt/4J+/A/4L+O7Hxb4b+E3gDT/G2n+YyeK20S
+                C48RzyyxtHNcT6pKrXk9xMryebPLK8sxlkMjuXYlCOG/4bm+CXiP5fBHhvxN8VPtX7vSr3wT8PNR1rQt
+                cnPyrDb65Hbf2P8A63908sl7HBBIsizyw+VIU0PCfjjx/wDEfxVpsVh+zHbeC9Eiu4k1u78feJNHsrpb
+                d3AaTToNH/tVLqSNBIWjuZbIZMIV3DyND9E0UAfMdt4j/aK123TT9Lb4U/DLTNFUW9ncX/hzXvHF1rsI
+                +VHlhjOkJp0iKgLIk18rmYgSIId0z/8AhmrxD4248e/Hz48+INPv/wB7qmg6FpUHhPSnlPz7LS50+wj1
+                q1t45drRoNUeUoixzTXCtL5hRQBoeE/2E/2ePCfirTfEbfCPSfEPjLSLuK/tvFvijw3d+JPFAuIXDwTP
+                q+oRz38kkO1BEzzsYkiiRCqRoq+3/wDCeWP/ADw1n/wT3f8A8boooA8/+LPwJ+D3x81Gwu/HXwt8M+NL
+                vSrlryyn17wN/aMlnOyxI0sbTW7FHKwQgsuCRDGM/KuHeIvgf8IfF/xj0/4iat8L/DeqfEDSQi2Pie78
+                D+frNmE3bBFdtbmZNu5sbWGNxx1oooWlrdNV5MHrv6fLsJ8dPgV8Hv2oP7L/AOFl/C3wz8RP7D83+zf+
+                En8Df2v/AGf5uzzfJ+0W7+Xv8qPdtxu8tM52ivP/APhkGx8Jf8iD8Y/2mfh/9o/4/wD/AInF34w+37f9
+                X/yM1rqv2fZmT/j08jzPM/e+Zsi8sooAP+FmftGfCn/StR0/4c/GjTz+9urfQvD2seBdVsYo+XS0iupd
+                TttQuJlJEaT3WnRI8ah5isxkgu2X/BSvw34b06Wb4j/Dv42fCJoMzTP4i8E3WoadaWYGWvrnVNI+3abZ
+                264k3tdXUTRLE0kipEUkYooA/9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">Immagine SI - barrata.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAiAEoDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6t/Yb/wCCHfwX+I/7C3wK+J3hTwV8MNG+IPiv4a+GL/XR4q8B
+                2Pi/w74huG0e0UzXNhcbJoZADNJu027sTNPIJbo3W3YfUP8AhmH4BfBb5vjn+xD8APAmkv8AvP8AhLPC
+                vhLTvFnhWwQ9r+4/sy1vLDYqTyy3NxZLp0EKI0l8rv5S+/8A/BJ3/lFl+zT/ANkq8L/+mi1r6AoA+b/C
+                f/BMr9kTx74V03XdC/Z8/Zw1rRNatIr/AE/ULDwLotza39vKgeKaKVICkkboysrKSGBBBINaH/Dp39ln
+                /o2n4Af+G80j/wCR60PFn/BP3wDL4q1LxR4ETUPgx471i7lv9Q8TeARbaXdaxcSuWlm1G2eGWw1WQ75w
+                rajbXJhNzNJCYpX8yvHP21f24vjv/wAE6P2ZPFPjnxt4E+H3xE0bw9DFEvinwvfXuneRLPMiLeX+hzJP
+                JbWNuHZZGttRvZ5GjjYQxJNIbWZSUVd/5fnp944xcnZHqf8Aw6d/ZZ/6Np+AH/hvNI/+R6P+HTv7LP8A
+                0bT8AP8Aw3mkf/I9eI/Cj/gpR4l8c/CO48Yj4sfs3658MW8KXOpj4t2Ftc2Gg6FrJk04Wuk6nptxqG+0
+                mKXyny5b6OaRpFUxW7JiTzz/AII+f8FMf2sP+CnH7NV343fwJ8G9NtbvVJtJh1q5a90qy0zYxQ3EFmlz
+                fXGqPGfnkt530leI0juZPNeW2uK5m0uiv8uZx/NfdZrRomT5Um+rt+HN+XbZ3Ts00fWP/Dp39ln/AKNp
+                +AH/AIbzSP8A5HrwD/hQn7LPxo/0f4Bfsg/AD4x7v+Zo/wCEO0jSfAkHf/kNfYpvtudk8X/Eqt7/AMm4
+                h8q5+y7t49//AOHenhb4r/6d8c7n/hferS/vPsXiqxhk8K6U5+bFhoeGs4vLZp1iubhbnUVhneGS+mTi
+                voCkM+EPCf8AwQX+C/xF8Vab4m+K3wr+CAk027i1HT/B3gfwPY6JoGmSxuJYhdXSQrf6tJHulhkM0kFh
+                dR+Wz6XFIua9c/4JS+C9Huv+CXP7Nksuk6ZJJJ8LPDDO7WqFmJ0m1JJOOTX0nXz/AP8ABJ3/AJRZfs0/
+                9kq8L/8ApotaAD/gk7/yiy/Zp/7JV4X/APTRa19AV8Qf8E7/ANtbwt4G/wCCdv7PHgvw5YeIPij8RtN+
+                FXhP7Z4S8GwQ3t/pfmaJZzR/2hPLLFY6X5kDNND/AGhc232lYnEHnSAIfX/+FYfHH9oP9x8QfEnh/wCE
+                nhkfurrQvhxqs+qarrK9HEmu3VrayWlvLHJJG0VlZQ3kTxRTQ6lGSYlAPQPjp+1H4E/Zw/suHxZrn2fV
+                tf8AN/sbQ9PsrjVtd17ydhn+w6baRy3l55KyI8vkQv5UeZH2opYeC/tHa/8AtUftBfCi8sfAvw18E/Dn
+                TdYmgtpoPF3iK11HxHcWMkiwXsEtpDbXelWbmJ5porj7TqibYolksmaeRIPevgX+yr8OP2aP7Uk8C+C/
+                D/hvUPEHlNreqW1qp1XxFLFvK3Go3rZub643Sys09zJJK7zSuzszsT6BSavv5f8ADej2fkNOx+O3wE/4
+                IP6B8K/2qta+Kfhj4IfE7wNoGk+A7rSbnRZPFuk2fifxVr8k0bfb9IuNK1CKHSleNJVl8u6sY2S4e3W2
+                it3kjbsf+CEHwA/a7/4J0fsd3PgPxd8FvD95YabrV1qz2F14psbDWGhlcySCwltp7211C4kUYWK7OkxR
+                OqA3EqTPJbfqxRVU24Xt1jy/Lmc/zdu1klbQma59/wCbm+fLy/lr3u276nl/wU/a98G/GzxVceFoptQ8
+                MfEHT7Rr3UPBfiS1Oma/Zwo6RS3C27nF1ZrO/ki/s2nspZFZYriXGa9Qrj/jX+z34B/aU8K2+hfEXwP4
+                P8f6JaXa38Gn+JNGttVtYbhUdFmWKdHQSBJJFDAZAkYZwxry/wD4UF8U/wBnf978J/Gv/Ca+H0/5kr4m
+                6xd3nl54/wBD8RbLjUYMvJLNJ9vj1Tfsigg+xRDcEM+gK+f/APgk7/yiy/Zp/wCyVeF//TRa1oeE/wBt
+                7StG8Vab4U+K2h6h8HvGWq3cWm6emtzJLoHiO7kcRRRaXq6f6LcyTyiXyLOY2+pSRwtK9jClZ/8AwSd/
+                5RZfs0/9kq8L/wDpotaAMzwX/wAEpf2XLrwdpMsv7NnwCkkksoWd2+H2klmJQEkn7Pya0/8Ah07+yz/0
+                bT8AP/DeaR/8j0UUAH/Dp39ln/o2n4Af+G80j/5Ho/4dO/ss/wDRtPwA/wDDeaR/8j0UUAH/AA6d/ZZ/
+                6Np+AH/hvNI/+R6P+HTv7LP/AEbT8AP/AA3mkf8AyPRRQAf8Onf2Wf8Ao2n4Af8AhvNI/wDkej/h07+y
+                z/0bT8AP/DeaR/8AI9FFAB/w6d/ZZ/6Np+AH/hvNI/8AkevSvhN8JvCvhb4V+GtM0zwz4f07TdO0q1tb
+                S0tdOhhgtYUhRUjjRVCqiqAAoAAAAFFFAH//2Q==
+            </property>
+        </structure>
+        <structure>
+            <property name="name">Immagine SI-new.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAhAEkDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9Df8AgmV/wTK/Zu8e/wDBNv8AZ813Xf2fPghrWt618NfDl/qG
+                oX/gXS7m6v7iXS7Z5ZpZXgLySO7MzMxJYkkkk17f/wAOnf2Wf+jafgB/4bzSP/kej/gk7/yiy/Zp/wCy
+                VeF//TRa19AUAfP/APw6d/ZZ/wCjafgB/wCG80j/AOR6P+HTv7LP/RtPwA/8N5pH/wAj19AV4X/wUn/b
+                Bn/YM/Yu8afFS20X+3ZvDMVuFgkEv2e38+5it/tM/lK0nkQ+b5sgRdxWNgME5Ezmoq7/AK/r7ioRcpcs
+                dyn/AMOnf2Wf+jafgB/4bzSP/kej/h07+yz/ANG0/AD/AMN5pH/yPXDfBD9pf4x/GDS4H0TxP8EPH/hX
+                W/CGo61pXxM8K6Tey6LFqcMtosVhcad/aEjDEcszZF+Hl2MNkBiIfn/+CEH7fHxQ/wCCln7Hdz8VfiUP
+                AVlJea1daVYab4Z0W7sRaC2co7yy3F7ceaX3KQFWPZtOd+QV0UG5Sh1iuZ+nM4/mvu1WjM+dckZ9G7L1
+                5eb8vuejs1Y9Z/4dO/ss/wDRtPwA/wDDeaR/8j0f8Onf2Wf+jafgB/4bzSP/AJHr6AoqSj5//wCHTv7L
+                P/RtPwA/8N5pH/yPX8Qdf3+V/AHQB/b5/wAEnf8AlFl+zT/2Srwv/wCmi1r6Ar5//wCCTv8Ayiy/Zp/7
+                JV4X/wDTRa19AUAFeb/tW2vjjUPg9NbfD/QvDfifW7q/soLnSdfuBb6bqOnPcxrfRTSGOXaGtTMARG5z
+                j5W6H0iik1e1+6frZ3s/J7NdVoNOx+ZH7J//AATg1T9lX9tLx98XPhN8FvHnwe+H2p+CrrTdY+Gp8Q6P
+                cDxlrTzK0Fxp9vFqElnbRxxq4D3FxAcybVijUuW7f/g3F/Zb+Kn7E37Bc/wy+LXw91bwP4g0vxBe6nHL
+                Pqml39rqMV0+9fJazup2DIFAcSrHy67d/OP0AoqqT9nfl6x5fRc7np83bslZJE1Fz7/zc3z5eT8tX1bb
+                bYUUUUhhX8Adf3+V/AHQAUUUUAFFFFABRRRQAUUUUAFFFFAH/9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_barrato.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAwAFUDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9TtF+B3xR/Z80m21jwa2mfGbwpexJdz+FPFLQ22vWG9QzLp+q
+                ldky5YkQ34JPA+1RqAtejfAb9oj4XftA61e6DYafDoHjXSYlm1Twj4g0ldN17TEJIEj2zjLwkg7Z4jJC
+                /wDBIwr1LwH/AMiPo3/XjB/6LWuV+Pv7L3gb9pvR7K28YaHHfXWjym50jVLeaSy1XQ5yu3z7K8hZJ7aX
+                BxvidSRwcgkUAdV/wgmh/wDQG0r/AMBI/wDCj/hBND/6A2lf+Akf+FeD7vjh+yd1Fz+0D4Bg7j7PY+Nt
+                KiHt+7tNTVVHb7PcH0uHPPp/wC/af8DftOaHeXng3XYtQm0mVbbVdNnhks9U0Ocru8i9s5lSe1lxzsmR
+                WxyAQc0AdT/wgmh/9AbSv/ASP/Cj/hBND/6A2lf+Akf+Fa1FAGT/AMIJof8A0BtK/wDASP8Awo/4QTQ/
+                +gNpX/gJH/hVWH4s+Fbj4mzeCo/Evh9/GVvYDVZdBXUYTqcVmX8sXLW27zRCX+USFdueM5qn8Z/jr4O/
+                Z18DT+JfHPiXR/C2h25CG61C5WJZJDnbFGD80kjYwsaAux4UE8UdL/12DZ2f9dfyNb/hBND/AOgNpX/g
+                JH/hXB/Hf4vfC79m3R7W48Wf2Pa3eps8WlaVbad9s1XW5VXcYbOziRp7mTH8MaMQOTgc1wFz8UvjN+1T
+                OIPh7op+EfgO4BV/F/iuwLeIL+Mjh9P0h8fZ/US6hhhjm0YEGu9+A37G/gf9n3Xr/wAQafaX2u+NtaQJ
+                qvi3X7ptS1zUhx8rXD/6uLIyIIBHAn8EajigDymUfHv44/8AE08H+A/hb8IdBViLW28d6Y+s61qcZAIl
+                lt7KeKKyxyBGZp3bOW8ojaSvqqigDJ8B/wDIj6N/14wf+i1rWrJ8B/8AIj6N/wBeMH/ota1qACvLPjx+
+                x14K+P2uWev3kGoeHvG+lRGHTPF3h66Om67pyEgmNblBmSEkfNBMJIX/AIo2r1Oo7u7isLWSeeSOGCFD
+                JJJIwVY1AySSeAAO9AH4rf8ABTP9qe5/ZF/4KbfCfwj+2xfXHxM/Zlk8N3Fzol3a+G/K0nVNZ+0BftWt
+                WEbNFeyWsJ2mONDGPPilS3UuVr7W+BHwa+DHhD4ueFv2gvgr460HRvgRZ+GdVs9a0nRtfWHwTp0zG1kj
+                vo7MSi1sbhFjmjlCRo37wbwrBi3NftIftf8Aw6/4KW/ELxL+zR4N+HPgn47xtpNtrVxqmuatHD4Ys4Hk
+                mha9jkUG4uWhlVFV9PD/ADyMjT25Ga/Ok/8ABC24/wCCbP8AwVh/Zp8I+FPiRc67pHxbk1S6ls0sIXPh
+                i/0+1edb2KzumuY5rZGlAXz1d1XzF80SOkqzhVOM4U+snLlfe/NdS9FeKk7pWXw8qtVfklGVT+VJtdrJ
+                ax7X+K3W7avzH6H+Af8AgpT8OP25/wBtbxL4P/Zksfh7efFjR9AeDW/iRr2jMTZaYksa+VbpGq3N6qXE
+                sZ8maa2hJ+dHkwcfTfwd/Yj8OeAfF9t4y8V6hqnxQ+JUG5k8VeJvLmn08uoV10+3VVt9PjYAArbRoXAH
+                mNIRur83/hz+0FrP7Ln/AAcf/EO++N09heSJ8GrKyuPEPhXR7uSxW2F/EyX13ajzZbJCflkIaaKIlWaV
+                Ub5f118HeNNH+Inhex1zw/q2m67oupxCez1DT7pLq1u4z0eORCVdT6gkVas6MJrrzemlScdPW135tkSb
+                9tOL2XLbvZwi9fS9l5JGnRRRSGFFFFAGT4D/AORH0b/rxg/9FrWtXg/i/wDbY8MfCu20nwfothrfxG+I
+                39n2rDwn4WhS7v7ZZIgUlu3ZlgsYTg/vbmSNT/DuOFOOP2afiP8AtQ3Ed78Z/E7eG/C8gDj4deC9Rlit
+                JAVIMepaoFjub0c8xQrbwHlXWdeSAavjj9vDS9U8bal4K+E2i3Pxe8d6XKLfULbSrhYNF8PylSR/aOps
+                DBARxuhj865AYEQNkVmWP7E+tftAJFf/ALRHiKx8eL5i3EPgnSIZLPwfpzAY2yQsTLqZHdrxmiJAZLeI
+                17v4E8AaF8LfCNjoHhnRtK8PaFpkQhs9O020S1tbVB0VI0AVR7AVr0AePfEf9gL4OfFbxbF4i1jwFow8
+                T2mnwaTYa9p5l03WNItYTIY4rK9tnjuLNQZX/wCPeSPO7nOBi18D/wBiT4bfs9eOL/xT4f0bU7vxbqdo
+                un3HiHxF4g1HxJrL2qtvFsL3UZ57hYA3zeUsgTODtyK9XooXu7CklL4tdvw2+7ofPWhf8EtPgp4b/a+v
+                Pj1Z6D4oi+LOoOxutePjjXXNzGxB+zvA14bdrYbVC2xj8lQiBUAVQJ/G/wCwna+HfEl/4r+DPiKf4O+M
+                b+Rrm8jsLUXXhvXpj/FqGlFkikY8lprdre5PeYjivfqKFpFQWy2XRDesnN7vqfOumftwah8FL6HR/j/4
+                Zj+G88kogt/F1lcNfeDNTYnamb0qr2EjdfLvUjUEhUmmPNfQ1neRahaRTwSxzwToJI5I2DJIpGQwI4II
+                6Gm6jp9vq+nz2l3BDdWt1G0M0MyB45kYYZWU8EEEgg8HNfO99+xJrPwG1CTVv2fPFEPgONnMs/gfVYXv
+                vBl+SQW8q3UiXTHwCA1k6wgsWe2mNAH0dRXzj/w8a0n4Xf8AEt+Mfgzxr8MPEqcCGHRr3xHpWpAdZLK/
+                sIJFljGVyJUgmXcN0S5GSgD/2Q==
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_barrato1.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAtAFQDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9bV+Gnxn/AGUFDeBtXuPjX4Hg/wCZX8U6isXibT4x/DZavJ8l
+                3jPEeoYc45uwMCu++AX7YXgj9onVL/RtJvLzSPGOixiXVvCeu2j6br2kqSVDy2kuHMTEELPHvhkxlJHH
+                Neo1598e/wBlvwP+0tp9inivRRcaho0hn0jWLOeSx1fQ5iMedZ3sLLPbv7xuMjg5GRQB6DRXze978b/2
+                Sx/pMd1+0D4AgIHnW6QWXjfSoumXj/d2mpqqjJZPs857R3Dnn1X4CftMeCP2m/DdxqXgvXoNVGnyC31G
+                ykiktdR0acjPkXlpMqXFrNjny5kRsc4xQB3dFFFABRRXh/xR/bq8PeG/iHdeA/BGk6x8VfiPabBdaD4c
+                VXi0XepZH1K9ci2sUIwcSv5zKcxxSHAIB7e7iNCzEAAZJPQCvn3xF+3UvxG1q88PfAzw8Pi7rtjObS+1
+                WG9Fn4V0STByLnU9rpK6EYaC0WeZTw6x53VRg/ZB8Z/tIXBvPj94qtNV0SUh4/h34XaW08NxDBBS9uDt
+                udVyDhll8q2cDm27n6C8L+FtM8D+HbLR9F06w0jSdNhW3s7Kyt0t7e1iUYVI40AVFA4AAAFAHz5F+xl8
+                SviOg1fx1+0J8RtL8Q3IBmsPASWWjaFYjA/dwRXFvcztg7iZJZmZs9FACgr6SooAKKKKACvKfjt+xv4M
+                +PHiC28RTx6l4X8dadEYdP8AF/hu6/s7XLFOvl+eoImh45guFlhb+KM16tXnPx+/ax8BfszQaevi3Xo7
+                bVNak8nSdFs4JL7WNZlPGy1soVeeY+pRCFGSxUAkAH5z/wDBRX/gph8Vv+CdP7UXwt+Gvxo+J1/4P+EP
+                iuzu7t/i34N8GW0msXU8ZCxWdzb3cV3ZwmMHfM9vbyvKHiKQwAsK6D4zf8FcF+AP7K/xc8QS/H3RfilZ
+                y6RazfD3xF8OdC0zXdf061dJEn1HU9O+0R24kt5ioleU21u21FSJJC8Vbn7VXws/aT/bY+IWq/8ACT/C
+                RV/Zr8QaNpsOo+BJNV0W/wDGd/NBcXsnmwQ32dMtJJBLCJgbkSqkVu0U6yq6J8q+Kv8Ag3i8T+Bf2Wf2
+                qdR+FHgTxz4Iu/ixFpmneA/hjbeNbSS6sbWEKt1/a08t41hMksjySiPz53hVF8uXe20cs1UVCpHraTW+
+                uqstLtPXTl+ym9Hc3g6arwl5xv221eullq2paX01uk/vn9k3wf8AFb/goV+yj8NPF/xO+It/oPhDxP4b
+                0zVf7G8HsdL1PxIktqrmfUr+IK8Pn7xI1pYCFYidnnzJnP1l8LPhN4Y+B/gay8M+D9A0jwz4f05Sttp+
+                m2qW0EWTkkKoA3E5JY8sSSSSc18ZfsA/H34i/sLfsVfC/wAGftG/CvVfAOn+EPDVjoZ8T6RdRa7p1gtr
+                CkA/tNbR5XsidgPnKZrbaQzywEmJft3wn4u0rx54bstZ0PU9P1nSNSiE9pfWFylxbXUZ6PHIhKsp9QSK
+                9PGcn1ifs9ru221/LT7tOxw4Xm9jDn3sr79vPX7zRooormNwooooAK5P4y/HTwh+z14NbxB418Qab4d0
+                rzUt45ruTDXMznCQwoMvLK54WONWdjwAa+fv27P25/FHwO/aR+EXwc8H6fo1rrvxiuZreHxJqkb3sGhL
+                Fjc32JGiM7EE7czoFOCQ4+U+k/BH9iTwt8JvGv8AwmesXmtfET4lSxGGXxd4onW71CGNiS0VoiqsFjCc
+                /wCqtY4lbAL72+YgHHRfEb4z/tfWi/8ACE6de/AvwNcEH/hI/E+lrN4r1GPcc/Y9KkzHZBlwVlvt0i5w
+                1n3HpXwH/ZL8F/s9XFzqOk2d3qvirU4li1TxTrl02pa9q4XkCe8lzIUBJ2xKViTOERBxXpdFABRRRQAV
+                8/eMf2EofCHiS88U/BPxHL8HvFV5K11e2dnaC78La/KQcm+0oske5ictPavb3DH70rD5T9A0UAfPGl/t
+                x3Xwc1K30X4+eGR8MbuaVba28U29yb7wbqsjEKm2/KobKRz0hvUi5O1JJvvH6EtrmO8t0mhdJYpVDo6N
+                uV1PIII4IIqPVNMttb024sr23gu7O7iaCeCeMSRzxsCrIynhlIJBB4INfJP7QHwPuf8Agnf8I/FXxL+C
+                +vz+FvD3heyl1XUPh7ewnUPC18iAFls4S6SaW+Adv2SRbcElntpDQB9e0V5v+yD+0F/w1Z+zH4J+I39k
+                f2D/AMJjpcWpf2f9q+1fZN+fk83Ym/GOuxfpRQB//9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">no_barrato.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAtAFQDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9gfHf7C2n6f4vv/F/wn8QXvwe8balN9pvrjSbZbjRNemIxu1H
+                S2KwXBIyDMhhuemJx0rKsP229a+A+oJpP7QXhiLwFGzCK38b6VM994NviSQpluGUS6Y5GCVvUWEEhUuJ
+                jX0fior+zh1CylguIY54JkMckUihlkUjBUg8EEHGD60AM03UodYsoLu0niurS6jWWGaJw8cqMMqysOCC
+                MEEHnNWa+c9S/Yi1D4K302sfAHxNH8N7iSVri48I3tu194N1Ridz4sgyvYSN082yeNQSWeGY8Va8E/t1
+                W3h7xNY+FPjL4fuPg94vv5VtrOS/uxdeG9emI+7p+qhVikYkgLDcLb3LdoSOaAPoKiowxzQ5Kkc0XAkp
+                D0rh/jj+0P4N/Zw8JLrXjXxFp+g2c0n2e0SVy9zqU5Hy29tAgMtxM3RYokZ27LXk3/CXfG79qq+lh0LT
+                pvgX8PJCyf27q8Edz4x1aPjElpYsGt9NVhnEl6Jph0a0ibkHmB6P+0D+1l4L/Zrhs4fEWoXNzr2rq50j
+                w7pFnLqeua4y43La2UKtNLjI3MF2IDudkUEjzabwj8av2urTd4g1LUPgF4GuQ6nRtGuobnxhqURxt+0X
+                6F4NOJG7Mdp50oyCLmNgVr0b9n39knwP+zTJqNz4c0uebX9dIk1nxFqt1LqWta04H3rm8mZpZAMfKm7Y
+                g4VVAAr03GKAPP8A4Ufsw/D74H+Ff7G8NeEdFsLR53u7h2hE9xfXD48y4uJ5N0s8z4G6WRmdsDJor0Hp
+                RQAUUUjfdoAMYrj/AI/fA3w1+0p8Hte8DeMLK51Hwz4ktvsuo2tvf3Fi88W4Nt863eOVQSoztcZGQcgk
+                Ho9b12z8NaPdahqN3bafYWML3Fzc3Moiht41GWd3b5VUAEkk4ABPavm/xr+2d46+O+l3+nfs2eCLDxnK
+                0EiweOfFV5LpPgtJNhKNBKkclzqSlsfNaxGEgH/SARgxUV4tDWjPx98M/tR/tOf8EFviF4Fs/Fvi27+I
+                37Lvxj062m0O78R3t9JD4cM1urfYFvkMlzp7wqcAxrKjRKZY4TIHWP1zSP8AgtFcfsz/ALK2r3fgTTfi
+                hpniPxnrNzFo118UvEeq+JrzWTNfXEFhB4ehvbqSO5hhRkSa5eaFE8tWeO5cqjfZXwa/4I12nxt/ZMl8
+                I/tXQWnxE8WSad/Y1vPa+JbjUtL0C2SGOOKXSons7SOwlG37whkmO0b7iYMVHIfEz/gge3jr/gkJ4F/Z
+                xTxfp1x4j+EmvyeIfC+s3dtILG+mS9u5YYryJGDqklvctHJ5bExs25S4XDaaKPK+jWveN9fmkOTU58y8
+                9Ozs7fJs6z9gL4h+GNP/AG7vFfwv+KnhMR/tP6BoEHiP/hJNQ8S/8JWdX0q52K5srtrOzFkEk2pLaW9p
+                bxfcZRIMsPvpetfmB+zb/wAEw/j9+yx+23rX7SV//wAIr4+1Z/Dy+D9P8B/8JlfaneafpCmGQmDXb62g
+                a6uBKkm2O9hHyMFa6yAw+6vgP+2H4M+Put3eg2c2oeHvG2lRCbU/CPiG0Ona9pyHIEjWz58yEkfLPCZI
+                X/hkam0lFPr1+/T8LfMzV+Z22/4Cv+N/ker4paYhJan1JQUUUUANmcJESx2qBkknGBXz74l/bpX4i6zq
+                Phz4GaB/wtvxJp8z2l5qUN59i8K6FOo5W71TY6O6kgNBZpcTqfvxoPmrzP8AZX8Nax/wVG+Bvhf4qfFD
+                xJqP/CDeMbJL6y+G2jFtP0eKNlZTHqM6P5+p55yjtFbsMBrc4zX174T8L6X4I8PWOkaLptjo+k6bCLez
+                sbKBbe2tIlwFSONAFVQOAAAAOlAHg2jfsKyfGC/sNe+P3iCP4p6xaSpd2vh6K3ay8G6PMFHMOnF3+1MC
+                MiW+ed1PMYhyRX0PFEkESxoqrGo2hQMADpjFSYzS0MBgXk0FMinYpaVgGHk/oDXn/wAff2X/AAP+01ot
+                naeMdCj1CbSpWudK1KCaSz1TQ52XaZ7K8hZJ7WXHG+F1YjgkgkV6HSYxQB83gfHD9lD7rXH7QPgGDsTb
+                2PjbS4h6H93aamqqO/2e4PrcOefUPgD+1B4I/aZ0i9ufCGuR31zpEottW0u5iks9V0OcqG8i9s5lSe2l
+                xzslRSRyMg5r0B+FJ9q8p+O/7H/gr9oDXLXXb+31DQfG2jRmDTPF3h+7Om69pqNgmNLlOXhJxuglEkL/
+                AMcbUwPV6K/I79vf/gvP8S/+CVHx/l+EfiPQdB+MN5ZWEGow+JJP+JBc3EM27Yk8ESyxNMu07pIhEjZG
+                IUxyUAf/2Q==
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAuAFUDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9+8c0YoHWloATFGKWigBMUYpaKAExRilooATFGKWigBMUUtFA
+                CDrS0g60tACN0prtj2xTm4pkjYP44pXA/P7/AIKkf8FHb79lv9tT4UfDnxP8RtR+Avwm8aaNeX118QbH
+                Rbe+uLrVY5Vih0xJby1urS1jCt5sskkDnBQbohlja+Lv7YHxA+BH7Cfxw+KF18WbD4ieA9L0u2bwH4/8
+                CaPo+q3sMLb4Z7y4tnuorK7uYJmUyBHihkRF2Qq2+OvRf2r/AIc/Ejxf+0Nriat8JPDfx2/Z71jwlptr
+                qHhK9vbJtRGsQ3t/IbiytL8pZSjypLcSefPAflhaNmMTIfh6T/gjD4++Ef7EX7ZelfC34b6x4c0z4/Lp
+                dt4I+FUniKxubrQBBtFxc3N1JdtaI0rvI/lxXMuyONFDudqJjC6p367/AHtaNeXdF2TqR7aX/wA/8z9R
+                /wBir4qyfHL9kX4YeMZdV1DXZPFPhTS9WfUr/T4dOur9p7SKUzS20LvFA77txjjdkQsVViADXqFeFf8A
+                BM34eeJvhD+wD8HPCHjLw9eeFvFPhHwhpuhapptzc2tw9vcWltHbuRJbSywsjmMupVydrLuCtlR7rXZX
+                5VUkobXOeg5OCc9wooorI1CiiigBB1paauc8+nNOoAQjNBQGlooAb5Y9KXYM0tFACAbaWiigAooooAKK
+                KKAP/9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">no.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAuAFUDASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9+8UtFFABRRRQAUUUUAFFFFABQeaKKACiiigAooooAKwfid4A
+                svij4E1HQdRuNbtLLUYwksuj6xd6PeoAwbMV1aSxTxHIHMcikjIJwSDvVhfEy88Raf4D1Obwnp2jat4j
+                SEmwtNW1KTTrKeTI4luI4Lh41xk5WFzwBjnIiorwaGtz8SPgP+2v8bv+CLfx78M2f7R3jnxx8U/2XP2h
+                rCC80TxnqWp3uoX/AIKvLiBHMElzI7ToI1YhkWQ7kUXEOJFmiP2jP+1/4C/4JZfsOax8TZda+InxRl8Z
+                eNL7QfCthqHjnUPEs2vTnUruHT7a0uL+4nSGHyEBaVD8yR72819ob2LQP2Ipv2m/+CeMHwR/aN8J+C54
+                10qHRZ4vDes3GpWxW3ijWG9hnuLS2kguAy7goRthUfO4JFeAeNf+CE93q/8AwSc+Hf7P+n+NNPPi34Me
+                Jm8UeEtdu7WQWN3cw391PbpeQo28JJBcGOTy2JRjuUuFw2t1y8kt00rrrG+vzS+8TtKbktL306J2dvk3
+                ue/fszf8FFbr4kftf+KvgD8RvCWmeAviz4b0S28Tw2Wk+IG17StW0ybaplhuntrWQSxSNskieBeoZGkU
+                kr9QK+WxXxb+y1/wT68eQ/8ABSTxn+1D8W7nwdp3ivWPDFt4N0Xw14V1C51Kw0uyjMcks0t5Pb2zzSyS
+                oSF8hRGpxuc8j7RB+ak7cq79fvf6W+ZK+Jrpp+Sv+Nx9FFFIoKKKKACimK/P5/pxS76AHUU3fRvoAUDF
+                G0Z6Um+jfQAuwelG3mk30b6AHUU3fQX4NADqKYMnPfB9aKAP/9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_barrato2.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBD
+                AAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0M
+                DgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAz/wAARCAAtAFcDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQF
+                BgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAk
+                M2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWG
+                h4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx
+                8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQA
+                AQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5
+                OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmq
+                srO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9
+                jPHPwh+KHw0+JniTxp8Lda8H65H4su4b/WPBnimxi0q1u7iO0t7JJrbWLC2a6t5PKhRpXvrfUzKLaCCI
+                2cY3DQ+Fv7a3hXxz47sfBfiPT/EHwu+I2peZ9j8JeMoIbK/1Ty42mk/s+eGWWx1Ty4FWab+zrm5+zLKi
+                z+TISg9grn/il8J/Cvxx8CX3hbxt4Z8P+MPDOqeX9s0jW9Oh1Cwu/LkWWPzIJlaN9siI43A4ZFI5ANAH
+                QUV8/wD/AAoL4qfs7/vfhP41/wCE28Pp/wAyV8TdYu7zy88f6H4i2XGowZeSWeT7fHqm/ZFBB9iiG5eg
+                +Fv7a3hXxz47sfBfiPT/ABB8LviNqXmfY/CXjKCGyv8AVPLjaaT+z54ZZbHVPLgVZpv7Oubn7MsqLP5M
+                hKAA9goozRmgAoorw/xZ+29pWs+KtS8KfCnQ9Q+MXjLSruXTdQTRJki0Dw5dxuYpYtU1d/8ARbaSCUxe
+                fZwm41KOOZZUsZkoA9wrw/xZ+29pWs+KtS8KfCnQ9Q+MXjLSruXTdQTRJki0Dw5dxuYpYtU1d/8ARbaS
+                CUxefZwm41KOOZZUsZkrP/4ZN8VftBf6V8dPF/8AbGk3Hzf8K98KvNpvhWNDz5F/NkXmtYWSe3lW4eHT
+                ryEoZNLjcZr3Dwn4T0vwF4V03QtC0zT9F0TRbSKw0/T7C3S2tbC3iQJFDFEgCRxoiqqooAUAAAAUAeH/
+                APDKnjb48/6d8YviN4gt4ZP3tr4R+HGtah4V0rSWPzIZNTtZYtV1C4iDzQtKZ7aznTypDpsMyBwV9AUU
+                AFFFFABXP/FL4T+Ffjj4EvvC3jbwz4f8YeGdU8v7ZpGt6dDqFhd+XIssfmQTK0b7ZERxuBwyKRyAa6Cv
+                D/Fv7b+laz4p1Pwp8KdD1D4xeMtJu5dN1BNEmSLQPDd3G5ili1TV3/0W2kglMXn2cJuNSjjmWVLGZKAP
+                kH/gqP8ACv42fsheF/A+t/Cy8+Nnxi+DOn6vJ/wmXgSLxzqdvrunwPAyW9za65Zxy+IJLdLqV7i4R5r1
+                9qRRxpDboyLxvwQ/4LF/Cf44eD/g3ovgXxt+0B44+InjDx3cSeF9D1R4tKWaRNOdxp2t6tAkmnzafbQX
+                VpNcRWsl1fRedatLby3IlRvpT47f8E8/ip+1xq+i+J/HXxd0/RtR0mG5ig8C6PpFzN4Gube5MJksdZRb
+                q3vtdiCrJFIHns7S6EdszWMSi4huOH1H/ghbpep+DPA+gyax8L7jRdL+I0nxF8VaBP8ADONvDmuzfYV0
+                6KwstOF6IrG0is1CqshumMqRyszEMrxTVpa91+a/TXv06jqarTs/yf5vT8eh9CL+yb4q/aCX7V8dPF/9
+                saTcfN/wr3wq82m+FY0PPkX82Rea1hZJ7eVbh4dOvIShk0uNxmvcPCfhPS/AXhXTdC0LTNP0XRNFtIrD
+                T9PsLdLa1sLeJAkUMUSAJHGiKqqigBQAAABXh4+APxU/Z2HmfCfxr/wm3h+P/mSvibq93eeXnj/Q/EWy
+                41GDLySzyfb49U37IoIPsUQ3L0Hwt/bW8K+OfHdj4L8R6f4g+F3xG1LzPsfhLxlBDZX+qeXG00n9nzwy
+                y2OqeXAqzTf2dc3P2ZZUWfyZCUFiPYKKKKACiiigArw/xZ+29pWs+KtS8KfCnQ9Q+MXjLSruXTdQTRJk
+                i0Dw5dxuYpYtU1d/9FtpIJTF59nCbjUo45llSxmSs/8A4Y78VfGn5fjp8SP+E80lP3f/AAifhXSZvCfh
+                XUEHe/t/td1eX+9Xnhltri9fTp4XRZLFnTzW9w8J+E9L8BeFdN0LQtM0/RdE0W0isNP0+wt0trWwt4kC
+                RQxRIAkcaIqqqKAFAAAAFAHh/wDwyb4q/aC/0r46eL/7Y0m4+b/hXvhV5tN8KxoefIv5si81rCyT28q3
+                Dw6deQlDJpcbjNe4eE/Cel+AvCum6FoWmafouiaLaRWGn6fYW6W1rYW8SBIoYokASONEVVVFACgAAACt
+                CigAooooAK5/4pfCfwr8cfAl94W8beGfD/jDwzqnl/bNI1vTodQsLvy5Flj8yCZWjfbIiONwOGRSOQDX
+                QUUAfP8A/wAKC+Kn7O/734T+Nf8AhNvD6f8AMlfE3WLu88vPH+h+ItlxqMGXklnk+3x6pv2RQQfYohuX
+                oPhb+2t4V8c+O7HwX4j0/wAQfC74jal5n2Pwl4yghsr/AFTy42mk/s+eGWWx1Ty4FWab+zrm5+zLKiz+
+                TISg9grn/il8J/Cvxx8CX3hbxt4Z8P8AjDwzqnl/bNI1vTodQsLvy5Flj8yCZWjfbIiONwOGRSOQDQB0
+                FFfEH7evxY8Vf8EZf2TvFfxo8OeJvEHxK+HPgz7H9t8A+MtRm1K/P2q8gs4/7P1+Znvof3941xN/aI1L
+                esaQwfY4wMFAH//Z
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_3.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAtAE0DASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKAPiX/goT+2T
+                qP7Pf7XvgPwz4w+KGr/AL4T+ItFeTTfG9vo1jdaZqniIXB/4lWp3l7BPDZQfZl81cCBpv32LmLygG9R8
+                HfGW9039ob4TeA/E3xs8Kah461Hwtq+t6n4W0TQl8rxbB5tuLfU43LySWFvD+8WNGkYTmZx5kpgZq0P2
+                lfhn8U/E/jDWn8PaP8LfiT4A8SeH7fQ9T8CeN76506zuJBLdNNc/aY7S9Qo0UsUT272jCYbWMsXk7JvA
+                /wBlT/gmb8SP2WvjT+zpNaTeBdT8FfCjwz4m0vV2/tu+hurObWr1LsWun2z2sqvZ2YgigiMtyjvGclUM
+                YVzDraMu8tfVVGr3035UmtLNXSmrjrW5nOPZadPsptfjo1e92m4n3rRRRQIKKKKACiiigAooooAKKKKA
+                CiiigAooooA//9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_barrato3.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBD
+                AAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0M
+                DgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAz/wAARCAAtAE0DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQF
+                BgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAk
+                M2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWG
+                h4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx
+                8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQA
+                AQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5
+                OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmq
+                srO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9
+                fP8AhAPjJ+zN+88H61/wujwTb8/8I14qvFtfFWmwL/yzsNYx5V/5cMaRRW+qIs880zy3OsADFegfAv8A
+                aj8CftH/ANqQ+E9c+0atoHlf2zoeoWVxpOvaD528wfbtNu44ryz85Y3ki+0Qx+bHiRNyMrH0CvP/AI6f
+                s0eFfj9/Zd9qlp/Z/i3wz5snhjxZp8UKa94Tnl2b5rG4dH8vf5UayxMrwXMamG4imhd4mAPQKK+f/wDh
+                ZfxU/ZX/AOSiW3/C1Ph/B+6TxZ4V0G7l8VWOfkgW/wBDs4Zvtudg82907y8zXSY0y2topbiP2D4W/Fnw
+                r8cfAlj4p8E+JvD/AIw8M6p5n2PV9E1GHULC78uRopPLnhZo32yI6HaThkYHkEUAdBRRRQAUV4/8Uv2s
+                v7E8d33gjwD4Q8QfEzx7YeXHeWtin2PRPD7yxq8Z1PVph9mt9qzWssltB9p1EW91FPHYzxkE8/8A8MdX
+                n7Rv/Ew/aGm8P+OIW/49PAmnJdL4N02JvnMV7azSGPXbhJNmLq9hSJTaW81vZWM3nNKAH/DXOvftFf6P
+                +z7o/h/xpoU37pviVqOqRt4Nt2+7KLL7M73OsXEDPGxigEFnIY7i3bUre5hkiX0D4F/B/Xvhv/amp+LP
+                HviDx94m17yjdz3McdjpWnKm9hbadYQjy7e3WSaYq0zXF46NEk93ciCEp6BRQAUUUUAFeP8AxS/ZN/tv
+                x1feOPAPi7xB8M/Ht/5cl5dWD/bNE8QPFGqRjU9JmJtrjcsNrFJcwfZtRNvaxQR30EYAHYfGv4/eDf2d
+                PCtvrHjXxDp+g2d9drp2nxzMXutYvXR3isbK3QNNeXkojcRW1ukk0pXaiM3FeX/278WP2sf3nh248QfA
+                TwF0XU9R0Szn8ZeIFP7yK5sre5ae20q32iIFdStJryQTXET2mnSQRzSgHxt+2t/wVn8S/srftc6D8K/j
+                N4+l+CrQ+FX1bS9Y8I2ui3tt8RtU+2eTArrqTztpFhMm0YvTaIk/2uM6mYbVbuf1bwT4n+IX7Rfxc+HP
+                w9+NPxk0bwTqfiHw1e+IJPhx8Pruez1zxdZh4Xh1O91ezmE2kJC7rGtnYXUiSPDMDqOoRNJGnovir9jz
+                xd8I7jxDpfw58O/D/wCI3w98ZaVDZeIfCPxJ8R6pNPrd4WnWa/utWuIdSnuibX7JaGG5hlLwwW6CaGO0
+                jhk+bPgt/wAEj/j/APsefG/4J+Ivhf4m+HeraH8PdB1u31rRPFevarLYRT6ncrcPYaNELeWWxtkjtrO0
+                SZ7iWJEj+0DT2m85bqaVtE/P8pNb+dv+HCe/Mv62/wCD/wAMfpD8LfhP4V+B3gSx8L+CfDPh/wAH+GdL
+                8z7FpGiadDp9haeZI0snlwQqsabpHdztAyzsTySa6CvH/hb+2t4V8c+O7HwX4j0/xB8LviNqXmfY/CXj
+                KCGyv9U8uNppP7PnhllsdU8uBVmm/s65ufsyyos/kyEoPYKoAooooAz/ABZ4s0vwF4V1LXdd1LT9F0TR
+                bSW/1DUL+4S2tbC3iQvLNLK5CRxoiszOxAUAkkAV4f8A8NIeNv2m/wB38CLPw/b+GV+Wb4heMNNv20qV
+                j88baTpy/Z5Nat5I1U/bI7u2s9l3BLbz3xSeCPsPEv7Ifg34h/GWPxx4wh1DxtqWl3dte6Bp+u3RutG8
+                LTW4jMNxY6fgWsd4kqyyrfvG96hupo1uFg8uFPUKAPL/AIKfsn+HvhD4quPFmoXeoePPiXfWjade+OvE
+                lvZPr9zZF0dbFZLa3ghtrNTHGwtrWKGEyK07I1xLNNJ6hRRQAUUUUAc/8UvhboPxo8CX3hvxJY/2hpOo
+                eWzos0lvNBLFIssNxBNEyywXEMyRyxTxOksMsUckbo6Kw8f/AOER+LH7Kf8ApHh3UfEHx08BQ/ul8Lai
+                1mvjLTFb5IhZatc3FtbX1vCqRKYtSP2xxJcXD6lcSJHay/QFFAHH/BT47+Gf2g/Ctxq3hm61CSOxu2sL
+                6z1PSrvR9T0u4CJJ5N1Y3kUV1bSNFLDMqTRIXhnhlUGOWN27CvL/AI1/sh+DfjZ4qt/FUsOoeF/iFp9o
+                tlp/jTw3dHTNfs4Ud5YrdrhBi6s0nfzzYXiz2Usiq0tvLjFeX/sTfti698Tf2sfj58AfEkP9sat+zp/w
+                j0T+MWeOCbxZFq9nNeQvPZxRrFBcQwpHHK8TCKeXzJY4bVGW3QA//9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">no_barrato3.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBD
+                AAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0M
+                DgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAz/wAARCAAtAFADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQF
+                BgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAk
+                M2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWG
+                h4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx
+                8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQA
+                AQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5
+                OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmq
+                srO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9
+                fP8Ahk3xV+z7/pXwL8X/ANj6Tb/N/wAK98VPNqXhWRBz5FhNk3mi5WOC3iW3ebTrOEOY9Lkc5roPhb+2
+                LoPiLx3Y+APGkP8Awrv4rXPmRJ4a1R5Eh1yWKNpZn0W9ljii1i3SFROz2oMsEUsX2qG0mZoE9grn/il8
+                J/Cvxx8CX3hbxt4Z8P8AjDwzqnl/bNI1vTodQsLvy5Flj8yCZWjfbIiONwOGRSOQDQB0FFfP/wDwgHxk
+                /Zm/eeD9a/4XR4Jt+f8AhGvFV4tr4q02Bf8AlnYaxjyr/wAuGNIorfVEWeeaZ5bnWABivQPgX+0v4V+P
+                39qWOl3f9n+LfDPlR+J/CeoSwpr3hOeXfshvrdHfy9/lSNFKrPBcxqJreWaF0lYA9AooooAKK5/4pfFn
+                wr8DvAl94p8beJvD/g/wzpfl/bNX1vUYdPsLTzJFij8yeZljTdI6INxGWdQOSBXj/wDwv34p/tEfuvhP
+                4K/4Qnw+/wDzOvxN0e7s/Mxz/ofh3fb6jPh45YJPt8ml7N8U8H22I7WAPUPjX8fvBv7OnhW31jxr4h0/
+                QbO+u107T45mL3WsXro7xWNlboGmvLyURuIra3SSaUrtRGbivL/+E/8AjJ+0z+78H6L/AMKX8E3HH/CS
+                +KrNbrxVqUDf8tLDR8+VYeZDIksVxqjtPBNC8Vzo5BzXYfBT9k/w98IfFVx4s1C71Dx58S760bTr3x14
+                kt7J9fubIujrYrJbW8ENtZqY42FtaxQwmRWnZGuJZppPUKACiiigArz/AOOn7LngX9o/+y5vFmh/aNW0
+                Dzf7G13T7240nXtB87YJ/sOpWkkV5Z+csaRy/Z5o/NjzG+5GZT6BXz//AMNz/wDC6P8AR/gF4X/4XHu/
+                5mj+0v7J8CQd/wDkNeVN9tzsni/4lVvf+TcQ+Vc/Zd28AHyT8R/2hf2lv+CYH7U2teJPih8TLv4/fs1a
+                VZWl14kuP+EZ0/S/EHgKzv7u6ittQaCwtk+3w2oswLqWNlZhdF47RBCc2fgf/wAFK9e+N3ib4o/Eb4U/
+                ErXPHXwXt1iaw8T+PNNs9E8JeGFmcpKtpaQabBrmrXcM+2OC1LRwXKrLEb9LkJn1XwB+wx8VPiT+2Frv
+                in9oKTwF8SvBs2nWdrpltpmtahpukwzWks8kTSeG2t3t7hS00cqnUNR1B7a5tzPbtD5ixQeO6j/wbyQ+
+                Cfh/8UbL4c+Pr7wn4jufEel+KPhrqyzTBdCfTmhms9P1S3U+RqlrazwlLVruO4a1gkCxgbSJJTaSvt+N
+                r6/Pqv8Ahgkk5O3l6XS/pP8A4c+kP2Mbb4d/H/x/f+NdW8Uap8UvjB4HmEElx4u8HS+GdQ8Afa7di0Gl
+                6Td20NzptpcJLKBNJ51zcxKkU97drbR+X9UE5r4H+BmpfE79mj9pbWvi5+1bpHh/Sda1zwnY+FpPFPw2
+                s7y/8CadbW17fXQkv2mZr+xdUuHaW6ubddOt4bbe96rz+RH90eFfFmlePfC2ma5oepafrWh61aRX+n6j
+                YXCXNrf28qB4popUJWSN0ZWV1JVgwIJBqunmT37f8MaVFFFBQV4/8Uv2sv7E8d33gjwD4Q8QfEzx7YeX
+                HeWtin2PRPD7yxq8Z1PVph9mt9qzWssltB9p1EW91FPHYzxkE+AfsFfFjxV/wWa/ZO8KfGjxH4m8QfDX
+                4c+M/tn2LwD4N1GbTb8fZbyezk/tDX4WS+m/f2a3EP8AZw03Ysjwz/bIyc/X/wALfhP4V+B3gSx8LeCf
+                DPh/wf4Z0vzPsekaJp0On2Fp5kjSyeXBCqxpukd3O0DLOxPJJoA8f/4ZN8VftBf6V8dPF/8AbGk3Hzf8
+                K98KvNpvhWNDz5F/NkXmtYWSe3lW4eHTryEoZNLjcZr6AoooAKKKKACvD/Fn7Imq+FPFWpeJvg/481D4
+                ba3rF3Lf6ho9/avr/g/VriVy0s0ulPNE1tIzy3M7PplzYme6nM10bsjYfcKKAPD/AAn+2db+EvFWm+D/
+                AIy6bp/wp8caxdxWWmbr+e+8L+Ipp3C2tvputTW1tDcXkpLILCVIb0vbzslvJbrHcy+4Vn+LPCel+PfC
+                upaFrumafrWia1aS2Goaff26XNrf28qFJYZYnBSSN0ZlZGBDAkEEGvjD9vX4pa9/wRc/ZO8V/GPwXff8
+                JV8KfBH2NX+FuqQxww6dFc3kFlDb6LqUSiXT7eOa7MrQXUV/EsUMVtapYQooAB//2Q==
+            </property>
+        </structure>
+        <structure>
+            <property name="name">no_3.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcI
+                CQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwM
+                DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAAtAFADASIAAhEBAxEB/8QA
+                HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+                MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+                V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+                x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+                BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+                YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+                hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+                8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKAPg/wDad/aZ
+                +K37Av7YV74w1jxZr/xF/Z0gsLK48Z6be6fpiXnw+TUb27jg1O0e0tIJp7C1+yrHMk7zTLHMZdz+W1ep
+                /D34rzfDD4x/GXxj4y+NXiDW/hl4fgsLzTLG+tdH/svT4r6NZ0+zSWdjHd3ByVigVppmkEijEsjK1dho
+                vgH4i61+1p43v/EvhT4czfCvxF4dtNBglTxHdXmq3QgkvHb7RYSacluI5ReuhUXT7RFn5/MKx/N2nf8A
+                BGTXfhl+z/8AEvwH4I+IK29mfF+i+M/hcNXie5i8Ltpc8V5baTdAYaaxS5jZEIYukEiKMmJd0wbjFJ7d
+                93yt2kmt20nzRvro43XuFzSlUdvK62V1G6afRN+7K2m0rP3j64+AH7WHgb9pqTXYPCeoap/afhieK31f
+                Sda0K/0HVtMaWMSQtNY38MFyiSJkpI0YR9rbWO1sejV89/s5/s8+OG/ah8V/Gj4lWnhHw94p17w1p/g+
+                10LwvrFzq9hDZ2lxc3RuZbqe1tHkmklumUILdREkQ+eQudv0JWjVku/Xr1f5qz8r21tcyTu32+7or/c7
+                rztfqFFFFSUFFFFABRRRQAUUUUAFFFFABRRRQB//2Q==
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_barrato4.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQEB9AH0AAD/4RciRXhpZgAASUkqAAgAAAAGABIBAwABAAAAAQAAABoBBQABAAAA
+                VgAAABsBBQABAAAAXgAAACgBAwABAAAAAgAAADEBAgANAAAAZgAAADIBAgAUAAAAdAAAAIgAAAD0AQAA
+                AQAAAPQBAAABAAAAR0lNUCAyLjEwLjEwAAAyMDE5OjA2OjE0IDExOjAwOjM1AAgAAAEEAAEAAAAAAQAA
+                AQEEAAEAAACVAAAAAgEDAAMAAADuAAAAAwEDAAEAAAAGAAAABgEDAAEAAAAGAAAAFQEDAAEAAAADAAAA
+                AQIEAAEAAAD0AAAAAgIEAAEAAAAmFgAAAAAAAAgACAAIAP/Y/+AAEEpGSUYAAQEAAAEAAQAA/9sAQwAI
+                BgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04Mjwu
+                MzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy
+                MjIyMjIyMjIyMjIy/8AAEQgAlQEAAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYH
+                CAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNi
+                coIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeI
+                iYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz
+                9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAEC
+                dwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpD
+                REVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKz
+                tLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A7vwV
+                8RJrrRZn8eSab4d1UXDCK0umNozw7Vw4SVtxBbeMjj5SOxru7G/tNTtI7uwuoLq1kzsmgkDo2Dg4YcHB
+                BH4Vz/iT4d+FvFupR3+uaX9ruY4hCr/aJY8ICSBhGA6sfzrkL7wX8RdHvJLDwLr2laV4aix9js5x5jx5
+                AL5Z4nJy5c8sevboAD1fnNBwRivLNJ+M2lQ6zY+EtUg1KfXkuI9NurmOGMQSXIYRu4O4HYXyfug47DpX
+                qfGaADA/KlpKM9qAFooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKBRSYOfagA
+                4oGT1rkPHXxG0f4f/YP7Wtr6b7b5nl/ZURsbNuc7mX++PXvXH/8ACQ+NviT/AMTn4d6zBpOkQ/6LNBqc
+                MfmNOPmZhhJPl2ug+8OQeO5APSL3xZ4b0y8ks7/xBpVpcx43wz3scbrkAjKk5GQQfxrl/hl4p8YeJv7U
+                /wCEr0H+yvs/lfZv9Dmg83dv3f6wnONq9Omfeq9j8JdJ1izjv/HVnBqviWXP2y8guJY0kwSEwqFFGECD
+                hR079T6Oc9jQAfjR0pcDNFAHN6t4H0HUba+kt9K02z1S4SRo9Sjsk8+GZgcTBgA28Md2cg5HXvXBnxf4
+                v8B/8U1/wiWueLPsX/MazKPtO/8Aef8APOT7u/Z94/c7dB7BRQBy1h4/8OTadbS6hrWladfPEjXFjcX8
+                ayW0hA3RuCQQynKkEA5HQV1HQ4xn3riL74Q+BdS1G6v7zQ/MurqVppn+1zjc7EljgPgZJPSuH0TW/ip4
+                c1iDVfiDcfZ/C0G77bLstX27lKx8Qguf3hQcD68ZoA9worP0TW9O8R6RBq2k3H2iyn3eXLsZN21ip4YA
+                jkEdK0KACiikoAWik/lS0AFFFFABRRRQAUUUUAFFFFABRRmkznpQAtFJzRzQAtFVr6+ttN0661C7k8u1
+                tYnmmfaTtRQSxwOTgA9K8w8R/ES58W6dHYfCvVPteuxyiadPs4jxbAEMc3ChfvtH0559M0Aekapruj6L
+                5X9q6tY2HnZ8v7VcJFvxjONxGcZHT1FcP4j8Q3ni3UI/CnhiWcWV9EGfxRpkxljspEJcxkx4G4hFGPMU
+                4lHHY4/hjwT4i8Y/av8Ahben/bPsuz+zP30ce3dnzf8Aj3YZzti+96cd69I8OeFtG8JadJYaHZ/ZLWSU
+                zMnmvJlyACcuSeij8qAOX8M/DP8As77V/wAJXq//AAl/mbPs39q23m/ZcZ3bPMd8bsrnGPuDr27PTdK0
+                3RoGttL060sYGcu0drCsSlsAZIUAZwAM+wq7RigBKCSO2aXFFABRRRQAUh6UtHNAB2qtfWNnqVo9nf2k
+                F3bSY3wzxiRGwcjKnIOCAfwqxjPWj60AeYa38KdYvNYnn0HxxfeHtMbb5OmWETpDBhQG2qkqqNzbmOFH
+                LH61z+g/tDf214i0zSv+EX8n7ddxW3m/2hu2b3C7seWM4znGRXt/B4qpq2nQ6zo19pdw0iwXlvJbyNGQ
+                GCupUkZBGcH0NAFr+LFL6V5D/wAKeg8Dj/hIvBhvtR8QWf8Ax6Wt/PF5Mm/5H3YCdEZyPmHIHXoei0n4
+                q+G5bix0XU9SSHxHI8dpdWcdtKVjuyQrxhtpXAfIzuI9yOaAO8xz1ozzjFHtQTgcUAITg4p1HagdKACi
+                iigAooooAKKKKAE6c0dunWjnPtXCar8VfDcNzfaNpepJP4jR5LW1s5LaYK92CVSMttC4L4GdwHuOtAHd
+                9RjNch8RvHP/AAr/AMPW+q/2d9v826W28vz/ACsZR23Z2t/cxjHeuP8AsvxK8cf8U5408PWOneHrz/j7
+                urCZPOj2fOm3Mr9XVAflPBPTqOk8F/CfQfAusTanpd3qU08tubdlupEZQpZWyNqKc5Ud/WgDl/Dzal8Y
+                riDxRHq11oml2dwtndaGsjTwXqoRI+/lFw6ybCCjcLznOB6fp3hrQtGuGuNL0XTbGdkKNLa2qRMVJBwS
+                oBxkA49hWpwKTgHNACiloFFABRRRQAUUUUAFFFFABRRRQAhBoxS0UAJiloooAK4PVvhT4bmuL7WtM02O
+                DxG7yXdreSXMxWO7JLJIV3FcB8HG0j2I4rvKKAPH/tfxK8D/APFR+NPENjqPh6z/AOPu1sIU86Tf8ibc
+                xJ0dkJ+YcA9eh9U0nUYdZ0ax1S3WRYLy3juI1kADBXUMAcEjOD6mrZ54rxDXf2ef7a8Q6nqv/CU+T9tu
+                pbnyv7P3bN7ltufMGcZxnAoA9vzR0ryiw+LfiSbUbaLUfhtqum2LyotxfXDyLHbRkjdI5MIAVRliSQMD
+                qK9CsPEug6xcNb6Xrem306rvaO1uklYLkDJCknGSBn3FJsDVzRms3WNZs9G0+W5ubiBGSJ5I45ZQhkKj
+                OBn8Pzrzi6+MOsNKBo3gO+1i32/NPZzPIiv3UlYmGcYPXuKE7getZpNwxmuH034jWUtqj65Fb6HMyKfI
+                vbtUbcR8y/OFOVOAeO/augt/ENk2kzanfTW9jbQvseSeYKi5xjLHAGSwFMVzYzmqmralDo2jX2qXCyNB
+                Z28lxIsYBYqiliBkgZwPUV5Zrnxway8TXekaH4aOvwwBWW7sb3esgKqSQEjYYBbb1PI/Cs7Qf2ehoviH
+                TdVHinz/ALDdxXPlf2ft37HDbc+YcZxjODQM0P8AhcUHjkf8I54LF9p3iG8/49Lq/gi8mPZ877sF+qK4
+                Hynkjp1HSaT8KvDcNxY61qmmxz+JEeO7uryO5mCvdghnkC7guC+TjaB7AcV3dB6igAox6UtFACYox+VL
+                RQACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAQ4zx1ox+dHvQAQc5zQBXvrKDU9OubC8j8y
+                1uYmhmTcRuRgQwyORkE9K8u8SfDy48JafHf/AAs0v7Jrckohnf7QJM2xBLDFwxX76x9OePTNetUhH5Um
+                B85+OvHdnfL4Y0y+1Lff2YNvr8fkEbJf3ayjIXB5WTmMkccdq9N+FdzoU/h24Ph991v9scNw4+fYmfv8
+                9MVyfxSXRplntfDPhGw13Upxcx38+m26SzWUxwA0uxGYOWLkbiDlG98eQWGk/EfRbNxp9n4q0+HfuaO3
+                huIlLHAycYGegz7UR2Gz2LxprPwk1LVpLbWbjzL6znmjnXZdjZJuw4yoweV7cccVn+F/C3xK1PUodF8a
+                2fmeE7hma+h822G4hSyfNEfMHzrH909ueM1R8JeNPCV/ayWniTwjolvqdkkcVxdaiYvOu5sESO++MNv3
+                LlsknLcmvZ9e8QnT/Dt1qmkWp1iSAqq29pJuLksoIBUNyA2enQUPRE9SjpHw08H6BO0+m6T5ErIYy32m
+                ZvlJBx8zHuBXWAoOnevn/SPG2v618TNVS6TUtLi+yBxp8tzJthIEQztIXBOSeg+9X0AMHsKpppJgLkHi
+                gZ5zR3paQxD19qWkpaACiiigAooooAKKKKACiiigAooooAKKKKACiiigApAQfwpTSHgjFAC5pKKAaADH
+                btRz6cUvevH/ABT4pvPiLqF54M8GX19pGt6VdvLc3U0pt43jiLROqvEWY5d0IBAGBnggCgDt/EnxD8K+
+                EtRjsNc1X7JdSRCZU+zyyZQkgHKKR1U/lXIX3jX4i6xdvf8AgXQtK1Tw1Lj7HeTny3kwMPlWlRhhw45U
+                dO/U6ngv4eTWujyp47j03xDqhuCYru6U3bJDtXCB5V3ABt5wOPmJ7mu5s7C0021SzsLWC0tY87IYIxGi
+                5OThQMDJJP40mB5xotingbVLe9mLJqviuaOXVIJSHSGbdl1i29AGmccluAOTyT6RNFFeWrxbm2MRkjg8
+                EGvPvino2o6zNosOmXKW11ulWOVpGTa7GMKwKgkYPOa57TvGc3wmt20Xxrd6hq2oTP8AbI5rWQzqsTAI
+                F3SspB3IxxjHPXk0IZlfEH4MW66mt/pBv7iW+mmmuRJPEFRiwI25UcfM3r0FQeAPH/iS30uTUNTsNPg8
+                JRXDLfX6qxkikKKFAUOWOWMY4Q/eP4TeJ/ijaeNPsv8AYDapZfZN/necRHv37duNjnONrdfWuytdDsvh
+                78NdVi8R2NpfWn2lZ5IbeJZVYMY0XKuFBIYA/gKJbC6nnum63Ya/8YNb1LS7j7RbTWS7H2MucCFTwwB6
+                g19I8L1PWvizxVr1rJ4uvr/wxHNpNtKEVI4AICqhFDDEZxgsM/rXs3gvWdY+H+sw6X401W91ifX7iG30
+                5o7h7hYGDbWLeaVKgmVPug52n0GbbvFCPbe2RRzxQfQUdBjvUjDvS0gBx15paACiiigAooooAKKKKACi
+                iigAoopM0ALRSc0Z70ALRSA5zS0AFN+6Rjv1p1cd458Yp4d+waND56avrvmWumzqitHDP8qo0mT90NIp
+                4VuAeD0IB1F9e2em2kl5f3cFpbR43zTyCNFyQBljwMkgfjXm/jn4j6xa/YP+Ff21j4k3eZ9t+yRvefZ8
+                bfLz5LfLu+fr12nHQ1BY+C/iLrF5HYeOte0rVfDUuftlnAPLeTAJTDLEhGHCHhh079D2/hnwV4e8Gm6/
+                sLT/ALJ9r2ed++kk3bc7fvscY3Hp60Aeaad4Gm+L1s2v+O7PUtG1S3f7FFb2sRt1aFQHDlZVZid0jjIO
+                OBxwa9g0nTodG0ax0u3Z2gs7eO3jaQgsVRQoJwAM4HoKuUUAJ2pB97HanUUmgGEZPPalwO3SlwKMDGKL
+                ANKg0Y45p+KQgGhgIOBVPVdLh1bRr7S52kWC9t5LeRoyAwV1KkgkEZwe4NXcDGKWmB4vffCqz+G9pJ4s
+                8Irquqa7YY+zWc4E6SeYRG+UjRWOEdjwRjGTwDWx4F+I+sXf2/8A4WDbWPhvb5f2L7Wj2f2jO7zMec3z
+                bfk6dNwz1Fen4596wPE3gnw74y+y/wBvaf8AbPsm/wAn99JHt3Y3fcYZztXr6UAaenarpusW7XOl6ha3
+                0KuY2ktZllUNgHBKkjOCDj3FXa8r1HTZvhPcLrGjtHa+BLZBJqOmREy3E1w5MYdDICcZMOR5ijCHj12P
+                BXxZ0Hx3rM2l6XaalDPFbtcM11GirtDKuBtdjnLjt60Ad5RRSZycUALRSUA0ALRSZx1pec0AFFFFACds
+                Un3R6mlFHf3oAPSiis/XNb0/w5o0+rarcfZ7KDb5kuxn27mCjhQSeSB0oA0OnauQ1v4h6RZ6PPPoNzY+
+                IdTXb5OmWF6jzT5YBtoTcx2ruY4U8KfrXP6n8R9Y8RCH/hVttY675Gf7R+1I8Pk7seVjzGjznEnTP3R0
+                72PC3wX8O+EvEdprljearJc22/Ys8sZQ7kZDkBAejHvQBj/2x4v+J/8AxJf7K1zwL5H+l/2l+9Pm7fk8
+                n7sXXfu+8fudO46Twl8OZtEuJrjxHrr+KJw8b2UuowF2smUkkxl3cqWOwkjH3B14x3eATmjr1oAMcYzz
+                SAYPJzS96KAFooooAKKKKACiiigAooooAKKKKAEoxjPNHOPejGRzQBXvbGz1KzktL+1gvLWTG+GeMSI2
+                CCMqcg4IB/CuQ8R/Dezv9Oji8MTQeFL4ShnvtMtBHJJHg5jJjKHaSVbGcZUcenbgAcCjOKAPIP7Y8X/C
+                /wD4kn9k65468/8A0v8AtP8AfDyt3yeT92Xps3feH3+nc934T8XQ+JNPiF1BHpmtbGe40eWYG4t1D4Bd
+                CFYAjYwJUcOPUE9JkdK848U+F9a0PxHd+NPBVn/aXiDUNlrc2t5KggSAIuWUZQ7sxRj7x+8ePQA9Ho/D
+                FeYaZ8R9Y8O+b/wtO2sdC8/H9nfZEebztufNz5bSYxmPrj7x69u48OeKdG8W6dJqGh3n2u1jlMLyeU8e
+                HABIw4B6MPzoA1zxQPrmjrQMdqAFooooATvS1S1aW+h0a+k0yGOfUUt5GtYpDhXlCnYp5HBbA6j6ivLP
+                +FOweOF/4SLxn9u07xDef8fdrYTxeTHs+RNuQ/VFQn5jyT06AAqat8Z5tQ8U33ge30d7Oe5vZNIj1OO9
+                O6FmcxCYIEByCd2Nw6Yz3rb0T4U6xZ6xBPr3ji+8Q6Yu7ztMv4neGfKkLuV5WU7W2sMqeVH1r0PSdNh0
+                bRrHS7dnaCzt47eNpCCxVFCgnAAzgelXaAM7TNB0jRfN/snS7Gw87HmfZbdIt+M4ztAzjJ/M1o0UUAFI
+                RS0UAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAJjnOaWiigApMUtFABikx70tFAGfqmhaPrQi/tbSrG/8
+                nPl/a7dJdmcZxuBxnA/IV5/4x0z/AIV/J/wm2jy/ZtI02JVn8O2a/Z7e7kkYx+YxU7dw8xDkoT+7UZ6Y
+                9QpO+aAOA+GXxM/4WN/an/Eo/s77B5X/AC8+bv37/wDYXGNnv1r0CuP8c/DnSPiB9g/tW4vofsXmeX9l
+                dFzv25zuVv7g9O9cf/wj3jX4bH+xvh5o0GraRP8A6VNPqcyeYs5+VlGHj+XaiH7p5J57AA9gorjvB3jF
+                9Vl/sDXvItfFttE019YQI2yJNw2EPllOUeM8MfvdsEDsODQAHqKAfmI7UUUAFLRRQAUUUUAFFFFABRRR
+                QAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFACHtR3oooADR3oooA8h+MQ/4Qe1HjTw7/AKF4
+                hv7uOzubz/WeZD5THbsfKDmKPkKD8vXk5b8DPG3iLxj/AG9/b2ofa/sv2fyf3Mce3d5m77ijOdo6+lFF
+                AH//2f/iArBJQ0NfUFJPRklMRQABAQAAAqBsY21zBDAAAG1udHJSR0IgWFlaIAfjAAYADgAIADoAKmFj
+                c3BNU0ZUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtbGNtcwAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADWRlc2MAAAEgAAAAQGNwcnQAAAFgAAAANnd0
+                cHQAAAGYAAAAFGNoYWQAAAGsAAAALHJYWVoAAAHYAAAAFGJYWVoAAAHsAAAAFGdYWVoAAAIAAAAAFHJU
+                UkMAAAIUAAAAIGdUUkMAAAIUAAAAIGJUUkMAAAIUAAAAIGNocm0AAAI0AAAAJGRtbmQAAAJYAAAAJGRt
+                ZGQAAAJ8AAAAJG1sdWMAAAAAAAAAAQAAAAxlblVTAAAAJAAAABwARwBJAE0AUAAgAGIAdQBpAGwAdAAt
+                AGkAbgAgAHMAUgBHAEJtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABoAAAAcAFAAdQBiAGwAaQBjACAARABv
+                AG0AYQBpAG4AAFhZWiAAAAAAAAD21gABAAAAANMtc2YzMgAAAAAAAQxCAAAF3v//8yUAAAeTAAD9kP//
+                +6H///2iAAAD3AAAwG5YWVogAAAAAAAAb6AAADj1AAADkFhZWiAAAAAAAAAknwAAD4QAALbEWFlaIAAA
+                AAAAAGKXAAC3hwAAGNlwYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW2Nocm0AAAAAAAMAAAAA
+                o9cAAFR8AABMzQAAmZoAACZnAAAPXG1sdWMAAAAAAAAAAQAAAAxlblVTAAAACAAAABwARwBJAE0AUG1s
+                dWMAAAAAAAAAAQAAAAxlblVTAAAACAAAABwAcwBSAEcAQv/bAEMAAgEBAgEBAgICAgICAgIDBQMDAwMD
+                BgQEAwUHBgcHBwYHBwgJCwkICAoIBwcKDQoKCwwMDAwHCQ4PDQwOCwwMDP/bAEMBAgICAwMDBgMDBgwI
+                BwgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDP/CABEIAC0A
+                TQMBEQACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAAABgUHBAj/xAAWAQEBAQAAAAAAAAAAAAAAAAAA
+                AgH/2gAMAwEAAhADEAAAAfr03yiAABz43yiJ0wCvNIEaZ50IAAjThkbV3HaFaQABikwZEbza57e2yAPK
+                RBrlUAZpIFObRKlUAAASpMH/xAAgEAADAAEDBQEAAAAAAAAAAAAEBQYAAxAgAgcTFBYV/9oACAEBAAEF
+                AvQczWIqgGj5/Xa9FiNRrrdns0K/z9JrK4rbCvANmlZ4Tvj+uj5NJPzHWvdkmVrgiWFE3VqRUYPF0/Dn
+                RfO1rMKjy1PUl7SP492rtRTjtyytIAX6Q2mxLJjqSt2ivQdA+o1lcSvRqAXCZENg55upEN2VFWOuyrP/
+                xAAYEQACAwAAAAAAAAAAAAAAAAABQAARMP/aAAgBAwEBPwFgwZUz/8QAHREAAQMFAQAAAAAAAAAAAAAA
+                AQACQDAxMkFRYf/aAAgBAgEBPwGQ3aAv5RCa7Idk/wD/xAAxEAACAgEDAgMGBAcAAAAAAAABAgMEEQUS
+                IRMxABQiECAyQUJRBhUzYiMlMERSU2H/2gAIAQEABj8CzTm/OqS/21p9tqMfZJuz4AwFl5JOWm8SipPu
+                lgx1oJEaKeDPbfGwDpnGRuAyOffx+H4oLkB4/MpJR5Nfvs2+qZhxwMIcMvUVgR4lktX7F+zPjcWGyKP9
+                saDhVyT33P2yzYHsieVenbrZNa3GB16hPzRvl2GR2YcMCOPH8xX81oDjzVWBjaT7b4EB3/8AXjxy36aq
+                CwS1SswXK0udksMgkRsHBwRx39r0qFSxqV9MB1T0Q18jjqSn0r3UlRuk2sCEI8dT8QmveH00Y93k4x9n
+                UnE7Z+pxj0qVRDnPuvdoW59NvvguyeuGxgcdSI+luygsNsm1QA4HiDStZvnRcVerFNUWF11GXfgfqZ6S
+                H9+3ncOphdx07T9a1iGlJYrPYOnaexSe2mRiR5UOYsdtiMc4P8SQZHhKtKtBTrRZ2RQxiNFycnAHHf3h
+                NdsJAjv04wfimf5Ii93c44Vck+M1zY0Gh/skhQ3LHzDIrZWJe36ilzlhtjIBNiPTq+n6jp9yIJYqalYl
+                JmfnLtKwkLenauGB4C8gKAdEsaXZ06WHT4JlmhtTylAZG3bIRtJRcKi53EcbunnO5KVhLGl6jJnZUuAI
+                8uBk9MglJcDk9Nm255wfcknnkSGCFS8kjttVFHck/IeMaEkC1vnqFuN+kft0o/SZlI+sMqeoFS/IDW5H
+                kvak69N71gJ12T/DKqAqcD0qAM8/EST7XrWU6kUmPmVIIOQwI5DA4II5BAI8bq8ljXKA48rJs85H9tkr
+                Mquo44k9fLN1GOFJlrNIQjbHSSJopIm74ZHAZTgg8jsQexHsF22JLskTK8CTtuhqlezJH8IfOTvxv9RG
+                7GB/QFoiSrqEa7I7tdunOg7hd31JnnY+UJ7qfGvaBZHWl/Dvlx5zhTbEqFxlAMBgAAccE5IC/D4//8QA
+                HxABAAICAwADAQAAAAAAAAAAAREhADEgQVFhcYEQ/9oACAEBAAE/IfylAv8AEoAfwfLIwL14V0ISI8/V
+                dMNqwoq2wEmmZ2gJdGIa0EVvFKU0YqXDaBBJM1fUG6tnqbwPIG4XRrJGqAldj/aH1HKB6UMxFbcJ1i66
+                MIVRdPyWf6OUB2oZiKzCR6nBo2eOk1vnOtYLBjXaAZXgNxujWQMEpa7XkLjViwUSZhAhQC59JorbAiNJ
+                5MlT5zwuPvv9GzUGR95ZRBAsBYjzuNmGipklYA1uAidpDJUoAVXWfDUfptFBBokZ5kQPTpghBklLLHga
+                8yiBMKwLRCgEHPOlIDaghQbUgmJ94Y1wlxAwpOsOUd2my6qAGhGEXmdksD1WDU6xA4LFLEpKkKwVIaD/
+                2gAMAwEAAgADAAAAEBAAABBBAJAABI4AAIHoAAIAIIAAAAIP/8QAGxEBAQACAwEAAAAAAAAAAAAAAREA
+                QDAxQWH/2gAIAQMBAT8Q2DZMcBfeEevmMTZ//8QAGhEAAQUBAAAAAAAAAAAAAAAAEQABIUBBMP/aAAgB
+                AgEBPxCw1tIhDHFwkIEmLP8A/8QAIBABAAICAgMAAwAAAAAAAAAAAQARITEQQSBRYTBxgf/aAAgBAQAB
+                PxAb2B8xSxjlnBU+qAyT6lBRWo8kny8IDfyhsgEsg4a72rkAAb7cf2YUCnjszkJyC+x+zvQ131GfPYkg
+                5iQns0JyJzu8cEZG1BemQrmIu5CsMKq3lEL4csBZOcwXhkBohYgcU2qd/ODOCeeQXBsJRlH2cIeYkJ6F
+                qcq+TyYISfqBF06MmVoldGnXChEPSoxD5lIJtqlYIOCSD+fTa15AP6Q0OQFiHtE8u/jlrdxmEAFUCaCu
+                RW3EAZN6nL44394VANPAUjBABo5KYv7HjS6LCE2sM1MESDgafLwaYsqeFKjD8MdAI+3/AAASq0KQlRqz
+                qnC1FvUPQw0wOnRH/9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_4.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQELuAu4AAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/4gKwSUNDX1BST0ZJTEUAAQEA
+                AAKgbGNtcwQwAABtbnRyUkdCIFhZWiAH4wAGABQADQA0AAdhY3NwTVNGVAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAA1kZXNjAAABIAAAAEBjcHJ0AAABYAAAADZ3dHB0AAABmAAAABRjaGFkAAABrAAAACxy
+                WFlaAAAB2AAAABRiWFlaAAAB7AAAABRnWFlaAAACAAAAABRyVFJDAAACFAAAACBnVFJDAAACFAAAACBi
+                VFJDAAACFAAAACBjaHJtAAACNAAAACRkbW5kAAACWAAAACRkbWRkAAACfAAAACRtbHVjAAAAAAAAAAEA
+                AAAMZW5VUwAAACQAAAAcAEcASQBNAFAAIABiAHUAaQBsAHQALQBpAG4AIABzAFIARwBCbWx1YwAAAAAA
+                AAABAAAADGVuVVMAAAAaAAAAHABQAHUAYgBsAGkAYwAgAEQAbwBtAGEAaQBuAABYWVogAAAAAAAA9tYA
+                AQAAAADTLXNmMzIAAAAAAAEMQgAABd7///MlAAAHkwAA/ZD///uh///9ogAAA9wAAMBuWFlaIAAAAAAA
+                AG+gAAA49QAAA5BYWVogAAAAAAAAJJ8AAA+EAAC2xFhZWiAAAAAAAABilwAAt4cAABjZcGFyYQAAAAAA
+                AwAAAAJmZgAA8qcAAA1ZAAAT0AAACltjaHJtAAAAAAADAAAAAKPXAABUfAAATM0AAJmaAAAmZwAAD1xt
+                bHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAEcASQBNAFBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgA
+                AAAcAHMAUgBHAEL/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsL
+                EBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQU
+                FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAtAE0DAREAAhEBAxEB/8QAGAABAQADAAAA
+                AAAAAAAAAAAAAAYFBwj/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHqkAAAAAAAAAAA
+                GujNlUAAACVBVAAAAAAAAAAAA//EABoQAAMAAwEAAAAAAAAAAAAAAAIDBQEEQDD/2gAIAQEAAQUC6KIm
+                qjHYCX+DJtDG3OilNo9H/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwFz/8QAFBEBAAAAAAAA
+                AAAAAAAAAAAAUP/aAAgBAgEBPwFz/8QAKRAAAQMDAAgHAAAAAAAAAAAAAQIDBBESIQAFEyIxMkBhFCMw
+                QVGBof/aAAgBAQAGPwLqJDk9+c1EqDGkRl0aY3RW8J7hSquAoAp3GitXKdkSJcOMwl5924Jc5qKFTxwa
+                n9NMehJcZ1pYzIWDs1s37IWpHlmuDgnIIzw41W6062IfhmozccNm5Abrbv3Z5le3x99R/8QAHBABAQAB
+                BQEAAAAAAAAAAAAAAREhADAxQFHx/9oACAEBAAE/IexSevRfVFsAykqCIKGiACClwvIKTsq2sbx5oRnl
+                2NX3cG5KS+ow9l//2gAMAwEAAgADAAAAEJJJJJJJJJJJJIJJJJAJJJJJJJJJJJJP/8QAFBEBAAAAAAAA
+                AAAAAAAAAAAAUP/aAAgBAwEBPxBz/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPxBz/8QAGxAB
+                AAEFAQAAAAAAAAAAAAAAAREAITFAQTD/2gAIAQEAAT8Q2HRIEHLAIz5Kf5HbJAoobcrR4kF+ZnFHBIyV
+                JjrdctyZLh4iVOz7L//Z
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_5.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQGT4JPgAAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/4gKwSUNDX1BST0ZJTEUAAQEA
+                AAKgbGNtcwQwAABtbnRyUkdCIFhZWiAH4wAGABQADQA0AAdhY3NwTVNGVAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAA1kZXNjAAABIAAAAEBjcHJ0AAABYAAAADZ3dHB0AAABmAAAABRjaGFkAAABrAAAACxy
+                WFlaAAAB2AAAABRiWFlaAAAB7AAAABRnWFlaAAACAAAAABRyVFJDAAACFAAAACBnVFJDAAACFAAAACBi
+                VFJDAAACFAAAACBjaHJtAAACNAAAACRkbW5kAAACWAAAACRkbWRkAAACfAAAACRtbHVjAAAAAAAAAAEA
+                AAAMZW5VUwAAACQAAAAcAEcASQBNAFAAIABiAHUAaQBsAHQALQBpAG4AIABzAFIARwBCbWx1YwAAAAAA
+                AAABAAAADGVuVVMAAAAaAAAAHABQAHUAYgBsAGkAYwAgAEQAbwBtAGEAaQBuAABYWVogAAAAAAAA9tYA
+                AQAAAADTLXNmMzIAAAAAAAEMQgAABd7///MlAAAHkwAA/ZD///uh///9ogAAA9wAAMBuWFlaIAAAAAAA
+                AG+gAAA49QAAA5BYWVogAAAAAAAAJJ8AAA+EAAC2xFhZWiAAAAAAAABilwAAt4cAABjZcGFyYQAAAAAA
+                AwAAAAJmZgAA8qcAAA1ZAAAT0AAACltjaHJtAAAAAAADAAAAAKPXAABUfAAATM0AAJmaAAAmZwAAD1xt
+                bHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAEcASQBNAFBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgA
+                AAAcAHMAUgBHAEL/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsL
+                EBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQU
+                FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAtAE0DAREAAhEBAxEB/8QAGAABAQADAAAA
+                AAAAAAAAAAAAAAYFBwj/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHqkAAAAAAAAAAA
+                GujNlUAAACVBVAAAAAAAAAAAA//EABoQAAMAAwEAAAAAAAAAAAAAAAIDBQEEQDD/2gAIAQEAAQUC6KIm
+                qjHYCX+DJtDG3OilNo9H/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPwFz/8QAFBEBAAAAAAAA
+                AAAAAAAAAAAAUP/aAAgBAgEBPwFz/8QAKRAAAQMDAAgHAAAAAAAAAAAAAQIDBBESIQAFEyIxMkBhFCMw
+                QVGBof/aAAgBAQAGPwLqJDk9+c1EqDGkRl0aY3RW8J7hSquAoAp3GitXKdkSJcOMwl5924Jc5qKFTxwa
+                n9NMehJcZ1pYzIWDs1s37IWpHlmuDgnIIzw41W6062IfhmozccNm5Abrbv3Z5le3x99R/8QAHBABAQAB
+                BQEAAAAAAAAAAAAAAREhADAxQFHx/9oACAEBAAE/IexSevRfVFsAykqCIKGiACClwvIKTsq2sbx5oRnl
+                2NX3cG5KS+ow9l//2gAMAwEAAgADAAAAEJJJJJJJJJJJJIJJJJAJJJJJJJJJJJJP/8QAFBEBAAAAAAAA
+                AAAAAAAAAAAAUP/aAAgBAwEBPxBz/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPxBz/8QAGxAB
+                AAEFAQAAAAAAAAAAAAAAAREAITFAQTD/2gAIAQEAAT8Q2HRIEHLAIz5Kf5HbJAoobcrR4kF+ZnFHBIyV
+                JjrdctyZLh4iVOz7L//Z
+            </property>
+        </structure>
+        <structure>
+            <property name="name">si_barrato5.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQGT4JPgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD//gAU
+                Q3JlYXRlZCB3aXRoIEdJTVAA/+ICsElDQ19QUk9GSUxFAAEBAAACoGxjbXMEMAAAbW50clJHQiBYWVog
+                B+MABgAUAA0ANAAHYWNzcE1TRlQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1sY21z
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANZGVzYwAAASAAAABA
+                Y3BydAAAAWAAAAA2d3RwdAAAAZgAAAAUY2hhZAAAAawAAAAsclhZWgAAAdgAAAAUYlhZWgAAAewAAAAU
+                Z1hZWgAAAgAAAAAUclRSQwAAAhQAAAAgZ1RSQwAAAhQAAAAgYlRSQwAAAhQAAAAgY2hybQAAAjQAAAAk
+                ZG1uZAAAAlgAAAAkZG1kZAAAAnwAAAAkbWx1YwAAAAAAAAABAAAADGVuVVMAAAAkAAAAHABHAEkATQBQ
+                ACAAYgB1AGkAbAB0AC0AaQBuACAAcwBSAEcAQm1sdWMAAAAAAAAAAQAAAAxlblVTAAAAGgAAABwAUAB1
+                AGIAbABpAGMAIABEAG8AbQBhAGkAbgAAWFlaIAAAAAAAAPbWAAEAAAAA0y1zZjMyAAAAAAABDEIAAAXe
+                ///zJQAAB5MAAP2Q///7of///aIAAAPcAADAblhZWiAAAAAAAABvoAAAOPUAAAOQWFlaIAAAAAAAACSf
+                AAAPhAAAtsRYWVogAAAAAAAAYpcAALeHAAAY2XBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApb
+                Y2hybQAAAAAAAwAAAACj1wAAVHwAAEzNAACZmgAAJmcAAA9cbWx1YwAAAAAAAAABAAAADGVuVVMAAAAI
+                AAAAHABHAEkATQBQbWx1YwAAAAAAAAABAAAADGVuVVMAAAAIAAAAHABzAFIARwBC/9sAQwACAQECAQEC
+                AgICAgICAgMFAwMDAwMGBAQDBQcGBwcHBgcHCAkLCQgICggHBwoNCgoLDAwMDAcJDg8NDA4LDAwM/9sA
+                QwECAgIDAwMGAwMGDAgHCAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM
+                DAwMDAwM/8AAEQgALQBNAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//E
+                ALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYX
+                GBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SV
+                lpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5
+                +v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMR
+                BAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJ
+                SlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5
+                usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/Xz/AIZN8Vfs
+                +/6V8C/F/wDY+k2/zf8ACvfFTzal4VkQc+RYTZN5ouVjgt4lt3m06zhDmPS5HOa7D4KftU6V8XPFVx4X
+                1Lw74w+HvjuztGv5/DPimwS3unt1dFaa2uYJJrDUI0862Mr2NzcC3N3BHOYZZBHXqFcf8a/gD4N/aL8K
+                2+j+NfD2n69Z2N2uo6fJMpS60e9RHSK+srhCs1neRCRzFc27xzRFtyOrc0AdhRXz/wD2F8WP2Tv3fh23
+                8QfHvwF1XTNR1uzg8ZeHlH7uK2sri5WC21W32mIltSu4byMQ3Er3eoyTxwxeofBT47+Gf2g/Ctxq3hm6
+                1CSOxu2sL6z1PSrvR9T0u4CJJ5N1Y3kUV1bSNFLDMqTRIXhnhlUGOWN2AOwooooAKK8v+Nf7Xvg34J+K
+                rfwrLNqHij4hahaLe6f4L8N2p1PX7yF3eKK4a3Q4tbN508k3940FlFIyrLcRZzXH/wDDPfxH/aR/5LVr
+                3h/SfB8/y3Xw28HlrzStWi6Pb6tqt1BHc6jbu0ccnkW9vp0RSWe1uk1CBzuANDxZ+2db+LfFWpeD/g1p
+                un/Fbxxo93LZantv57Hwv4dmgcrdW+pa1DbXMNveREKhsIkmvQ9xAz28du0lzFn/APDEusfFf/T/AIvf
+                Ff4geKNW/wCWFn4J1zVPh7oOlfwt9nt9MvVvJfMVYmf+0L692yLI0H2ZJXir3Dwn4T0vwF4V03QtC0zT
+                9F0TRbSKw0/T7C3S2tbC3iQJFDFEgCRxoiqqooAUAAAAVoUAFFFFABXl/wAa/wBkPwb8bPFVv4qlh1Dw
+                v8QtPtFstP8AGnhu6Oma/Zwo7yxW7XCDF1ZpO/nmwvFnspZFVpbeXGK9A8WeLNL8BeFdS13XdS0/RdE0
+                W0lv9Q1C/uEtrWwt4kLyzSyuQkcaIrMzsQFAJJAFeH/8NIeNv2m/3fwIs/D9v4ZX5ZviF4w02/bSpWPz
+                xtpOnL9nk1q3kjVT9sju7az2XcEtvPfFJ4IwD49/az+PPir9iP4t6lr/AO2N8RfiBpnw51jVbGz+HHxJ
+                +F15NoPhzwpetps8strf+H4bi4vrq4M+nNMpvxrVlIJo1MdrG1zDJ2H7Cnxd8fftYXy/D/wx8RPF/hfR
+                /Avw18GTXXxFvrK4v/EXxKsLuC/NjrNlban5um6ZJcvZzzzStBqc1xb30MM8lneWbw2vp3g7/gnH8TPh
+                x8d/FfjzTfj/AP8ACR6/40KaXceIvF3w90nUvFOg6KLe0T7DpN9aCzgtc3ENxdbJrS5svOeCQ2TSrdS3
+                uD8Kv+CR2u/siftH674s/Z68feAPg34KvvCuleHLbwNa/DSO+0/U5dPaXyb7WLs3sd5f3AW8vv3kMtpK
+                7G0aaS4FvIlwAfWXwU+APg39nTwrcaP4K8PafoNnfXbajqEkKl7rWL10RJb69uHLTXl5KI0MtzcPJNKV
+                3O7NzXYV4f4T/bOt/CXirTfB/wAZdN0/4U+ONYu4rLTN1/PfeF/EU07hbW303Wpra2huLyUlkFhKkN6X
+                t52S3kt1juZfcKACiiigArw/xZ+29pWs+KtS8KfCnQ9Q+MXjLSruXTdQTRJki0Dw5dxuYpYtU1d/9Ftp
+                IJTF59nCbjUo45llSxmSuP8Ah3onir9vm18Qa54j8deIPCPw50/xX4g8MWXhLwbcTaHf3/8AZGsXmlST
+                6hrUMv25t8+nrdQppzaf5azPbztfRkk/SHhPwnpfgLwrpuhaFpmn6Lomi2kVhp+n2Fulta2FvEgSKGKJ
+                AEjjRFVVRQAoAAAAoA8f8J/siar4r8Vab4m+MHjzUPiTrej3cV/p+j2Fq+geD9JuInDRTRaUk0rXMivF
+                bTq+p3N8YLqATWptCdg9woooAKKKKAM/xZ4T0vx74V1LQtd0zT9a0TWrSWw1DT7+3S5tb+3lQpLDLE4K
+                SRujMrIwIYEggg14f/wovx3+yv8A6X8J9U/4SP4f6f8AP/wq7Ura3X7Dar/y6eHr/fD9ixvleO1vzc2p
+                8u2tIJNKtl8yP6AooA8v+Cn7Xvg342eKrjwrFNqHhf4hafaNe6h4L8SWp0zX7OFHSKW4W3c4urNJ38kX
+                9m09lLIrLFcS4zXqFcf8a/gR4Z/aD8K2+k+JrXUJI7G7W/sbzTNVu9H1PS7gI8fnWt9ZyxXVtI0Us0LP
+                DKheGeaJiY5ZEb88f+Crf/BYrx3/AMEE/wDhArDxZZ/8NIaT8SP7Q/sa81CW38L69pP2H7K0/wBuuLS2
+                ezvvMa+RYvs9jZeTHbhX+0u7SgA//9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">no_5.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQGT4JPgAAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/4gKwSUNDX1BST0ZJTEUAAQEA
+                AAKgbGNtcwQwAABtbnRyUkdCIFhZWiAH4wAHAAEADAA6AAZhY3NwTVNGVAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAA1kZXNjAAABIAAAAEBjcHJ0AAABYAAAADZ3dHB0AAABmAAAABRjaGFkAAABrAAAACxy
+                WFlaAAAB2AAAABRiWFlaAAAB7AAAABRnWFlaAAACAAAAABRyVFJDAAACFAAAACBnVFJDAAACFAAAACBi
+                VFJDAAACFAAAACBjaHJtAAACNAAAACRkbW5kAAACWAAAACRkbWRkAAACfAAAACRtbHVjAAAAAAAAAAEA
+                AAAMZW5VUwAAACQAAAAcAEcASQBNAFAAIABiAHUAaQBsAHQALQBpAG4AIABzAFIARwBCbWx1YwAAAAAA
+                AAABAAAADGVuVVMAAAAaAAAAHABQAHUAYgBsAGkAYwAgAEQAbwBtAGEAaQBuAABYWVogAAAAAAAA9tYA
+                AQAAAADTLXNmMzIAAAAAAAEMQgAABd7///MlAAAHkwAA/ZD///uh///9ogAAA9wAAMBuWFlaIAAAAAAA
+                AG+gAAA49QAAA5BYWVogAAAAAAAAJJ8AAA+EAAC2xFhZWiAAAAAAAABilwAAt4cAABjZcGFyYQAAAAAA
+                AwAAAAJmZgAA8qcAAA1ZAAAT0AAACltjaHJtAAAAAAADAAAAAKPXAABUfAAATM0AAJmaAAAmZwAAD1xt
+                bHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAEcASQBNAFBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgA
+                AAAcAHMAUgBHAEL/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsL
+                EBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQU
+                FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAtAE0DAREAAhEBAxEB/8QAGgABAAIDAQAA
+                AAAAAAAAAAAAAAQGAwUHCP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAfVIAAAAAAAA
+                AABpSIWAygAAFKK+SzpQAAAAAAAAAAAP/8QAHhAAAgEDBQAAAAAAAAAAAAAAAwQFAgZAARITFSD/2gAI
+                AQEAAQUCx5iT6dCSnKUFhV6kF7vRsCtrSu3hlmzjbyP/xAAUEQEAAAAAAAAAAAAAAAAAAABQ/9oACAED
+                AQE/AXP/xAAUEQEAAAAAAAAAAAAAAAAAAABQ/9oACAECAQE/AXP/xAApEAACAgEBBgUFAAAAAAAAAAAB
+                AgMEESIABRITMTIjQEJRYRQhMDVB/9oACAEBAAY/AvLy22rzWY4gWkEPDlVAyTqI9tq9iOtNfgmKqslV
+                oyNRATuYdSw6bIzI0TEZKNjK/H2/BvTnTRw8ytLGnMbHExQ4UfO0Vii8drdlq5VPgOCscn1K8Tj3Df3H
+                qGcamIt+NJHfT9ZWVsLY0jqPXqyGz2qAdPcfMf/EAB0QAQADAQACAwAAAAAAAAAAAAERITEAQGEwQXH/
+                2gAIAQEAAT8h8c71KnTSwMEt50nQcBv0siGR9sHFFGmmTUkk9Ke/gweNu9jVFBfOWxqPVsQihmweDIzy
+                dqYak/3I/Jv/2gAMAwEAAgADAAAAEJJJJJJJJJJJIAJJJIIJJJJJJJJJJJJP/8QAFBEBAAAAAAAAAAAA
+                AAAAAAAAUP/aAAgBAwEBPxBz/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAgEBPxBz/8QAGxABAQAC
+                AwEAAAAAAAAAAAAAAREAISAxQGH/2gAIAQEAAT8Q86NRbpfgoCqoi2h4zUBegEUUVIKL0WQhVXRi3BiI
+                vP6NpDCZvNpRhrKpnkFkFDOGUuJnuHJurumaj6c//9k=
+            </property>
+        </structure>
+        <structure>
+            <property name="name">no_6.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQGT4JPgAAD//gATQ3JlYXRlZCB3aXRoIEdJTVD/4gKwSUNDX1BST0ZJTEUAAQEA
+                AAKgbGNtcwQwAABtbnRyUkdCIFhZWiAH4wAHAAEADAA6AAZhY3NwTVNGVAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAA1kZXNjAAABIAAAAEBjcHJ0AAABYAAAADZ3dHB0AAABmAAAABRjaGFkAAABrAAAACxy
+                WFlaAAAB2AAAABRiWFlaAAAB7AAAABRnWFlaAAACAAAAABRyVFJDAAACFAAAACBnVFJDAAACFAAAACBi
+                VFJDAAACFAAAACBjaHJtAAACNAAAACRkbW5kAAACWAAAACRkbWRkAAACfAAAACRtbHVjAAAAAAAAAAEA
+                AAAMZW5VUwAAACQAAAAcAEcASQBNAFAAIABiAHUAaQBsAHQALQBpAG4AIABzAFIARwBCbWx1YwAAAAAA
+                AAABAAAADGVuVVMAAAAaAAAAHABQAHUAYgBsAGkAYwAgAEQAbwBtAGEAaQBuAABYWVogAAAAAAAA9tYA
+                AQAAAADTLXNmMzIAAAAAAAEMQgAABd7///MlAAAHkwAA/ZD///uh///9ogAAA9wAAMBuWFlaIAAAAAAA
+                AG+gAAA49QAAA5BYWVogAAAAAAAAJJ8AAA+EAAC2xFhZWiAAAAAAAABilwAAt4cAABjZcGFyYQAAAAAA
+                AwAAAAJmZgAA8qcAAA1ZAAAT0AAACltjaHJtAAAAAAADAAAAAKPXAABUfAAATM0AAJmaAAAmZwAAD1xt
+                bHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAEcASQBNAFBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgA
+                AAAcAHMAUgBHAEL/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsL
+                EBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQU
+                FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCAAtAE0DAREAAhEBAxEB/8QAGQABAQEAAwAA
+                AAAAAAAAAAAAAAYEBQcI/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB9UgAAAAAAAAA
+                AGQii1NYAABkOmy1Ko5AAAAAAAAAAAA//8QAHBAAAwACAwEAAAAAAAAAAAAAAgMEAQUGFkAg/9oACAEB
+                AAEFAvPUTxR2kn8WlJ5I+6qQjRmB9PBtzPg79eFC4PP/AP/EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAI
+                AQMBAT8Bc//EABQRAQAAAAAAAAAAAAAAAAAAAFD/2gAIAQIBAT8Bc//EACkQAAICAQIDBwUAAAAAAAAA
+                AAECAwQREiEAMUIFEzJAgZGxFSIjMEH/2gAIAQEABj8C8uxrRxyzdKSvoU+uD8cfWKleOUpD301eSUoU
+                +zUR4TvyxsMg54U2Y44pupIn1qPXA+P0NK4kZV/kUbSN7KCeFarDMt2Lss0pq00LxmT8Y25ZJU+HmN2H
+                VkarlWa7U7sCukCkmObJydvCSNOH6cNuud6y23WW2I1EzryZ8bn38x//xAAeEAEBAAICAgMAAAAAAAAA
+                AAABEQAhMUFAwTBRcf/aAAgBAQABPyHxwUGUdzdLmr295wdXvSa2YdgADEqKDaO5qN3U6e/giPK7IZph
+                z0ZyZ3s3ATWUCTysi7F9fGquXoYtKuMcIJaNNdH55H//2gAMAwEAAgADAAAAEJJJJJJJJJJJJJJJJJAJ
+                JJJJJJJJJJJP/8QAFBEBAAAAAAAAAAAAAAAAAAAAUP/aAAgBAwEBPxBz/8QAFBEBAAAAAAAAAAAAAAAA
+                AAAAUP/aAAgBAgEBPxBz/8QAHBABAQACAwEBAAAAAAAAAAAAAREAITFAQSBh/9oACAEBAAE/EOv5tUDA
+                0o0JRA0Mft5Bn2ZmBuvx7tUDA2o0bBU2Ffe4sSBAc4xaQqwFAKJiWScK1EosECg+gvdMRf8AbdyL8eQa
+                KGAYcSacHX//2Q==
+            </property>
+        </structure>
+        <structure>
+            <property name="name">no_barrato6.jpg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQGT4JPgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD//gAU
+                Q3JlYXRlZCB3aXRoIEdJTVAA/+ICsElDQ19QUk9GSUxFAAEBAAACoGxjbXMEMAAAbW50clJHQiBYWVog
+                B+MABwABAAwAOgAGYWNzcE1TRlQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1sY21z
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANZGVzYwAAASAAAABA
+                Y3BydAAAAWAAAAA2d3RwdAAAAZgAAAAUY2hhZAAAAawAAAAsclhZWgAAAdgAAAAUYlhZWgAAAewAAAAU
+                Z1hZWgAAAgAAAAAUclRSQwAAAhQAAAAgZ1RSQwAAAhQAAAAgYlRSQwAAAhQAAAAgY2hybQAAAjQAAAAk
+                ZG1uZAAAAlgAAAAkZG1kZAAAAnwAAAAkbWx1YwAAAAAAAAABAAAADGVuVVMAAAAkAAAAHABHAEkATQBQ
+                ACAAYgB1AGkAbAB0AC0AaQBuACAAcwBSAEcAQm1sdWMAAAAAAAAAAQAAAAxlblVTAAAAGgAAABwAUAB1
+                AGIAbABpAGMAIABEAG8AbQBhAGkAbgAAWFlaIAAAAAAAAPbWAAEAAAAA0y1zZjMyAAAAAAABDEIAAAXe
+                ///zJQAAB5MAAP2Q///7of///aIAAAPcAADAblhZWiAAAAAAAABvoAAAOPUAAAOQWFlaIAAAAAAAACSf
+                AAAPhAAAtsRYWVogAAAAAAAAYpcAALeHAAAY2XBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApb
+                Y2hybQAAAAAAAwAAAACj1wAAVHwAAEzNAACZmgAAJmcAAA9cbWx1YwAAAAAAAAABAAAADGVuVVMAAAAI
+                AAAAHABHAEkATQBQbWx1YwAAAAAAAAABAAAADGVuVVMAAAAIAAAAHABzAFIARwBC/9sAQwACAQECAQEC
+                AgICAgICAgMFAwMDAwMGBAQDBQcGBwcHBgcHCAkLCQgICggHBwoNCgoLDAwMDAcJDg8NDA4LDAwM/9sA
+                QwECAgIDAwMGAwMGDAgHCAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM
+                DAwMDAwM/8AAEQgALQBNAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//E
+                ALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYX
+                GBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SV
+                lpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5
+                +v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMR
+                BAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJ
+                SlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5
+                usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/YzxZ+yJqvhT
+                xVqXib4P+PNQ+G2t6xdy3+oaPf2r6/4P1a4lctLNLpTzRNbSM8tzOz6Zc2JnupzNdG7I2E8J/tvaVo3i
+                rTfCnxW0PUPg74y1W7i03T01uZJdA8R3cjiKKLS9XT/RbmSeUS+RZzG31KSOFpXsYUr3Cs/xZ4T0vx74
+                V1LQtd0zT9a0TWrSWw1DT7+3S5tb+3lQpLDLE4KSRujMrIwIYEggg0AaFFfP/wDwqT4j/sp/6V8N9S8Q
+                fFbwf/y9eC/GHidp9V0yJf3jy6Tq91HJc3VxI3nD7Lq100TvNAI73ToLcxy+gfAv9pDQfjx/alna2fiD
+                w74m8O+Uut+G/EOmyadquktJvCsUb93cW7SQ3Ecd5aPPZzvaziCeYRMQAegUUUUAFZ/izxZpfgLwrqWu
+                67qWn6Lomi2kt/qGoX9wlta2FvEheWaWVyEjjRFZmdiAoBJIArx/xZ+2FceMPFWpeF/gr4b0/wCLfiLQ
+                7uXTtc1BfEMGneF/Cl7E5EljqWoItxMl5iOUG2tLS7mhcwfaUtYriKZjwn+xjb+LPFWm+MPjLqWn/Fbx
+                xo93Fe6ZusJ7Hwv4dmgcNa3Gm6LNc3MNveREM4v5XmvQ9xOqXEdu0dtEAZ//AA0h42/ab/d/Aiz8P2/h
+                lflm+IXjDTb9tKlY/PG2k6cv2eTWreSNVP2yO7trPZdwS2898UngjP8Ah2j8K/HH+mfFjSf+GgvEDf8A
+                MW+Jtraa79m7f6HY+QmnaduRYkk+wWlv9o8iJ5/OlXzD9AUUAFFFFABXjf7YX7OGm/HnwJFfW3gfQfE/
+                j7w3uHhm8u/Et74Rv9J86SJbr7Lrmnwy6hp/mwx7X+zD9+qiGTMTsR0nx0/aj8Cfs4f2XD4s1z7Pq2v+
+                b/Y2h6fZXGra9r3k7DP9h020jlvLzyVkSSX7PDJ5UeZH2orMPG/ile/FTxz4GvvE3xG1LxB8I/hxblPN
+                8KfDvTbvxN441SCWRUEd3e2UE0lrvjnMc9vpEEk9tJCJ4NY2BsAHyDp3/Bcf4j/Cv9kLwv408KeCf+Gm
+                vtXhWPxl4ltbnXDoPiz4dWZ0qTU7ga6sGix6ctuqQymyvCti2owyQC2tLnY93P8AX3wu+Gl5+354D0/x
+                n8T/ABEbzwnqheFPhv4Y1W6j8OQNDI1vNDq0slrZ6jqFxvF1Bd6ffRwWaBza3GnvNatcyfImg/staxrH
+                /BCm3k+FPgXxB4Z+Ivhn4Bah8NfF/gjVPBmqeG5vFM1xo6TXeyB7WOa61C3v5rme1nWOeCaW+1WAMr30
+                l3b+u/8ABRX9g/wr8Sf2jtX8W+I/B/xB8nxNpWk/8Itr3wq0qE+I7HxdaHUIDdXjmEwi4ksLm0gsNT1I
+                Pb6Wba7dLrS5ZIZrgA+8vCfhPS/AXhXTdC0LTNP0XRNFtIrDT9PsLdLa1sLeJAkUMUSAJHGiKqqigBQA
+                AABWhXy18KP2p/Hf7MPws8NaZ+1VZaD4ZubHSra11X4padr1vceDdQvliWNmvZZILKXS7i5mSZwkloLF
+                TJbwJdvcTx29fUtABRRRQBz/AMUviloPwX8CX3iTxJff2fpOn+WrusMlxNPLLIsUNvBDErSz3E0zxxRQ
+                RI8s0ssccaO7qp8f/wCE/wDjJ+0z+78H6L/wpfwTccf8JL4qs1uvFWpQN/y0sNHz5Vh5kMiSxXGqO08E
+                0LxXOjkHNdB8Lf2KfCvgbx3Y+NPEeoeIPil8RtN8z7H4t8ZTw3t/pfmRtDJ/Z8EMUVjpfmQMsM39nW1t
+                9pWJGn86QFz7BQB5/wDAv9lzwJ+zh/ak3hPQ/s+ra/5X9s67qF7catr2veTvEH27UruSW8vPJWR44vtE
+                0nlR4jTaiqo9AoooAKKKKACvn/8A4Y6vP2cv+Jh+zzN4f8Dwr/x9+BNRS6bwbqUS/OIrK1hkEehXDyb8
+                3VlC8TG7uJriyvpvJaL6AooA8f8Ahb+1zZ6z47sfAfxC0f8A4Vb8TdS8waZoOqapa3EPixYY2e4udFuY
+                3/0+3j8uVmVo4byGIRS3NparPDv9grn/AIpfCfwr8cfAl94W8beGfD/jDwzqnl/bNI1vTodQsLvy5Flj
+                8yCZWjfbIiONwOGRSOQDXj//AAzf8YPhT/xKfhV8XvD9j4PX97DZfEfw3qvjrVbGVv8AWJHqba1a3Mlu
+                zDzFS6NxKjySqswgEFvAAf/Z
+            </property>
+        </structure>
+    </list-property>
+</report>

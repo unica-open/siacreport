@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte&#13;
+SPDX-License-Identifier: EUPL-1.2</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
@@ -81,6 +83,24 @@
                 <property name="category">Unformatted</property>
             </structure>
         </scalar-parameter>
+        <scalar-parameter name="Organo emettitore delibera" id="5193">
+            <text-property name="promptText">Organo che ha emesso il provvedimento</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">false</property>
+            <property name="dataSetName">DataSetElencoOrganiProvv</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["msg_stampa"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["nome_organo_provv"]</expression>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
     </parameters>
     <data-sources>
         <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="89">
@@ -101,9 +121,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-			<property name="odaURL">${userconn}</property>
-			<property name="odaUser">${userdb}</property>
-			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
+            <property name="odaURL">${userconn}</property>
+            <property name="odaUser">${userdb}</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">pwddAA==</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -1985,7 +2005,7 @@ and t_ente.data_cancellazione IS NULL]]></xml-property>
                     <property name="name">flag_visualizzazione</property>
                     <property name="nativeName">flag_visualizzazione</property>
                     <property name="dataType">decimal</property>
-                 </structure>
+                </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
 from "BILR068_stampa_variazione_spese" (?,?,?,?)]]></xml-property>
@@ -2588,6 +2608,118 @@ from "BILR068_stampa_variazione_spese" (?,?,?,?)]]></xml-property>
   </design:ResultSets>
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetElencoOrganiProvv" id="11971">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">nome_organo_provv</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">nome_organo_provv</text-property>
+                    <text-property name="heading">nome_organo_provv</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">msg_stampa</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">msg_stampa</text-property>
+                    <text-property name="heading">msg_stampa</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">p_ente</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">nome_organo_provv</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">msg_stampa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">nome_organo_provv</property>
+                    <property name="nativeName">nome_organo_provv</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">msg_stampa</property>
+                    <property name="nativeName">msg_stampa</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select nome_organo_provv,  msg_stampa
+from siac_t_organo_emiss_provv
+where ente_proprietario_id = ?
+	and data_cancellazione IS NULL;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>nome_organo_provv</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>nome_organo_provv</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>nome_organo_provv</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
     </data-sets>
     <styles>
         <style name="report" id="4">
@@ -2741,6 +2873,62 @@ from "BILR068_stampa_variazione_spese" (?,?,?,?)]]></xml-property>
                                             <property name="textAlign">right</property>
                                             <property name="type">total-page</property>
                                         </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="11972">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">params["Organo emettitore delibera"].value == null || params["Organo emettitore delibera"].value == ""</expression>
+                            </structure>
+                        </list-property>
+                        <cell id="11973">
+                            <property name="colSpan">5</property>
+                            <property name="rowSpan">1</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">none</property>
+                            <grid id="11978">
+                                <property name="width">11.375in</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">params["Organo emettitore delibera"].value == null || params["Organo emettitore delibera"].value == ""</expression>
+                                    </structure>
+                                </list-property>
+                                <column id="11979">
+                                    <property name="width">5.3125in</property>
+                                </column>
+                                <column id="11974">
+                                    <property name="width">0.9895833333333334in</property>
+                                </column>
+                                <column id="11975">
+                                    <property name="width">5.072916666666667in</property>
+                                </column>
+                                <row id="11976">
+                                    <cell id="11977">
+                                        <property name="colSpan">3</property>
+                                        <property name="rowSpan">1</property>
+                                        <text-data id="11980">
+                                            <property name="fontFamily">"Times New Roman"</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">center</property>
+                                            <expression name="valueExpr">"Delibera "+params["Organo emettitore delibera"].value</expression>
+                                            <property name="contentType">html</property>
+                                        </text-data>
                                     </cell>
                                 </row>
                             </grid>

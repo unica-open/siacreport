@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte
+SPDX-License-Identifier: EUPL-1.2</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <list-property name="propertyBindings">
         <structure>
@@ -105,6 +107,79 @@
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <cascading-parameter-group name="DirezSettPEG" id="6992">
+            <text-property name="promptText">Struttura Organizzativa</text-property>
+            <property name="dataSet">DataSetElencoDirezioniSettori</property>
+            <property name="dataSetMode">single</property>
+            <parameters>
+                <scalar-parameter name="Direzione" id="6993">
+                    <text-property name="promptText">Direzione</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">true</property>
+                    <property name="dataSetName">DataSetElencoDirezioniSettori</property>
+                    <expression name="valueExpr">row["cod_direz"]</expression>
+                    <expression name="labelExpr">row["desc_direz_completa"]</expression>
+                    <expression name="sortByColumn">dataSetRow["cod_direz"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="defaultValue">
+                        <value type="constant">999</value>
+                    </simple-property-list>
+                    <property name="paramType">simple</property>
+                    <property name="controlType">list-box</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+                <scalar-parameter name="Settore" id="6994">
+                    <text-property name="promptText">Settore</text-property>
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">true</property>
+                    <property name="dataSetName">DataSetElencoDirezioniSettori</property>
+                    <expression name="valueExpr">row["cod_sett"]</expression>
+                    <expression name="labelExpr">row["desc_sett_completa"]</expression>
+                    <expression name="sortByColumn">dataSetRow["cod_sett"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <simple-property-list name="defaultValue">
+                        <value type="constant">999</value>
+                    </simple-property-list>
+                    <property name="controlType">list-box</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format">
+                        <property name="category">Unformatted</property>
+                    </structure>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+        <scalar-parameter name="Fase Bilancio" id="10074">
+            <text-property name="promptText">Fase Bilancio (per i progetti)</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="sortBy">label</property>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">G</value>
+            </simple-property-list>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">P</property>
+                    <property name="label">Previsione</property>
+                </structure>
+                <structure>
+                    <property name="value">G</property>
+                    <property name="label">Gestione</property>
+                </structure>
+            </list-property>
             <property name="paramType">simple</property>
             <property name="controlType">list-box</property>
             <property name="mustMatch">true</property>
@@ -658,6 +733,12 @@ else {&#13;
                     <text-property name="displayName">importo_accertamento</text-property>
                     <text-property name="heading">importo_accertamento</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
+                </structure>
             </list-property>
             <list-property name="filter"/>
             <list-property name="parameters">
@@ -708,6 +789,26 @@ else {&#13;
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                     <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdr</property>
+                    <property name="paramName">Direzione</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdc</property>
+                    <property name="paramName">Settore</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -806,16 +907,21 @@ else {&#13;
                     </structure>
                     <structure>
                         <property name="position">19</property>
-                        <property name="name">capitolo_completo</property>
+                        <property name="name">display_error</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">20</property>
-                        <property name="name">num_mov_origine_completo</property>
+                        <property name="name">capitolo_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">21</property>
+                        <property name="name">num_mov_origine_completo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
                         <property name="name">numero_accert_completo</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -949,9 +1055,16 @@ else {&#13;
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from "BILR152_elenco_accertamenti" (?, ?, ?, ?, ?)]]></xml-property>
+from "BILR152_elenco_accertamenti" (?, ?, ?, ?, ?, ?, ?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -1023,6 +1136,36 @@ from "BILR152_elenco_accertamenti" (?, ?, ?, ?, ?)]]></xml-property>
           <design:identifier>
             <design:name></design:name>
             <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
@@ -1333,6 +1476,12 @@ else {&#13;
                     <text-property name="heading">num_subaccertamento</text-property>
                 </structure>
                 <structure>
+                    <property name="columnName">tipo_accert</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">tipo_accert</text-property>
+                    <text-property name="heading">tipo_accert</text-property>
+                </structure>
+                <structure>
                     <property name="columnName">code_soggetto</property>
                     <property name="analysis">dimension</property>
                     <text-property name="displayName">code_soggetto</text-property>
@@ -1361,6 +1510,24 @@ else {&#13;
                     <property name="analysis">measure</property>
                     <text-property name="displayName">importo_quota</text-property>
                     <text-property name="heading">importo_quota</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">doc_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">doc_id</text-property>
+                    <text-property name="heading">doc_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subdoc_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">subdoc_id</text-property>
+                    <text-property name="heading">subdoc_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
                 </structure>
             </list-property>
             <list-property name="filter"/>
@@ -1412,6 +1579,26 @@ else {&#13;
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                     <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdr</property>
+                    <property name="paramName">Direzione</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdc</property>
+                    <property name="paramName">Settore</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -1530,21 +1717,26 @@ else {&#13;
                     </structure>
                     <structure>
                         <property name="position">23</property>
-                        <property name="name">capitolo_completo</property>
+                        <property name="name">display_error</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">24</property>
-                        <property name="name">numero_accert_completo</property>
+                        <property name="name">capitolo_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">25</property>
-                        <property name="name">numero_documento_completo</property>
+                        <property name="name">numero_accert_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">26</property>
+                        <property name="name">numero_documento_completo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
                         <property name="name">numero_reversale_completo</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -1684,9 +1876,15 @@ else {&#13;
                     <property name="nativeName">subdoc_id</property>
                     <property name="dataType">integer</property>
                 </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
+                </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from "BILR152_elenco_doc_entrata" (?, ?, ?, ?, ?)]]></xml-property>
+from "BILR152_elenco_doc_entrata" (?, ?, ?, ?, ?, ?, ?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -1758,6 +1956,36 @@ from "BILR152_elenco_doc_entrata" (?, ?, ?, ?, ?)]]></xml-property>
           <design:identifier>
             <design:name></design:name>
             <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
@@ -2052,6 +2280,18 @@ else {&#13;
                     <text-property name="displayName">categoria</text-property>
                     <text-property name="heading">categoria</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">ord_ts_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ord_ts_id</text-property>
+                    <text-property name="heading">ord_ts_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
+                </structure>
             </list-property>
             <list-property name="filter"/>
             <list-property name="parameters">
@@ -2102,6 +2342,26 @@ else {&#13;
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                     <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdr</property>
+                    <property name="paramName">Direzione</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdc</property>
+                    <property name="paramName">Settore</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -2180,11 +2440,21 @@ else {&#13;
                     </structure>
                     <structure>
                         <property name="position">15</property>
+                        <property name="name">ord_ts_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">display_error</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
                         <property name="name">numero_accert_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">16</property>
+                        <property name="position">18</property>
                         <property name="name">numero_reversale_completo</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -2197,102 +2467,100 @@ else {&#13;
                     <property name="name">num_reversale</property>
                     <property name="nativeName">num_reversale</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">2</property>
                     <property name="name">anno_reversale</property>
                     <property name="nativeName">anno_reversale</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">3</property>
                     <property name="name">stato_reversale</property>
                     <property name="nativeName">stato_reversale</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">4</property>
                     <property name="name">desc_stato_reversale</property>
                     <property name="nativeName">desc_stato_reversale</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">5</property>
                     <property name="name">importo_reversale</property>
                     <property name="nativeName">importo_reversale</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">6</property>
                     <property name="name">conto_dare</property>
                     <property name="nativeName">conto_dare</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">7</property>
                     <property name="name">conto_avere</property>
                     <property name="nativeName">conto_avere</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">8</property>
                     <property name="name">num_accertamento</property>
                     <property name="nativeName">num_accertamento</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">9</property>
                     <property name="name">anno_accertamento</property>
                     <property name="nativeName">anno_accertamento</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">10</property>
                     <property name="name">num_subaccertamento</property>
                     <property name="nativeName">num_subaccertamento</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">11</property>
                     <property name="name">tipo_accert</property>
                     <property name="nativeName">tipo_accert</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">12</property>
                     <property name="name">code_soggetto</property>
                     <property name="nativeName">code_soggetto</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">13</property>
                     <property name="name">desc_soggetto</property>
                     <property name="nativeName">desc_soggetto</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">14</property>
                     <property name="name">categoria</property>
                     <property name="nativeName">categoria</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">ord_ts_id</property>
+                    <property name="nativeName">ord_ts_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from "BILR152_elenco_reversali" (?, ?, ?, ?, ?)]]></xml-property>
+from "BILR152_elenco_reversali" (?, ?, ?, ?, ?, ?, ?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -2364,6 +2632,36 @@ from "BILR152_elenco_reversali" (?, ?, ?, ?, ?)]]></xml-property>
           <design:identifier>
             <design:name></design:name>
             <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
@@ -2720,6 +3018,24 @@ miaStringa;</expression>
                     <text-property name="displayName">cig</text-property>
                     <text-property name="heading">cig</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">desc_motiv_assenza_siope</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">desc_motiv_assenza_siope</text-property>
+                    <text-property name="heading">desc_motiv_assenza_siope</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">code_motiv_assenza_siope</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">code_motiv_assenza_siope</text-property>
+                    <text-property name="heading">code_motiv_assenza_siope</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
+                </structure>
             </list-property>
             <list-property name="filter"/>
             <list-property name="parameters">
@@ -2770,6 +3086,26 @@ miaStringa;</expression>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                     <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdr</property>
+                    <property name="paramName">Direzione</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdc</property>
+                    <property name="paramName">Settore</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -2898,16 +3234,21 @@ miaStringa;</expression>
                     </structure>
                     <structure>
                         <property name="position">25</property>
-                        <property name="name">capitolo_completo</property>
+                        <property name="name">display_error</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">26</property>
-                        <property name="name">numero_impegno_completo</property>
+                        <property name="name">capitolo_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">27</property>
+                        <property name="name">numero_impegno_completo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
                         <property name="name">num_movim_orig_completo</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -3059,9 +3400,15 @@ miaStringa;</expression>
                     <property name="nativeName">code_motiv_assenza_siope</property>
                     <property name="dataType">string</property>
                 </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
+                </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from "BILR152_elenco_impegni" (?, ?, ?, ?, ?)]]></xml-property>
+from "BILR152_elenco_impegni" (?, ?, ?, ?, ?, ?, ?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -3133,6 +3480,36 @@ from "BILR152_elenco_impegni" (?, ?, ?, ?, ?)]]></xml-property>
           <design:identifier>
             <design:name></design:name>
             <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
@@ -3421,6 +3798,12 @@ else {&#13;
                     <text-property name="displayName">tipo_modifica</text-property>
                     <text-property name="heading">tipo_modifica</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
+                </structure>
             </list-property>
             <list-property name="filter"/>
             <list-property name="parameters">
@@ -3471,6 +3854,26 @@ else {&#13;
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                     <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdr</property>
+                    <property name="paramName">Direzione</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdc</property>
+                    <property name="paramName">Settore</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -3544,11 +3947,16 @@ else {&#13;
                     </structure>
                     <structure>
                         <property name="position">14</property>
-                        <property name="name">numero_movimento_completo</property>
+                        <property name="name">display_error</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">15</property>
+                        <property name="name">numero_movimento_completo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
                         <property name="name">capitolo_completo</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -3561,95 +3969,88 @@ else {&#13;
                     <property name="name">bil_ele_code</property>
                     <property name="nativeName">bil_ele_code</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">2</property>
                     <property name="name">bil_ele_desc</property>
                     <property name="nativeName">bil_ele_desc</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">3</property>
                     <property name="name">bil_ele_code2</property>
                     <property name="nativeName">bil_ele_code2</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">4</property>
                     <property name="name">bil_ele_desc2</property>
                     <property name="nativeName">bil_ele_desc2</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">5</property>
                     <property name="name">bil_ele_code3</property>
                     <property name="nativeName">bil_ele_code3</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">6</property>
                     <property name="name">num_movimento</property>
                     <property name="nativeName">num_movimento</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">7</property>
                     <property name="name">anno_movimento</property>
                     <property name="nativeName">anno_movimento</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">8</property>
                     <property name="name">num_submovimento</property>
                     <property name="nativeName">num_submovimento</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">9</property>
                     <property name="name">tipo_movimento</property>
                     <property name="nativeName">tipo_movimento</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">10</property>
                     <property name="name">num_modifica</property>
                     <property name="nativeName">num_modifica</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">11</property>
                     <property name="name">motivazione_modifica</property>
                     <property name="nativeName">motivazione_modifica</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">12</property>
                     <property name="name">importo_modifica</property>
                     <property name="nativeName">importo_modifica</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">13</property>
                     <property name="name">tipo_modifica</property>
                     <property name="nativeName">tipo_modifica</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from "BILR152_elenco_modifiche_entrata_spesa" (?, ?, ?, ?, ?)]]></xml-property>
+from "BILR152_elenco_modifiche_entrata_spesa" (?, ?, ?, ?, ?, ?, ?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -3721,6 +4122,36 @@ from "BILR152_elenco_modifiche_entrata_spesa" (?, ?, ?, ?, ?)]]></xml-property>
           <design:identifier>
             <design:name></design:name>
             <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
@@ -4152,6 +4583,12 @@ else {&#13;
                     <text-property name="displayName">subdoc_id</text-property>
                     <text-property name="heading">subdoc_id</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
+                </structure>
             </list-property>
             <list-property name="filter"/>
             <list-property name="parameters">
@@ -4207,6 +4644,26 @@ else {&#13;
                     <property name="nativeDataType">12</property>
                     <property name="position">5</property>
                     <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdr</property>
+                    <property name="paramName">Direzione</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdc</property>
+                    <property name="paramName">Settore</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -4365,31 +4822,36 @@ else {&#13;
                     </structure>
                     <structure>
                         <property name="position">31</property>
-                        <property name="name">capitolo_completo</property>
+                        <property name="name">display_error</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">32</property>
-                        <property name="name">numero_impegno_completo</property>
+                        <property name="name">capitolo_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">33</property>
-                        <property name="name">numero_documento_completo</property>
+                        <property name="name">numero_impegno_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">34</property>
-                        <property name="name">numero_liquid_completo</property>
+                        <property name="name">numero_documento_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">35</property>
-                        <property name="name">num_penale_completo</property>
+                        <property name="name">numero_liquid_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">36</property>
+                        <property name="name">num_penale_completo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
                         <property name="name">num_ncd_completo</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -4402,214 +4864,190 @@ else {&#13;
                     <property name="name">bil_ele_code</property>
                     <property name="nativeName">bil_ele_code</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">2</property>
                     <property name="name">bil_ele_desc</property>
                     <property name="nativeName">bil_ele_desc</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">3</property>
                     <property name="name">bil_ele_code2</property>
                     <property name="nativeName">bil_ele_code2</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">4</property>
                     <property name="name">bil_ele_desc2</property>
                     <property name="nativeName">bil_ele_desc2</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">5</property>
                     <property name="name">bil_ele_code3</property>
                     <property name="nativeName">bil_ele_code3</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">6</property>
                     <property name="name">doc_anno</property>
                     <property name="nativeName">doc_anno</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">7</property>
                     <property name="name">doc_numero</property>
                     <property name="nativeName">doc_numero</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">8</property>
                     <property name="name">subdoc_numero</property>
                     <property name="nativeName">subdoc_numero</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">9</property>
                     <property name="name">tipo_doc</property>
                     <property name="nativeName">tipo_doc</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">10</property>
                     <property name="name">conto_dare</property>
                     <property name="nativeName">conto_dare</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">11</property>
                     <property name="name">conto_avere</property>
                     <property name="nativeName">conto_avere</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">12</property>
                     <property name="name">num_impegno</property>
                     <property name="nativeName">num_impegno</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">13</property>
                     <property name="name">anno_impegno</property>
                     <property name="nativeName">anno_impegno</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">14</property>
                     <property name="name">num_subimpegno</property>
                     <property name="nativeName">num_subimpegno</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">15</property>
                     <property name="name">tipo_impegno</property>
                     <property name="nativeName">tipo_impegno</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">16</property>
                     <property name="name">code_soggetto</property>
                     <property name="nativeName">code_soggetto</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">17</property>
                     <property name="name">desc_soggetto</property>
                     <property name="nativeName">desc_soggetto</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">18</property>
                     <property name="name">num_liquidazione</property>
                     <property name="nativeName">num_liquidazione</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">19</property>
                     <property name="name">anno_liquidazione</property>
                     <property name="nativeName">anno_liquidazione</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">20</property>
                     <property name="name">importo_quota</property>
                     <property name="nativeName">importo_quota</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">21</property>
                     <property name="name">penale_anno</property>
                     <property name="nativeName">penale_anno</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">22</property>
                     <property name="name">penale_numero</property>
                     <property name="nativeName">penale_numero</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">23</property>
                     <property name="name">ncd_anno</property>
                     <property name="nativeName">ncd_anno</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">24</property>
                     <property name="name">ncd_numero</property>
                     <property name="nativeName">ncd_numero</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">25</property>
                     <property name="name">tipo_iva_split_reverse</property>
                     <property name="nativeName">tipo_iva_split_reverse</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">26</property>
                     <property name="name">importo_split_reverse</property>
                     <property name="nativeName">importo_split_reverse</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">27</property>
                     <property name="name">codice_onere</property>
                     <property name="nativeName">codice_onere</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">28</property>
                     <property name="name">aliquota_carico_sogg</property>
                     <property name="nativeName">aliquota_carico_sogg</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
                     <property name="position">29</property>
                     <property name="name">doc_id</property>
                     <property name="nativeName">doc_id</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
                     <property name="position">30</property>
                     <property name="name">subdoc_id</property>
                     <property name="nativeName">subdoc_id</property>
                     <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from "BILR152_elenco_doc_spesa" (?, ?, ?, ?, ?)]]></xml-property>
+from "BILR152_elenco_doc_spesa" (?, ?, ?, ?, ?, ?, ?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -4681,6 +5119,36 @@ from "BILR152_elenco_doc_spesa" (?, ?, ?, ?, ?)]]></xml-property>
           <design:identifier>
             <design:name></design:name>
             <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
@@ -5143,6 +5611,42 @@ trans_eu+ricorrente;</expression>
                     <text-property name="displayName">importo_mandato</text-property>
                     <text-property name="heading">importo_mandato</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">pdce_v</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">pdce_v</text-property>
+                    <text-property name="heading">pdce_v</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">trans_eu</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">trans_eu</text-property>
+                    <text-property name="heading">trans_eu</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ricorrente</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ricorrente</text-property>
+                    <text-property name="heading">ricorrente</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">desc_motiv_assenza_siope</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">desc_motiv_assenza_siope</text-property>
+                    <text-property name="heading">desc_motiv_assenza_siope</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">code_motiv_assenza_siope</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">code_motiv_assenza_siope</text-property>
+                    <text-property name="heading">code_motiv_assenza_siope</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
+                </structure>
             </list-property>
             <list-property name="filter"/>
             <list-property name="parameters">
@@ -5193,6 +5697,26 @@ trans_eu+ricorrente;</expression>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                     <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdr</property>
+                    <property name="paramName">Direzione</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdc</property>
+                    <property name="paramName">Settore</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
@@ -5376,31 +5900,36 @@ trans_eu+ricorrente;</expression>
                     </structure>
                     <structure>
                         <property name="position">36</property>
-                        <property name="name">capitolo_completo</property>
+                        <property name="name">display_error</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">37</property>
-                        <property name="name">numero_impegno_completo</property>
+                        <property name="name">capitolo_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">38</property>
-                        <property name="name">liquidazione_completa</property>
+                        <property name="name">numero_impegno_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">39</property>
-                        <property name="name">mandato_completo</property>
+                        <property name="name">liquidazione_completa</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">40</property>
-                        <property name="name">attrib_completi</property>
+                        <property name="name">mandato_completo</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">41</property>
+                        <property name="name">attrib_completi</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">42</property>
                         <property name="name">trans_eu_ricorr_completo</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -5618,9 +6147,15 @@ trans_eu+ricorrente;</expression>
                     <property name="nativeName">code_motiv_assenza_siope</property>
                     <property name="dataType">string</property>
                 </structure>
+                <structure>
+                    <property name="position">36</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
+                </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from "BILR152_elenco_liquidazioni" (?, ?, ?, ?, ?)]]></xml-property>
+from "BILR152_elenco_liquidazioni" (?, ?, ?, ?, ?, ?, ?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -5692,6 +6227,36 @@ from "BILR152_elenco_liquidazioni" (?, ?, ?, ?, ?)]]></xml-property>
           <design:identifier>
             <design:name></design:name>
             <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
@@ -5879,6 +6444,17 @@ from "BILR152_elenco_liquidazioni" (?, ?, ?, ?, ?)]]></xml-property>
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
         <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetElencoProgetti" id="9960">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">Cronoprogramma</property>
+                    <expression name="expression">if(row["cronop_code"] != "" ) {&#13;
+	var cronop = row["cronop_code"];&#13;
+	if (row["cronop_desc"] != "") cronop = cronop + " - " + row["cronop_desc"];&#13;
+}&#13;
+else var cronop= "";</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
             <list-property name="columnHints">
                 <structure>
                     <property name="columnName">code_progetto</property>
@@ -5897,6 +6473,30 @@ from "BILR152_elenco_liquidazioni" (?, ?, ?, ?, ?)]]></xml-property>
                     <property name="analysis">measure</property>
                     <text-property name="displayName">importo_progetto</text-property>
                     <text-property name="heading">importo_progetto</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cronop_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cronop_code</text-property>
+                    <text-property name="heading">cronop_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cronop_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cronop_desc</text-property>
+                    <text-property name="heading">cronop_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">progetto_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">progetto_id</text-property>
+                    <text-property name="heading">progetto_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">display_error</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <text-property name="heading">display_error</text-property>
                 </structure>
             </list-property>
             <list-property name="filter"/>
@@ -5945,6 +6545,36 @@ from "BILR152_elenco_liquidazioni" (?, ?, ?, ?, ?)]]></xml-property>
                     <property name="isInput">true</property>
                     <property name="isOutput">false</property>
                 </structure>
+                <structure>
+                    <property name="name">p_fase_bilancio</property>
+                    <property name="paramName">Fase Bilancio</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">5</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdr</property>
+                    <property name="paramName">Direzione</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">6</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">p_cdc</property>
+                    <property name="paramName">Settore</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">7</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
             </list-property>
             <structure name="cachedMetaData">
                 <list-property name="resultSet">
@@ -5963,6 +6593,31 @@ from "BILR152_elenco_liquidazioni" (?, ?, ?, ?, ?)]]></xml-property>
                         <property name="name">importo_progetto</property>
                         <property name="dataType">decimal</property>
                     </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">cronop_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">cronop_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">progetto_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">display_error</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Cronoprogramma</property>
+                        <property name="dataType">string</property>
+                    </structure>
                 </list-property>
             </structure>
             <property name="dataSource">DataSource</property>
@@ -5972,25 +6627,46 @@ from "BILR152_elenco_liquidazioni" (?, ?, ?, ?, ?)]]></xml-property>
                     <property name="name">code_progetto</property>
                     <property name="nativeName">code_progetto</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">2</property>
                     <property name="name">desc_progetto</property>
                     <property name="nativeName">desc_progetto</property>
                     <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
                     <property name="position">3</property>
                     <property name="name">importo_progetto</property>
                     <property name="nativeName">importo_progetto</property>
                     <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">cronop_code</property>
+                    <property name="nativeName">cronop_code</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">cronop_desc</property>
+                    <property name="nativeName">cronop_desc</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">progetto_id</property>
+                    <property name="nativeName">progetto_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">display_error</property>
+                    <property name="nativeName">display_error</property>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select *
-from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
+from "BILR152_elenco_progetti" (?, ?, ?, ?, ?, ?, ?)]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -6047,6 +6723,51 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
           <design:identifier>
             <design:name></design:name>
             <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>7</design:position>
           </design:identifier>
           <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
           <design:precision>0</design:precision>
@@ -6233,6 +6954,310 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
   </design:ResultSets>
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DataSetElencoDirezioniSettori" id="6991">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">desc_completa</property>
+                    <expression name="expression">row["cod_direz"] + " - "+row["desc_direz"]+ " - "+row["cod_sett"]+ " - "+row["desc_sett"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">desc_direz_completa</property>
+                    <expression name="expression">if(row["cod_direz"] != "999") row["cod_direz"]+" - "+row["desc_direz"];&#13;
+else row["desc_direz"];</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">desc_sett_completa</property>
+                    <expression name="expression">if(row["cod_sett"] != "999") row["cod_sett"]+" - "+row["desc_sett"];&#13;
+else row["desc_sett"];</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cod_direz</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cod_direz</text-property>
+                    <text-property name="heading">cod_direz</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">desc_direz</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">desc_direz</text-property>
+                    <text-property name="heading">desc_direz</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cod_sett</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cod_sett</text-property>
+                    <text-property name="heading">cod_sett</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">desc_sett</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">desc_sett</text-property>
+                    <text-property name="heading">desc_sett</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">ente_proprietario</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">ente_proprietario1</property>
+                    <property name="paramName">ente_proprietario</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cod_direz</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">desc_direz</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">cod_sett</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">desc_sett</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">desc_completa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">desc_direz_completa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">desc_sett_completa</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">DataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cod_direz</property>
+                    <property name="nativeName">cod_direz</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">desc_direz</property>
+                    <property name="nativeName">desc_direz</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">cod_sett</property>
+                    <property name="nativeName">cod_sett</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">desc_sett</property>
+                    <property name="nativeName">desc_sett</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT   t_class2.classif_code cod_direz, t_class2.classif_desc  desc_direz,
+ t_class.classif_code cod_sett, t_class.classif_desc  desc_sett
+            from siac_r_class_fam_tree r_class_fam_tree,
+                siac_t_class			t_class,
+                siac_d_class_tipo		d_class_tipo,
+                siac_t_class			t_class2            
+        where                        
+             t_class.classif_id 					= 	r_class_fam_tree.classif_id
+            and d_class_tipo.classif_tipo_id		=	t_class.classif_tipo_id
+            and t_class2.classif_id = r_class_fam_tree.classif_id_padre
+           --AND d_class_tipo.classif_tipo_desc='Cdc(Settore)'
+           AND d_class_tipo.classif_tipo_code='CDC'
+           and t_class.ente_proprietario_id=?            
+             AND t_class.data_cancellazione is NULL
+             AND d_class_tipo.data_cancellazione is NULL             
+             and r_class_fam_tree.data_cancellazione is NULL            
+            and (t_class.validita_inizio <=now() AND
+            	COALESCE(t_class.validita_fine, now()) >=now())     
+UNION SELECT t_class.classif_code cod_direz, t_class.classif_desc  desc_direz,
+			'999', 'SETTORE NON SPECIFICATO'
+            from siac_r_class_fam_tree r_class_fam_tree,
+                siac_t_class			t_class,
+                siac_d_class_tipo		d_class_tipo                           
+        where                        
+             t_class.classif_id 					= 	r_class_fam_tree.classif_id
+            and d_class_tipo.classif_tipo_id		=	t_class.classif_tipo_id
+           AND d_class_tipo.classif_tipo_code='CDR'
+           and t_class.ente_proprietario_id=?           
+             AND t_class.data_cancellazione is NULL
+             AND d_class_tipo.data_cancellazione is NULL             
+             and r_class_fam_tree.data_cancellazione is NULL            
+            and (t_class.validita_inizio <=now()AND
+            	COALESCE(t_class.validita_fine, now()) >=now())            	
+--UNION SELECT 'T', 'TUTTE', 'T', 'TUTTI' 
+UNION SELECT '999', 'DIREZIONE NON SPECIFICATA', '999', 'SETTORE NON SPECIFICATO'           	
+ORDER BY cod_direz, cod_sett]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cod_direz</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cod_direz</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cod_direz</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>desc_direz</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>desc_direz</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>desc_direz</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cod_sett</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cod_sett</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cod_sett</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>desc_sett</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>desc_sett</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>desc_sett</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
     </data-sets>
     <styles>
         <style name="report" id="4">
@@ -6357,7 +7382,10 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
                             <text-data id="9007">
                                 <property name="fontSize">14pt</property>
                                 <property name="textAlign">center</property>
-                                <expression name="valueExpr">"Movimenti contabili relativi al provvedimento "+ params["tipo_provvedimento"].value+" - "+params["Anno provvedimento"].value+"/"+params["Numero provvedimento"].value</expression>
+                                <expression name="valueExpr">if(params["Settore"].value!='999') var struttura = params["Settore"].value;&#13;
+else if(params["Direzione"].value!='999')  var struttura =params["Direzione"].value;&#13;
+	else  var struttura ="";&#13;
+"Movimenti contabili relativi al provvedimento "+ params["tipo_provvedimento"].value+" - "+params["Anno provvedimento"].value+"/"+params["Numero provvedimento"].value + " - " +struttura</expression>
                                 <property name="contentType">html</property>
                             </text-data>
                         </cell>
@@ -6471,7 +7499,10 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
                             <text-data id="9181">
                                 <property name="fontSize">14pt</property>
                                 <property name="textAlign">center</property>
-                                <expression name="valueExpr">"Movimenti contabili relativi al provvedimento "+ params["tipo_provvedimento"].value+" - "+params["Anno provvedimento"].value+"/"+params["Numero provvedimento"].value</expression>
+                                <expression name="valueExpr">if(params["Settore"].value!='999') var struttura = params["Settore"].value;&#13;
+else if(params["Direzione"].value!='999')  var struttura =params["Direzione"].value;&#13;
+	else  var struttura ="";&#13;
+"Movimenti contabili relativi al provvedimento "+ params["tipo_provvedimento"].value+" - "+params["Anno provvedimento"].value+"/"+params["Numero provvedimento"].value + " - " +struttura</expression>
                                 <property name="contentType">html</property>
                             </text-data>
                         </cell>
@@ -6579,7 +7610,10 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
                             <text-data id="10014">
                                 <property name="fontSize">14pt</property>
                                 <property name="textAlign">center</property>
-                                <expression name="valueExpr">"Movimenti contabili relativi al provvedimento "+ params["tipo_provvedimento"].value+" - "+params["Anno provvedimento"].value+"/"+params["Numero provvedimento"].value</expression>
+                                <expression name="valueExpr">if(params["Settore"].value!='999') var struttura = params["Settore"].value;&#13;
+else if(params["Direzione"].value!='999')  var struttura =params["Direzione"].value;&#13;
+	else  var struttura ="";&#13;
+"Movimenti contabili relativi al provvedimento "+ params["tipo_provvedimento"].value+" - "+params["Anno provvedimento"].value+"/"+params["Numero provvedimento"].value + " - " +struttura</expression>
                                 <property name="contentType">html</property>
                             </text-data>
                         </cell>
@@ -6604,12 +7638,13 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
         <table name="TableEntrAccertamenti" id="9008">
             <property name="fontFamily">"Times New Roman"</property>
             <property name="masterPage">MasterPageEntrate</property>
+            <property name="showIfBlank">false</property>
             <property name="width">15.927083333333334in</property>
             <property name="dataSet">DataSetEntrateAccertamenti</property>
             <list-property name="visibility">
                 <structure>
                     <property name="format">all</property>
-                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0</expression>
+                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0 || row["display_error"] != ""</expression>
                 </structure>
             </list-property>
             <list-property name="boundDataColumns">
@@ -6829,6 +7864,12 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
                         </structure>
                     </list-property>
                     <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <list-property name="sort">
@@ -7366,7 +8407,7 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
             <list-property name="visibility">
                 <structure>
                     <property name="format">all</property>
-                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0</expression>
+                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0 || row["display_error"] != ""</expression>
                 </structure>
             </list-property>
             <list-property name="boundDataColumns">
@@ -7597,6 +8638,12 @@ from "BILR152_elenco_progetti" (?, ?, ?, ?)]]></xml-property>
                     <text-property name="displayName">subdoc_id</text-property>
                     <expression name="expression" type="javascript">dataSetRow["subdoc_id"]</expression>
                     <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <list-property name="sort">
@@ -8298,7 +9345,7 @@ else {&#13;
             <list-property name="visibility">
                 <structure>
                     <property name="format">all</property>
-                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0</expression>
+                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0 || row["display_error"] != ""</expression>
                 </structure>
             </list-property>
             <list-property name="boundDataColumns">
@@ -8490,6 +9537,18 @@ else {&#13;
                         </structure>
                     </list-property>
                     <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ord_ts_id</property>
+                    <text-property name="displayName">ord_ts_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ord_ts_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <column id="9252">
@@ -9329,7 +10388,7 @@ else {&#13;
             <list-property name="visibility">
                 <structure>
                     <property name="format">all</property>
-                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0</expression>
+                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0 || row["display_error"] != ""</expression>
                 </structure>
             </list-property>
             <list-property name="boundDataColumns">
@@ -9477,6 +10536,12 @@ else {&#13;
                         </structure>
                     </list-property>
                     <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <list-property name="sort">
@@ -9796,7 +10861,7 @@ else {&#13;
             <list-property name="visibility">
                 <structure>
                     <property name="format">all</property>
-                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0</expression>
+                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0 || row["display_error"] != ""</expression>
                 </structure>
             </list-property>
             <list-property name="boundDataColumns">
@@ -10071,6 +11136,18 @@ else {&#13;
                     <property name="name">desc_motiv_assenza_siope</property>
                     <text-property name="displayName">desc_motiv_assenza_siope</text-property>
                     <expression name="expression" type="javascript">dataSetRow["desc_motiv_assenza_siope"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">code_motiv_assenza_siope</property>
+                    <text-property name="displayName">code_motiv_assenza_siope</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["code_motiv_assenza_siope"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
                     <property name="dataType">string</property>
                 </structure>
             </list-property>
@@ -11274,7 +12351,7 @@ else {&#13;
             <list-property name="visibility">
                 <structure>
                     <property name="format">all</property>
-                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0</expression>
+                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0 || row["display_error"] != ""</expression>
                 </structure>
             </list-property>
             <list-property name="boundDataColumns">
@@ -11577,6 +12654,12 @@ else {&#13;
                     <text-property name="displayName">subdoc_id</text-property>
                     <expression name="expression" type="javascript">dataSetRow["subdoc_id"]</expression>
                     <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <column id="9644">
@@ -14066,7 +15149,7 @@ else {&#13;
             <list-property name="visibility">
                 <structure>
                     <property name="format">all</property>
-                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0</expression>
+                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0 || row["display_error"] != ""</expression>
                 </structure>
             </list-property>
             <list-property name="boundDataColumns">
@@ -14449,6 +15532,12 @@ else {&#13;
                     <property name="name">code_motiv_assenza_siope</property>
                     <text-property name="displayName">code_motiv_assenza_siope</text-property>
                     <expression name="expression" type="javascript">dataSetRow["code_motiv_assenza_siope"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
                     <property name="dataType">string</property>
                 </structure>
             </list-property>
@@ -16162,7 +17251,7 @@ else {&#13;
             <list-property name="visibility">
                 <structure>
                     <property name="format">all</property>
-                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0</expression>
+                    <expression name="valueExpr" type="javascript">row["ContaElem"]==0 || row["display_error"] != ""</expression>
                 </structure>
             </list-property>
             <list-property name="boundDataColumns">
@@ -16309,6 +17398,12 @@ else {&#13;
                         </structure>
                     </list-property>
                     <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
                 </structure>
             </list-property>
             <list-property name="sort">
@@ -16624,7 +17719,7 @@ else {&#13;
         <table name="TableElencoProgetti" id="9961">
             <property name="fontFamily">"Times New Roman"</property>
             <property name="masterPage">MasterPageAltro</property>
-            <property name="width">15.927in</property>
+            <property name="width">15.916666666666666in</property>
             <property name="dataSet">DataSetElencoProgetti</property>
             <list-property name="visibility">
                 <structure>
@@ -16685,14 +17780,59 @@ else {&#13;
                     </list-property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">cronop_code</property>
+                    <text-property name="displayName">cronop_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cronop_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">cronop_desc</property>
+                    <text-property name="displayName">cronop_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cronop_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Cronoprogramma</property>
+                    <text-property name="displayName">Cronoprogramma</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Cronoprogramma"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">progetto_id</property>
+                    <text-property name="displayName">progetto_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["progetto_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">display_error</property>
+                    <text-property name="displayName">display_error</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["display_error"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
             </list-property>
-            <column id="9974"/>
-            <column id="9975"/>
-            <column id="9976"/>
+            <column id="9974">
+                <property name="width">3.9791666666666665in</property>
+            </column>
+            <column id="9975">
+                <property name="width">2.7291666666666665in</property>
+            </column>
+            <column id="9976">
+                <property name="width">4.604166666666667in</property>
+            </column>
+            <column id="10079">
+                <property name="width">4.604166666666667in</property>
+            </column>
             <header>
                 <row id="9962">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr" type="javascript">row["display_error"]!=""</expression>
+                        </structure>
+                    </list-property>
                     <cell id="9963">
-                        <property name="colSpan">3</property>
+                        <property name="colSpan">4</property>
                         <property name="rowSpan">1</property>
                         <property name="borderBottomStyle">solid</property>
                         <property name="borderBottomWidth">thin</property>
@@ -16712,6 +17852,12 @@ else {&#13;
                     </cell>
                 </row>
                 <row id="9977">
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr" type="javascript">row["display_error"]!=""</expression>
+                        </structure>
+                    </list-property>
                     <cell id="9978">
                         <property name="borderBottomStyle">solid</property>
                         <property name="borderBottomWidth">thin</property>
@@ -16751,14 +17897,41 @@ else {&#13;
                         <property name="borderTopWidth">thin</property>
                         <text id="9984">
                             <property name="contentType">auto</property>
-                            <text-property name="content"><![CDATA[Descrizione]]></text-property>
+                            <text-property name="content"><![CDATA[Descrizione Progetto]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="10076">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <text id="10080">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Cronoprogramma]]></text-property>
                         </text>
                     </cell>
                 </row>
             </header>
-            <detail>
-                <row id="9966">
-                    <cell id="9967">
+            <group id="10094">
+                <property name="groupName">GruppoProgetto</property>
+                <expression name="keyExpr" type="javascript">row["progetto_id"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["progetto_id"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <list-property name="sort">
+                    <structure>
+                        <expression name="key" type="javascript">row["code_progetto"]</expression>
+                        <property name="direction">asc</property>
+                        <property name="strength">-1</property>
+                    </structure>
+                </list-property>
+                <header>
+                    <row id="10095">
                         <property name="borderBottomStyle">solid</property>
                         <property name="borderBottomWidth">thin</property>
                         <property name="borderLeftStyle">solid</property>
@@ -16767,97 +17940,221 @@ else {&#13;
                         <property name="borderRightWidth">thin</property>
                         <property name="borderTopStyle">solid</property>
                         <property name="borderTopWidth">thin</property>
-                        <data id="9985">
-                            <property name="textAlign">center</property>
-                            <property name="resultSetColumn">code_progetto_progetti</property>
-                        </data>
-                    </cell>
-                    <cell id="9968">
-                        <property name="borderBottomStyle">solid</property>
-                        <property name="borderBottomWidth">thin</property>
-                        <property name="borderLeftStyle">solid</property>
-                        <property name="borderLeftWidth">thin</property>
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <property name="borderTopStyle">solid</property>
-                        <property name="borderTopWidth">thin</property>
-                        <data id="9986">
-                            <property name="backgroundAttachment">scroll</property>
-                            <property name="backgroundPositionX">0%</property>
-                            <property name="backgroundPositionY">0%</property>
-                            <property name="backgroundRepeat">repeat</property>
-                            <property name="fontFamily">"Times New Roman"</property>
-                            <property name="fontSize">10pt</property>
-                            <property name="fontWeight">normal</property>
-                            <property name="fontStyle">normal</property>
-                            <property name="fontVariant">normal</property>
-                            <property name="color">black</property>
-                            <property name="textLineThrough">none</property>
-                            <property name="textOverline">none</property>
-                            <property name="textUnderline">none</property>
-                            <property name="borderBottomColor">black</property>
-                            <property name="borderBottomStyle">none</property>
-                            <property name="borderBottomWidth">medium</property>
-                            <property name="borderLeftColor">black</property>
-                            <property name="borderLeftStyle">none</property>
-                            <property name="borderLeftWidth">medium</property>
-                            <property name="borderRightColor">black</property>
-                            <property name="borderRightStyle">none</property>
-                            <property name="borderRightWidth">medium</property>
-                            <property name="borderTopColor">black</property>
-                            <property name="borderTopStyle">none</property>
-                            <property name="borderTopWidth">medium</property>
-                            <property name="marginTop">0pt</property>
-                            <property name="marginLeft">0pt</property>
-                            <property name="marginBottom">0pt</property>
-                            <property name="marginRight">0pt</property>
-                            <property name="paddingTop">1pt</property>
-                            <property name="paddingLeft">1pt</property>
-                            <property name="paddingBottom">1pt</property>
-                            <property name="paddingRight">1pt</property>
-                            <structure name="numberFormat">
-                                <property name="category">Currency</property>
-                                <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
-                                <property name="locale">it_IT</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">row["display_error"]!=""</expression>
                             </structure>
-                            <property name="textAlign">right</property>
-                            <property name="letterSpacing">normal</property>
-                            <property name="lineHeight">normal</property>
-                            <property name="orphans">2</property>
-                            <property name="textTransform">none</property>
-                            <property name="whiteSpace">normal</property>
-                            <property name="widows">2</property>
-                            <property name="wordSpacing">normal</property>
-                            <property name="display">block</property>
-                            <property name="pageBreakAfter">auto</property>
-                            <property name="pageBreakBefore">auto</property>
-                            <property name="pageBreakInside">auto</property>
-                            <property name="showIfBlank">false</property>
-                            <property name="canShrink">false</property>
-                            <property name="overflow">hidden</property>
-                            <property name="resultSetColumn">importo_progetto_progetti</property>
-                        </data>
-                    </cell>
-                    <cell id="9969">
-                        <property name="borderBottomStyle">solid</property>
-                        <property name="borderBottomWidth">thin</property>
-                        <property name="borderLeftStyle">solid</property>
-                        <property name="borderLeftWidth">thin</property>
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <property name="borderTopStyle">solid</property>
-                        <property name="borderTopWidth">thin</property>
-                        <data id="9987">
-                            <property name="resultSetColumn">desc_progetto_progetti</property>
-                        </data>
-                    </cell>
-                </row>
-            </detail>
+                        </list-property>
+                        <cell id="10096">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="verticalAlign">middle</property>
+                            <data id="9985">
+                                <property name="textAlign">center</property>
+                                <property name="resultSetColumn">code_progetto_progetti</property>
+                            </data>
+                        </cell>
+                        <cell id="10097">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="verticalAlign">middle</property>
+                            <data id="9986">
+                                <property name="backgroundAttachment">scroll</property>
+                                <property name="backgroundPositionX">0%</property>
+                                <property name="backgroundPositionY">0%</property>
+                                <property name="backgroundRepeat">repeat</property>
+                                <property name="fontFamily">"Times New Roman"</property>
+                                <property name="fontSize">10pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="fontStyle">normal</property>
+                                <property name="fontVariant">normal</property>
+                                <property name="color">black</property>
+                                <property name="textLineThrough">none</property>
+                                <property name="textOverline">none</property>
+                                <property name="textUnderline">none</property>
+                                <property name="borderBottomColor">black</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderBottomWidth">medium</property>
+                                <property name="borderLeftColor">black</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderLeftWidth">medium</property>
+                                <property name="borderRightColor">black</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderRightWidth">medium</property>
+                                <property name="borderTopColor">black</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="borderTopWidth">medium</property>
+                                <property name="marginTop">0pt</property>
+                                <property name="marginLeft">0pt</property>
+                                <property name="marginBottom">0pt</property>
+                                <property name="marginRight">0pt</property>
+                                <property name="paddingTop">1pt</property>
+                                <property name="paddingLeft">1pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <property name="paddingRight">1pt</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Currency</property>
+                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                    <property name="locale">it_IT</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="letterSpacing">normal</property>
+                                <property name="lineHeight">normal</property>
+                                <property name="orphans">2</property>
+                                <property name="textTransform">none</property>
+                                <property name="whiteSpace">normal</property>
+                                <property name="widows">2</property>
+                                <property name="wordSpacing">normal</property>
+                                <property name="display">block</property>
+                                <property name="pageBreakAfter">auto</property>
+                                <property name="pageBreakBefore">auto</property>
+                                <property name="pageBreakInside">auto</property>
+                                <property name="showIfBlank">false</property>
+                                <property name="canShrink">false</property>
+                                <property name="overflow">hidden</property>
+                                <property name="resultSetColumn">importo_progetto_progetti</property>
+                            </data>
+                        </cell>
+                        <cell id="10098">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="verticalAlign">middle</property>
+                            <data id="10115">
+                                <property name="resultSetColumn">desc_progetto</property>
+                            </data>
+                        </cell>
+                        <cell id="10099">
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="verticalAlign">middle</property>
+                            <table name="TableCronoprogramma" id="10106">
+                                <property name="dataSet">DataSetElencoProgetti</property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">code_progetto</property>
+                                        <text-property name="displayName">code_progetto</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["code_progetto"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">desc_progetto</property>
+                                        <text-property name="displayName">desc_progetto</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["desc_progetto"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">importo_progetto</property>
+                                        <text-property name="displayName">importo_progetto</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["importo_progetto"]</expression>
+                                        <property name="dataType">decimal</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">cronop_code</property>
+                                        <text-property name="displayName">cronop_code</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["cronop_code"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">cronop_desc</property>
+                                        <text-property name="displayName">cronop_desc</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["cronop_desc"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">progetto_id</property>
+                                        <text-property name="displayName">progetto_id</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["progetto_id"]</expression>
+                                        <property name="dataType">integer</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">Cronoprogramma</property>
+                                        <text-property name="displayName">Cronoprogramma</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["Cronoprogramma"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">Cronoprogr</property>
+                                        <text-property name="displayName">Cronoprogr</text-property>
+                                        <expression name="expression" type="javascript">dataSetRow["Cronoprogramma"]</expression>
+                                        <property name="dataType">string</property>
+                                        <property name="allowExport">true</property>
+                                    </structure>
+                                </list-property>
+                                <list-property name="sort">
+                                    <structure>
+                                        <expression name="key" type="javascript">row["Cronoprogramma"]</expression>
+                                        <property name="direction">asc</property>
+                                        <property name="strength">-1</property>
+                                    </structure>
+                                </list-property>
+                                <list-property name="filter">
+                                    <structure>
+                                        <property name="operator">eq</property>
+                                        <expression name="expr" type="javascript">row["progetto_id"]</expression>
+                                        <simple-property-list name="value1">
+                                            <value>row._outer["progetto_id"]</value>
+                                        </simple-property-list>
+                                        <property name="updateAggregation">true</property>
+                                    </structure>
+                                </list-property>
+                                <column id="10113"/>
+                                <detail>
+                                    <row id="10109">
+                                        <cell id="10110">
+                                            <data id="10114">
+                                                <property name="resultSetColumn">Cronoprogr</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </detail>
+                            </table>
+                        </cell>
+                    </row>
+                </header>
+            </group>
             <footer>
                 <row id="9970">
-                    <cell id="9971"/>
-                    <cell id="9972"/>
-                    <cell id="9973"/>
+                    <list-property name="visibility">
+                        <structure>
+                            <property name="format">all</property>
+                            <expression name="valueExpr" type="javascript">row["display_error"]==""</expression>
+                        </structure>
+                    </list-property>
+                    <cell id="9971">
+                        <property name="colSpan">4</property>
+                        <property name="rowSpan">1</property>
+                        <data id="10120">
+                            <property name="fontSize">18pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">display_error</property>
+                        </data>
+                    </cell>
                 </row>
             </footer>
         </table>

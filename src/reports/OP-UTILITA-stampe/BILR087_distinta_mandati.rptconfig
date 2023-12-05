@@ -11,34 +11,62 @@
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_1208_2</property>
-            <property name="value">2015</property>
+            <property name="value">2023</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__Numero mandato da_1013_3</property>
+            <property name="name">__isdisplay__DataDistinta_1335_3</property>
+            <property name="value">21/04/2023</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero mandato da_1013_4</property>
             <property name="value">1</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__Numero mandato a_1014_4</property>
-            <property name="value">20</property>
+            <property name="name">__isdisplay__Numero mandato a_1014_5</property>
+            <property name="value">100</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__Data mandato da_1018_5</property>
-            <property name="value">23/04/2015</property>
+            <property name="name">__isnull_1018_6</property>
+            <property name="value">Data mandato da_1018</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__Data mandato a_1015_6</property>
-            <property name="value">07/07/2015</property>
+            <property name="name">Data mandato da_1018_type_</property>
+            <property name="value">date</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_17_7</property>
-            <property name="value">15</property>
+            <property name="name">__isnull_1015_7</property>
+            <property name="value">Data mandato a_1015</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_17_type_</property>
-            <property name="value">integer</property>
+            <property name="name">Data mandato a_1015_type_</property>
+            <property name="value">date</property>
         </structure>
         <structure>
-            <property name="name">Numero mandato da_1013_8</property>
+            <property name="name">__isdisplay__cod_distinta_1263_8</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__conto_tes_1319_9</property>
+            <property name="value">T - TUTTI</property>
+        </structure>
+        <structure>
+            <property name="name">DataDistinta_1335_10</property>
+            <property name="value">2023-04-21</property>
+        </structure>
+        <structure>
+            <property name="name">DataDistinta_1335_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">cod_distinta_1263_11</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">cod_distinta_1263_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero mandato da_1013_12</property>
             <property name="value">1</property>
         </structure>
         <structure>
@@ -46,23 +74,7 @@
             <property name="value">integer</property>
         </structure>
         <structure>
-            <property name="name">Data mandato da_1018_9</property>
-            <property name="value">2015-04-23</property>
-        </structure>
-        <structure>
-            <property name="name">Data mandato da_1018_type_</property>
-            <property name="value">date</property>
-        </structure>
-        <structure>
-            <property name="name">Data mandato a_1015_10</property>
-            <property name="value">2015-07-07</property>
-        </structure>
-        <structure>
-            <property name="name">Data mandato a_1015_type_</property>
-            <property name="value">date</property>
-        </structure>
-        <structure>
-            <property name="name">nome_report_89_11</property>
+            <property name="name">nome_report_89_13</property>
             <property name="value">BILR085</property>
         </structure>
         <structure>
@@ -70,20 +82,40 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">anno_bilancio_1208_12</property>
-            <property name="value">2015</property>
+            <property name="name">anno_bilancio_1208_14</property>
+            <property name="value">2023</property>
         </structure>
         <structure>
             <property name="name">anno_bilancio_1208_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">Numero mandato a_1014_13</property>
-            <property name="value">20</property>
+            <property name="name">Numero mandato a_1014_15</property>
+            <property name="value">100</property>
         </structure>
         <structure>
             <property name="name">Numero mandato a_1014_type_</property>
             <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_17_16</property>
+            <property name="value">15</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_17_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">conto_tes_1319_17</property>
+            <property name="value">T</property>
+        </structure>
+        <structure>
+            <property name="name">conto_tes_1319_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">conto_tes_1319_expr_</property>
+            <property name="value">dataSetRow["contotes_code"]</property>
         </structure>
     </list-property>
 </report>

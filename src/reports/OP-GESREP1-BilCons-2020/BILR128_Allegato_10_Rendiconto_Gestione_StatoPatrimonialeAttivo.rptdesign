@@ -1973,6 +1973,20 @@ tagname;</expression>
                     <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">Anno</property>
+                    <text-property name="displayName">Anno</text-property>
+                    <expression name="expression" type="javascript">params["anno_bilancio"].value</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Anno_meno_1</property>
+                    <text-property name="displayName">Anno_meno_1</text-property>
+                    <expression name="expression" type="javascript">(new Number(params["anno_bilancio"].value)-1).toString()</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <column id="5954">
                 <property name="width">0.23958333333333334in</property>
@@ -2022,11 +2036,11 @@ tagname;</expression>
                         <property name="borderLeftWidth">thin</property>
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <text id="6311">
+                        <text-data id="11216">
                             <property name="fontWeight">bold</property>
-                            <property name="contentType">auto</property>
-                            <text-property name="content"><![CDATA[Anno]]></text-property>
-                        </text>
+                            <expression name="valueExpr">"Anno " + row["Anno"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
                     </cell>
                     <cell id="5928">
                         <property name="borderBottomStyle">solid</property>
@@ -2035,11 +2049,11 @@ tagname;</expression>
                         <property name="borderLeftWidth">thin</property>
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <text id="6312">
+                        <text-data id="11217">
                             <property name="fontWeight">bold</property>
-                            <property name="contentType">auto</property>
-                            <text-property name="content"><![CDATA[Anno -1]]></text-property>
-                        </text>
+                            <expression name="valueExpr">"Anno " + row["Anno_meno_1"]</expression>
+                            <property name="contentType">html</property>
+                        </text-data>
                     </cell>
                     <cell id="5929">
                         <property name="borderBottomStyle">solid</property>

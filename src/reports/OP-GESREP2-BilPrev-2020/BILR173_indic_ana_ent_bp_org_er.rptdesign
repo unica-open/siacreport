@@ -100,9 +100,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-			<property name="odaURL">${userconn}</property>
-			<property name="odaUser">${userdb}</property>
-			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
+            <property name="odaURL">${userconn}</property>
+            <property name="odaUser">${userdb}</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">pwddAA==</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -1748,7 +1748,7 @@ from "BILR998_tipo_capitolo_dei_report" (?,?)]]></xml-property>
                             <text id="3434">
                                 <property name="textAlign">right</property>
                                 <property name="contentType">auto</property>
-                                <text-property name="content"><![CDATA[Allegato n. 1-b]]></text-property>
+                                <text-property name="content"><![CDATA[Allegato n. 3-b]]></text-property>
                             </text>
                         </cell>
                     </row>

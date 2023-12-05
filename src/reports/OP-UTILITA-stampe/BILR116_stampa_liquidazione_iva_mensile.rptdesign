@@ -1909,6 +1909,8 @@ from "BILR116_Stampa_riepilogo_iva" (?,?,?)]]></xml-property>
                             <expression name="value" type="javascript">row["importo_iva_imponibile"]</expression>
                         </structure>
                     </list-property>
+                    <expression name="filterExpr" type="javascript">//SIAC-8162&#13;
+dataSetRow["cod_aliquota_iva"] != 'E15' &amp;&amp; dataSetRow["cod_aliquota_iva"] != 'FCI'</expression>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>

@@ -3,15 +3,15 @@
     <list-property name="configVars">
         <structure>
             <property name="name">__isdisplay__ente_proprietario_1211_0</property>
-            <property name="value">1</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__nome_report_89_1</property>
-            <property name="value">BILR092</property>
+            <property name="value">BILR131</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_1208_2</property>
-            <property name="value">2016</property>
+            <property name="value">2023</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__classificatori_5723_3</property>
@@ -19,11 +19,11 @@
         </structure>
         <structure>
             <property name="name">__isdisplay__tipo_stampa_6201_4</property>
-            <property name="value">Stampa anche conti con importi a 0</property>
+            <property name="value">Sì</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__Stampa conti al di sotto del livello di legge_2720_5</property>
-            <property name="value">No</property>
+            <property name="value">Sì</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__Codice PDCE Livello II_2180_6</property>
@@ -39,7 +39,7 @@
         </structure>
         <structure>
             <property name="name">classificatori_5723_9</property>
-            <property name="value">1</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">classificatori_5723_type_</property>
@@ -55,7 +55,7 @@
         </structure>
         <structure>
             <property name="name">nome_report_89_11</property>
-            <property name="value">BILR092</property>
+            <property name="value">BILR131</property>
         </structure>
         <structure>
             <property name="name">nome_report_89_type_</property>
@@ -63,7 +63,7 @@
         </structure>
         <structure>
             <property name="name">anno_bilancio_1208_12</property>
-            <property name="value">2016</property>
+            <property name="value">2023</property>
         </structure>
         <structure>
             <property name="name">anno_bilancio_1208_type_</property>
@@ -71,7 +71,7 @@
         </structure>
         <structure>
             <property name="name">Stampa conti al di sotto del livello di legge_2720_13</property>
-            <property name="value">N</property>
+            <property name="value">S</property>
         </structure>
         <structure>
             <property name="name">Stampa conti al di sotto del livello di legge_2720_type_</property>
@@ -103,7 +103,7 @@
         </structure>
         <structure>
             <property name="name">ente_proprietario_1211_17</property>
-            <property name="value">1</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">ente_proprietario_1211_type_</property>

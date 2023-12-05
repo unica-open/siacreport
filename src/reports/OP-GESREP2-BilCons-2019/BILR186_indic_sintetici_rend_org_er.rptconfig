@@ -3,26 +3,38 @@
     <list-property name="configVars">
         <structure>
             <property name="name">__isdisplay__ente_proprietario_58_0</property>
-            <property name="value">14</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_1208_1</property>
-            <property name="value">2017</property>
+            <property name="value">2021</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__nome_report_89_2</property>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_89_3</property>
             <property name="value">BILR174</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__nome_report_equi_bil_4418_3</property>
+            <property name="name">__isdisplay__nome_report_equi_bil_4418_4</property>
             <property name="value">BILR006</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__nome_report_allegato_a_5648_4</property>
+            <property name="name">__isdisplay__nome_report_allegato_a_5648_5</property>
             <property name="value">BILR150</property>
         </structure>
         <structure>
-            <property name="name">nome_report_allegato_a_5648_5</property>
+            <property name="name">Titolo aggiuntivo_11211_6</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_allegato_a_5648_7</property>
             <property name="value">BILR150</property>
         </structure>
         <structure>
@@ -30,7 +42,7 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">nome_report_89_6</property>
+            <property name="name">nome_report_89_8</property>
             <property name="value">BILR174</property>
         </structure>
         <structure>
@@ -38,23 +50,23 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">anno_bilancio_1208_7</property>
-            <property name="value">2017</property>
+            <property name="name">anno_bilancio_1208_9</property>
+            <property name="value">2021</property>
         </structure>
         <structure>
             <property name="name">anno_bilancio_1208_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_58_8</property>
-            <property name="value">14</property>
+            <property name="name">ente_proprietario_58_10</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">ente_proprietario_58_type_</property>
             <property name="value">integer</property>
         </structure>
         <structure>
-            <property name="name">nome_report_equi_bil_4418_9</property>
+            <property name="name">nome_report_equi_bil_4418_11</property>
             <property name="value">BILR006</property>
         </structure>
         <structure>

@@ -26,9 +26,6 @@
             <property name="isRequired">true</property>
             <property name="dataType">integer</property>
             <property name="distinct">true</property>
-            <simple-property-list name="defaultValue">
-                <value type="constant">2</value>
-            </simple-property-list>
             <list-property name="selectionList"/>
             <property name="paramType">simple</property>
             <property name="concealValue">false</property>
@@ -130,9 +127,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-            <property name="odaURL">jdbc:postgresql://tst-dbsiac-consip.bilancio.csi.it:5432/CONSIP-RP</property>
-            <property name="odaUser">siac</property>
-            <encrypted-property name="odaPassword" encryptionID="base64">bXlwYXNz</encrypted-property>
+			<property name="odaURL">${userconn}</property>
+			<property name="odaUser">${userdb}</property>
+			<encrypted-property name="odaPassword" encryptionID="base64">${pwddb}</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -2716,7 +2713,7 @@ CASSA =TR-CS]]></text-property>
                     <property name="fontWeight">bold</property>
                     <text id="4013">
                         <property name="contentType">auto</property>
-                        <text-property name="content"><![CDATA[- di cui Utilizzo Fondo anticipazioni di liquidità (DL 35/2013 e successive modifiche e rifinanziamenti) - solo per le Regioni]]></text-property>
+                        <text-property name="content"><![CDATA[- di cui Utilizzo Fondo anticipazioni di liquidità]]></text-property>
                     </text>
                 </cell>
                 <cell id="4010">

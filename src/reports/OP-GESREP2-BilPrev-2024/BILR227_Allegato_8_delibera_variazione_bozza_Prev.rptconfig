@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_26_0</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_5195_1</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11749_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno Competenza_3586_3</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno delibera_5197_4</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5188_5</property>
+            <property name="value">Numero della delibera_5188</property>
+        </structure>
+        <structure>
+            <property name="name">Numero della delibera_5188_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8702_6</property>
+            <property name="value">tipo_atto_8702</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_atto_8702_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">tipo_atto_8702_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Variazione_3402_7</property>
+            <property name="value">16</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5191_8</property>
+            <property name="value">Data protocollo delibera variazione_5191</property>
+        </structure>
+        <structure>
+            <property name="name">Data protocollo delibera variazione_5191_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5194_9</property>
+            <property name="value">Data della delibera di variazione_5194</property>
+        </structure>
+        <structure>
+            <property name="name">Data della delibera di variazione_5194_type_</property>
+            <property name="value">date</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero protocollo provvedimento di variazione_5192_10</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno esercizio della delibera precedente_5189_11</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero della delibera precedente_4974_12</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11749_13</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11749_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno esercizio della delibera precedente_5189_14</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno esercizio della delibera precedente_5189_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero della delibera precedente_4974_15</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Numero della delibera precedente_4974_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero protocollo provvedimento di variazione_5192_16</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Numero protocollo provvedimento di variazione_5192_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_5195_17</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_5195_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_3402_18</property>
+            <property name="value">16</property>
+        </structure>
+        <structure>
+            <property name="name">Numero Variazione_3402_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno delibera_5197_19</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno delibera_5197_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_20</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Anno Competenza_3586_expr_</property>
+            <property name="value">dataSetRow["anno"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_21</property>
+            <property name="value">2</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_26_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>

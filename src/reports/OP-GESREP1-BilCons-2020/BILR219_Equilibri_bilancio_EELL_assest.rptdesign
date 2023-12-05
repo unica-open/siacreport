@@ -12199,8 +12199,7 @@ else row._outer["D_fpv_t1_2"];</expression>
                         <property name="canShrink">false</property>
                         <property name="overflow">hidden</property>
                         <property name="contentType">auto</property>
-                        <text-property name="content"><![CDATA[     di cui Fondo anticipazioni di liquidità (DL 35/2013 e successive
-     modifiche e rifinanziamenti) ]]></text-property>
+                        <text-property name="content"><![CDATA[     di cui Fondo anticipazioni di liquidità]]></text-property>
                     </text>
                 </cell>
                 <cell id="3948">

@@ -3,26 +3,38 @@
     <list-property name="configVars">
         <structure>
             <property name="name">__isdisplay__ente_proprietario_26_0</property>
-            <property name="value">5</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_27_1</property>
-            <property name="value">2016</property>
+            <property name="value">2021</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__report_71_2</property>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_71_3</property>
             <property name="value">BILR125</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__classificatori_3586_3</property>
+            <property name="name">__isdisplay__classificatori_3586_4</property>
             <property name="value">Stato Patrimoniale - Passivo</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__data del giorno_3585_4</property>
+            <property name="name">__isdisplay__data del giorno_3585_5</property>
             <property name="value">Con data del giorno</property>
         </structure>
         <structure>
-            <property name="name">classificatori_3586_5</property>
+            <property name="name">Titolo aggiuntivo_11211_6</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">classificatori_3586_7</property>
             <property name="value">3</property>
         </structure>
         <structure>
@@ -30,15 +42,15 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">anno_bilancio_27_6</property>
-            <property name="value">2016</property>
+            <property name="name">anno_bilancio_27_8</property>
+            <property name="value">2021</property>
         </structure>
         <structure>
             <property name="name">anno_bilancio_27_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">report_71_7</property>
+            <property name="name">report_71_9</property>
             <property name="value">BILR125</property>
         </structure>
         <structure>
@@ -46,7 +58,7 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">data del giorno_3585_8</property>
+            <property name="name">data del giorno_3585_10</property>
             <property name="value">S</property>
         </structure>
         <structure>
@@ -54,8 +66,8 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_26_9</property>
-            <property name="value">5</property>
+            <property name="name">ente_proprietario_26_11</property>
+            <property name="value">2</property>
         </structure>
         <structure>
             <property name="name">ente_proprietario_26_type_</property>

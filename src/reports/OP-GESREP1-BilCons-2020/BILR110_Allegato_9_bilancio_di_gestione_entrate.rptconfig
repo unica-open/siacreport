@@ -7,30 +7,118 @@
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_1208_1</property>
-            <property name="value">2016</property>
+            <property name="value">2020</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__report_3154_2</property>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Numero Variazione_72_3</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_5188_4</property>
+            <property name="value">Numero provvedimento di variazione di PEG_5188</property>
+        </structure>
+        <structure>
+            <property name="name">Numero provvedimento di variazione di PEG_5188_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno provvedimento di variazione di PEG_5197_5</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__DirezioneSettorePEG_11254_6</property>
+            <property name="value">999 - DIREZIONE NON SPECIFICATA / 999 - SETTORE NON SPECIFICATO</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8702_7</property>
+            <property name="value">Tipo provvedimento di variazione di PEG_8702</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di PEG_8702_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di PEG_8702_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8703_8</property>
+            <property name="value">Numero provvedimento di variazione di Bilancio_8703</property>
+        </structure>
+        <structure>
+            <property name="name">Numero provvedimento di variazione di Bilancio_8703_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Anno provvedimento di variazione di Bilancio_8704_9</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_8705_10</property>
+            <property name="value">Tipo provvedimento di variazione di Bilancio_8705</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di Bilancio_8705_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">Tipo provvedimento di variazione di Bilancio_8705_expr_</property>
+            <property name="value">dataSetRow["attoamm_tipo_code"]</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__DirezioneSettoreBilancio_11255_11</property>
+            <property name="value">999 - DIREZIONE NON SPECIFICATA / 999 - SETTORE NON SPECIFICATO</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_3154_12</property>
             <property name="value">BILR110</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__data del giorno_3585_3</property>
+            <property name="name">__isdisplay__data del giorno_3585_13</property>
             <property name="value">Con data del giorno</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__report_old_3592_4</property>
-            <property name="value">BILR001</property>
+            <property name="name">Titolo aggiuntivo_11211_14</property>
+            <property name="value"></property>
         </structure>
         <structure>
-            <property name="name">anno_bilancio_1208_5</property>
-            <property name="value">2016</property>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">DirezioneSettorePEG_11254_15</property>
+            <property name="value">999$999</property>
+        </structure>
+        <structure>
+            <property name="name">DirezioneSettorePEG_11254_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">DirezioneSettorePEG_11254_expr_</property>
+            <property name="value">dataSetRow["completo"]</property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di Bilancio_8704_16</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di Bilancio_8704_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_17</property>
+            <property name="value">2020</property>
         </structure>
         <structure>
             <property name="name">anno_bilancio_1208_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">report_3154_6</property>
+            <property name="name">report_3154_18</property>
             <property name="value">BILR110</property>
         </structure>
         <structure>
@@ -38,7 +126,7 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">data del giorno_3585_7</property>
+            <property name="name">data del giorno_3585_19</property>
             <property name="value">S</property>
         </structure>
         <structure>
@@ -46,15 +134,35 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">report_old_3592_8</property>
-            <property name="value">BILR001</property>
+            <property name="name">Numero Variazione_72_20</property>
+            <property name="value"></property>
         </structure>
         <structure>
-            <property name="name">report_old_3592_type_</property>
+            <property name="name">Numero Variazione_72_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_3401_9</property>
+            <property name="name">Anno provvedimento di variazione di PEG_5197_21</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Anno provvedimento di variazione di PEG_5197_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">DirezioneSettoreBilancio_11255_22</property>
+            <property name="value">999$999</property>
+        </structure>
+        <structure>
+            <property name="name">DirezioneSettoreBilancio_11255_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">DirezioneSettoreBilancio_11255_expr_</property>
+            <property name="value">dataSetRow["completo"]</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_23</property>
             <property name="value">4</property>
         </structure>
         <structure>

@@ -3237,7 +3237,7 @@ UNION SELECT t_class.classif_code cod_direz, t_class.classif_desc  desc_direz,
              and r_class_fam_tree.data_cancellazione is NULL            
             and (t_class.validita_inizio <=now()AND
             	COALESCE(t_class.validita_fine, now()) >=now())            	
---UNION SELECT 'T', 'TUTTE', 'T', 'TUTTI' 
+UNION SELECT 'T', 'TUTTE', 'T', 'TUTTI' 
 UNION SELECT '999', 'DIREZIONE NON CONFIGURATA', '999', 'SETTORE NON CONFIGURATO'            	
 ORDER BY cod_direz, cod_sett]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>

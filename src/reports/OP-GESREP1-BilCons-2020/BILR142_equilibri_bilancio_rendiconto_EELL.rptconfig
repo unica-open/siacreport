@@ -7,18 +7,30 @@
         </structure>
         <structure>
             <property name="name">__isdisplay__anno_bilancio_1208_1</property>
-            <property name="value">2017</property>
+            <property name="value">2019</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__nome_report_3876_2</property>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__nome_report_3876_3</property>
             <property name="value">BILR142</property>
         </structure>
         <structure>
-            <property name="name">__isdisplay__data del giorno_3585_3</property>
+            <property name="name">__isdisplay__data del giorno_3585_4</property>
             <property name="value">Con data del giorno</property>
         </structure>
         <structure>
-            <property name="name">nome_report_3876_4</property>
+            <property name="name">Titolo aggiuntivo_11211_5</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">nome_report_3876_6</property>
             <property name="value">BILR142</property>
         </structure>
         <structure>
@@ -26,15 +38,15 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">anno_bilancio_1208_5</property>
-            <property name="value">2017</property>
+            <property name="name">anno_bilancio_1208_7</property>
+            <property name="value">2019</property>
         </structure>
         <structure>
             <property name="name">anno_bilancio_1208_type_</property>
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">data del giorno_3585_6</property>
+            <property name="name">data del giorno_3585_8</property>
             <property name="value">S</property>
         </structure>
         <structure>
@@ -42,7 +54,7 @@
             <property name="value">string</property>
         </structure>
         <structure>
-            <property name="name">ente_proprietario_3408_7</property>
+            <property name="name">ente_proprietario_3408_9</property>
             <property name="value">3</property>
         </structure>
         <structure>

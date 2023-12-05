@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte SPDX-License-Identifier: EUPL-1.2</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <list-property name="userProperties">
         <structure>
@@ -2079,7 +2080,7 @@ else {&#13;
                                                         <property name="backgroundPositionY">0%</property>
                                                         <property name="backgroundRepeat">repeat</property>
                                                         <property name="fontFamily">"Times New Roman"</property>
-                                                        <property name="fontSize">4pt</property>
+                                                        <property name="fontSize">5pt</property>
                                                         <property name="fontWeight">bold</property>
                                                         <property name="fontStyle">normal</property>
                                                         <property name="fontVariant">normal</property>
@@ -2155,7 +2156,7 @@ else {&#13;
                                                         <property name="backgroundPositionY">0%</property>
                                                         <property name="backgroundRepeat">repeat</property>
                                                         <property name="fontFamily">"Times New Roman"</property>
-                                                        <property name="fontSize">4pt</property>
+                                                        <property name="fontSize">5pt</property>
                                                         <property name="fontWeight">bold</property>
                                                         <property name="fontStyle">normal</property>
                                                         <property name="fontVariant">normal</property>
@@ -3050,7 +3051,7 @@ else {&#13;
                                                     <property name="backgroundPositionY">0%</property>
                                                     <property name="backgroundRepeat">repeat</property>
                                                     <property name="fontFamily">"Times New Roman"</property>
-                                                    <property name="fontSize">2pt</property>
+                                                    <property name="fontSize">5pt</property>
                                                     <property name="fontWeight">bold</property>
                                                     <property name="fontStyle">normal</property>
                                                     <property name="fontVariant">normal</property>

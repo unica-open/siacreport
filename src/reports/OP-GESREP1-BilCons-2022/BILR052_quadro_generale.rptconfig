@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__ente_proprietario_3401_0</property>
+            <property name="value">3</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__anno_bilancio_1208_1</property>
+            <property name="value">2022</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Titolo aggiuntivo_11211_2</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_3154_3</property>
+            <property name="value">BILR052</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__reportEquilibri_11487_4</property>
+            <property name="value">BILR142</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__data del giorno_3585_5</property>
+            <property name="value">Con data del giorno</property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_6</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">Titolo aggiuntivo_11211_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">reportEquilibri_11487_7</property>
+            <property name="value">BILR142</property>
+        </structure>
+        <structure>
+            <property name="name">reportEquilibri_11487_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_8</property>
+            <property name="value">2022</property>
+        </structure>
+        <structure>
+            <property name="name">anno_bilancio_1208_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_3154_9</property>
+            <property name="value">BILR052</property>
+        </structure>
+        <structure>
+            <property name="name">report_3154_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_10</property>
+            <property name="value">S</property>
+        </structure>
+        <structure>
+            <property name="name">data del giorno_3585_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_11</property>
+            <property name="value">3</property>
+        </structure>
+        <structure>
+            <property name="name">ente_proprietario_3401_type_</property>
+            <property name="value">integer</property>
+        </structure>
+    </list-property>
+</report>
